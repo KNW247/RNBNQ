@@ -14,7 +14,7 @@
       padding: 0;
     }
     header {
-      background-color: #d36c2d;
+      background-color: #c7551a;
       color: #fff;
       display: flex;
       justify-content: space-between;
@@ -45,52 +45,76 @@
     h1, h2, h3 {
       text-align: center;
     }
-    iframe {
-      display: block;
-      margin: 2rem auto;
-      max-width: 720px;
-      width: 100%;
-      height: 405px;
-      border: none;
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    article {
-      max-width: 720px;
-      margin: 2rem auto;
+    .video-card {
       background-color: #fff;
-      padding: 1.5rem;
+      padding: 1rem;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
-    article p {
-      line-height: 1.6;
+    .video-card iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+      border-radius: 4px;
+    }
+    .video-card h3 {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .more-button {
+      display: block;
+      width: fit-content;
+      margin: 2rem auto;
+      padding: 0.75rem 1.5rem;
+      background-color: #c7551a;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="assets/rnbnqweblogo.png" alt="Rusty Nut Brew N' Que Logo" class="logo" />
+    <img src="../assets/rnbnqweblogo.png" alt="Rusty Nut Brew N' Que Logo" class="logo" />
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="../index.html">Home</a></li>
         <li><a href="#">Brew Days</a></li>
         <li><a href="#">Recipes</a></li>
-        <li><a href="how-i-do-it.html">How I Do It</a></li>
+        <li><a href="index.html">How I Do It</a></li>
         <li><a href="#">Gear</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h1>How I Do It – Video Series</h1>
+    <h1>How I Do It — Real Brewing. Real Gear. My Way.</h1>
+    <p style="max-width: 720px; margin: 0 auto 2rem; text-align: center;">
+      This isn’t the way. It might not even be the best way. <br>
+      It’s just my way — how I brew, clean, and build things with the gear I have and the space I’m in.<br><br>
+      This series walks through how I approach different parts of the brewing process, solve problems, and make it work in the real world.<br><br>
+      I’ll sometimes shout out gear or producers who support the homebrewing community and the clubs I’m part of. These aren’t paid promotions — just genuine nods to folks doing right by brewers.
+    </p>
 
-    <iframe src="https://www.youtube.com/embed/videoseries?list=PLOelfgnzOe3rXpZwMc9Fa5BFiAcOEFp2-" title="How I Do It Playlist" allowfullscreen></iframe>
+    <h2 style="margin-top: 3rem;">Most Recent Episodes</h2>
+    <div class="video-grid">
+      <div class="video-card">
+        <iframe src="https://www.youtube.com/embed/2v0UOsviHfk" title="Episode 1"></iframe>
+        <h3>Ep. 1 – How I Clean My Fermenter (CIP Build)</h3>
+        <p>My DIY CIP system uses a ¾ HP, 3300 GPH pump for industrial-level cleaning. No lifting, just fast, effective results. <a href="#">See the gear</a>.</p>
+      </div>
+      <!-- Placeholder for more episodes -->
+    </div>
 
-    <article>
-      <h3>Episode 1: How I Clean My Fermenter (CIP Build)</h3>
-      <p>This is the first episode of <em>How I Do It</em> — a series where I walk through my actual brewing gear and processes.</p>
-      <p>In this video, I walk through exactly how I clean my fermenter using my DIY CIP (Clean-in-Place) setup. The heart of this system is a ¾ HP, 3300 GPH pump—delivering 4–6× the flow rate of most homebrew CIP kits. It’s industrial-level cleaning power, built for a homebrew budget.</p>
-      <p>This isn’t a parts list or theory—this is how I actually clean my gear. No heavy lifting. Just fast, effective cleaning that gets me back to brewing.</p>
-    </article>
+    <a href="#" class="more-button">See All Episodes</a>
   </main>
 </body>
 </html>
