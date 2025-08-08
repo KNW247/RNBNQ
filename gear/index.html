@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Homebrewing Gear I Actually Use – CIP, Kegging, Cleaning | Rusty Nut Brew N' Que</title>
   <meta name="description" content="Explore the exact homebrewing gear I use for keg dosing, CIP fermenter cleaning, and closed-loop transfers. Each item links to the Amazon page and the video where it’s used." />
-  <base href="https://rustynutbrewnque.com/">
-
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -15,89 +13,81 @@
       margin: 0;
       padding: 0;
     }
-
-    /* --- Header / Nav Styles (same as other pages) --- */
-    .site-header {
-      position: sticky; top: 0; z-index: 1000;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.75rem 1rem; background: #d36c2d; color: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    header {
+      background-color: #c7551a; /* keep this page’s original color */
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      /* allow wrapping so nav never spills onto the white page */
+      flex-wrap: wrap;
     }
-    .site-header .brand img { height: 48px; background:#fff; padding:2px; border-radius:4px }
-    .nav-wrap { margin: 0; }
-    .nav-wrap > summary {
-      list-style: none; cursor: pointer; display: none;
-      width: 44px; height: 44px; border-radius: 6px;
+    header img.logo {
+      max-height: 50px;
+      background: #fff;
+      padding: 0.25rem;
+      border-radius: 4px;
     }
-    .nav-wrap > summary::-webkit-details-marker { display: none; }
-    .hamburger { position: relative; display:block; width:24px; height:2px; background:#fff; margin:21px 10px; }
-    .hamburger::before, .hamburger::after {
-      content:""; position:absolute; left:0; right:0; height:2px; background:#fff;
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+      /* keep wrapped links on the colored header background */
+      background: #c7551a;
     }
-    .hamburger::before { top:-7px } .hamburger::after { top:7px }
-
-    .nav ul { list-style:none; margin:0; padding:0; display:flex; gap:1.5rem }
-    .nav a { color:#fff; text-decoration:none; font-weight:bold }
-
-    /* Mobile */
-    @media (max-width: 768px){
-      .nav-wrap > summary { display:block }
-      .nav{ position:absolute; left:0; right:0; top:100%; background:#d36c2d; box-shadow:0 2px 5px rgba(0,0,0,.1) }
-      .nav ul{ flex-direction:column; gap:0 }
-      .nav a{ display:block; padding:0.9rem 1rem; border-top:1px solid rgba(255,255,255,.15) }
-      .nav{ display:none }
-      .nav-wrap[open] .nav{ display:block }
-      .nav-wrap[open] .hamburger{ background:transparent }
-      .nav-wrap[open] .hamburger::before{ transform:translateY(7px) rotate(45deg) }
-      .nav-wrap[open] .hamburger::after{ transform:translateY(-7px) rotate(-45deg) }
-      .nav-wrap .hamburger::before, .nav-wrap .hamburger::after{ transition:transform .2s ease }
-    }
-    /* Desktop: menu always visible */
-    @media (min-width: 769px){
-      .nav { display:block !important }
-      .nav-wrap > summary { display:none !important }
-    }
-    .sr-only{
-      position:absolute;width:1px;height:1px;padding:0;margin:-1px;
-      overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    /* --- Page-specific styles --- */
-    main { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
     h1 { margin-bottom: 1rem; }
     .intro { max-width: 800px; margin-bottom: 3rem; }
     .category-index { margin-bottom: 2rem; }
     .category-index ul { padding-left: 1rem; }
     .gear-section { margin-bottom: 3rem; }
-    .gear-section h2 { border-bottom: 2px solid #c7551a; padding-bottom: 0.5rem; }
+    .gear-section h2 {
+      border-bottom: 2px solid #c7551a;
+      padding-bottom: 0.5rem;
+    }
     .gear-item { margin-bottom: 1.5rem; }
-    .gear-item a { display: inline-block; margin-right: 1rem; color: #c7551a; text-decoration: none; }
+    .gear-item a {
+      display: inline-block;
+      margin-right: 1rem;
+      color: #c7551a;
+      text-decoration: none;
+    }
     .gear-item p { margin: 0.5rem 0 0.2rem; }
     .gear-item .video-ref { font-size: 0.9rem; color: #555; }
+
+    /* small-screen tweaks so nothing gets cut off on iPhone portrait */
+    @media (max-width: 600px) {
+      header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      nav ul { gap: 1rem; flex-wrap: wrap; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Consistent header -->
-  <header class="site-header">
-    <a class="brand" href="index.html">
-      <img src="assets/rnbnqweblogo.png" alt="Rusty Nut Brew N' Que logo">
-    </a>
-    <details class="nav-wrap">
-      <summary aria-label="Menu" role="button">
-        <span class="hamburger" aria-hidden="true"></span>
-        <span class="sr-only">Menu</span>
-      </summary>
-      <nav class="nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="brew-days/">Brew Days</a></li>
-          <li><a href="how-i-do-it/">How I Do It</a></li>
-          <li><a href="gear/">Gear</a></li>
-          <li><a href="about/">About The Brewer</a></li>
-        </ul>
-      </nav>
-    </details>
+  <header>
+    <img src="../assets/rnbnqweblogo.png" alt="Rusty Nut Brew N' Que Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../brew-days/index.html">Brew Days</a></li>
+        <li><a href="../how-i-do-it/index.html">How I Do It</a></li>
+        <li><a href="../gear/index.html">Gear</a></li>
+        <li><a href="../about/index.html">About The Brewer</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -115,33 +105,33 @@
       <h2>CIP &amp; Cleaning</h2>
 
       <div class="gear-item">
-        <a href="https://amzn.to/4lhMDZj" target="_blank" rel="noopener">FLUENTPOWER 3/4HP Submersible Pump</a>
+        <a href="https://amzn.to/4lhMDZj" target="_blank">FLUENTPOWER 3/4HP Submersible Pump</a>
         <p>Pushes cleaning solution through system.</p>
-        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank" rel="noopener">Clean My Fermenter – Ep. 1</a></div>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank">Clean My Fermenter – Ep. 1</a></div>
       </div>
 
       <div class="gear-item">
-        <a href="https://amzn.to/4lrtBzZ" target="_blank" rel="noopener">Rotating CIP Spray Ball (1.5&quot; Flange, 1/2&quot; FPT)</a>
+        <a href="https://amzn.to/4lrtBzZ" target="_blank">Rotating CIP Spray Ball (1.5&quot; Flange, 1/2&quot; FPT)</a>
         <p>Cleans fermenter interior.</p>
-        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank" rel="noopener">Clean My Fermenter – Ep. 1</a></div>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank">Clean My Fermenter – Ep. 1</a></div>
       </div>
 
       <div class="gear-item">
-        <a href="https://amzn.to/40T88rg" target="_blank" rel="noopener">DERNORD Stainless Quick Connect (Male/Female Barb)</a>
+        <a href="https://amzn.to/40T88rg" target="_blank">DERNORD Stainless Quick Connect (Male/Female Barb)</a>
         <p>Connects main hose to spray ball.</p>
-        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank" rel="noopener">Clean My Fermenter – Ep. 1</a></div>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank">Clean My Fermenter – Ep. 1</a></div>
       </div>
 
       <div class="gear-item">
-        <a href="https://amzn.to/4kyEA9l" target="_blank" rel="noopener">DERNORD Stainless Quick Connect (Female/Male Barb)</a>
+        <a href="https://amzn.to/4kyEA9l" target="_blank">DERNORD Stainless Quick Connect (Female/Male Barb)</a>
         <p>Connects riser to main hose.</p>
-        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank" rel="noopener">Clean My Fermenter – Ep. 1</a></div>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank">Clean My Fermenter – Ep. 1</a></div>
       </div>
 
       <div class="gear-item">
-        <a href="https://amzn.to/4nD2eV0" target="_blank" rel="noopener">10 ft High Pressure Braided PVC Tubing (1/2&quot; ID x 3/4&quot; OD)</a>
+        <a href="https://amzn.to/4nD2eV0" target="_blank">10 ft High Pressure Braided PVC Tubing (1/2&quot; ID x 3/4&quot; OD)</a>
         <p>Main CIP line to spray ball.</p>
-        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank" rel="noopener">Clean My Fermenter – Ep. 1</a></div>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank">Clean My Fermenter – Ep. 1</a></div>
       </div>
     </div>
 
@@ -149,21 +139,21 @@
       <h2>Kegging &amp; Dosing</h2>
 
       <div class="gear-item">
-        <a href="https://amzn.to/44NCcXO" target="_blank" rel="noopener">12 ml Syringe (20 ct)</a>
+        <a href="https://amzn.to/44NCcXO" target="_blank">12 ml Syringe (20 ct)</a>
         <p>Used for closed-loop keg dosing — hop oils, finings, etc.</p>
-        <div class="video-ref">Mentioned in: <a href="https://youtu.be/8V3y7dUDpsA" target="_blank" rel="noopener">Dosing a Keg – Ep. 2</a></div>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/8V3y7dUDpsA" target="_blank">Dosing a Keg – Ep. 2</a></div>
       </div>
 
       <div class="gear-item">
-        <a href="https://amzn.to/46k2iTw" target="_blank" rel="noopener">Duotight Gas Ball Lock</a>
+        <a href="https://amzn.to/46k2iTw" target="_blank">Duotight Gas Ball Lock</a>
         <p>Clean CO<sub>2</sub> path for dosing keg pressure-side.</p>
-        <div class="video-ref">Mentioned in: <a href="https://youtu.be/8V3y7dUDpsA" target="_blank" rel="noopener">Dosing a Keg – Ep. 2</a></div>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/8V3y7dUDpsA" target="_blank">Dosing a Keg – Ep. 2</a></div>
       </div>
 
       <div class="gear-item">
-        <a href="https://amzn.to/47iF28L" target="_blank" rel="noopener">Kegland FermZilla Plastic Carbonation &amp; Line Cleaning Ball Lock Cap – KL10788</a>
+        <a href="https://amzn.to/47iF28L" target="_blank">Kegland FermZilla Plastic Homebrewing Carbonation &amp; Line Cleaning Ball Lock Cap – KL10788</a>
         <p>Smaller-post style as shown in my video. Ideal for dosing or line cleaning.</p>
-        <div class="video-ref">Mentioned in: <a href="https://youtu.be/8V3y7dUDpsA" target="_blank" rel="noopener">Dosing a Keg – Ep. 2</a></div>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/8V3y7dUDpsA" target="_blank">Dosing a Keg – Ep. 2</a></div>
       </div>
     </div>
   </main>
