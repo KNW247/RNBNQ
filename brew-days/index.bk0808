@@ -70,20 +70,21 @@
     }
   </style>
 </head>
-<header>
-  <img src="../assets/rnbnqweblogo.png" alt="Rusty Nut Brew N' Que Logo" class="logo" />
-  <nav>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../brew-days/index.html">Brew Days</a></li>
-      <li><a href="../how-i-do-it/index.html">How I Do It</a></li>
-      <li><a href="../gear/index.html">Gear</a></li>
-      <li><a href="../recipes/index.html">Recipes</a></li>
-    </ul>
-  </nav>
-</header>
 
-  
+<body>
+  <header>
+    <img src="../assets/rnbnqweblogo.png" alt="Rusty Nut Brew N' Que Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../brew-days/index.html">Brew Days</a></li>
+        <li><a href="../how-i-do-it/index.html">How I Do It</a></li>
+        <li><a href="../gear/index.html">Gear</a></li>
+        <li><a href="about/index.html">About The Brewer</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <main>
     <h1>Brew Days</h1>
     <p>Each video below captures a full brew day, often featuring recipes that have gone on to earn medals in competition. These are real sessions from my garage brewery — the wins, the tweaks, and everything in between.</p>
@@ -93,7 +94,7 @@
         <iframe src="https://www.youtube.com/embed/aGl-9XD66aw" title="Love's Eternal Pale Ale"></iframe>
         <div class="video-info">
           <h2>Love's Eternal Pale Ale</h2>
-          <p class="video-description">One of my early brew day videos, this Pale Ale was brewed for the weddings of close friends. A sentimental batch with solid process behind it.</p>
+          <p class="video-description">One of my early brew day videos, this Pale Ale was brewed for the weddings of close friends. A sentimental batch with solid process behind it. <a href="../assets/loves-eternal-pale-ale.pdf" target="_blank">[Recipe PDF]</a></p>
         </div>
       </div>
     </div>
@@ -103,7 +104,7 @@
         <iframe src="https://www.youtube.com/embed/jraQESpMt1Q" title="Vienna Lager"></iframe>
         <div class="video-info">
           <h2>Vienna Lager</h2>
-          <p class="video-description">A competition workhorse. This recipe has medaled in 8 of 11 comps, including two Best of Show placements and a top score of 43. Clean, malty, and reliable.</p>
+          <p class="video-description">A competition workhorse. This recipe has medaled in 8 of 11 comps, including two Best of Show placements and a top score of 43. Clean, malty, and reliable. <a href="../assets/vienna-lager.pdf" target="_blank">[Recipe PDF]</a></p>
         </div>
       </div>
     </div>
@@ -113,7 +114,7 @@
         <iframe src="https://www.youtube.com/embed/1HlRJXoxSVY" title="Mexican Lager"></iframe>
         <div class="video-info">
           <h2>Mexican Lager</h2>
-          <p class="video-description">Based on a pro-designed recipe from Washington State, this one has earned 3 golds, 3 bronzes, and an honorable mention. Top score: 41.</p>
+          <p class="video-description">Based on a pro-designed recipe from Washington State, this one has earned 3 golds, 3 bronzes, and an honorable mention. Top score: 41. <a href="../assets/mexican-lager.pdf" target="_blank">[Recipe PDF]</a></p>
         </div>
       </div>
     </div>
@@ -123,7 +124,7 @@
         <iframe src="https://www.youtube.com/embed/2hUgTTLA8FI" title="Munich Helles"></iframe>
         <div class="video-info">
           <h2>Munich Helles</h2>
-          <p class="video-description">Still dialing this one in, but it's already earned a gold and silver with a top score of 41. Light, crisp, and promising.</p>
+          <p class="video-description">Still dialing this one in, but it's already earned a gold and silver with a top score of 41. Light, crisp, and promising. <a href="../assets/munich-helles.pdf" target="_blank">[Recipe PDF]</a></p>
         </div>
       </div>
     </div>
@@ -133,7 +134,7 @@
         <iframe src="https://www.youtube.com/embed/oYV4MpF-J_Y" title="American Wheat"></iframe>
         <div class="video-info">
           <h2>American Wheat</h2>
-          <p class="video-description">A newer recipe that's already showing promise. Took gold in one of its first three comps with a top score of 39.</p>
+          <p class="video-description">A newer recipe that's already showing promise. Took gold in one of its first three comps with a top score of 39. <a href="../assets/american-wheat.pdf" target="_blank">[Recipe PDF]</a></p>
         </div>
       </div>
     </div>
@@ -143,7 +144,7 @@
         <iframe src="https://www.youtube.com/embed/tuq4ARfmvrE" title="Rauchbier"></iframe>
         <div class="video-info">
           <h2>Rauchbier</h2>
-          <p class="video-description">My favorite beer. Crafted to land between the intensity of Schlenkerla and the subtlety of Spezial. Two comps in and it already has a gold and bronze. Top score of 40 is promising as a new competitor in my stable</p>
+          <p class="video-description">My favorite beer. Crafted to land between the intensity of Schlenkerla and the subtlety of Spezial. Two comps in and it already has a gold and bronze. Top score of 40 is promising as a new competitor in my stable. <a href="../assets/rauchbier.pdf" target="_blank">[Recipe PDF]</a></p>
         </div>
       </div>
     </div>
