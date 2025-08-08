@@ -20,7 +20,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      flex-wrap: wrap; /* NEW: allow wrapping so nav never spills */
+      flex-wrap: wrap; /* allow wrapping so nav never spills */
     }
     header img.logo {
       max-height: 50px;
@@ -34,8 +34,8 @@
       padding: 0;
       display: flex;
       gap: 1.5rem;
-      background: #c7551a; /* NEW: keeps wrapped links on orange background */
-      flex-wrap: wrap; /* NEW: allow link wrap inside nav */
+      background: #c7551a; /* keep wrapped links on orange background */
+      flex-wrap: wrap;      /* allow link wrap inside nav */
     }
     nav ul li a {
       color: #fff;
@@ -54,6 +54,11 @@
     .video-block {
       margin-bottom: 3rem;
     }
+    .video-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
     .video-block iframe {
       width: 100%;
       max-width: 400px;
@@ -63,11 +68,7 @@
     .video-info {
       margin-left: 1rem;
       flex: 1;
-    }
-    .video-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
+      min-width: 250px;
     }
     .video-description {
       margin: 0.5rem 0;
@@ -113,4 +114,43 @@
         <iframe src="https://www.youtube.com/embed/2v0UOsviHfk" title="Clean My Fermenter"></iframe>
         <div class="video-info">
           <h2>Clean My Fermenter – Ep. 1</h2>
-          <p class="video-description">In this video, I walk through exactly how I clean my fermenter using my DIY CIP (Clean-in-Place) s
+          <p class="video-description">In this video, I walk through exactly how I clean my fermenter using my DIY CIP (Clean-in-Place) setup. The heart of this system is a ¾ HP, 3300 GPH pump — delivering 4–6× the flow rate of most homebrew CIP kits. It’s industrial-level cleaning power, built for a homebrew budget. No heavy lifting. Just fast, effective cleaning that gets me back to brewing.</p>
+          <a class="gear-link" href="../gear/index.html#cip-cleaning">See the gear from this video</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-block">
+      <div class="video-row">
+        <iframe src="https://www.youtube.com/embed/8V3y7dUDpsA" title="Dosing A Keg"></iframe>
+        <div class="video-info">
+          <h2>Dosing a Keg – Ep. 2</h2>
+          <p class="video-description">Learn how to safely add hop oils, finings, or other liquids to a pressurized keg without introducing oxygen. I show my clean, closed-loop keg dosing method using a syringe and DuoTight setup — no lid removal, no mess (OK, maybe a little mess).</p>
+          <a class="gear-link" href="../gear/index.html#kegging-dosing">See the gear from this video</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-block">
+      <div class="video-row">
+        <iframe src="https://www.youtube.com/embed/Kw_NQq8FEB4" title="Bottling for Competition – Short"></iframe>
+        <div class="video-info">
+          <h2>Bottling for Competition – Short</h2>
+          <p class="video-description">A quick breakdown of how I prep and bottle for homebrew competitions. Short, sharp, and to the point.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-block">
+      <div class="video-row">
+        <iframe src="https://www.youtube.com/embed/m3q9hAnOllQ" title="Bottling for Competition – Long"></iframe>
+        <div class="video-info">
+          <h2>Bottling for Competition – Long</h2>
+          <p class="video-description">A full walkthrough of my competition bottling process. Every step, from prep to cap, with real-world tips and tricks I’ve learned along the way.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
