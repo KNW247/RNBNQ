@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About the Brewer | Rusty Nut Brew N' Que</title>
+  <meta name="description" content="The story behind Rusty Nut Brew N' Que — how it started, brewing and competition milestones, and where to find more." />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #c7551a;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    header img.logo {
+      max-height: 50px;
+      background: #fff;
+      padding: 0.25rem;
+      border-radius: 4px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    th {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="../assets/rnbnqweblogo.png" alt="Rusty Nut Brew N' Que Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../brew-days/index.html">Brew Days</a></li>
+        <li><a href="../how-i-do-it/index.html">How I Do It</a></li>
+        <li><a href="../gear/index.html">Gear</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>About the Brewer</h1>
+    <p>Doug “Old Man” Walker brewed his first all-grain batch on July 31, 2021 using a Grainfather G30. What started as a curiosity quickly turned into a garage project, then into a garage brewery — complete with a dedicated sink, PEX plumbing, a chiller, a sparge tank, and over 300 pounds of grain in rotation.</p>
+    <p>He brews under the name <strong>Rusty Nut Brew ’n Que</strong>, a nod to the busted knuckles and late-night sessions that take place in the third bay of his garage.</p>
+
+    <h2>Brewing Philosophy</h2>
+<p>No gimmicks. No slogans. Just a commitment to get better one batch at a time. Some beers are built for competition. Others are brewed for the backyard. All of them are brewed to be shared.</p>
+
+<h2>Current Brewing Setup</h2>
+<p>Doug started brewing with a Grainfather G30, a dedicated sparge tank, and a converted chest freezer fermentation chamber. He quickly upgraded to SS Brewtech 7-gallon Brew Buckets with closed-transfer capability and has been steadily refining the system ever since.</p>
+
+<p>Today, the garage brewery includes a Grainfather G40, two SS Brewtech Brew Buckets, a BrewBuilt X3 Conical Fermenter, and a CoolMax 4 Glycol Chiller. A 10-gallon SS Brewtech Brite Tank handles cold-conditioning and carbonation, while two Kegmenters (15 gal and 7 gal) expand fermentation flexibility. Each vessel is fitted with a dedicated Tilt hydrometer, and final readings are taken with an EasyDens for precision.</p>
+
+    
+  <h2>Brewing Milestones</h2>
+<ul>
+  <li>First batch: July 31, 2021</li>
+  <li>50th batch: September 18, 2022</li>
+  <li>100th batch: August 20, 2023</li>
+  <li>150th batch: September 24, 2024</li>
+</ul>
+
+<h2>Brewing Achievements</h2>
+<ul>
+  <li>Became a certified BJCP Judge: March 2024</li>
+  <li>Authored a <a href="https://a.co/d/bkq5hp8" target="_blank">BJCP Tasting Exam Study Guide</a>: March 2024</li>
+  <li>Achieved Master Rank from MHP: 2024</li>
+  <li>Won a Silver Medal at the National Homebrew Competition (NHC) in 2024 for “Darth Maltious” (Weizenbock)</li>
+  <li>Won Best of Show 1st at CHC 2024 for “Forty Eight Tears”</li>
+  <li>Won Best of Show 2nd at the 2025 Southern California Regional Homebrew Championship with my Vienna Lager</li>
+  <li>Won Best of Show 3rd at OctoberBrix 2023 for “Darth Maltious”</li>
+  <li>Named Heavy Medal Brewer at the 2023 and 2024 Pacific Brewers Cup</li>
+  <li>Had my recipe brewed at Oakland United Beerworks (Feb 2024). <a href="RNBQ/forty_eight_tears/index.html" target="_blank">Read more</a></li>
+</ul>
+
+
+    <h2>Podcast Features & Reviews</h2>
+<ul>
+  <li>
+    Dr. Homebrew – Episode 259: California Common Judging  
+    <a href="https://www.youtube.com/watch?v=f2Tt862m5NE" target="_blank">Watch on YouTube</a>
+  </li>
+  <li>
+    Dr. Homebrew – Episode 275: Brown Ale, IIPA, Gose  
+    <a href="https://www.youtube.com/watch?v=aoqclkbaq1I" target="_blank">Watch on YouTube</a>
+  </li>
+  <li>
+    Basic Brewing Radio – “Mash Your Luck”  
+    <ul>
+      <li>
+        Part 1 – July 25, 2024  
+        <a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=75092679" target="_blank">Listen on Apple Podcasts</a>
+      </li>
+      <li>
+        Part 2 – October 31, 2024  
+        <a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=75092679" target="_blank">Listen on Apple Podcasts</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Brülosophy – Average Brü Series
+    <ul>
+      <li>Pale Ale</li>
+      <li>Imperial Stout</li>
+      <li>Belgian Quad</li>
+    </ul>
+  </li>
+  <li>
+    Brülosophy – Mystery Yeast Challenge  
+    <a href="https://www.youtube.com/watch?v=H0dMuMk2Gu4" target="_blank">Watch on YouTube (January 16, 2025)</a>
+  </li>
+</ul>
+
+
+    <h2>Go-To Styles</h2>
+<p>While Rusty Nut Brew ’n Que doesn’t have official flagships, Doug tends to favor malt-forward beers for everyday drinking. There's almost always a Rauchbier, Vienna Lager, British Brown, American Brown, Mexican Lager, Czech Premium Pale Lager, or Munich Helles on tap in the garage. These styles reflect a personal preference for balance, depth, and drinkability.</p>
+
+    <p>Doug entered his first competition in late 2022. Since then, he’s brewed across more than 40 styles and submitted beers to competitions throughout California and beyond. He tracks every result—wins, near misses, and performance by style—and posts the raw data below.</p>
+
+    <h2>Results by Year</h2>
+    <table>
+      <tr>
+        <th>Year</th><th>Styles</th><th>Comps</th><th>Entries</th><th>1st</th><th>2nd</th><th>3rd</th><th>HM</th><th>BOS 1st</th><th>BOS 2nd</th><th>BOS 3rd</th><th>Total Wins</th><th>% Wins</th>
+      </tr>
+      <tr><td>Lifetime</td><td>51</td><td>33</td><td>216</td><td>34</td><td>33</td><td>22</td><td>5</td><td>1</td><td>2</td><td>3</td><td>100</td><td>46%</td></tr>
+      <tr><td>2022</td><td>4</td><td>1</td><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>25%</td></tr>
+      <tr><td>2023</td><td>15</td><td>11</td><td>39</td><td>4</td><td>6</td><td>4</td><td>2</td><td>0</td><td>0</td><td>1</td><td>17</td><td>44%</td></tr>
+      <tr><td>2024</td><td>32</td><td>26</td><td>119</td><td>18</td><td>21</td><td>10</td><td>2</td><td>1</td><td>1</td><td>1</td><td>54</td><td>45%</td></tr>
+      <tr><td>2025</td><td>22</td><td>10</td><td>54</td><td>11</td><td>5</td><td>8</td><td>1</td><td>0</td><td>1</td><td>1</td><td>27</td><td>50%</td></tr>
+    </table>
+
+    <h2>Performance by Style</h2>
+    <p>Below is a selection of styles Doug has brewed and competed with most frequently, showing the number of competitions entered, placements earned, and average performance.</p>
+    <table>
+      <tr>
+        <th>Entry Style</th><th>Comps</th><th>1st</th><th>2nd</th><th>3rd</th><th>HM</th><th>BOS 1st</th><th>BOS 2nd</th><th>BOS 3rd</th><th>Total Wins</th><th>Misses</th><th>Top Score</th>
+      </tr>
+      <tr><td>10C- Weizenbock</td><td>28</td><td>7</td><td>11</td><td>3</td><td>1</td><td></td><td>1</td><td>1</td><td>24</td><td>6</td><td>44</td></tr>
+      <tr><td>16A- Sweet Stout</td><td>1</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>30</td></tr>
+      <tr><td>3B- Czech Premium Pale Lager</td><td>9</td><td>1</td><td></td><td>2</td><td></td><td></td><td></td><td></td><td>3</td><td>6</td><td>40</td></tr>
+      <tr><td>30A- Spice, Herb or Vegetable Beer</td><td>19</td><td>5</td><td>5</td><td>1</td><td></td><td>1</td><td></td><td></td><td>12</td><td>8</td><td>45</td></tr>
+      <tr><td>21B- Specialty IPA - Black</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>33</td></tr>
+      <tr><td>27B - Kentucky Common</td><td>2</td><td></td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td>2</td><td>0</td><td>33</td></tr>
+      <tr><td>7A- Vienna Lager</td><td>11</td><td>5</td><td>1</td><td></td><td></td><td>1</td><td></td><td>1</td><td>8</td><td>5</td><td>43</td></tr>
+      <tr><td>19B- California Common</td><td>2</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>37</td></tr>
+<tr><td>13B- British Brown Ale</td><td>13</td><td>3</td><td>1</td><td>2</td><td></td><td></td><td>1</td><td></td><td>7</td><td>7</td><td>44</td></tr>
+<tr><td>34B- Mixed-Style Beer</td><td>5</td><td></td><td>2</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td>3</td><td>43</td></tr>
+<tr><td>2A- International Pale Lager</td><td>16</td><td>3</td><td></td><td>3</td><td>1</td><td></td><td></td><td></td><td>7</td><td>9</td><td>41</td></tr>
+<tr><td>25B- Saison- Table - Pale</td><td>5</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>4</td><td>37</td></tr>
+<tr><td>12A- British Golden Ale</td><td>3</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>2</td><td>1</td><td>44</td></tr>
+<tr><td>24C- Biere De Garde</td><td>4</td><td>1</td><td>2</td><td></td><td></td><td></td><td></td><td></td><td>3</td><td>1</td><td>40</td></tr>
+<tr><td>8A- Munich Dunkel</td><td>1</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>35</td></tr>
+<tr><td>8B- Schwarzbier</td><td>5</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>2</td><td>3</td><td>42</td></tr>
+<tr><td>4A- Munich Helles</td><td>9</td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td>7</td><td>41</td></tr>
+<tr><td>1D- American Wheat</td><td>3</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>39</td></tr>
+<tr><td>20A- American Porter</td><td>9</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>2</td><td>7</td><td>40</td></tr>
+<tr><td>16B- Oatmeal Stout</td><td>3</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>39</td></tr>
+<tr><td>29C- Specialty Fruit Beer</td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>42</td></tr>
+<tr><td>7B- Altbier</td><td>6</td><td></td><td>1</td><td></td><td>1</td><td></td><td></td><td></td><td>2</td><td>4</td><td>40</td></tr>
+<tr><td>26D- Belgian Dark Strong Ale</td><td>3</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>39</td></tr>
+<tr><td>9A- Doppelbock</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>42</td></tr>
+<tr><td>6C- Dunkles Bock</td><td>4</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>3</td><td>42</td></tr>
+<tr><td>14C- Scottish Export</td><td>3</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>41</td></tr>
+<tr><td>20C- Imperial Stout</td><td>8</td><td>1</td><td>2</td><td></td><td>1</td><td></td><td></td><td></td><td>4</td><td>4</td><td>44</td></tr>
+<tr><td>23G- Gose</td><td>1</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>31</td></tr>
+<tr><td>32A- Classic Style Smoked Beer</td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>40</td></tr>
+<tr><td>301C1A- New World Cider</td><td>3</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>2</td><td>1</td><td>41</td></tr>
+<tr><td>6B- Rauchbier</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>38</td></tr>
+    </table>
