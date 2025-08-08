@@ -8,9 +8,11 @@
   <meta name="keywords" content="homebrewing, beer brewing, DIY brewing, keg dosing, BJCP judging, brewing videos, small footprint brewing, Rusty Nut Brew N' Que" />
   <meta property="og:title" content="Rusty Nut Brew N' Que" />
   <meta property="og:description" content="DIY builds, brew days, judging tips, and how-to brewing walkthroughs from a medal-winning homebrewer." />
-  <meta property="og:image" content="https://RustyNutBrewNQue.com/assets/rnbnqweblogo.png" />
-  <meta property="og:url" content="https://RustyNutBrewNQue.com/" />
+  <meta property="og:image" content="https://rustynutbrewnque.com/assets/rnbnqweblogo.png" />
+  <meta property="og:url" content="https://rustynutbrewnque.com/" />
   <meta name="twitter:card" content="summary_large_image" />
+  <base href="https://rustynutbrewnque.com/">
+
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -19,36 +21,99 @@
       margin: 0;
       padding: 0;
     }
-    header {
-      background-color: #d36c2d;
-      color: #fff;
+
+    /* Header styles */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      background: #d36c2d;
+      color: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    header img.logo {
-      max-height: 50px;
+    .site-header .brand img {
+      height: 48px;
       background: #fff;
-      padding: 0.25rem;
+      padding: 2px;
       border-radius: 4px;
     }
-    nav ul {
+    .nav-wrap { margin: 0; }
+    .nav-wrap > summary {
+      list-style: none;
+      cursor: pointer;
+      display: none; /* hidden on desktop */
+      width: 44px; height: 44px;
+      border-radius: 6px;
+    }
+    .nav-wrap > summary::-webkit-details-marker { display: none; }
+    .hamburger {
+      position: relative;
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      margin: 21px 10px;
+    }
+    .hamburger::before, .hamburger::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0;
+      height: 2px;
+      background: #fff;
+    }
+    .hamburger::before { top: -7px; }
+    .hamburger::after { top: 7px; }
+
+    .nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
       gap: 1.5rem;
     }
-    nav ul li {
-      display: inline;
-    }
-    nav ul li a {
+    .nav a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
     }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .nav-wrap > summary { display: block; }
+      .nav {
+        position: absolute;
+        left: 0; right: 0; top: 100%;
+        background: #d36c2d;
+        box-shadow: 0 2px 5px rgba(0,0,0,.1);
+      }
+      .nav ul {
+        flex-direction: column;
+        gap: 0;
+      }
+      .nav a {
+        display: block;
+        padding: 0.9rem 1rem;
+        border-top: 1px solid rgba(255,255,255,.15);
+      }
+      .nav { display: none; }
+      .nav-wrap[open] .nav { display: block; }
+      .nav-wrap[open] .hamburger { background: transparent; }
+      .nav-wrap[open] .hamburger::before {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .nav-wrap[open] .hamburger::after {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+      .nav-wrap .hamburger::before,
+      .nav-wrap .hamburger::after {
+        transition: transform .2s ease;
+      }
+    }
+
     main {
       padding: 2rem;
       text-align: center;
@@ -68,48 +133,39 @@
       border: none;
     }
   </style>
-  <base href="https://rustynutbrewnque.com/">
-
 </head>
 <body>
-  <header>
-<header class="site-header">
-  <a class="brand" href="/"><img src="/assets/rnbnqweblogo.png" alt="Rusty Nut Brew N' Que logo"></a>
 
-  <details class="nav-wrap">
-    <summary aria-label="Menu" role="button">
-      <span class="hamburger" aria-hidden="true"></span>
-      <span class="sr-only">Menu</span>
-    </summary>
-
-    <nav class="nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="brew-days/">Brew Days</a></li>
-        <li><a href="how-i-do-it/">How I Do It</a></li>
-        <li><a href="gear/">Gear</a></li>
-        <li><a href="about/">About The Brewer</a></li>
-      </ul>
-    </nav>
-  </details>
-</header>
-
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="assets/rnbnqweblogo.png" alt="Rusty Nut Brew N' Que logo">
+    </a>
+    <details class="nav-wrap">
+      <summary aria-label="Menu" role="button">
+        <span class="hamburger" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </summary>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="brew-days/">Brew Days</a></li>
+          <li><a href="how-i-do-it/">How I Do It</a></li>
+          <li><a href="gear/">Gear</a></li>
+          <li><a href="about/">About The Brewer</a></li>
+        </ul>
+      </nav>
+    </details>
   </header>
 
   <main>
     <h1>Rusty Nut Brew N' Que</h1>
-    <p>
-      <strong>Rusty Nut Brew N' Que</strong> is a hands-on homebrewing resource built for those who want better process, gear, and results. Inside, you'll find DIY builds, judging tips, competition-tested workflows, and real-world brewing walk-throughs.
-    </p>
-
-    <p>
-      Whether you're dialing in your cleaning process, exploring keg dosing options, sharpening your BJCP judging skills, or just curious how others are brewing smarter — you'll find real examples, results, and walk-throughs right here.
-    </p>
-
+    <p><strong>Rusty Nut Brew N' Que</strong> is a hands-on homebrewing resource built for those who want better process, gear, and results. Inside, you'll find DIY builds, judging tips, competition-tested workflows, and real-world brewing walk-throughs.</p>
+    <p>Whether you're dialing in your cleaning process, exploring keg dosing options, sharpening your BJCP judging skills, or just curious how others are brewing smarter — you'll find real examples, results, and walk-throughs right here.</p>
     <section class="video">
       <h2>Featured Video</h2>
       <iframe src="https://www.youtube.com/embed/8V3y7dUDpsA" title="Featured Brewing Video" allowfullscreen></iframe>
     </section>
   </main>
+
 </body>
 </html>
