@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rusty Nut Brew N' Que</title>
+  <meta name="description" content="Rusty Nut Brew N' Que – homebrewing tips, DIY gear builds, brewing videos, BJCP judging insights, and real-world competition brewing walkthroughs." />
+  <meta name="keywords" content="homebrewing, beer brewing, DIY brewing, keg dosing, BJCP judging, brewing videos, small footprint brewing, Rusty Nut Brew N' Que" />
+  <meta property="og:title" content="Rusty Nut Brew N' Que" />
+  <meta property="og:description" content="DIY builds, brew days, judging tips, and how-to brewing walkthroughs from a medal-winning homebrewer." />
+  <meta property="og:image" content="https://RustyNutBrewNQue.com/assets/rnbnqweblogo.png" />
+  <meta property="og:url" content="https://RustyNutBrewNQue.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #d36c2d;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header img.logo {
+      max-height: 50px;
+      background: #fff;
+      padding: 0.25rem;
+      border-radius: 4px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+    main p {
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+    }
+    section.video {
+      margin-top: 3rem;
+    }
+    section.video iframe {
+      width: 100%;
+      max-width: 720px;
+      height: 405px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="assets/rnbnqweblogo.png" alt="Rusty Nut Brew N' Que Logo" class="logo" />
+    <nav>
+      <ul>
+        <li></li><a href="/index.html">Home</a></li>
+        <li><a href="brew-days/index.html">Brew Days</a></li>
+        <li><a href="how-i-do-it/index.html">How I Do It</a></li>
+       <li><a href="gear/index.html">Gear</a></li>
+        <li><a href="about/index.html">About The Brewer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Rusty Nut Brew N' Que</h1>
+    <p>
+      <strong>Rusty Nut Brew N' Que</strong> is a hands-on homebrewing resource built for those who want better process, gear, and results. Inside, you'll find DIY builds, judging tips, competition-tested workflows, and real-world brewing walk-throughs.
+    </p>
+
+    <p>
+      Whether you're dialing in your cleaning process, exploring keg dosing options, sharpening your BJCP judging skills, or just curious how others are brewing smarter — you'll find real examples, results, and walk-throughs right here.
+    </p>
+
+    <section class="video">
+      <h2>Featured Video</h2>
+      <iframe src="https://www.youtube.com/embed/8V3y7dUDpsA" title="Featured Brewing Video" allowfullscreen></iframe>
+    </section>
+  </main>
+</body>
+</html>
