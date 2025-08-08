@@ -20,6 +20,8 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
+      flex-wrap: wrap; /* prevent spill on small screens */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     header img.logo {
       max-height: 50px;
@@ -33,12 +35,19 @@
       padding: 0;
       display: flex;
       gap: 1.5rem;
+      flex-wrap: wrap; /* wrap links */
+      background: #c7551a; /* keep wrapped links on the bar color */
     }
     nav ul li a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
     }
+    @media (max-width: 600px) {
+      header { padding: 0.75rem 1rem; gap: 0.5rem; }
+      nav ul { gap: 1rem; }
+    }
+
     main {
       padding: 2rem;
       max-width: 900px;
@@ -55,6 +64,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
+      align-items: flex-start;
     }
     .video-row iframe {
       width: 100%;
@@ -64,10 +74,13 @@
     }
     .video-info {
       flex: 1;
+      min-width: 260px;
     }
     .video-description {
       margin-top: 0.5rem;
+      line-height: 1.6;
     }
+    a { color: #c7551a; text-decoration: none; }
   </style>
 </head>
 
@@ -80,7 +93,7 @@
         <li><a href="../brew-days/index.html">Brew Days</a></li>
         <li><a href="../how-i-do-it/index.html">How I Do It</a></li>
         <li><a href="../gear/index.html">Gear</a></li>
-        <li><a href="about/index.html">About The Brewer</a></li>
+        <li><a href="../about/index.html">About The Brewer</a></li>
       </ul>
     </nav>
   </header>
@@ -91,60 +104,60 @@
 
     <div class="video-block">
       <div class="video-row">
-        <iframe src="https://www.youtube.com/embed/aGl-9XD66aw" title="Love's Eternal Pale Ale"></iframe>
+        <iframe src="https://www.youtube.com/embed/aGl-9XD66aw" title="Love's Eternal Pale Ale" loading="lazy" allowfullscreen></iframe>
         <div class="video-info">
           <h2>Love's Eternal Pale Ale</h2>
-          <p class="video-description">One of my early brew day videos, this Pale Ale was brewed for the weddings of close friends. A sentimental batch with solid process behind it. <a href="../assets/loves-eternal-pale-ale.pdf" target="_blank">[Recipe PDF]</a></p>
+          <p class="video-description">One of my early brew day videos, this Pale Ale was brewed for the weddings of close friends. A sentimental batch with solid process behind it. <a href="../assets/loves-eternal-pale-ale.pdf" target="_blank" rel="noopener">[Recipe PDF]</a></p>
         </div>
       </div>
     </div>
 
     <div class="video-block">
       <div class="video-row">
-        <iframe src="https://www.youtube.com/embed/jraQESpMt1Q" title="Vienna Lager"></iframe>
+        <iframe src="https://www.youtube.com/embed/jraQESpMt1Q" title="Vienna Lager" loading="lazy" allowfullscreen></iframe>
         <div class="video-info">
           <h2>Vienna Lager</h2>
-          <p class="video-description">A competition workhorse. This recipe has medaled in 8 of 11 comps, including two Best of Show placements and a top score of 43. Clean, malty, and reliable. <a href="../assets/vienna-lager.pdf" target="_blank">[Recipe PDF]</a></p>
+          <p class="video-description">A competition workhorse. This recipe has medaled in 8 of 11 comps, including two Best of Show placements and a top score of 43. Clean, malty, and reliable. <a href="../assets/vienna-lager.pdf" target="_blank" rel="noopener">[Recipe PDF]</a></p>
         </div>
       </div>
     </div>
 
     <div class="video-block">
       <div class="video-row">
-        <iframe src="https://www.youtube.com/embed/1HlRJXoxSVY" title="Mexican Lager"></iframe>
+        <iframe src="https://www.youtube.com/embed/1HlRJXoxSVY" title="Mexican Lager" loading="lazy" allowfullscreen></iframe>
         <div class="video-info">
           <h2>Mexican Lager</h2>
-          <p class="video-description">Based on a pro-designed recipe from Washington State, this one has earned 3 golds, 3 bronzes, and an honorable mention. Top score: 41. <a href="../assets/mexican-lager.pdf" target="_blank">[Recipe PDF]</a></p>
+          <p class="video-description">Based on a pro-designed recipe from Washington State, this one has earned 3 golds, 3 bronzes, and an honorable mention. Top score: 41. <a href="../assets/mexican-lager.pdf" target="_blank" rel="noopener">[Recipe PDF]</a></p>
         </div>
       </div>
     </div>
 
     <div class="video-block">
       <div class="video-row">
-        <iframe src="https://www.youtube.com/embed/2hUgTTLA8FI" title="Munich Helles"></iframe>
+        <iframe src="https://www.youtube.com/embed/2hUgTTLA8FI" title="Munich Helles" loading="lazy" allowfullscreen></iframe>
         <div class="video-info">
           <h2>Munich Helles</h2>
-          <p class="video-description">Still dialing this one in, but it's already earned a gold and silver with a top score of 41. Light, crisp, and promising. <a href="../assets/munich-helles.pdf" target="_blank">[Recipe PDF]</a></p>
+          <p class="video-description">Still dialing this one in, but it's already earned a gold and silver with a top score of 41. Light, crisp, and promising. <a href="../assets/munich-helles.pdf" target="_blank" rel="noopener">[Recipe PDF]</a></p>
         </div>
       </div>
     </div>
 
     <div class="video-block">
       <div class="video-row">
-        <iframe src="https://www.youtube.com/embed/oYV4MpF-J_Y" title="American Wheat"></iframe>
+        <iframe src="https://www.youtube.com/embed/oYV4MpF-J_Y" title="American Wheat" loading="lazy" allowfullscreen></iframe>
         <div class="video-info">
           <h2>American Wheat</h2>
-          <p class="video-description">A newer recipe that's already showing promise. Took gold in one of its first three comps with a top score of 39. <a href="../assets/american-wheat.pdf" target="_blank">[Recipe PDF]</a></p>
+          <p class="video-description">A newer recipe that's already showing promise. Took gold in one of its first three comps with a top score of 39. <a href="../assets/american-wheat.pdf" target="_blank" rel="noopener">[Recipe PDF]</a></p>
         </div>
       </div>
     </div>
 
     <div class="video-block">
       <div class="video-row">
-        <iframe src="https://www.youtube.com/embed/tuq4ARfmvrE" title="Rauchbier"></iframe>
+        <iframe src="https://www.youtube.com/embed/tuq4ARfmvrE" title="Rauchbier" loading="lazy" allowfullscreen></iframe>
         <div class="video-info">
           <h2>Rauchbier</h2>
-          <p class="video-description">My favorite beer. Crafted to land between the intensity of Schlenkerla and the subtlety of Spezial. Two comps in and it already has a gold and bronze. Top score of 40 is promising as a new competitor in my stable. <a href="../assets/rauchbier.pdf" target="_blank">[Recipe PDF]</a></p>
+          <p class="video-description">My favorite beer. Crafted to land between the intensity of Schlenkerla and the subtlety of Spezial. Two comps in and it already has a gold and bronze. Top score of 40 is promising as a new competitor in my stable. <a href="../assets/rauchbier.pdf" target="_blank" rel="noopener">[Recipe PDF]</a></p>
         </div>
       </div>
     </div>
