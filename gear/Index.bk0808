@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homebrewing Gear I Actually Use – CIP, Kegging, Cleaning | Rusty Nut Brew N' Que</title>
+  <meta name="description" content="Explore the exact homebrewing gear I use for keg dosing, CIP fermenter cleaning, and closed-loop transfers. Each item links to the Amazon page and the video where it’s used." />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #c7551a;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    header img.logo {
+      max-height: 50px;
+      background: #fff;
+      padding: 0.25rem;
+      border-radius: 4px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    .intro {
+      max-width: 800px;
+      margin-bottom: 3rem;
+    }
+    .category-index {
+      margin-bottom: 2rem;
+    }
+    .category-index ul {
+      padding-left: 1rem;
+    }
+    .gear-section {
+      margin-bottom: 3rem;
+    }
+    .gear-section h2 {
+      border-bottom: 2px solid #c7551a;
+      padding-bottom: 0.5rem;
+    }
+    .gear-item {
+      margin-bottom: 1.5rem;
+    }
+    .gear-item a {
+      display: inline-block;
+      margin-right: 1rem;
+      color: #c7551a;
+      text-decoration: none;
+    }
+    .gear-item p {
+      margin: 0.5rem 0 0.2rem;
+    }
+    .gear-item .video-ref {
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<header>
+  <img src="../assets/rnbnqweblogo.png" alt="Rusty Nut Brew N' Que Logo" class="logo" />
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../brew-days/index.html">Brew Days</a></li>
+      <li><a href="../how-i-do-it/index.html">How I Do It</a></li>
+      <li><a href="../gear/index.html">Gear</a></li>
+      <li><a href="about/index.html">About The Brewer</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+
+<main>
+    <h1>Brewing Gear – What I Actually Use</h1>
+
+    <div class="category-index">
+      <strong>Jump to:</strong>
+      <ul>
+        <li><a href="#cip-cleaning">CIP & Cleaning</a></li>
+        <li><a href="#kegging-dosing">Kegging & Dosing</a></li>
+      </ul>
+    </div>
+
+    <div class="gear-section" id="cip-cleaning">
+      <h2>CIP & Cleaning</h2>
+
+      <div class="gear-item">
+        <a href="https://amzn.to/4lhMDZj" target="_blank">FLUENTPOWER 3/4HP Submersible Pump</a>
+        <p>Pushes cleaning solution through system.</p>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank">Clean My Fermenter – Ep. 1</a></div>
+      </div>
+
+      <div class="gear-item">
+        <a href="https://amzn.to/4lrtBzZ" target="_blank">Rotating CIP Spray Ball (1.5" Flange, 1/2" FPT)</a>
+        <p>Cleans fermenter interior.</p>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank">Clean My Fermenter – Ep. 1</a></div>
+      </div>
+
+      <div class="gear-item">
+        <a href="https://amzn.to/40T88rg" target="_blank">DERNORD Stainless Quick Connect (Male/Female Barb)</a>
+        <p>Connects main hose to spray ball.</p>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank">Clean My Fermenter – Ep. 1</a></div>
+      </div>
+
+      <div class="gear-item">
+        <a href="https://amzn.to/4kyEA9l" target="_blank">DERNORD Stainless Quick Connect (Female/Male Barb)</a>
+        <p>Connects riser to main hose.</p>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank">Clean My Fermenter – Ep. 1</a></div>
+      </div>
+
+      <div class="gear-item">
+        <a href="https://amzn.to/4nD2eV0" target="_blank">10 ft High Pressure Braided PVC Tubing (1/2" ID x 3/4" OD)</a>
+        <p>Main CIP line to spray ball.</p>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/2v0UOsviHfk" target="_blank">Clean My Fermenter – Ep. 1</a></div>
+      </div>
+    </div>
+
+    <div class="gear-section" id="kegging-dosing">
+      <h2>Kegging & Dosing</h2>
+
+      <div class="gear-item">
+        <a href="https://amzn.to/44NCcXO" target="_blank">12 ml Syringe (20 ct)</a>
+        <p>Used for closed-loop keg dosing — hop oils, finings, etc.</p>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/8V3y7dUDpsA" target="_blank">Dosing a Keg – Ep. 2</a></div>
+      </div>
+
+      <div class="gear-item">
+        <a href="https://amzn.to/46k2iTw" target="_blank">Duotight Gas Ball Lock</a>
+        <p>Clean CO2 path for dosing keg pressure-side.</p>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/8V3y7dUDpsA" target="_blank">Dosing a Keg – Ep. 2</a></div>
+      </div>
+
+      <div class="gear-item">
+        <a href="https://amzn.to/47iF28L" target="_blank">Kegland FermZilla Plastic Homebrewing Carbonation & Line Cleaning Ball Lock Cap – KL10788</a>
+        <p>Smaller-post style as shown in my video. Ideal for dosing or line cleaning.</p>
+        <div class="video-ref">Mentioned in: <a href="https://youtu.be/8V3y7dUDpsA" target="_blank">Dosing a Keg – Ep. 2</a></div>
+      </div>
+    </div>
+</main>
+
+</body>
+</html>
