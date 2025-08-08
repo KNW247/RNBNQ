@@ -6,91 +6,90 @@
   <title>About the Brewer | Rusty Nut Brew N' Que</title>
   <meta name="description" content="The story behind Rusty Nut Brew N' Que — how it started, brewing and competition milestones, and where to find more." />
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    /* Header: same layout as before, with wrap so links don't spill */
-    header {
-      background-color: #c7551a;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      flex-wrap: wrap; /* allow wrapping so nav never spills */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    header img.logo {
-      max-height: 50px;
-      background: #fff;
-      padding: 0.25rem;
-      border-radius: 4px;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 1.5rem;
-      background: #c7551a; /* keep wrapped links on the colored header */
-      flex-wrap: wrap;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
+  /* Base */
+  :root {
+    --accent: #c7551a;
+    --text: #333;
+  }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+  }
 
-    /* Page content */
-    main {
-      padding: 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    h2 {
-      margin-top: 2rem;
-      font-size: 1.5rem;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 2rem;
-      background: #fff;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 0.5rem;
-      text-align: center;
-    }
-    th {
-      background-color: #e0e0e0;
-    }
+  /* Table overflow fix */
+  main {
+    overflow-x: hidden;
+  }
+  table {
+    display: block;
+    overflow-x: auto;
+  }
 
-    /* Small-screen tweaks */
-    @media (max-width: 600px) {
-      header { padding: 0.75rem 1rem; gap: 0.5rem; }
-      nav ul { gap: 1rem; }
-    }
+  /* Header/nav (consistent, mobile-safe) */
+  header {
+    background-color: var(--accent);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+  }
+  header img.logo {
+    max-height: 50px;
+    background: #fff;
+    padding: 0.25rem;
+    border-radius: 4px;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    background: var(--accent);
+    flex-wrap: wrap;
+  }
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  @media (max-width: 600px) {
+    header { padding: 0.75rem 1rem; gap: 0.5rem; }
+    nav ul { gap: 1rem; }
+  }
 
-    main { overflow-x: hidden; }
-    table { display: block; overflow-x: auto; }
+  /* Content area */
+  .container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 2rem;
+    color: var(--accent);
+    margin: 0.5rem 0 1rem;
+  }
+  h2 {
+    color: #444;
+    font-size: 1.4rem;
+    margin: 2rem 0 0.5rem;
+  }
+  p {
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+</style>
 
-  </style>
 </head>
 <body>
   <header>
