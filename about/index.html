@@ -19,15 +19,6 @@
     padding: 0;
   }
 
-  /* Table overflow fix */
-  main {
-    overflow-x: hidden;
-  }
-  table {
-    display: block;
-    overflow-x: auto;
-  }
-
   /* Header/nav (consistent, mobile-safe) */
   header {
     background-color: var(--accent);
@@ -88,6 +79,38 @@
     color: var(--accent);
     text-decoration: none;
   }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 2rem;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px; /* so small screens can scroll instead of squish */
+    background: #fff;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+  th {
+    background-color: #e0e0e0;
+  }
+
+  /* Optional: right-align numeric columns for readability */
+  .results-by-year table td:nth-child(n+4),
+  .results-by-year table th:nth-child(n+4),
+  .results-by-style table td:nth-child(n+2),
+  .results-by-style table th:nth-child(n+2) {
+    text-align: right;
+  }
 </style>
 
 </head>
@@ -105,7 +128,7 @@
     </nav>
   </header>
 
-  <main>
+  <main class="container">
     <h1>About the Brewer</h1>
 
     <p>I brewed my first all-grain batch on July 31, 2021 using a Grainfather G30. What started as a curiosity quickly turned into a garage project, then into a garage brewery — complete with a dedicated sink, PEX plumbing, a chiller, a sparge tank, and over 300 pounds of grain in rotation.</p>
@@ -136,8 +159,7 @@
       <li>Won Best of Show 2nd at the 2025 Southern California Regional Homebrew Championship with my Vienna Lager</li>
       <li>Won Best of Show 3rd at OctoberBrix 2023 for “Darth Maltious”</li>
       <li>Named Heavy Medal Brewer at the 2023 and 2024 Pacific Brewers Cup</li>
-      <li>Had my recipe brewed at Oakland United Beerworks (Feb 2024). <a href="../forty_eight_tears/" target="_blank" rel="noopener">Read more</a>
-</li>
+      <li>Had my recipe brewed at Oakland United Beerworks (Feb 2024). <a href="../forty_eight_tears/" target="_blank" rel="noopener">Read more</a></li>
     </ul>
 
     <h2>Podcast Features & Reviews</h2>
@@ -185,56 +207,60 @@
     <h2>Results by Year</h2>
     <p>Since my first competition in late 2022, I’ve entered beers in dozens of events across the country. Each year brings new challenges, new recipes, and plenty of lessons learned — along with some hardware that makes the work worthwhile.</p>
 
-    <table>
-      <tr>
-        <th>Year</th><th>Styles</th><th>Comps</th><th>Entries</th><th>1st</th><th>2nd</th><th>3rd</th><th>HM</th><th>BOS 1st</th><th>BOS 2nd</th><th>BOS 3rd</th><th>Total Wins</th><th>% Wins</th>
-      </tr>
-      <tr><td>Lifetime</td><td>51</td><td>33</td><td>216</td><td>34</td><td>33</td><td>22</td><td>5</td><td>1</td><td>2</td><td>3</td><td>100</td><td>46%</td></tr>
-      <tr><td>2022</td><td>4</td><td>1</td><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>25%</td></tr>
-      <tr><td>2023</td><td>15</td><td>11</td><td>39</td><td>4</td><td>6</td><td>4</td><td>2</td><td>0</td><td>0</td><td>1</td><td>17</td><td>44%</td></tr>
-      <tr><td>2024</td><td>32</td><td>26</td><td>119</td><td>18</td><td>21</td><td>10</td><td>2</td><td>1</td><td>1</td><td>1</td><td>54</td><td>45%</td></tr>
-      <tr><td>2025</td><td>22</td><td>10</td><td>54</td><td>11</td><td>5</td><td>8</td><td>1</td><td>0</td><td>1</td><td>1</td><td>27</td><td>50%</td></tr>
-    </table>
+    <div class="table-wrap results-by-year">
+      <table>
+        <tr>
+          <th>Year</th><th>Styles</th><th>Comps</th><th>Entries</th><th>1st</th><th>2nd</th><th>3rd</th><th>HM</th><th>BOS 1st</th><th>BOS 2nd</th><th>BOS 3rd</th><th>Total Wins</th><th>% Wins</th>
+        </tr>
+        <tr><td>Lifetime</td><td>51</td><td>33</td><td>216</td><td>34</td><td>33</td><td>22</td><td>5</td><td>1</td><td>2</td><td>3</td><td>100</td><td>46%</td></tr>
+        <tr><td>2022</td><td>4</td><td>1</td><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>25%</td></tr>
+        <tr><td>2023</td><td>15</td><td>11</td><td>39</td><td>4</td><td>6</td><td>4</td><td>2</td><td>0</td><td>0</td><td>1</td><td>17</td><td>44%</td></tr>
+        <tr><td>2024</td><td>32</td><td>26</td><td>119</td><td>18</td><td>21</td><td>10</td><td>2</td><td>1</td><td>1</td><td>1</td><td>54</td><td>45%</td></tr>
+        <tr><td>2025</td><td>22</td><td>10</td><td>54</td><td>11</td><td>5</td><td>8</td><td>1</td><td>0</td><td>1</td><td>1</td><td>27</td><td>50%</td></tr>
+      </table>
+    </div>
 
     <h2>Performance by Style</h2>
     <p>I enjoy brewing a wide variety of styles, from malt-forward dark beers to crisp hop-driven lagers. This table shows how my entries have performed across different styles over time.</p>
 
-    <table>
-      <tr>
-        <th>Entry Style</th><th>Comps</th><th>1st</th><th>2nd</th><th>3rd</th><th>HM</th><th>BOS 1st</th><th>BOS 2nd</th><th>BOS 3rd</th><th>Total Wins</th><th>Misses</th><th>Top Score</th>
-      </tr>
-      <tr><td>10C- Weizenbock</td><td>28</td><td>7</td><td>11</td><td>3</td><td>1</td><td></td><td>1</td><td>1</td><td>24</td><td>6</td><td>44</td></tr>
-      <tr><td>16A- Sweet Stout</td><td>1</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>30</td></tr>
-      <tr><td>3B- Czech Premium Pale Lager</td><td>9</td><td>1</td><td></td><td>2</td><td></td><td></td><td></td><td></td><td>3</td><td>6</td><td>40</td></tr>
-      <tr><td>30A- Spice, Herb or Vegetable Beer</td><td>19</td><td>5</td><td>5</td><td>1</td><td></td><td>1</td><td></td><td></td><td>12</td><td>8</td><td>45</td></tr>
-      <tr><td>21B- Specialty IPA - Black</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>33</td></tr>
-      <tr><td>27B - Kentucky Common</td><td>2</td><td></td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td>2</td><td>0</td><td>33</td></tr>
-      <tr><td>7A- Vienna Lager</td><td>11</td><td>5</td><td>1</td><td></td><td></td><td>1</td><td></td><td>1</td><td>8</td><td>5</td><td>43</td></tr>
-      <tr><td>19B- California Common</td><td>2</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>37</td></tr>
-      <tr><td>13B- British Brown Ale</td><td>13</td><td>3</td><td>1</td><td>2</td><td></td><td></td><td>1</td><td></td><td>7</td><td>7</td><td>44</td></tr>
-      <tr><td>34B- Mixed-Style Beer</td><td>5</td><td></td><td>2</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td>3</td><td>43</td></tr>
-      <tr><td>2A- International Pale Lager</td><td>16</td><td>3</td><td></td><td>3</td><td>1</td><td></td><td></td><td></td><td>7</td><td>9</td><td>41</td></tr>
-      <tr><td>25B- Saison- Table - Pale</td><td>5</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>4</td><td>37</td></tr>
-      <tr><td>12A- British Golden Ale</td><td>3</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>2</td><td>1</td><td>44</td></tr>
-      <tr><td>24C- Biere De Garde</td><td>4</td><td>1</td><td>2</td><td></td><td></td><td></td><td></td><td></td><td>3</td><td>1</td><td>40</td></tr>
-      <tr><td>8A- Munich Dunkel</td><td>1</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>35</td></tr>
-      <tr><td>8B- Schwarzbier</td><td>5</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>2</td><td>3</td><td>42</td></tr>
-      <tr><td>4A- Munich Helles</td><td>9</td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td>7</td><td>41</td></tr>
-      <tr><td>1D- American Wheat</td><td>3</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>39</td></tr>
-      <tr><td>20A- American Porter</td><td>9</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>2</td><td>7</td><td>40</td></tr>
-      <tr><td>16B- Oatmeal Stout</td><td>3</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>39</td></tr>
-      <tr><td>29C- Specialty Fruit Beer</td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>42</td></tr>
-      <tr><td>7B- Altbier</td><td>6</td><td></td><td>1</td><td></td><td>1</td><td></td><td></td><td></td><td>2</td><td>4</td><td>40</td></tr>
-      <tr><td>26D- Belgian Dark Strong Ale</td><td>3</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>39</td></tr>
-      <tr><td>9A- Doppelbock</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>42</td></tr>
-      <tr><td>6C- Dunkles Bock</td><td>4</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>3</td><td>42</td></tr>
-      <tr><td>14C- Scottish Export</td><td>3</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>41</td></tr>
-      <tr><td>20C- Imperial Stout</td><td>8</td><td>1</td><td>2</td><td></td><td>1</td><td></td><td></td><td></td><td>4</td><td>4</td><td>44</td></tr>
-      <tr><td>23G- Gose</td><td>1</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>31</td></tr>
-      <tr><td>32A- Classic Style Smoked Beer</td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>40</td></tr>
-      <tr><td>301C1A- New World Cider</td><td>3</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>2</td><td>1</td><td>41</td></tr>
-      <tr><td>6B- Rauchbier</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>38</td></tr>
-    </table>
+    <div class="table-wrap results-by-style">
+      <table>
+        <tr>
+          <th>Entry Style</th><th>Comps</th><th>1st</th><th>2nd</th><th>3rd</th><th>HM</th><th>BOS 1st</th><th>BOS 2nd</th><th>BOS 3rd</th><th>Total Wins</th><th>Misses</th><th>Top Score</th>
+        </tr>
+        <tr><td>10C- Weizenbock</td><td>28</td><td>7</td><td>11</td><td>3</td><td>1</td><td></td><td>1</td><td>1</td><td>24</td><td>6</td><td>44</td></tr>
+        <tr><td>16A- Sweet Stout</td><td>1</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>30</td></tr>
+        <tr><td>3B- Czech Premium Pale Lager</td><td>9</td><td>1</td><td></td><td>2</td><td></td><td></td><td></td><td></td><td>3</td><td>6</td><td>40</td></tr>
+        <tr><td>30A- Spice, Herb or Vegetable Beer</td><td>19</td><td>5</td><td>5</td><td>1</td><td></td><td>1</td><td></td><td></td><td>12</td><td>8</td><td>45</td></tr>
+        <tr><td>21B- Specialty IPA - Black</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>33</td></tr>
+        <tr><td>27B - Kentucky Common</td><td>2</td><td></td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td>2</td><td>0</td><td>33</td></tr>
+        <tr><td>7A- Vienna Lager</td><td>11</td><td>5</td><td>1</td><td></td><td></td><td>1</td><td></td><td>1</td><td>8</td><td>5</td><td>43</td></tr>
+        <tr><td>19B- California Common</td><td>2</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>37</td></tr>
+        <tr><td>13B- British Brown Ale</td><td>13</td><td>3</td><td>1</td><td>2</td><td></td><td></td><td>1</td><td></td><td>7</td><td>7</td><td>44</td></tr>
+        <tr><td>34B- Mixed-Style Beer</td><td>5</td><td></td><td>2</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td>3</td><td>43</td></tr>
+        <tr><td>2A- International Pale Lager</td><td>16</td><td>3</td><td></td><td>3</td><td>1</td><td></td><td></td><td></td><td>7</td><td>9</td><td>41</td></tr>
+        <tr><td>25B- Saison- Table - Pale</td><td>5</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>4</td><td>37</td></tr>
+        <tr><td>12A- British Golden Ale</td><td>3</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>2</td><td>1</td><td>44</td></tr>
+        <tr><td>24C- Biere De Garde</td><td>4</td><td>1</td><td>2</td><td></td><td></td><td></td><td></td><td></td><td>3</td><td>1</td><td>40</td></tr>
+        <tr><td>8A- Munich Dunkel</td><td>1</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>35</td></tr>
+        <tr><td>8B- Schwarzbier</td><td>5</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>2</td><td>3</td><td>42</td></tr>
+        <tr><td>4A- Munich Helles</td><td>9</td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>2</td><td>7</td><td>41</td></tr>
+        <tr><td>1D- American Wheat</td><td>3</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>39</td></tr>
+        <tr><td>20A- American Porter</td><td>9</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>2</td><td>7</td><td>40</td></tr>
+        <tr><td>16B- Oatmeal Stout</td><td>3</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>39</td></tr>
+        <tr><td>29C- Specialty Fruit Beer</td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>42</td></tr>
+        <tr><td>7B- Altbier</td><td>6</td><td></td><td>1</td><td></td><td>1</td><td></td><td></td><td></td><td>2</td><td>4</td><td>40</td></tr>
+        <tr><td>26D- Belgian Dark Strong Ale</td><td>3</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>39</td></tr>
+        <tr><td>9A- Doppelbock</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>42</td></tr>
+        <tr><td>6C- Dunkles Bock</td><td>4</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>3</td><td>42</td></tr>
+        <tr><td>14C- Scottish Export</td><td>3</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>41</td></tr>
+        <tr><td>20C- Imperial Stout</td><td>8</td><td>1</td><td>2</td><td></td><td>1</td><td></td><td></td><td></td><td>4</td><td>4</td><td>44</td></tr>
+        <tr><td>23G- Gose</td><td>1</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>31</td></tr>
+        <tr><td>32A- Classic Style Smoked Beer</td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>40</td></tr>
+        <tr><td>301C1A- New World Cider</td><td>3</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>2</td><td>1</td><td>41</td></tr>
+        <tr><td>6B- Rauchbier</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>38</td></tr>
+      </table>
+    </div>
   </main>
 
 </body>
