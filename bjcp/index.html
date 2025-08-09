@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>BJCP Tasting Exam Study Guide – Maximize Your Potential | BJCP Exam Success by Doug Walker</title>
   <meta name="description" content="Practical, exam-focused strategies to maximize your potential on the BJCP Tasting Exam. Scoresheet completeness, calibrated language, time management, and constructive feedback—based on Doug Walker’s study guide, BJCP Exam Success." />
   <link rel="canonical" href="https://rustynutbrewnque.com/bjcp/" />
@@ -38,7 +39,7 @@
       line-height: 1.55;
     }
 
-    /* ===== Header (matches site style) ===== */
+    /* Header */
     header {
       background-color: var(--brand);
       color: #fff;
@@ -69,27 +70,21 @@
 
     main { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
 
-    /* ===== Hero ===== */
-    .hero {
+    h1 { margin: 0; font-size: clamp(1.4rem, 2vw, 2rem); }
+    .muted { color: var(--muted); }
+
+    .card {
       background: var(--card);
       border-radius: var(--radius);
-      padding: 1.25rem;
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1.2fr .8fr;
-      box-shadow: 0 4px 12px rgba(0,0,0,.06);
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,.05);
     }
-    .hero h1 { margin: 0 0 .5rem; font-size: clamp(1.4rem, 2vw, 2rem); }
-    .hero p.lede { color: var(--muted); margin: .25rem 0 1rem; }
-    .cover {
-      width: 100%;
-      aspect-ratio: 3/4;
-      border-radius: 6px;
-      object-fit: cover;
-      background: #eee;
-      box-shadow: 0 6px 18px rgba(0,0,0,.12);
-    }
-    .cta-row { display: flex; gap: .75rem; flex-wrap: wrap; }
+    section { margin-top: 1.5rem; }
+    h2 { font-size: clamp(1.1rem, 1.4vw, 1.4rem); margin: 0 0 .75rem; }
+
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .tip h3 { margin:.25rem 0 .5rem; font-size: 1rem; }
+
     .btn {
       display: inline-block;
       padding: .5rem .75rem;
@@ -105,23 +100,6 @@
       color: #fff;
       border-color: var(--brand);
     }
-
-    section { margin-top: 1.5rem; }
-    h2 { font-size: clamp(1.1rem, 1.4vw, 1.4rem); margin: 0 0 .75rem; }
-
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,.05);
-    }
-
-    .grid {
-      display: grid; gap: 1rem;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-    }
-    .tip h3 { margin:.25rem 0 .5rem; font-size: 1rem; }
-    .muted { color: var(--muted); }
 
     blockquote {
       margin: 0;
@@ -143,19 +121,12 @@
       padding: 1rem;
     }
 
-    footer {
-      margin-top: 2rem;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-
     @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
       .grid, .reviews { grid-template-columns: 1fr; }
     }
   </style>
 
-  <!-- Schema.org Book + AggregateRating with your two reviews -->
+  <!-- Schema.org Book with ratings & offer -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -166,6 +137,10 @@
     "inLanguage":"en",
     "image":"https://rustynutbrewnque.com/assets/bjcp-exam-success-cover.jpg",
     "description":"An exam-focused study companion to help candidates maximize their potential on the BJCP Tasting Exam through structured scoresheet writing, calibrated language, and time management strategies.",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.amazon.com/dp/B0D2C5TS2J"
+    },
     "aggregateRating":{
       "@type":"AggregateRating",
       "ratingValue":"5.0",
@@ -191,154 +166,62 @@
   </script>
 </head>
 <body>
-  <!-- Updated header with full site nav -->
-<header>
-  <a href="https://rustynutbrewnque.com/index.html" style="display:flex;align-items:center;gap:.5rem;text-decoration:none;">
-    <img src="https://rustynutbrewnque.com/assets/rnbnqweblogo.png"
-         alt="Rusty Nut Brew N' Que Logo"
-         class="logo"
-         style="max-height:50px;background:#fff;padding:.25rem;border-radius:4px;" />
-  </a>
-  <nav>
-    <ul style="list-style:none;margin:0;padding:0;display:flex;gap:1rem;">
-      <li><a href="https://rustynutbrewnque.com/index.html">Home</a></li>
-      <li><a href="https://rustynutbrewnque.com/brew-days/index.html">Brew Days</a></li>
-      <li><a href="https://rustynutbrewnque.com/how-i-do-it/index.html">How I Do It</a></li>
-      <li><a href="https://rustynutbrewnque.com/gear/index.html">Gear</a></li>
-      <li><a href="https://rustynutbrewnque.com/bjcp/index.html">BJCP Study Guide</a></li>
-      <li><a href="https://rustynutbrewnque.com/about/index.html">About</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- Master header with absolute URLs -->
+  <header>
+    <a href="https://rustynutbrewnque.com/index.html" style="display:flex;align-items:center;gap:.5rem;text-decoration:none;">
+      <img src="https://rustynutbrewnque.com/assets/rnbnqweblogo.png"
+           alt="Rusty Nut Brew N' Que Logo"
+           class="logo" />
+    </a>
+    <nav>
+      <ul>
+        <li><a href="https://rustynutbrewnque.com/index.html">Home</a></li>
+        <li><a href="https://rustynutbrewnque.com/brew-days/index.html">Brew Days</a></li>
+        <li><a href="https://rustynutbrewnque.com/how-i-do-it/index.html">How I Do It</a></li>
+        <li><a href="https://rustynutbrewnque.com/gear/index.html">Gear</a></li>
+        <li><a href="https://rustynutbrewnque.com/bjcp/index.html">BJCP Study Guide</a></li>
+        <li><a href="https://rustynutbrewnque.com/about/index.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+<main>
+  <section class="hero" style="display:flex;flex-wrap:wrap;align-items:center;gap:2rem;max-width:1100px;margin:0 auto;padding:2rem 1rem;">
+    <!-- Text content -->
+    <div style="flex:1 1 400px;min-width:280px;">
+      <h1 style="margin:0 0 0.5rem;font-size:clamp(1.6rem,2vw,2rem);">
+        BJCP Tasting Exam Study Guide — Maximize Your Potential
+      </h1>
+      <p style="margin:0 0 1rem;color:#555;line-height:1.5;">
+        A practical, exam-focused companion designed to help you perform better on the BJCP Tasting Exam. 
+        Packed with judging drills, structured feedback exercises, style guideline insights, and proven strategies — 
+        this guide gives you the tools to walk into exam day with confidence.
+      </p>
+      <p style="margin:0 0 1.5rem;color:#555;">
+        Whether you’re aiming for Certified, National, or simply want to sharpen your scoresheet skills, 
+        this resource keeps you focused on what the exam actually measures.
+      </p>
+      <a class="btn btn-primary" href="https://www.amazon.com/dp/B0D2C5TS2J" target="_blank" rel="noopener" style="display:inline-block;padding:.6rem 1rem;border-radius:4px;background:#c7551a;color:#fff;text-decoration:none;font-weight:600;">
+        Buy on Amazon
+      </a>
+    </div>
 
-  <main>
-  <section class="book-covers" style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin:2rem 0;">
-  <img
-    src="/assets/bjcp-exam-success-cover.jpg"
-    alt="BJCP Exam Success — Front Cover"
-    width="600" height="800"
-    loading="lazy"
-    style="max-width:300px;width:100%;height:auto;border:1px solid #ccc;box-shadow:0 2px 6px rgba(0,0,0,.15);" />
+    <!-- Images -->
+    <div style="flex:1 1 300px;min-width:260px;display:flex;flex-direction:column;align-items:center;gap:1rem;">
+      <img 
+        src="/assets/bjcp-exam-success-cover.jpg" 
+        alt="BJCP Exam Success — Front Cover"
+        width="600" height="800"
+        loading="lazy"
+        style="max-width:260px;width:100%;height:auto;border:1px solid #ccc;box-shadow:0 2px 6px rgba(0,0,0,.15);" />
+      <img 
+        src="/assets/bjcp-exam-success-back.jpg" 
+        alt="BJCP Exam Success — Back Cover"
+        width="600" height="800"
+        loading="lazy"
+        style="max-width:260px;width:100%;height:auto;border:1px solid #ccc;box-shadow:0 2px 6px rgba(0,0,0,.15);" />
+    </div>
+  </section>
+</main>
 
-  <img
-    src="/assets/bjcp-exam-success-back.jpg"
-    alt="BJCP Exam Success — Back Cover"
-    width="600" height="800"
-    loading="lazy"
-    style="max-width:300px;width:100%;height:auto;border:1px solid #ccc;box-shadow:0 2px 6px rgba(0,0,0,.15);" />
-</section>
-
-<div style="text-align:center;margin:-.5rem 0 2rem;">
-  <a class="btn btn-primary" href="https://www.amazon.com/dp/B0D2C5TS2J" target="_blank" rel="noopener" style="display:inline-block;padding:.6rem 1rem;border-radius:4px;background:#c7551a;color:#fff;text-decoration:none;font-weight:600;">
-    Buy on Amazon
-  </a>
-</div>
-
-
-
-    <section aria-labelledby="why">
-      <h2 id="why">Why this guide (and what it is—and isn’t)</h2>
-      <div class="card">
-        <p><strong>What it is:</strong> A focused study companion for the BJCP <em>Tasting</em> Exam—helping you write complete, clear scoresheets; use calibrated intensity terms; manage time; and align with BJCP expectations.</p>
-        <p><strong>What it isn’t:</strong> A promise to make you a better brewer or to overhaul your palate. It’s about performing your best on <em>this specific exam</em>.</p>
-      </div>
-    </section>
-
-    <section id="quick-tips" aria-labelledby="tips">
-      <h2 id="tips">Quick BJCP Tasting Exam Tips</h2>
-      <div class="grid">
-        <article class="card tip">
-          <h3>Use the scoresheet as a checklist</h3>
-          <p>Hit <em>every</em> required element (aroma, appearance, flavor, mouthfeel, overall). If a trait is absent, say so: “No detectable esters or phenols.” Incomplete = lost points.</p>
-        </article>
-        <article class="card tip">
-          <h3>Be precise with intensity</h3>
-          <p>Avoid vague ranges like “low–medium.” Use anchored language: “just above low,” “just below medium,” or “high.” Precision signals calibration.</p>
-        </article>
-        <article class="card tip">
-          <h3>Feedback that helps</h3>
-          <p>Issue → impact → fix. Even strong beers deserve one actionable tweak that could elevate them.</p>
-        </article>
-        <article class="card tip">
-          <h3>Time targets that work</h3>
-          <p>Aim for 12–14 minutes per beer: quick first impressions, methodical sections, then 1–2 minutes to set the score and double-check math.</p>
-        </article>
-        <article class="card tip">
-          <h3>Judge independently</h3>
-          <p>Don’t compare to the previous sample. Evaluate each beer against the style guideline to keep your scoring consistent.</p>
-        </article>
-        <article class="card tip">
-          <h3>Match words to numbers</h3>
-          <p>Ensure written comments line up with the numeric score and the three summary boxes (Stylistic Accuracy, Technical Merit, Intangibles).</p>
-        </article>
-      </div>
-      <p class="muted" style="margin-top:.5rem">Like these? The full guide expands each into repeatable frameworks you can practice before exam day.</p>
-    </section>
-
-    <section aria-labelledby="learn">
-      <h2 id="learn">What you’ll learn inside <em>BJCP Exam Success</em></h2>
-      <div class="grid">
-        <div class="card">
-          <ul class="bullets">
-            <li>Scoresheet completeness without fluff</li>
-            <li>Calibrated intensity language (no “low/medium” hedging)</li>
-            <li>Constructive, brewer-useful feedback under time pressure</li>
-            <li>Time management patterns for six beers in 90 minutes</li>
-            <li>Common pitfalls (and simple ways to avoid them)</li>
-          </ul>
-        </div>
-        <div class="card">
-          <p class="muted">This guide focuses on exam execution. Palate training and brewing science matter—but this book stays in its lane: helping you perform better on the BJCP Tasting Exam.</p>
-          <div class="cta-row" style="margin-top:.5rem">
-            <a class="btn btn-primary" href="https://www.amazon.com/dp/B0D2C5TS2J" target="_blank" rel="noopener">Get the Book</a>
-            <a class="btn" href="#reviews">Read reviews</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="reviews" aria-labelledby="voices">
-      <h2 id="voices">What judges say about the book</h2>
-      <div class="reviews">
-        <blockquote>
-          <p><strong>★★★★★ If you are taking the test, read this book.</strong> I teach new judges on the tasting exam a couple times a year… Emphasizing <em>how exams are scored</em> and defining a structured approach are sure fire methods for prepping and passing first time. Quick read, great reference!</p>
-          <p class="muted">— Verified Amazon Review, Jul 24, 2025</p>
-        </blockquote>
-        <blockquote>
-          <p><strong>★★★★★ Great tool to get a higher score.</strong> Deep dive into preparing for the tasting exam and how to describe what the taster is experiencing. Very useful and worth the cost!</p>
-          <p class="muted">— Amazon Review, Apr 30, 2025</p>
-        </blockquote>
-      </div>
-    </section>
-
-    <section aria-labelledby="author">
-      <h2 id="author">About the author</h2>
-      <div class="card">
-        <p>Doug Walker is a <strong>Certified BJCP judge</strong> and active competition brewer. He wrote this guide to formalize a clear, repeatable approach to the BJCP Tasting Exam while preparing for his next test. It’s practical, structured, and built for real exam conditions.</p>
-      </div>
-    </section>
-
-    <section aria-labelledby="buy">
-      <h2 id="buy">Buy the book</h2>
-      <div class="card" style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
-        <img src="/assets/bjcp-exam-success-cover.jpg" alt="BJCP Exam Success book cover" style="width:140px; border-radius:6px; box-shadow:0 6px 18px rgba(0,0,0,.12);" />
-        <div>
-          <p><em>BJCP Exam Success: A Practical Study Guide</em> by Doug Walker</p>
-          <a class="btn btn-primary" href="https://www.amazon.com/dp/B0D2C5TS2J" target="_blank" rel="noopener">Buy on Amazon</a>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="coming">
-      <h2 id="coming">Competition feedback reviews (coming soon)</h2>
-      <div class="coming">
-        <p>Short breakdowns of real comp sheets—what multiple judges agreed on, where perceptions diverged, and how to translate feedback into clearer scoresheets. Quick reads to reinforce exam habits.</p>
-      </div>
-    </section>
-
-    <footer>
-      <p>Note: This resource is focused on improving performance on the BJCP <em>Tasting</em> Exam. It does not claim to make you a better brewer or to replace comprehensive sensory training.</p>
-    </footer>
-  </main>
 </body>
 </html>
