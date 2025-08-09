@@ -111,6 +111,21 @@
   .results-by-style table th:nth-child(n+2) {
     text-align: right;
   }
+    /* --- TOC --- */
+.toc {
+  background:#fff; border:1px solid #e5e5e5; border-radius:6px;
+  padding:0.75rem 1rem; box-shadow:0 1px 3px rgba(0,0,0,.05);
+  margin:1rem 0 1.5rem; position:sticky; top:12px;
+}
+.toc h2 { margin:.25rem 0 .5rem; font-size:1rem; color:#444; }
+.toc ol { margin:.25rem 0 0; padding-left:1.25rem; }
+.toc a { color:var(--accent); text-decoration:none; }
+.toc a:hover { text-decoration:underline; }
+@media (max-width: 900px){
+  .toc { position:static; }
+}
+html { scroll-behavior:smooth; } /* smooth jump */
+
 </style>
 
 </head>
@@ -137,6 +152,11 @@
 
   <main class="container">
     <h1>About the Brewer</h1>
+    <nav class="toc" aria-label="Table of contents">
+  <h2>On this page</h2>
+  <ol id="toc-list"></ol>
+</nav>
+
 <p>I brewed my first all-grain batch on July 31, 2021 using a Grainfather G30. What started as a curiosity quickly turned into a garage project, then into a garage brewery — complete with a dedicated sink, PEX plumbing, a chiller, a sparge tank, and over 300 pounds of grain in rotation.</p>
 
 <p>I brew under the name <strong>Rusty Nut Brew ’n Que</strong>, a nod to my early days of entertaining friends at home. The name came from a friend who, while trying to remember the name of a bar we frequented called the Rotten Oak—blurted out, “Are we going to that Rusty Nut place?” I immediately hijacked it, and ever since, the “Rusty Nut” has been the go-to name for my home in full-on entertainment mode.</p>
@@ -249,6 +269,27 @@
       </table>
     </div>
   </main>
+<script>
+(function(){
+  const h2s = document.querySelectorAll('main h2');
+  const list = document.getElementById('toc-list');
+  if (!h2s.length || !list) return;
+
+  const slugify = s => s.toLowerCase()
+    .replace(/[^a-z0-9\s-]/g,'').trim()
+    .replace(/\s+/g,'-').replace(/-+/g,'-');
+
+  h2s.forEach(h => {
+    if (!h.id) h.id = slugify(h.textContent);
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    li.appendChild(a);
+    list.appendChild(li);
+  });
+})();
+</script>
 
 </body>
 </html>
