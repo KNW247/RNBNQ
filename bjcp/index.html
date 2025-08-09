@@ -22,133 +22,42 @@
   <meta name="twitter:image" content="https://rustynutbrewnque.com/assets/bjcp-exam-success-cover.jpg" />
 
   <style>
-    :root {
-      --brand: #c7551a;
-      --ink: #333;
-      --muted: #666;
-      --bg: #f4f4f4;
-      --card: #ffffff;
-      --radius: 8px;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Inter, Arial, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.55;
-    }
+    :root { --brand:#c7551a; --ink:#333; --muted:#666; --bg:#f4f4f4; --card:#fff; --radius:8px; }
+    *{ box-sizing:border-box; }
+    body{ margin:0; font-family:'Segoe UI',system-ui,-apple-system,Roboto,Inter,Arial,sans-serif; color:var(--ink); background:var(--bg); line-height:1.55; }
 
     /* Header */
-    header {
-      background-color: var(--brand);
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-    }
-    header img.logo {
-      max-height: 50px;
-      background: #fff;
-      padding: 0.25rem;
-      border-radius: 4px;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 1rem;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    nav ul li a:hover { text-decoration: underline; }
+    header{ background:var(--brand); color:#fff; display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
+    header img.logo{ max-height:50px; background:#fff; padding:.25rem; border-radius:4px; }
+    nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:1rem; }
+    nav a{ color:#fff; text-decoration:none; font-weight:600; }
+    nav a:hover{ text-decoration:underline; }
 
-    main { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+    main{ max-width:1100px; margin:0 auto; padding:1.5rem 1rem 3rem; }
 
     /* Hero */
-    .hero {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1.2fr .8fr;
-      box-shadow: 0 4px 12px rgba(0,0,0,.06);
-    }
-    .hero h1 { margin: 0 0 .5rem; font-size: clamp(1.6rem, 2vw, 2rem); }
-    .hero p.lede { color: var(--muted); margin: .25rem 0 1rem; }
-    .covers { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-    .cover {
-      width: 100%;
-      max-width: 260px;
-      height: auto;
-      aspect-ratio: 3/4;
-      border-radius: 6px;
-      object-fit: cover;
-      background: #eee;
-      box-shadow: 0 6px 18px rgba(0,0,0,.12);
-      border: 1px solid #ccc;
-    }
+    .hero{ background:var(--card); border-radius:var(--radius); padding:1.25rem; display:grid; gap:1.25rem; grid-template-columns:1.2fr .8fr; box-shadow:0 4px 12px rgba(0,0,0,.06); }
+    .hero h1{ margin:0 0 .5rem; font-size:clamp(1.6rem,2vw,2rem); }
+    .hero .lede{ color:var(--muted); margin:.25rem 0 1rem; }
+    .hero .bullets{ margin:.5rem 0 1rem; display:grid; gap:.4rem; }
+    .cover{ width:100%; max-width:260px; height:auto; aspect-ratio:3/4; border-radius:6px; object-fit:cover; background:#eee; box-shadow:0 6px 18px rgba(0,0,0,.12); border:1px solid #ccc; justify-self:center; }
+    .cta-row{ display:flex; gap:.75rem; flex-wrap:wrap; }
 
-    .cta-row { display: flex; gap: .75rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-block;
-      padding: .5rem .75rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid #ddd;
-      background: #fff;
-      color: var(--ink);
-    }
-    .btn-primary {
-      background: var(--brand);
-      color: #fff;
-      border-color: var(--brand);
-    }
+    section{ margin-top:1.5rem; }
+    h2{ font-size:clamp(1.1rem,1.4vw,1.4rem); margin:0 0 .75rem; }
+    .card{ background:var(--card); border-radius:var(--radius); padding:1rem; box-shadow:0 4px 12px rgba(0,0,0,.05); }
+    .grid{ display:grid; gap:1rem; grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .tip h3{ margin:.25rem 0 .5rem; font-size:1rem; }
+    .muted{ color:var(--muted); }
+    blockquote{ margin:0; padding:1rem 1rem 1rem 1.25rem; background:var(--card); border-left:4px solid var(--brand); border-radius:4px; box-shadow:0 4px 12px rgba(0,0,0,.05); }
+    .reviews{ display:grid; gap:1rem; grid-template-columns:1fr 1fr; }
 
-    section { margin-top: 1.5rem; }
-    h2 { font-size: clamp(1.1rem, 1.4vw, 1.4rem); margin: 0 0 .75rem; }
+    .btn{ display:inline-block; padding:.5rem .75rem; border-radius:4px; text-decoration:none; font-weight:600; border:1px solid #ddd; background:#fff; color:var(--ink); }
+    .btn-primary{ background:var(--brand); color:#fff; border-color:var(--brand); }
 
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,.05);
-    }
-    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .tip h3 { margin:.25rem 0 .5rem; font-size: 1rem; }
-    .muted { color: var(--muted); }
+    .coming{ background:var(--card); border:1px dashed #e3e3e3; border-radius:var(--radius); padding:1rem; }
 
-    blockquote {
-      margin: 0;
-      padding: 1rem 1rem 1rem 1.25rem;
-      background: var(--card);
-      border-left: 4px solid var(--brand);
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0,0,0,.05);
-    }
-    .reviews { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
-
-    .bullets { display: grid; gap: .5rem; }
-    .bullets li { margin-left: 1.25rem; }
-
-    .coming {
-      background: var(--card);
-      border: 1px dashed #e3e3e3;
-      border-radius: var(--radius);
-      padding: 1rem;
-    }
-
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
-      .grid, .reviews { grid-template-columns: 1fr; }
-    }
+    @media (max-width:900px){ .hero{ grid-template-columns:1fr; } .grid,.reviews{ grid-template-columns:1fr; } }
   </style>
 
   <!-- Schema.org Book + reviews + offer -->
@@ -190,28 +99,29 @@
   </header>
 
   <main>
-    <!-- HERO: text left, covers right -->
+    <!-- HERO: text left, single cover right -->
     <section class="hero" aria-labelledby="hero-title">
       <div>
         <h1 id="hero-title">BJCP Tasting Exam Study Guide — Maximize Your Potential</h1>
-        <p class="lede">A practical, exam-focused companion to help you perform better on the BJCP Tasting Exam. Clearer scoresheets, calibrated language, smarter time management—without pretending to be a brewing textbook or palate bootcamp.</p>
+        <p class="lede">
+          Passing the BJCP Tasting Exam takes more than beer knowledge—it takes structured evaluation, calibrated language, and efficient scoresheet writing under time pressure. This guide gives you practical strategies you can practice and repeat on exam day.
+        </p>
+        <ul class="bullets">
+          <li>Exam structure & scoring insights</li>
+          <li>Scoresheet mastery & judging technique</li>
+          <li>Calibrated intensity language that graders respect</li>
+          <li>Study strategies & realistic exam-day timing</li>
+        </ul>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://www.amazon.com/dp/B0D2C5TS2J" target="_blank" rel="noopener">Buy on Amazon</a>
           <a class="btn" href="#quick-tips">Preview quick exam tips</a>
         </div>
       </div>
-      <div class="covers">
-        <img
-          src="/assets/bjcp-exam-success-cover.jpg"
-          alt="BJCP Exam Success — Front Cover"
-          width="600" height="800" loading="lazy"
-          class="cover" />
-        <img
-          src="/assets/bjcp-exam-success-back.jpg"
-          alt="BJCP Exam Success — Back Cover"
-          width="600" height="800" loading="lazy"
-          class="cover" />
-      </div>
+      <img
+        src="/assets/bjcp-exam-success-cover.jpg"
+        alt="BJCP Exam Success — Front Cover"
+        width="600" height="800" loading="lazy"
+        class="cover" />
     </section>
 
     <!-- Why / positioning -->
@@ -307,7 +217,7 @@
       <div class="card" style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
         <img src="/assets/bjcp-exam-success-cover.jpg" alt="BJCP Exam Success book cover" width="200" height="266" loading="lazy" style="width:140px;height:auto;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.12);" />
         <div>
-          <p><em>BJCP Exam Success: A Practical Study Guide</em> by Doug Walker</p>
+          <p><em>Bjcp Exam Success: A Practical Study Guide</em> by Doug Walker</p>
           <a class="btn btn-primary" href="https://www.amazon.com/dp/B0D2C5TS2J" target="_blank" rel="noopener">Buy on Amazon</a>
         </div>
       </div>
