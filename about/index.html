@@ -43,13 +43,17 @@
   .toc ol{ margin:0; padding-left:1rem; }
   .toc a{ color:inherit; text-decoration:underline; }
   html{ scroll-behavior:smooth; }
+    
   /* Avoid header overlap on anchor jump */
   main h2{ scroll-margin-top:88px; }
-     table caption { 
-  text-align: left; 
-  font-weight: 600; 
-  padding: .5rem 0; 
-}
+
+  /* Table captions */
+  table caption{
+    text-align:left;
+    font-weight:600;
+    padding:.5rem 0;
+  }
+</style>
   </style>
   
 </head>
@@ -71,7 +75,7 @@
 </header>
 
 <main class="container">
-  <h1>About the Brewer</h1>
+  <h1 id="top">About the Brewer</h1>
 
   <!-- TOC (no heading label, just links) -->
   <nav class="toc" aria-label="Table of contents">
