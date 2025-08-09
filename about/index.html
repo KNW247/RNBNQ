@@ -46,6 +46,13 @@
   /* Avoid header overlap on anchor jump */
   main h2{ scroll-margin-top:88px; }
   </style>
+  
+  table caption { 
+  text-align: left; 
+  font-weight: 600; 
+  padding: .5rem 0; 
+}
+
 </head>
 <body>
 <header>
@@ -149,27 +156,37 @@
   <p>Since my first competition in late 2022, I’ve entered beers in dozens of events across the country. Each year brings new challenges, new recipes, and plenty of lessons learned — along with some hardware that makes the work worthwhile.</p>
 
   <div class="table-wrap results-by-year">
-    <table>
+  <table>
+    <caption>Competition Results by Year</caption>
+    <thead>
       <tr>
         <th scope="col">Year</th><th scope="col">Styles</th><th scope="col">Comps</th><th scope="col">Entries</th><th scope="col">1st</th><th scope="col">2nd</th><th scope="col">3rd</th><th scope="col">HM</th><th scope="col">BOS 1st</th><th scope="col">BOS 2nd</th><th scope="col">BOS 3rd</th><th scope="col">Total Wins</th><th scope="col">% Wins</th>
       </tr>
+    </thead>
+    <tbody>
       <tr><td>Lifetime</td><td>51</td><td>33</td><td>216</td><td>34</td><td>33</td><td>22</td><td>5</td><td>1</td><td>2</td><td>3</td><td>100</td><td>46%</td></tr>
       <tr><td>2022</td><td>4</td><td>1</td><td>4</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>25%</td></tr>
       <tr><td>2023</td><td>15</td><td>11</td><td>39</td><td>4</td><td>6</td><td>4</td><td>2</td><td>0</td><td>0</td><td>1</td><td>17</td><td>44%</td></tr>
       <tr><td>2024</td><td>32</td><td>26</td><td>119</td><td>18</td><td>21</td><td>10</td><td>2</td><td>1</td><td>1</td><td>1</td><td>54</td><td>45%</td></tr>
       <tr><td>2025</td><td>22</td><td>10</td><td>54</td><td>11</td><td>5</td><td>8</td><td>1</td><td>0</td><td>1</td><td>1</td><td>27</td><td>50%</td></tr>
-    </table>
-  </div>
+   </tbody>
+  </table>
+    <p style="margin:.5rem 0 0;"><a href="#top">Back to top</a></p>
+
+</div>
 
   <h2>Performance by Style</h2>
   <p>I enjoy brewing a wide variety of styles, from malt-forward dark beers to crisp hop-driven lagers. This table shows how my entries have performed across different styles over time.</p>
 
   <div class="table-wrap results-by-style">
- 
-    <table>
+  <table>
+    <caption>Performance by Style</caption>
+    <thead>
       <tr>
         <th>Entry Style</th><th>Comps</th><th>1st</th><th>2nd</th><th>3rd</th><th>HM</th><th>BOS 1st</th><th>BOS 2nd</th><th>BOS 3rd</th><th>Total Wins</th><th>Misses</th><th>Top Score</th>
       </tr>
+    </thead>
+    <tbody>
       <tr><td>10C- Weizenbock</td><td>28</td><td>7</td><td>11</td><td>3</td><td>1</td><td></td><td>1</td><td>1</td><td>24</td><td>6</td><td>44</td></tr>
       <tr><td>16A- Sweet Stout</td><td>1</td><td></td><td>1</td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>30</td></tr>
       <tr><td>3B- Czech Premium Pale Lager</td><td>9</td><td>1</td><td></td><td>2</td><td></td><td></td><td></td><td></td><td>3</td><td>6</td><td>40</td></tr>
@@ -201,8 +218,11 @@
 <tr><td>32A- Classic Style Smoked Beer</td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td><td>0</td><td>40</td></tr>
 <tr><td>301C1A- New World Cider</td><td>3</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td><td></td><td>2</td><td>1</td><td>41</td></tr>
 <tr><td>6B- Rauchbier</td><td>2</td><td></td><td></td><td>1</td><td></td><td></td><td></td><td></td><td>1</td><td>1</td><td>38</td></tr>
-    </table>
-    </div>
+        </tbody>
+  </table>
+    <p style="margin:.5rem 0 0;"><a href="#top">Back to top</a></p>
+
+</div>
 </main>
 
 <script>
