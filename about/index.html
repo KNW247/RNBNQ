@@ -176,29 +176,17 @@
         <tr><td>2025</td><td>22</td><td>10</td><td>54</td><td>11</td><td>5</td><td>8</td><td>1</td><td>0</td><td>1</td><td>1</td><td>27</td><td>50%</td></tr>
       </table>
     </div>
+</main>
 
-    <h2>Performance by Style</h2>
-    <p>I enjoy brewing a wide variety of styles, from malt-forward dark beers to crisp hop-driven lagers. This table shows how my entries have performed across different styles over time.</p>
-
-    <div class="table-wrap results-by-style">
-      <table>
-        <tr>
-          <th scope="col">Entry Style</th><th scope="col">Comps</th><th scope="col">1st</th><th scope="col">2nd</th><th scope="col">3rd</th><th scope="col">HM</th><th scope="col">BOS 1st</th><th scope="col">BOS 2nd</th><th scope="col">BOS 3rd</th><th scope="col">Total Wins</th><th scope="col">Misses</th><th scope="col">Top Score</th>
-        </tr>
-        <!-- table rows remain unchanged -->
-      </table>
-    </div>
-  </main>
-
-  <script>
+<script>
 (function(){
   const h2s = document.querySelectorAll('main h2');
   const list = document.getElementById('toc-list');
   if (!h2s.length || !list) return;
 
   const slugify = s => s.toLowerCase()
-    .replace(/[^a-z0-9\\s-]/g,'').trim()
-    .replace(/\\s+/g,'-').replace(/-+/g,'-');
+    .replace(/[^a-z0-9\s-]/g,'').trim()
+    .replace(/\s+/g,'-').replace(/-+/g,'-');
 
   h2s.forEach(h => {
     if (!h.id) h.id = slugify(h.textContent);
