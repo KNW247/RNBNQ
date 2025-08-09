@@ -79,47 +79,38 @@
       }
     }
 
-    /* Featured Article strip */
+    /* Featured Article */
     .featured-article {
       margin-top: 2rem;
     }
     .featured-card {
-      background:#fff;
-      border-radius:8px;
-      box-shadow:0 1px 3px rgba(0,0,0,0.06);
-      padding:1.25rem;
-      display:grid;
-      grid-template-columns: 120px 1fr;
-      gap:1rem;
-      align-items:center;
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem;
+      max-width: 720px;
+      margin: 1.5rem auto;
+      text-decoration: none;
+      color: inherit;
+    }
+    .featured-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-right: 1rem;
     }
     .featured-card h3 {
-      margin:0 0 .25rem;
+      margin: 0 0 0.25rem 0;
       color: #d36c2d;
-      font-size:1.25rem;
+      font-size: 1.1rem;
     }
     .featured-card p {
-      margin:.25rem 0 .75rem;
-    }
-    .featured-card a.button {
-      display:inline-block;
-      padding:.5rem .75rem;
-      border:1px solid #d36c2d;
-      border-radius:6px;
-      text-decoration:none;
-      color:#d36c2d;
-      font-weight:600;
-    }
-    .featured-card a.button:hover { background: rgba(211,108,45,.08); }
-    .featured-thumb {
-      width:100%;
-      height:100%;
-      max-height:120px;
-      object-fit:cover;
-      border-radius:6px;
-    }
-    @media (max-width:640px){
-      .featured-card { grid-template-columns: 1fr; }
+      margin: 0;
+      font-size: 0.95rem;
+      color: #555;
     }
   </style>
 </head>
@@ -151,19 +142,16 @@
       <iframe src="https://www.youtube.com/embed/8V3y7dUDpsA" title="Featured Brewing Video" allowfullscreen></iframe>
     </section>
 
-  <h2>Featured Article</h2>
- <section class="featured-article">
-  <a href="packaging/" class="featured-card" style="display:flex; align-items:center; background:#fff; border-radius:6px; box-shadow:0 2px 5px rgba(0,0,0,0.1); padding:1rem; max-width:720px; margin:1.5rem auto; text-decoration:none; color:inherit;">
-    <img src="assets/packaging/image2.jpg" alt="Beer packaging guide thumbnail" loading="lazy" style="width:80px; height:80px; object-fit:cover; border-radius:4px; margin-right:1rem;">
-    <div>
-      <h3 style="margin:0 0 0.25rem 0; color:#d36c2d; font-size:1.1rem;">Featured Article: Beer Packaging for Competitions &amp; Shipping</h3>
-      <p style="margin:0; font-size:0.95rem; color:#555;">
-        A roundup of practical tips from multiple brewers—Spirited Shippers, Whale Pods, DIY bubble-wrap methods, and the Pringles can trick. Step-by-steps, pros/cons, and materials.
-      </p>
-    </div>
-  </a>
-</section>
-
+    <h2>Featured Article</h2>
+    <section class="featured-article">
+      <a href="packaging/" class="featured-card">
+        <img src="assets/packaging/image2.jpg" alt="Beer packaging guide thumbnail" loading="lazy">
+        <div>
+          <h3>Featured Article: Beer Packaging for Competitions &amp; Shipping</h3>
+          <p>A roundup of practical tips from multiple brewers—Spirited Shippers, Whale Pods, DIY bubble-wrap methods, and the Pringles can trick. Step-by-steps, pros/cons, and materials.</p>
+        </div>
+      </a>
+    </section>
 
   </main>
 </body>
