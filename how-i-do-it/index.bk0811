@@ -20,6 +20,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
+      flex-wrap: wrap; /* allow wrapping so nav never spills */
     }
     header img.logo {
       max-height: 50px;
@@ -33,6 +34,8 @@
       padding: 0;
       display: flex;
       gap: 1.5rem;
+      background: #c7551a; /* keep wrapped links on orange background */
+      flex-wrap: wrap;      /* allow link wrap inside nav */
     }
     nav ul li a {
       color: #fff;
@@ -51,6 +54,11 @@
     .video-block {
       margin-bottom: 3rem;
     }
+    .video-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
     .video-block iframe {
       width: 100%;
       max-width: 400px;
@@ -60,11 +68,7 @@
     .video-info {
       margin-left: 1rem;
       flex: 1;
-    }
-    .video-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
+      min-width: 250px;
     }
     .video-description {
       margin: 0.5rem 0;
@@ -74,23 +78,40 @@
       color: #c7551a;
       text-decoration: none;
     }
+
+    /* Small-screen tweaks */
+    @media (max-width: 600px) {
+      header {
+        padding: 0.75rem 1rem;
+        gap: 0.5rem;
+      }
+      nav ul {
+        gap: 1rem;
+      }
+    }
   </style>
 </head>
+<body>
+ 
 <header>
-  <img src="../assets/rnbnqweblogo.png" alt="Rusty Nut Brew N' Que Logo" class="logo" />
+  <a href="https://rustynutbrewnque.com/index.html" style="display:flex;align-items:center;gap:.5rem;text-decoration:none;">
+    <img src="https://rustynutbrewnque.com/assets/rnbnqweblogo.png"
+         alt="Rusty Nut Brew N' Que Logo"
+         class="logo"
+         style="max-height:50px;background:#fff;padding:.25rem;border-radius:4px;" />
+  </a>
   <nav>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../brew-days/index.html">Brew Days</a></li>
-      <li><a href="../how-i-do-it/index.html">How I Do It</a></li>
-      <li><a href="../gear/index.html">Gear</a></li>
-      <li><a href="about/index.html">About The Brewer</a></li>
-   
+    <ul style="list-style:none;margin:0;padding:0;display:flex;gap:1rem;">
+      <li><a href="https://rustynutbrewnque.com/index.html">Home</a></li>
+      <li><a href="https://rustynutbrewnque.com/brew-days/index.html">Brew Days</a></li>
+      <li><a href="https://rustynutbrewnque.com/how-i-do-it/index.html">How I Do It</a></li>
+      <li><a href="https://rustynutbrewnque.com/gear/index.html">Gear</a></li>
+      <li><a href="https://rustynutbrewnque.com/bjcp/index.html">BJCP Study Guide</a></li>
+      <li><a href="https://rustynutbrewnque.com/about/index.html">About</a></li>
     </ul>
   </nav>
 </header>
 
-  
   <main>
     <h1>How I Do It Series</h1>
     <p>This series shows how I handle real brewing processes using practical setups and gear. It’s not just talk — it’s how I actually do things in my brewery.</p>
@@ -138,5 +159,8 @@
     </div>
 
   </main>
+   <script data-goatcounter="https://rnbnq.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
+ 
 </html>
