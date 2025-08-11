@@ -20,7 +20,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
-      flex-wrap: wrap; /* allow wrapping so nav never spills */
+      flex-wrap: wrap;
     }
     header img.logo {
       max-height: 50px;
@@ -34,8 +34,8 @@
       padding: 0;
       display: flex;
       gap: 1.5rem;
-      background: #c7551a; /* keep wrapped links on orange background */
-      flex-wrap: wrap;      /* allow link wrap inside nav */
+      background: #c7551a;
+      flex-wrap: wrap;
     }
     nav ul li a {
       color: #fff;
@@ -53,6 +53,8 @@
     }
     .video-block {
       margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #ddd;
     }
     .video-row {
       display: flex;
@@ -62,7 +64,8 @@
     .video-block iframe {
       width: 100%;
       max-width: 400px;
-      height: 225px;
+      aspect-ratio: 16 / 9;
+      height: auto;
       border: none;
     }
     .video-info {
@@ -77,9 +80,13 @@
       font-size: 0.9rem;
       color: #c7551a;
       text-decoration: none;
+      transition: color 0.2s ease, text-decoration 0.2s ease;
+    }
+    .gear-link:hover {
+      text-decoration: underline;
+      color: #a9440e;
     }
 
-    /* Small-screen tweaks */
     @media (max-width: 600px) {
       header {
         padding: 0.75rem 1rem;
@@ -97,11 +104,10 @@
   <a href="https://rustynutbrewnque.com/index.html" style="display:flex;align-items:center;gap:.5rem;text-decoration:none;">
     <img src="https://rustynutbrewnque.com/assets/rnbnqweblogo.png"
          alt="Rusty Nut Brew N' Que Logo"
-         class="logo"
-         style="max-height:50px;background:#fff;padding:.25rem;border-radius:4px;" />
+         class="logo" />
   </a>
   <nav>
-    <ul style="list-style:none;margin:0;padding:0;display:flex;gap:1rem;">
+    <ul>
       <li><a href="https://rustynutbrewnque.com/index.html">Home</a></li>
       <li><a href="https://rustynutbrewnque.com/brew-days/index.html">Brew Days</a></li>
       <li><a href="https://rustynutbrewnque.com/how-i-do-it/index.html">How I Do It</a></li>
@@ -112,57 +118,65 @@
   </nav>
 </header>
 
-  <main>
-    <h1>How I Do It Series</h1>
-    <p>This series shows how I handle real brewing processes using practical setups and gear. It’s not just talk — it’s how I actually do things in my brewery.</p>
+<main>
+  <h1>How I Do It Series</h1>
+  <p>This series shows how I handle real brewing processes using practical setups and gear. It’s not just talk — it’s how I actually do things in my brewery.</p>
 
-    <div class="video-block">
-      <div class="video-row">
-        <iframe src="https://www.youtube.com/embed/2v0UOsviHfk" title="Clean My Fermenter"></iframe>
-        <div class="video-info">
-          <h2>Clean My Fermenter – Ep. 1</h2>
-          <p class="video-description">In this video, I walk through exactly how I clean my fermenter using my DIY CIP (Clean-in-Place) setup. The heart of this system is a ¾ HP, 3300 GPH pump — delivering 4–6× the flow rate of most homebrew CIP kits. It’s industrial-level cleaning power, built for a homebrew budget. No heavy lifting. Just fast, effective cleaning that gets me back to brewing.</p>
-          <a class="gear-link" href="../gear/index.html#cip-cleaning">See the gear from this video</a>
-        </div>
+  <div class="video-block">
+    <div class="video-row">
+      <iframe src="https://www.youtube.com/embed/m3q9hAnOllQ" title="Bottling for Competition – Ep. 0 (Long)" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="video-info">
+        <h2>Bottling for Competition – Ep. 0 (Long)</h2>
+        <p class="video-description">A full walkthrough of my competition bottling process. Every step, from prep to cap, with real-world tips and tricks I’ve learned along the way.</p>
       </div>
     </div>
+  </div>
 
-    <div class="video-block">
-      <div class="video-row">
-        <iframe src="https://www.youtube.com/embed/8V3y7dUDpsA" title="Dosing A Keg"></iframe>
-        <div class="video-info">
-          <h2>Dosing a Keg – Ep. 2</h2>
-          <p class="video-description">Learn how to safely add hop oils, finings, or other liquids to a pressurized keg without introducing oxygen. I show my clean, closed-loop keg dosing method using a syringe and DuoTight setup — no lid removal, no mess (OK, maybe a little mess).</p>
-          <a class="gear-link" href="../gear/index.html#kegging-dosing">See the gear from this video</a>
-        </div>
+  <div class="video-block">
+    <div class="video-row">
+      <iframe src="https://www.youtube.com/embed/Kw_NQq8FEB4" title="Bottling for Competition – Ep. 0 (Short)" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="video-info">
+        <h2>Bottling for Competition – Ep. 0 (Short)</h2>
+        <p class="video-description">A quick breakdown of how I prep and bottle for homebrew competitions. Short, sharp, and to the point.</p>
       </div>
     </div>
+  </div>
 
-    <div class="video-block">
-      <div class="video-row">
-        <iframe src="https://www.youtube.com/embed/Kw_NQq8FEB4" title="Bottling for Competition – Short"></iframe>
-        <div class="video-info">
-          <h2>Bottling for Competition – Short</h2>
-          <p class="video-description">A quick breakdown of how I prep and bottle for homebrew competitions. Short, sharp, and to the point.</p>
-        </div>
+  <div class="video-block">
+    <div class="video-row">
+      <iframe src="https://www.youtube.com/embed/2v0UOsviHfk" title="Clean My Fermenter – Ep. 1" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="video-info">
+        <h2>Clean My Fermenter – Ep. 1</h2>
+        <p class="video-description">In this video, I walk through exactly how I clean my fermenter using my DIY CIP (Clean-in-Place) setup. The heart of this system is a ¾ HP, 3300 GPH pump — delivering 4–6× the flow rate of most homebrew CIP kits. It’s industrial-level cleaning power, built for a homebrew budget. No heavy lifting. Just fast, effective cleaning that gets me back to brewing.</p>
+        <a class="gear-link" href="../gear/index.html#cip-cleaning">See the gear from this video</a>
       </div>
     </div>
+  </div>
 
-    <div class="video-block">
-      <div class="video-row">
-        <iframe src="https://www.youtube.com/embed/m3q9hAnOllQ" title="Bottling for Competition – Long"></iframe>
-        <div class="video-info">
-          <h2>Bottling for Competition – Long</h2>
-          <p class="video-description">A full walkthrough of my competition bottling process. Every step, from prep to cap, with real-world tips and tricks I’ve learned along the way.</p>
-        </div>
+  <div class="video-block">
+    <div class="video-row">
+      <iframe src="https://www.youtube.com/embed/8V3y7dUDpsA" title="Dosing a Keg – Ep. 2" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="video-info">
+        <h2>Dosing a Keg – Ep. 2</h2>
+        <p class="video-description">Learn how to safely add hop oils, finings, or other liquids to a pressurized keg without introducing oxygen. I show my clean, closed-loop keg dosing method using a syringe and DuoTight setup — no lid removal, no mess (OK, maybe a little mess).</p>
+        <a class="gear-link" href="../gear/index.html#kegging-dosing">See the gear from this video</a>
       </div>
     </div>
+  </div>
 
-  </main>
-   <script data-goatcounter="https://rnbnq.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+  <div class="video-block">
+    <div class="video-row">
+      <iframe src="https://www.youtube.com/embed/yaA-ZPY8FNI" title="How I Clean My SS Brewtech Brite Tank – CIP Build (How I Do It, Ep. 3)" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="video-info">
+        <h2>How I Clean My SS Brewtech Brite Tank – CIP Build (How I Do It, Ep. 3)</h2>
+        <p class="video-description">Get pro-level brite tank cleaning results at home — in this follow-up to my BrewBuilt X3 fermenter cleaning video, I’ll show you how I deep clean an SS Brewtech Brite Tank step-by-step using my CIP pump setup.</p>
+        <a class="gear-link" href="../gear/index.html#cip-cleaning">See the gear from this video</a>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script data-goatcounter="https://rnbnq.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
- 
 </html>
-
-
