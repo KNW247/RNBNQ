@@ -6,76 +6,30 @@
   <title>Homebrewing Gear I Actually Use – CIP, Kegging, Cleaning | Rusty Nut Brew N' Que</title>
   <meta name="description" content="Explore the exact homebrewing gear I use for keg dosing, CIP fermenter cleaning, and closed-loop transfers. Each item links to the Amazon page." />
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f8f8;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #c7551a;
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      flex-wrap: wrap;
-    }
-    header img.logo {
-      max-height: 50px;
-      background: #fff;
-      padding: 0.25rem;
-      border-radius: 4px;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 1.5rem;
-      background: #c7551a;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    main {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    h1 { margin-bottom: 1rem; }
-    .intro { max-width: 800px; margin-bottom: 3rem; }
-    .category-index { margin-bottom: 2rem; }
+    body { font-family: 'Segoe UI', sans-serif; background-color: #f8f8f8; color: #333; margin: 0; padding: 0; }
+    header { background-color: #c7551a; color: #fff; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; flex-wrap: wrap; }
+    header img.logo { max-height: 50px; background: #fff; padding: 0.25rem; border-radius: 4px; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 1.5rem; background: #c7551a; flex-wrap: wrap; }
+    nav ul li a { color: #fff; text-decoration: none; font-weight: bold; }
+    main { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+    h1 { margin-bottom: 0.75rem; }
+    .intro { max-width: 800px; margin-bottom: 2rem; color:#555; }
+    .category-index { margin: 0 0 2rem; }
     .category-index ul { padding-left: 1rem; }
     .gear-section { margin-bottom: 3rem; }
-    .gear-section h2 {
-      border-bottom: 2px solid #c7551a;
-      padding-bottom: 0.5rem;
-    }
-    .gear-item { margin-bottom: 1.5rem; }
-    .gear-item a {
-      display: inline-block;
-      margin-right: 1rem;
-      color: #c7551a;
-      text-decoration: none;
-    }
-    .gear-item p { margin: 0.5rem 0 0.2rem; }
-    @media (max-width: 600px) {
-      header { padding: 0.75rem 1rem; gap: 0.5rem; }
-      nav ul { gap: 1rem; flex-wrap: wrap; }
-    }
+    .gear-section h2 { border-bottom: 2px solid #c7551a; padding-bottom: 0.5rem; }
+    .gear-item { margin-bottom: 1.1rem; }
+    .gear-item a { display: inline-block; margin-right: 1rem; color: #c7551a; text-decoration: none; }
+    .gear-item a:hover { text-decoration: underline; }
+    .gear-item p { margin: 0.35rem 0 0.1rem; }
+    @media (max-width: 600px) { header { padding: 0.75rem 1rem; gap: 0.5rem; } nav ul { gap: 1rem; flex-wrap: wrap; } }
   </style>
 </head>
 <body>
 
 <header>
   <a href="https://rustynutbrewnque.com/index.html" style="display:flex;align-items:center;gap:.5rem;text-decoration:none;">
-    <img src="https://rustynutbrewnque.com/assets/rnbnqweblogo.png"
-         alt="Rusty Nut Brew N' Que Logo"
-         class="logo" />
+    <img src="https://rustynutbrewnque.com/assets/rnbnqweblogo.png" alt="Rusty Nut Brew N' Que Logo" class="logo" />
   </a>
   <nav>
     <ul>
@@ -91,8 +45,8 @@
 
 <main>
   <h1>Brewing Gear – What I Actually Use</h1>
-  <p style="max-width:800px;margin:0 0 1.5rem;color:#555;">
-    <strong>Affiliate disclosure:</strong> As an Amazon Associate, I earn from qualifying purchases.  
+  <p class="intro">
+    <strong>Affiliate disclosure:</strong> As an Amazon Associate, I earn from qualifying purchases.<br>
     Note: Amazon availability changes. Links point to the exact item when possible, or the closest match if the original is unavailable.
   </p>
 
@@ -100,56 +54,134 @@
     <strong>Jump to:</strong>
     <ul>
       <li><a href="#cip-cleaning">CIP &amp; Cleaning</a></li>
+      <li><a href="#tubing-fittings">Tubing &amp; Fittings</a></li>
       <li><a href="#kegging-dosing">Kegging &amp; Dosing</a></li>
+      <li><a href="#storage-org">Storage &amp; Organization</a></li>
     </ul>
   </div>
 
+  <!-- CIP & Cleaning -->
   <div class="gear-section" id="cip-cleaning">
     <h2>CIP &amp; Cleaning</h2>
+
+    <div class="gear-item">
+      <a href="https://amzn.to/4517Pgw" target="_blank" rel="noopener noreferrer">PBW (Powdered Brewery Wash)</a>
+      <p>Primary alkaline cleaner for CIP cycles.</p>
+    </div>
+
+    <div class="gear-item">
+      <a href="https://amzn.to/40jul1v" target="_blank" rel="noopener noreferrer">Star San</a>
+      <p>No-rinse sanitizer for post-cleaning.</p>
+    </div>
+
+    <div class="gear-item">
+      <a href="https://amzn.to/45yMtq3" target="_blank" rel="noopener noreferrer">Scotch-Brite Zero-Scratch Sponge</a>
+      <p>Manual touch-ups without scuffing stainless.</p>
+    </div>
+
+    <div class="gear-item">
+      <a href="https://amzn.to/4eXMs39" target="_blank" rel="noopener noreferrer">PVC Riser (8")</a>
+      <p>Raises the spray ball to the correct height.</p>
+    </div>
+
+    <div class="gear-item">
+      <a href="https://amzn.to/4lCH3AU" target="_blank" rel="noopener noreferrer">1" M × 1/2" F PVC Adapters (10-pack)</a>
+      <p>Thread adapters for the riser/manifold.</p>
+    </div>
+
+    <div class="gear-item">
+      <a href="https://amzn.to/44Zy1YS" target="_blank" rel="noopener noreferrer">1/2" FPT PVC Tee (SCH 40)</a>
+      <p>Simple manifold tee used in the CIP setup.</p>
+    </div>
+
     <div class="gear-item">
       <a href="https://amzn.to/4lhMDZj" target="_blank" rel="noopener noreferrer">FLUENTPOWER 3/4HP Submersible Pump</a>
-      <p>Pushes cleaning solution through system.</p>
+      <p>Pushes cleaning solution through the CIP loop.</p>
     </div>
+
     <div class="gear-item">
-      <a href="https://amzn.to/4lrtBzZ" target="_blank" rel="noopener noreferrer">Rotating CIP Spray Ball (1.5&quot; Flange, 1/2&quot; FPT)</a>
-      <p>Cleans fermenter interior.</p>
+      <a href="https://amzn.to/4lrtBzZ" target="_blank" rel="noopener noreferrer">Rotating CIP Spray Ball (1.5" Flange, 1/2" FPT)</a>
+      <p>Spinning head for full interior coverage.</p>
     </div>
+
     <div class="gear-item">
-      <a href="https://amzn.to/4mcc92V" target="_blank" rel="noopener noreferrer">DERNORD Sanitary Concentric Reducer Tri Clamp (6&quot; × 1.5&quot;)</a>
-      <p>Stainless 304 sanitary fitting — connects brite tank to spray ball riser.</p>
+      <a href="https://amzn.to/4mcc92V" target="_blank" rel="noopener noreferrer">DERNORD 6" × 1.5" Tri-Clamp Reducer</a>
+      <p>Adapts the large TC port to 1.5" for the CIP rig.</p>
     </div>
+  </div>
+
+  <!-- Tubing & Fittings -->
+  <div class="gear-section" id="tubing-fittings">
+    <h2>Tubing &amp; Fittings</h2>
+
     <div class="gear-item">
-      <a href="https://amzn.to/40T88rg" target="_blank" rel="noopener noreferrer">DERNORD Stainless Quick Connect (Male/Female Barb)</a>
-      <p>Connects main hose to spray ball.</p>
+      <a href="https://amzn.to/3GJjLKy" target="_blank" rel="noopener noreferrer">1/4" Tee Hose Barb (Stainless)</a>
+      <p>Splitter for parallel jumper routing.</p>
     </div>
+
+    <div class="gear-item">
+      <a href="https://amzn.to/4lOkDfN" target="_blank" rel="noopener noreferrer">10 ft Braided PVC (1/4" ID)</a>
+      <p>Jumpers and small-bore connections.</p>
+    </div>
+
+    <div class="gear-item">
+      <a href="https://amzn.to/4nD2eV0" target="_blank" rel="noopener noreferrer">10 ft High-Pressure Braided PVC (1/2" ID × 3/4" OD)</a>
+      <p>Main 1/2" CIP line.</p>
+    </div>
+
+    <div class="gear-item">
+      <a href="https://amzn.to/3GJjjMm" target="_blank" rel="noopener noreferrer">Beduan 1/4" Barb → 1/2" M NPT (Stainless, 2-pack)</a>
+      <p>Barb adapters for the 1/4" jumper lines.</p>
+    </div>
+
     <div class="gear-item">
       <a href="https://amzn.to/4kyEA9l" target="_blank" rel="noopener noreferrer">DERNORD Stainless Quick Connect (Female/Male Barb)</a>
-      <p>Connects riser to main hose.</p>
+      <p>Companion QC for riser and return lines.</p>
     </div>
+
     <div class="gear-item">
-      <a href="https://amzn.to/4nD2eV0" target="_blank" rel="noopener noreferrer">10 ft High Pressure Braided PVC Tubing (1/2&quot; ID × 3/4&quot; OD)</a>
-      <p>Main CIP line to spray ball.</p>
+      <a href="https://amzn.to/40T88rg" target="_blank" rel="noopener noreferrer">DERNORD Stainless Quick Connect (Male/Female Barb)</a>
+      <p>Quick disconnect for main hose to spray ball.</p>
     </div>
   </div>
 
+  <!-- Kegging & Dosing -->
   <div class="gear-section" id="kegging-dosing">
     <h2>Kegging &amp; Dosing</h2>
+
     <div class="gear-item">
-      <a href="https://amzn.to/44NCcXO" target="_blank" rel="noopener noreferrer">12 ml Syringe (20 ct)</a>
-      <p>Used for closed-loop keg dosing — hop oils, finings, etc.</p>
+      <a href="https://amzn.to/44MneQL" target="_blank" rel="noopener noreferrer">Corny Keg Ball Lock Disconnect Set (1/4" Barbs + Swivel Nuts)</a>
+      <p>Gas/liquid disconnects for jumper builds and dosing.</p>
     </div>
+
     <div class="gear-item">
       <a href="https://amzn.to/46k2iTw" target="_blank" rel="noopener noreferrer">Duotight Gas Ball Lock</a>
-      <p>Clean CO<sub>2</sub> path for dosing keg pressure-side.</p>
+      <p>Clean CO<sub>2</sub> path for dosing on the pressure side.</p>
     </div>
+
     <div class="gear-item">
-      <a href="https://amzn.to/47iF28L" target="_blank" rel="noopener noreferrer">Kegland FermZilla Plastic Homebrewing Carbonation &amp; Line Cleaning Ball Lock Cap – KL10788</a>
-      <p>Smaller-post style as shown in my setup. Ideal for dosing or line cleaning.</p>
+      <a href="https://amzn.to/47iF28L" target="_blank" rel="noopener noreferrer">FermZilla Carb &amp; Line Cleaning Ball Lock Cap – KL10788</a>
+      <p>Small-post cap used for dosing and line cleaning.</p>
+    </div>
+
+    <div class="gear-item">
+      <a href="https://amzn.to/44NCcXO" target="_blank" rel="noopener noreferrer">12 ml Syringe (20 ct)</a>
+      <p>For closed-loop keg dosing — hop oils, finings, etc.</p>
     </div>
   </div>
+
+  <!-- Storage & Organization -->
+  <div class="gear-section" id="storage-org">
+    <h2>Storage &amp; Organization</h2>
+
+    <div class="gear-item">
+      <a href="https://amzn.to/4kFuyU2" target="_blank" rel="noopener noreferrer">Sterilite Modular Clear Box (30 Qt)</a>
+      <p>Holds the CIP manifold, tubing, and small parts between uses.</p>
+    </div>
+  </div>
+
 </main>
 
-<script data-goatcounter="https://rnbnq.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://rnbnq.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
