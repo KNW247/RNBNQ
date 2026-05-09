@@ -1,38 +1,48 @@
 const styles = [
-    {
-        code: "5D",
-        name: "German Pils",
-        strength: {
-            anchor: "Standard",
-            min: 4.4,
-            max: 5.2,
-            unit: "%"
-        },
-        bitterness: {
-            anchor: "Firm Bitter",
-            min: 22,
-            max: 40,
-            unit: "IBU"
-        },
-        body: {
-            anchor: "Dry",
-            min: 1.008,
-            max: 1.010,
-            unit: "FG"
-        },
-        carbonation: {
-            anchor: "Crisp",
-            min: 2.4,
-            max: 2.8,
-            unit: "vol"
-        },
-        color: {
-            anchor: "Pale Gold",
-            min: 2,
-            max: 5,
-            unit: "SRM"
-        }
+  {
+    code: "5D",
+    name: "German Pils",
+
+    strength: {
+        anchor: "Standard",
+        min: 4.4,
+        max: 5.2,
+        unit: "%"
     },
+
+    bitterness: {
+        anchor: "Firm Bitter",
+        min: 22,
+        max: 40,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Dry",
+        min: 1.008,
+        max: 1.013,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Medium-High",
+        min: null,
+        max: null,
+        unit: null
+    },
+
+    color: {
+        anchor: "Pale Gold",
+        min: 2,
+        max: 5,
+        unit: "SRM"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true
+},
 
     {
         code: "4A",
