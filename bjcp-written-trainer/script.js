@@ -11,7 +11,7 @@ const categoryButtons = document.querySelectorAll(".category-select button");
 const categoryOptions = {
     strength: ["Session / Low", "Standard", "Standard+", "Strong", "Very Strong"],
     bitterness: ["Malt-forward", "Balanced", "Firm Bitter", "Hop-forward", "Aggressive"],
-    body: ["Bone Dry", "Dry", "Medium", "Medium-Full", "Full"],
+    body: ["Very Light", "Light", "Medium-Light", "Medium", "Medium-Full", "Full"],
     carbonation: ["Low", "Moderate", "Medium-High", "High"],
     color: ["Straw", "Pale Gold", "Gold", "Amber", "Copper", "Brown", "Black"]
 };
