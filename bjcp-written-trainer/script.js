@@ -1,5 +1,8 @@
 const launchFoundationButton = document.getElementById("launch-foundation");
 const drillPanel = document.getElementById("drill-panel");
+const studySets = document.getElementById("study-sets");
+const modules = document.getElementById("modules");
+const backHomeButton = document.getElementById("back-home");
 
 const styleName = document.getElementById("style-name");
 const questionText = document.getElementById("question-text");
@@ -82,19 +85,25 @@ function checkAnswer(selectedAnswer, data) {
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
-
 launchFoundationButton.addEventListener("click", function () {
+    studySets.style.display = "none";
+    modules.style.display = "none";
+
     drillPanel.style.display = "block";
     renderQuestion("strength");
     drillPanel.scrollIntoView({ behavior: "smooth" });
 });
-
 categoryButtons.forEach(function(button) {
     button.addEventListener("click", function() {
         renderQuestion(button.dataset.category);
     });
 });
 
+backHomeButton.addEventListener("click", function () {
+    studySets.style.display = "block";
+    modules.style.display = "block";
+    drillPanel.style.display = "none";
+});
 nextQuestionButton.addEventListener("click", function () {
     renderQuestion(currentCategory);
 });
