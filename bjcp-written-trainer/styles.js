@@ -261,4 +261,536 @@ const styles = [
     core: true,
     anchorStatus: "approved"
 },
+
+{
+    code: "3A",
+    name: "Czech Pale Lager",
+
+    strength: {
+        anchor: "Session / Low",
+        min: 3.0,
+        max: 4.1,
+        unit: "%"
+    },
+
+    bitterness: {
+        anchor: "Balanced",
+        min: 20,
+        max: 35,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Light",
+        min: 1.008,
+        max: 1.013,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Medium-High",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Light to medium-light body. Medium to high carbonation."
+    },
+
+    color: {
+        anchor: "Gold",
+        min: 3,
+        max: 6,
+        unit: "SRM"
+    },
+
+    og: {
+        min: 1.028,
+        max: 1.044,
+        unit: "OG"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
+
+{
+    code: "3B",
+    name: "Czech Premium Pale Lager",
+
+    strength: {
+        anchor: "Standard",
+        min: 4.2,
+        max: 5.8,
+        unit: "%"
+    },
+
+    bitterness: {
+        anchor: "Firm Bitter",
+        min: 30,
+        max: 45,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Medium",
+        min: 1.013,
+        max: 1.017,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Medium-High",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Medium body. Medium to high carbonation."
+    },
+
+    color: {
+        anchor: "Gold",
+        min: 3.5,
+        max: 6,
+        unit: "SRM"
+    },
+
+    og: {
+        min: 1.044,
+        max: 1.060,
+        unit: "OG"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
+
+{
+    code: "8A",
+    name: "Munich Dunkel",
+
+    strength: {
+        anchor: "Standard",
+        min: 4.5,
+        max: 5.6,
+        unit: "%"
+    },
+
+    bitterness: {
+        anchor: "Malt-forward",
+        min: 18,
+        max: 28,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Medium",
+        min: 1.010,
+        max: 1.016,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Moderate",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Medium body. Moderate carbonation."
+    },
+
+    color: {
+        anchor: "Brown",
+        min: 14,
+        max: 28,
+        unit: "SRM"
+    },
+
+    og: {
+        min: 1.048,
+        max: 1.056,
+        unit: "OG"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
+
+{
+    code: "9A",
+    name: "Doppelbock",
+
+    strength: {
+        anchor: "Strong",
+        min: 7.0,
+        max: 10.0,
+        unit: "%"
+    },
+
+    bitterness: {
+        anchor: "Balanced",
+        min: 16,
+        max: 26,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Full",
+        min: 1.016,
+        max: 1.024,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Moderate",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Medium-low to moderate carbonation."
+    },
+
+    color: {
+        anchor: "Brown",
+        min: 6,
+        max: 25,
+        unit: "SRM"
+    },
+
+    og: {
+        min: 1.072,
+        max: 1.112,
+        unit: "OG"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
+
+{
+    code: "12A",
+    name: "Schwarzbier",
+
+    strength: {
+        anchor: "Standard",
+        min: 4.4,
+        max: 5.4,
+        unit: "%"
+    },
+
+    bitterness: {
+        anchor: "Balanced",
+        min: 20,
+        max: 30,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Medium-Light",
+        min: 1.010,
+        max: 1.016,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Moderate",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Medium-light to medium body. Moderate carbonation."
+    },
+
+    color: {
+        anchor: "Black",
+        min: 17,
+        max: 30,
+        unit: "SRM"
+    },
+
+    og: {
+        min: 1.046,
+        max: 1.052,
+        unit: "OG"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
+
+{
+    code: "11A",
+    name: "Ordinary Bitter",
+
+    strength: {
+        anchor: "Session / Low",
+        min: 3.2,
+        max: 3.8,
+        unit: "%"
+    },
+
+    bitterness: {
+        anchor: "Balanced",
+        min: 25,
+        max: 35,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Light",
+        min: 1.007,
+        max: 1.011,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Moderate",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Light to medium-light body. Low to moderate carbonation."
+    },
+
+    color: {
+        anchor: "Amber",
+        min: 8,
+        max: 14,
+        unit: "SRM"
+    },
+
+    og: {
+        min: 1.030,
+        max: 1.039,
+        unit: "OG"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
+
+{
+    code: "11B",
+    name: "Best Bitter",
+
+    strength: {
+        anchor: "Standard",
+        min: 3.8,
+        max: 4.6,
+        unit: "%"
+    },
+
+    bitterness: {
+        anchor: "Balanced",
+        min: 25,
+        max: 40,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Medium-Light",
+        min: 1.008,
+        max: 1.012,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Moderate",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Medium-light to medium body. Low to moderate carbonation."
+    },
+
+    color: {
+        anchor: "Amber",
+        min: 8,
+        max: 16,
+        unit: "SRM"
+    },
+
+    og: {
+        min: 1.040,
+        max: 1.048,
+        unit: "OG"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
+
+{
+    code: "11C",
+    name: "Strong Bitter",
+
+    strength: {
+        anchor: "Standard+",
+        min: 4.6,
+        max: 6.2,
+        unit: "%"
+    },
+
+    bitterness: {
+        anchor: "Firm Bitter",
+        min: 30,
+        max: 50,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Medium",
+        min: 1.008,
+        max: 1.016,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Moderate",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Medium-light to medium-full body. Low to moderate carbonation."
+    },
+
+    color: {
+        anchor: "Copper",
+        min: 8,
+        max: 18,
+        unit: "SRM"
+    },
+
+    og: {
+        min: 1.048,
+        max: 1.060,
+        unit: "OG"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
+
+{
+    code: "18A",
+    name: "Blonde Ale",
+
+    strength: {
+        anchor: "Standard",
+        min: 3.8,
+        max: 5.5,
+        unit: "%"
+    },
+
+    bitterness: {
+        anchor: "Balanced",
+        min: 15,
+        max: 28,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Medium-Light",
+        min: 1.008,
+        max: 1.013,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Moderate",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Medium-light to medium body. Medium to high carbonation."
+    },
+
+    color: {
+        anchor: "Gold",
+        min: 3,
+        max: 6,
+        unit: "SRM"
+    },
+
+    og: {
+        min: 1.038,
+        max: 1.054,
+        unit: "OG"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
+
+{
+    code: "18B",
+    name: "American Pale Ale",
+
+    strength: {
+        anchor: "Standard",
+        min: 4.5,
+        max: 6.2,
+        unit: "%"
+    },
+
+    bitterness: {
+        anchor: "Hop-forward",
+        min: 30,
+        max: 50,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Medium",
+        min: 1.010,
+        max: 1.015,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Moderate",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Medium-light to medium body. Moderate to high carbonation."
+    },
+
+    color: {
+        anchor: "Gold",
+        min: 5,
+        max: 10,
+        unit: "SRM"
+    },
+
+    og: {
+        min: 1.045,
+        max: 1.060,
+        unit: "OG"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
+
+    
 ];
