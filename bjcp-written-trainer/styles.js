@@ -18,7 +18,7 @@ const styles = [
         },
 
         body: {
-            anchor: "Medium-Light"
+            anchor: "Medium-Light",
             min: 1.008,
             max: 1.013,
             unit: "FG"
