@@ -37,24 +37,18 @@ launchFoundationButton.addEventListener("click", function () {
     drillPanel.scrollIntoView({ behavior: "smooth" });
 });
 
-categoryButtons.forEach(button => {
-    button.addEventListener("click", function () {
+categoryButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
         const category = button.dataset.category;
         const data = categoryData[category];
 
         questionTitle.textContent = data.question;
         answerContainer.innerHTML = "";
 
-        data.answers.forEach(answer => {
+        data.answers.forEach(function(answer) {
             const answerButton = document.createElement("button");
             answerButton.textContent = answer;
             answerContainer.appendChild(answerButton);
         });
     });
-});const launchFoundationButton = document.getElementById("launch-foundation");
-const drillPanel = document.getElementById("drill-panel");
-
-launchFoundationButton.addEventListener("click", function () {
-    drillPanel.style.display = "block";
-    drillPanel.scrollIntoView({ behavior: "smooth" });
 });
