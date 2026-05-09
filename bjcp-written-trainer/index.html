@@ -8,104 +8,101 @@
 </head>
 <body>
 
-    <header class="site-header">
-        <h1>BJCP Written Exam Trainer</h1>
-        <p>by Rusty Nut Brew n’ Que</p>
-    </header>
+<header class="site-header">
+    <h1>BJCP Written Exam Trainer</h1>
+    <p>by Rusty Nut Brew n’ Que</p>
+</header>
 
-    <main class="container">
+<main class="container">
 
-        <!-- STUDY SETS -->
-        <section class="study-sets">
-            <h2>Study Set</h2>
-            <div class="button-grid">
-                <button>Core Styles</button>
-                <button>Recipe Eligible</button>
-                <button>Comparison Eligible</button>
-                <button>Foundation Pool</button>
-                <button>Weak Styles Only</button>
+    <section class="study-sets">
+        <h2>Study Set</h2>
+        <div class="button-grid">
+            <button>Core Styles</button>
+            <button>Recipe Eligible</button>
+            <button>Comparison Eligible</button>
+            <button>Foundation Pool</button>
+            <button>Weak Styles Only</button>
+        </div>
+    </section>
+
+    <section class="modules">
+        <h2>Training Modes</h2>
+        <div class="card-grid">
+
+            <div class="card active">
+                <h3>Foundation Drill</h3>
+                <p>Train style identity anchors.</p>
+                <button id="launch-foundation">Launch</button>
             </div>
-        </section>
 
-        <!-- TRAINING MODULES -->
-        <section class="modules">
-            <h2>Training Modes</h2>
-            <div class="card-grid">
-
-                <div class="card active">
-                    <h3>Foundation Drill</h3>
-                    <p>Train style identity anchors.</p>
-                    <button id="launch-foundation">Launch</button>
-                </div>
-
-                <div class="card active">
-                    <h3>Math Tools</h3>
-                    <p>ABV, BU:GU, OG, grist calculators.</p>
-                    <button>Launch</button>
-                </div>
-
-                <div class="card disabled">
-                    <h3>Recall Drill</h3>
-                    <p>Category recall without prompts.</p>
-                    <button disabled>Coming Soon</button>
-                </div>
-
-                <div class="card disabled">
-                    <h3>Numeric Drill</h3>
-                    <p>Enter numeric style targets.</p>
-                    <button disabled>Coming Soon</button>
-                </div>
-
-                <div class="card disabled">
-                    <h3>Compare Mode</h3>
-                    <p>3-style compare and contrast drills.</p>
-                    <button disabled>Coming Soon</button>
-                </div>
-
-                <div class="card disabled">
-                    <h3>Recipe Mode</h3>
-                    <p>Full written recipe construction.</p>
-                    <button disabled>Coming Soon</button>
-                </div>
-
-                <div class="card disabled">
-                    <h3>Wrongness Detector</h3>
-                    <p>Spot invalid style-stat combinations.</p>
-                    <button disabled>Coming Soon</button>
-                </div>
-
+            <div class="card active">
+                <h3>Math Tools</h3>
+                <p>ABV, BU:GU, OG, grist calculators.</p>
+                <button>Launch</button>
             </div>
-        </section>
 
-        <!-- DRILL PANEL -->
-        <section class="drill-panel" id="drill-panel">
-            <h2>Foundation Drill</h2>
-<div class="category-select">
-    <button data-category="strength">Strength</button>
-    <button data-category="bitterness">Bitterness</button>
-    <button data-category="body">Body</button>
-    <button data-category="carbonation">Carbonation</button>
-    <button data-category="color">Color</button>
-    <button data-category="mixed">Mixed</button>
-</div>
-
-            <div class="question-box">
-                <h3>Style: German Pils</h3>
-                <p>Question: Strength Identity?</p>
-
-                <div class="answers">
-                    <button>Session / Low</button>
-                    <button>Standard</button>
-                    <button>Standard+</button>
-                    <button>Strong</button>
-                    <button>Very Strong</button>
-                </div>
+            <div class="card disabled">
+                <h3>Recall Drill</h3>
+                <p>Category recall without prompts.</p>
+                <button disabled>Coming Soon</button>
             </div>
-        </section>
 
-    </main>
+            <div class="card disabled">
+                <h3>Numeric Drill</h3>
+                <p>Enter numeric style targets.</p>
+                <button disabled>Coming Soon</button>
+            </div>
 
-    <script src="script.js"></script>
+            <div class="card disabled">
+                <h3>Compare Mode</h3>
+                <p>3-style compare and contrast drills.</p>
+                <button disabled>Coming Soon</button>
+            </div>
+
+            <div class="card disabled">
+                <h3>Recipe Mode</h3>
+                <p>Full written recipe construction.</p>
+                <button disabled>Coming Soon</button>
+            </div>
+
+            <div class="card disabled">
+                <h3>Wrongness Detector</h3>
+                <p>Spot invalid style-stat combinations.</p>
+                <button disabled>Coming Soon</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="drill-panel" id="drill-panel">
+        <h2>Foundation Drill</h2>
+
+        <div class="category-select">
+            <button data-category="strength">Strength</button>
+            <button data-category="bitterness">Bitterness</button>
+            <button data-category="body">Body</button>
+            <button data-category="carbonation">Carbonation</button>
+            <button data-category="color">Color</button>
+            <button data-category="mixed">Mixed</button>
+        </div>
+
+        <div class="question-box">
+            <h3 id="style-name">Style: German Pils</h3>
+            <p id="question-text">Question: Strength Identity?</p>
+
+            <div class="answers" id="answer-container"></div>
+
+            <div class="feedback-box" id="feedback-box"></div>
+
+            <button id="next-question" class="next-button">Next Question</button>
+        </div>
+    </section>
+
+</main>
+
+<script src="styles.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
