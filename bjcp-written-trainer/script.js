@@ -62,9 +62,23 @@ function renderQuestion(category = currentCategory) {
         answerContainer.appendChild(button);
     });
 }
-
 function checkAnswer(selectedAnswer, data) {
     const correctAnswer = data.anchor;
+    const buttons = answerContainer.querySelectorAll("button");
+
+    buttons.forEach(button => {
+        button.disabled = true;
+
+        if (button.textContent === correctAnswer) {
+            button.style.backgroundColor = "#16a34a";
+            button.style.color = "white";
+        }
+
+        if (button.textContent === selectedAnswer && selectedAnswer !== correctAnswer) {
+            button.style.backgroundColor = "#dc2626";
+            button.style.color = "white";
+        }
+    });
 
     if (selectedAnswer === correctAnswer) {
         feedbackBox.innerHTML = `
