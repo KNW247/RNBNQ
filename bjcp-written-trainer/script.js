@@ -20,7 +20,8 @@ let currentStyle = null;
 let currentCategory = "strength";
 
 function getRandomStyle() {
-    return styles[Math.floor(Math.random() * styles.length)];
+    const approvedStyles = styles.filter(style => style.anchorStatus === "approved");
+    return approvedStyles[Math.floor(Math.random() * approvedStyles.length)];
 }
 
 function getRandomCategory() {
@@ -29,6 +30,10 @@ function getRandomCategory() {
 }
 
 function formatRange(data) {
+    if (data.min === null || data.max === null || data.unit === null) {
+        return data.text || "Qualitative BJCP descriptor";
+    }
+
     return `${data.min}–${data.max} ${data.unit}`;
 }
 
