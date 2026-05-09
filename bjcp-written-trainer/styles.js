@@ -283,12 +283,12 @@ const styles = [
     body: {
         anchor: "Light",
         min: 1.008,
-        max: 1.013,
+        max: 1.014,
         unit: "FG"
     },
 
     carbonation: {
-        anchor: "Medium-High",
+        anchor: "Medium-light",
         min: null,
         max: null,
         unit: null,
@@ -475,7 +475,7 @@ const styles = [
 },
 
 {
-    code: "12A",
+    code: "8B",
     name: "Schwarzbier",
 
     strength: {
@@ -488,7 +488,7 @@ const styles = [
     bitterness: {
         anchor: "Balanced",
         min: 20,
-        max: 30,
+        max: 35,
         unit: "IBU"
     },
 
@@ -504,12 +504,12 @@ const styles = [
         min: null,
         max: null,
         unit: null,
-        text: "Medium-light to medium body. Moderate carbonation."
+        text: "Moderate to moderately-high carbonation"
     },
 
     color: {
         anchor: "Black",
-        min: 17,
+        min: 19,
         max: 30,
         unit: "SRM"
     },
@@ -553,11 +553,11 @@ const styles = [
     },
 
     carbonation: {
-        anchor: "Moderate",
+        anchor: "Low",
         min: null,
         max: null,
         unit: null,
-        text: "Light to medium-light body. Low to moderate carbonation."
+        text: "Low carbonation, although bottled examples can have moderate carbonation"
     },
 
     color: {
@@ -606,11 +606,11 @@ const styles = [
     },
 
     carbonation: {
-        anchor: "Moderate",
+        anchor: "Low",
         min: null,
         max: null,
         unit: null,
-        text: "Medium-light to medium body. Low to moderate carbonation."
+        text: "Low carbonation,although bottled examples can have moderate carbonation."
     },
 
     color: {
@@ -653,7 +653,7 @@ const styles = [
 
     body: {
         anchor: "Medium",
-        min: 1.008,
+        min: 1.010,
         max: 1.016,
         unit: "FG"
     },
@@ -663,7 +663,8 @@ const styles = [
         min: null,
         max: null,
         unit: null,
-        text: "Medium-light to medium-full body. Low to moderate carbonation."
+        text: "Low to moderate carbonation, although bottled versions will be
+higher."
     },
 
     color: {
@@ -716,7 +717,7 @@ const styles = [
         min: null,
         max: null,
         unit: null,
-        text: "Medium-light to medium body. Medium to high carbonation."
+        text: "Medium to high carbonation."
     },
 
     color: {
@@ -769,7 +770,7 @@ const styles = [
         min: null,
         max: null,
         unit: null,
-        text: "Medium-light to medium body. Moderate to high carbonation."
+        text: " Moderate to high carbonation. "
     },
 
     color: {
