@@ -52,59 +52,58 @@ const styles = [
         anchorStatus: "approved"
     },
 
-    {
-        code: "4A",
-        name: "Munich Helles",
+{
+    code: "4A",
+    name: "Munich Helles",
 
-        strength: {
-            anchor: null,
-            min: 4.7,
-            max: 5.4,
-            unit: "%"
-        },
-
-        bitterness: {
-            anchor: null,
-            min: 16,
-            max: 22,
-            unit: "IBU"
-        },
-
-        body: {
-            anchor: null,
-            min: 1.006,
-            max: 1.012,
-            unit: "FG"
-        },
-
-        carbonation: {
-            anchor: null,
-            min: null,
-            max: null,
-            unit: null,
-            text: ""
-        },
-
-        color: {
-            anchor: null,
-            min: 3,
-            max: 5,
-            unit: "SRM"
-        },
-
-        og: {
-            min: 1.044,
-            max: 1.048,
-            unit: "OG"
-        },
-
-        foundationEligible: true,
-        comparisonEligible: true,
-        recipeEligible: true,
-        core: true,
-        anchorStatus: "pending"
+    strength: {
+        anchor: "Standard",
+        min: 4.7,
+        max: 5.4,
+        unit: "%"
     },
 
+    bitterness: {
+        anchor: "Malt-forward",
+        min: 16,
+        max: 22,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Medium",
+        min: 1.006,
+        max: 1.012,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Moderate",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Medium body. Medium carbonation. Smooth, well-lagered character."
+    },
+
+    color: {
+        anchor: "Pale Gold",
+        min: 3,
+        max: 5,
+        unit: "SRM"
+    },
+
+    og: {
+        min: 1.044,
+        max: 1.048,
+        unit: "OG"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
     {
         code: "7A",
         name: "Vienna Lager",
