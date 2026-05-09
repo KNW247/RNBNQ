@@ -4,6 +4,10 @@ const studySets = document.getElementById("study-sets");
 const modules = document.getElementById("modules");
 const backHomeButton = document.getElementById("back-home");
 
+const correctCountDisplay = document.getElementById("correct-count");
+const incorrectCountDisplay = document.getElementById("incorrect-count");
+const accuracyDisplay = document.getElementById("accuracy");
+
 const styleName = document.getElementById("style-name");
 const questionText = document.getElementById("question-text");
 const answerContainer = document.getElementById("answer-container");
@@ -21,6 +25,9 @@ const categoryOptions = {
 
 let currentStyle = null;
 let currentCategory = "strength";
+let correctCount = 0;
+let incorrectCount = 0;
+let missedQuestions = [];
 
 function getRandomStyle() {
     const approvedStyles = styles.filter(style => style.anchorStatus === "approved");
@@ -38,6 +45,15 @@ function formatRange(data) {
     }
 
     return `${data.min}–${data.max} ${data.unit}`;
+}
+
+function updateScoreDisplay() {
+    const total = correctCount + incorrectCount;
+    const accuracy = total === 0 ? 0 : Math.round((correctCount / total) * 100);
+
+    correctCountDisplay.textContent = correctCount;
+    incorrectCountDisplay.textContent = incorrectCount;
+    accuracyDisplay.textContent = `${accuracy}%`;
 }
 
 function renderQuestion(category = currentCategory) {
@@ -62,6 +78,7 @@ function renderQuestion(category = currentCategory) {
         answerContainer.appendChild(button);
     });
 }
+
 function checkAnswer(selectedAnswer, data) {
     const correctAnswer = data.anchor;
     const buttons = answerContainer.querySelectorAll("button");
@@ -81,12 +98,26 @@ function checkAnswer(selectedAnswer, data) {
     });
 
     if (selectedAnswer === correctAnswer) {
+        correctCount++;
+        updateScoreDisplay();
+
         feedbackBox.innerHTML = `
             <strong class="correct">Correct.</strong><br>
             ${correctAnswer}<br>
             Range: ${formatRange(data)}
         `;
     } else {
+        incorrectCount++;
+
+        missedQuestions.push({
+            style: currentStyle.name,
+            category: currentCategory,
+            selected: selectedAnswer,
+            correct: correctAnswer
+        });
+
+        updateScoreDisplay();
+
         feedbackBox.innerHTML = `
             <strong class="incorrect">Incorrect.</strong><br>
             You selected: ${selectedAnswer}<br>
@@ -99,13 +130,14 @@ function checkAnswer(selectedAnswer, data) {
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
+
 launchFoundationButton.addEventListener("click", function () {
     studySets.style.display = "none";
     modules.style.display = "none";
 
- drillPanel.style.display = "block";
-renderQuestion("strength");
-window.scrollTo(0, 0);
+    drillPanel.style.display = "block";
+    renderQuestion("strength");
+    window.scrollTo(0, 0);
 });
 
 categoryButtons.forEach(function(button) {
@@ -119,6 +151,7 @@ backHomeButton.addEventListener("click", function () {
     modules.style.display = "block";
     drillPanel.style.display = "none";
 });
+
 nextQuestionButton.addEventListener("click", function () {
     renderQuestion(currentCategory);
 });
