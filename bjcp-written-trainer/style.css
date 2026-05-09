@@ -190,6 +190,14 @@ h2 {
         min-height: auto;
     }
 
+    
+.score-panel {
+    margin: 1rem 0 2rem 0;
+    padding: 1rem;
+    background: #f3f4f6;
+    border-radius: 10px;
+    font-weight: bold;
+}
     .answers {
         flex-direction: column;
     }
