@@ -104,59 +104,58 @@ const styles = [
     core: true,
     anchorStatus: "approved"
 },
-    {
-        code: "7A",
-        name: "Vienna Lager",
+  {
+    code: "7A",
+    name: "Vienna Lager",
 
-        strength: {
-            anchor: null,
-            min: 4.7,
-            max: 5.5,
-            unit: "%"
-        },
-
-        bitterness: {
-            anchor: null,
-            min: 18,
-            max: 30,
-            unit: "IBU"
-        },
-
-        body: {
-            anchor: null,
-            min: 1.010,
-            max: 1.014,
-            unit: "FG"
-        },
-
-        carbonation: {
-            anchor: null,
-            min: null,
-            max: null,
-            unit: null,
-            text: ""
-        },
-
-        color: {
-            anchor: null,
-            min: 9,
-            max: 15,
-            unit: "SRM"
-        },
-
-        og: {
-            min: 1.048,
-            max: 1.055,
-            unit: "OG"
-        },
-
-        foundationEligible: true,
-        comparisonEligible: true,
-        recipeEligible: true,
-        core: true,
-        anchorStatus: "pending"
+    strength: {
+        anchor: "Standard",
+        min: 4.7,
+        max: 5.5,
+        unit: "%"
     },
 
+    bitterness: {
+        anchor: "Balanced",
+        min: 18,
+        max: 30,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Medium",
+        min: 1.010,
+        max: 1.014,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Moderate",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Medium-light to medium body, with a gentle creaminess. Moderate carbonation. Smooth."
+    },
+
+    color: {
+        anchor: "Amber",
+        min: 9,
+        max: 15,
+        unit: "SRM"
+    },
+
+    og: {
+        min: 1.048,
+        max: 1.055,
+        unit: "OG"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
     {
         code: "6A",
         name: "Märzen",
