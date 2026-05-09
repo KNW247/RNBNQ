@@ -156,109 +156,109 @@ const styles = [
     core: true,
     anchorStatus: "approved"
 },
-    {
-        code: "6A",
-        name: "Märzen",
+   {
+    code: "6A",
+    name: "Märzen",
 
-        strength: {
-            anchor: null,
-            min: 5.8,
-            max: 6.3,
-            unit: "%"
-        },
-
-        bitterness: {
-            anchor: null,
-            min: 18,
-            max: 24,
-            unit: "IBU"
-        },
-
-        body: {
-            anchor: null,
-            min: 1.010,
-            max: 1.014,
-            unit: "FG"
-        },
-
-        carbonation: {
-            anchor: null,
-            min: null,
-            max: null,
-            unit: null,
-            text: ""
-        },
-
-        color: {
-            anchor: null,
-            min: 8,
-            max: 17,
-            unit: "SRM"
-        },
-
-        og: {
-            min: 1.054,
-            max: 1.060,
-            unit: "OG"
-        },
-
-        foundationEligible: true,
-        comparisonEligible: true,
-        recipeEligible: true,
-        core: true,
-        anchorStatus: "pending"
+    strength: {
+        anchor: "Standard+",
+        min: 5.6,
+        max: 6.3,
+        unit: "%"
     },
 
-    {
-        code: "15B",
-        name: "Irish Stout",
+    bitterness: {
+        anchor: "Balanced",
+        min: 18,
+        max: 24,
+        unit: "IBU"
+    },
 
-        strength: {
-            anchor: null,
-            min: 4.0,
-            max: 4.5,
-            unit: "%"
-        },
+    body: {
+        anchor: "Medium",
+        min: 1.010,
+        max: 1.014,
+        unit: "FG"
+    },
 
-        bitterness: {
-            anchor: null,
-            min: 25,
-            max: 45,
-            unit: "IBU"
-        },
+    carbonation: {
+        anchor: "Moderate",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Medium body, with a smooth, creamy texture that often suggests a fuller mouthfeel. Medium carbonation. Fully attenuated, without a sweet or cloying impression."
+    },
 
-        body: {
-            anchor: null,
-            min: 1.007,
-            max: 1.011,
-            unit: "FG"
-        },
+    color: {
+        anchor: "Amber",
+        min: 8,
+        max: 17,
+        unit: "SRM"
+    },
 
-        carbonation: {
-            anchor: null,
-            min: null,
-            max: null,
-            unit: null,
-            text: ""
-        },
+    og: {
+        min: 1.054,
+        max: 1.060,
+        unit: "OG"
+    },
 
-        color: {
-            anchor: null,
-            min: 25,
-            max: 40,
-            unit: "SRM"
-        },
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
 
-        og: {
-            min: 1.036,
-            max: 1.044,
-            unit: "OG"
-        },
+   {
+    code: "15B",
+    name: "Irish Stout",
 
-        foundationEligible: true,
-        comparisonEligible: true,
-        recipeEligible: true,
-        core: true,
-        anchorStatus: "pending"
-    }
+    strength: {
+        anchor: "Session / Low",
+        min: 3.8,
+        max: 5.0,
+        unit: "%"
+    },
+
+    bitterness: {
+        anchor: "Firm Bitter",
+        min: 25,
+        max: 45,
+        unit: "IBU"
+    },
+
+    body: {
+        anchor: "Medium",
+        min: 1.007,
+        max: 1.011,
+        unit: "FG"
+    },
+
+    carbonation: {
+        anchor: "Moderate",
+        min: null,
+        max: null,
+        unit: null,
+        text: "Medium-light to medium body. Moderate carbonation. Smooth."
+    },
+
+    color: {
+        anchor: "Black",
+        min: 25,
+        max: 40,
+        unit: "SRM"
+    },
+
+    og: {
+        min: 1.036,
+        max: 1.044,
+        unit: "OG"
+    },
+
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+},
 ];
