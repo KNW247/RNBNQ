@@ -89,10 +89,11 @@ launchFoundationButton.addEventListener("click", function () {
     studySets.style.display = "none";
     modules.style.display = "none";
 
-    drillPanel.style.display = "block";
-    renderQuestion("strength");
-    drillPanel.scrollIntoView({ behavior: "smooth" });
+ drillPanel.style.display = "block";
+renderQuestion("strength");
+window.scrollTo(0, 0);
 });
+
 categoryButtons.forEach(function(button) {
     button.addEventListener("click", function() {
         renderQuestion(button.dataset.category);
