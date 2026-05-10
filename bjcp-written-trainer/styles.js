@@ -288,7 +288,7 @@ const styles = [
     },
 
     carbonation: {
-        anchor: "Medium-High",
+        anchor: "Moderate",
         min: null,
         max: null,
         unit: null,
