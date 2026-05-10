@@ -182,10 +182,16 @@ function getStudySetLabel() {
 studySetButtons.forEach(function(button) {
     button.addEventListener("click", function() {
         activeStudySet = button.dataset.set;
+
+        studySetButtons.forEach(btn => {
+            btn.classList.remove("selected");
+        });
+
+        button.classList.add("selected");
+
         drillTitle.textContent = `Foundation Drill — ${getStudySetLabel()}`;
     });
 });
-
 
 launchFoundationButton.addEventListener("click", function () {
     studySets.style.display = "none";
