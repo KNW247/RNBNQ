@@ -109,6 +109,42 @@ function renderQuestion(category = currentCategory) {
     });
 }
 
+function renderCompareQuestion() {
+    const profile =
+        compareProfiles[Math.floor(Math.random() * compareProfiles.length)];
+
+    const focus =
+        profile.focus[Math.floor(Math.random() * profile.focus.length)];
+
+    styleName.textContent = `Compare Drill`;
+
+    questionText.textContent = focus.question;
+
+    feedbackBox.innerHTML = "";
+    answerContainer.innerHTML = "";
+
+    const choices = [
+        "Higher",
+        "Lower",
+        "Similar",
+        "Lighter",
+        "Fuller",
+        "More malt emphasis",
+        "Less malt emphasis"
+    ];
+
+    choices.forEach(choice => {
+        const button = document.createElement("button");
+        button.textContent = choice;
+
+        button.addEventListener("click", function () {
+            checkCompareAnswer(choice, focus.correct);
+        });
+
+        answerContainer.appendChild(button);
+    });
+}
+
 function checkAnswer(selectedAnswer, data) {
     const correctAnswer = data.anchor;
     const buttons = answerContainer.querySelectorAll("button");
@@ -153,6 +189,43 @@ function checkAnswer(selectedAnswer, data) {
             You selected: ${selectedAnswer}<br>
             Correct answer: ${correctAnswer}<br>
             Range: ${formatRange(data)}
+        `;
+    }
+}
+
+function checkCompareAnswer(selectedAnswer, correctAnswer) {
+    const buttons = answerContainer.querySelectorAll("button");
+
+    buttons.forEach(button => {
+        button.disabled = true;
+
+        if (button.textContent === correctAnswer) {
+            button.style.backgroundColor = "#16a34a";
+            button.style.color = "white";
+        }
+
+        if (button.textContent === selectedAnswer && selectedAnswer !== correctAnswer) {
+            button.style.backgroundColor = "#dc2626";
+            button.style.color = "white";
+        }
+    });
+
+    if (selectedAnswer === correctAnswer) {
+        correctCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong class="correct">Correct.</strong><br>
+            ${correctAnswer}
+        `;
+    } else {
+        incorrectCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong class="incorrect">Incorrect.</strong><br>
+            You selected: ${selectedAnswer}<br>
+            Correct answer: ${correctAnswer}
         `;
     }
 }
