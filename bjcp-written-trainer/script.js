@@ -409,7 +409,78 @@ function renderCompareQuestion() {
         answerContainer.appendChild(button);
     });
 }
+function renderGravityQuestion() {
+    const question =
+        module1GravityQuestions[Math.floor(Math.random() * module1GravityQuestions.length)];
 
+    currentStyle = null;
+
+    styleName.textContent = "Gravity Drill";
+
+    questionText.textContent =
+        `Target ABV: ${question.abv}% | Target FG: ${question.fg.toFixed(3)} | Estimate OG`;
+
+    feedbackBox.innerHTML = "";
+    answerContainer.innerHTML = "";
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Enter OG (example: 1.050)";
+
+    const button = document.createElement("button");
+    button.textContent = "Check Answer";
+
+    button.addEventListener("click", function () {
+        checkGravityAnswer(input.value, question);
+    });
+
+    answerContainer.appendChild(input);
+    answerContainer.appendChild(button);
+
+    input.focus();
+}
+function checkGravityAnswer(userInput, question) {
+    let cleaned = userInput.trim();
+
+    if (!cleaned) {
+        feedbackBox.innerHTML = `
+            <strong class="incorrect">Enter an answer.</strong>
+        `;
+        return;
+    }
+
+    if (!cleaned.startsWith("1.")) {
+        if (cleaned.length <= 3) {
+            cleaned = "1." + cleaned.padStart(3, "0");
+        }
+    }
+
+    const userOg = parseFloat(cleaned);
+
+    const trueOg = question.fg + (question.abv / 131.25);
+
+    const userPoints = Math.round((userOg - 1) * 1000);
+    const truePoints = Math.round((trueOg - 1) * 1000);
+
+    if (Math.abs(userPoints - truePoints) <= 1) {
+        correctCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong class="correct">Correct.</strong><br>
+            Expected OG: 1.${truePoints}
+        `;
+    } else {
+        incorrectCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong class="incorrect">Incorrect.</strong><br>
+            You entered: ${userOg.toFixed(3)}<br>
+            Expected OG: 1.${truePoints}
+        `;
+    }
+}
 function checkAnswer(selectedAnswer, data) {
     const correctAnswer = data.anchor;
     const buttons = answerContainer.querySelectorAll("button");
@@ -557,6 +628,21 @@ launchCompareButton.addEventListener("click", function () {
     window.scrollTo(0, 0);
 });
 
+launchGravityButton.addEventListener("click", function () {
+    currentMode = "gravity";
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+
+    drillTitle.textContent = "Gravity Drill";
+
+    drillPanel.style.display = "block";
+
+    renderGravityQuestion();
+
+    window.scrollTo(0, 0);
+});
+
 category.forEach(function(button) {
     button.addEventListener("click", function() {
         renderQuestion(button.dataset.category);
@@ -572,6 +658,8 @@ backHomeButton.addEventListener("click", function () {
 nextQuestionButton.addEventListener("click", function () {
     if (currentMode === "compare") {
         renderCompareQuestion();
+    } else if (currentMode === "gravity") {
+        renderGravityQuestion();
     } else {
         renderQuestion(currentCategory);
     }
