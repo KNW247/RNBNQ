@@ -17,6 +17,7 @@ const feedbackBox = document.getElementById("feedback-box");
 const nextQuestionButton = document.getElementById("next-question");
 const category = document.querySelectorAll(".category-select button");
 const studySetButtons = document.querySelectorAll(".button-grid button");
+const drillTitle = document.getElementById("drill-title");
 
 const categoryOptions = {
     strength: ["Session / Low", "Standard", "Standard+", "Strong", "Very Strong"],
