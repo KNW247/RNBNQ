@@ -288,7 +288,7 @@ const styles = [
     },
 
     carbonation: {
-        anchor: "Medium-light",
+        anchor: "Medium-High",
         min: null,
         max: null,
         unit: null,
@@ -610,7 +610,7 @@ const styles = [
         min: null,
         max: null,
         unit: null,
-        text: "Low carbonation,although bottled examples can have moderate carbonation."
+        text: "Low carbonation, although bottled examples can have moderate carbonation."
     },
 
     color: {
@@ -663,8 +663,7 @@ const styles = [
         min: null,
         max: null,
         unit: null,
-        text: "Low to moderate carbonation, although bottled versions will be
-higher."
+        text: "Low to moderate carbonation, although bottled versions will be higher."
     },
 
     color: {
@@ -713,7 +712,7 @@ higher."
     },
 
     carbonation: {
-        anchor: "Moderate",
+        anchor: "Medium-High",
         min: null,
         max: null,
         unit: null,
@@ -766,7 +765,7 @@ higher."
     },
 
     carbonation: {
-        anchor: "Moderate",
+        anchor: "Medium-High",
         min: null,
         max: null,
         unit: null,
