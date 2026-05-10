@@ -1,6 +1,7 @@
 
 
 const launchFoundationButton = document.getElementById("launch-foundation");
+const launchCompareButton = document.getElementById("launch-compare");
 const drillPanel = document.getElementById("drill-panel");
 const studySets = document.getElementById("study-sets");
 const modules = document.getElementById("modules");
