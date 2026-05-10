@@ -29,6 +29,7 @@ const categoryOptions = {
 
 let currentStyle = null;
 let currentCategory = "strength";
+let currentMode = "foundation";
 let correctCount = 0;
 let incorrectCount = 0;
 let missedQuestions = [];
