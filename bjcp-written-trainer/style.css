@@ -1,13 +1,3 @@
-Perfect.
-
-That means the HTML structure is good.
-
-You’re just seeing **unstyled raw HTML**, which is exactly expected because we haven’t built `style.css`.
-
-Next step: make it not look like 1998 😄
-
-Create **style.css** and paste this:
-
 ```css
 * {
     margin: 0;
