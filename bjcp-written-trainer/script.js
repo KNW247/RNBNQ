@@ -28,6 +28,270 @@ const categoryOptions = {
     color: ["Straw", "Pale Gold", "Gold", "Amber", "Copper", "Brown", "Black"]
 };
 
+
+// ==============================
+// RECIPE CONSTRUCTION MODULES 1–5
+// ==============================
+
+
+// MODULE 1 — ABV + FG → OG
+// Validator: true OG = FG + (ABV / 131.25)
+// Accept ±1 gravity point
+
+const module1GravityQuestions = [
+  { id: 1, type: "abvFgToOg", abv: 3.75, fg: 1.008 },
+  { id: 2, type: "abvFgToOg", abv: 4.0, fg: 1.010 },
+  { id: 3, type: "abvFgToOg", abv: 4.25, fg: 1.010 },
+  { id: 4, type: "abvFgToOg", abv: 4.5, fg: 1.011 },
+  { id: 5, type: "abvFgToOg", abv: 4.75, fg: 1.010 },
+  { id: 6, type: "abvFgToOg", abv: 5.0, fg: 1.012 },
+  { id: 7, type: "abvFgToOg", abv: 5.25, fg: 1.011 },
+  { id: 8, type: "abvFgToOg", abv: 5.5, fg: 1.012 },
+  { id: 9, type: "abvFgToOg", abv: 5.75, fg: 1.013 },
+  { id: 10, type: "abvFgToOg", abv: 6.0, fg: 1.012 },
+  { id: 11, type: "abvFgToOg", abv: 6.25, fg: 1.014 },
+  { id: 12, type: "abvFgToOg", abv: 6.5, fg: 1.014 },
+  { id: 13, type: "abvFgToOg", abv: 6.75, fg: 1.015 },
+  { id: 14, type: "abvFgToOg", abv: 7.0, fg: 1.014 },
+  { id: 15, type: "abvFgToOg", abv: 7.25, fg: 1.016 },
+  { id: 16, type: "abvFgToOg", abv: 7.5, fg: 1.016 }
+];
+
+
+// MODULE 2 — Style + OG → IBU
+// Uses styles.js style.bugu.min / style.bugu.max
+
+const module2IbuQuestions = [
+  { id: 1, type: "styleOgToIbu", styleCode: "5D", targetOg: 1.048 },
+  { id: 2, type: "styleOgToIbu", styleCode: "4A", targetOg: 1.046 },
+  { id: 3, type: "styleOgToIbu", styleCode: "7A", targetOg: 1.052 },
+  { id: 4, type: "styleOgToIbu", styleCode: "6A", targetOg: 1.057 },
+  { id: 5, type: "styleOgToIbu", styleCode: "15B", targetOg: 1.040 },
+  { id: 6, type: "styleOgToIbu", styleCode: "18A", targetOg: 1.046 },
+  { id: 7, type: "styleOgToIbu", styleCode: "18B", targetOg: 1.054 },
+  { id: 8, type: "styleOgToIbu", styleCode: "21A", targetOg: 1.064 },
+  { id: 9, type: "styleOgToIbu", styleCode: "11B", targetOg: 1.044 },
+  { id: 10, type: "styleOgToIbu", styleCode: "26C", targetOg: 1.080 }
+];
+
+
+// MODULE 3 — OG → Grist
+// Fixed assumption: 21.5L into fermenter, 70% BHE
+// Expected kg = OG points / 10
+// Accept ±0.2 kg
+
+const module3GristQuestions = [
+  { id: 1, type: "ogToGrist", og: 1.040 },
+  { id: 2, type: "ogToGrist", og: 1.044 },
+  { id: 3, type: "ogToGrist", og: 1.048 },
+  { id: 4, type: "ogToGrist", og: 1.050 },
+  { id: 5, type: "ogToGrist", og: 1.052 },
+  { id: 6, type: "ogToGrist", og: 1.056 },
+  { id: 7, type: "ogToGrist", og: 1.058 },
+  { id: 8, type: "ogToGrist", og: 1.060 },
+  { id: 9, type: "ogToGrist", og: 1.064 },
+  { id: 10, type: "ogToGrist", og: 1.068 },
+  { id: 11, type: "ogToGrist", og: 1.072 },
+  { id: 12, type: "ogToGrist", og: 1.080 }
+];
+
+
+// MODULE 4 — Mash Schedule Recognition
+// Style → select ALL acceptable schedules
+
+const mashScheduleOptions = [
+  {
+    id: "single_low",
+    label: "62–64°C single infusion"
+  },
+  {
+    id: "single_medium",
+    label: "64–67°C single infusion"
+  },
+  {
+    id: "single_full",
+    label: "67–70°C single infusion"
+  },
+  {
+    id: "single_medium_mashout",
+    label: "64–67°C single infusion + 76–78°C mashout"
+  },
+  {
+    id: "hochkurz",
+    label: "61–64°C beta rest / 68–72°C alpha rest"
+  },
+  {
+    id: "hochkurz_mashout",
+    label: "61–64°C beta rest / 68–72°C alpha rest / 76–78°C mashout"
+  },
+  {
+    id: "protein_step",
+    label: "50–55°C protein rest / 62–65°C beta rest / 68–72°C alpha rest"
+  },
+  {
+    id: "protein_step_mashout",
+    label: "50–55°C protein rest / 62–65°C beta rest / 68–72°C alpha rest / 76–78°C mashout"
+  }
+];
+
+const module4MashQuestions = [
+  {
+    id: 1,
+    type: "mashRecognition",
+    styleCode: "5D",
+    correctOptions: ["single_low", "single_medium", "single_medium_mashout", "hochkurz", "hochkurz_mashout"]
+  },
+  {
+    id: 2,
+    type: "mashRecognition",
+    styleCode: "4A",
+    correctOptions: ["single_medium", "single_medium_mashout", "hochkurz", "hochkurz_mashout"]
+  },
+  {
+    id: 3,
+    type: "mashRecognition",
+    styleCode: "7A",
+    correctOptions: ["single_medium", "single_medium_mashout", "hochkurz", "hochkurz_mashout"]
+  },
+  {
+    id: 4,
+    type: "mashRecognition",
+    styleCode: "6A",
+    correctOptions: ["single_medium", "single_medium_mashout", "hochkurz", "hochkurz_mashout"]
+  },
+  {
+    id: 5,
+    type: "mashRecognition",
+    styleCode: "18B",
+    correctOptions: ["single_medium", "single_medium_mashout"]
+  },
+  {
+    id: 6,
+    type: "mashRecognition",
+    styleCode: "21A",
+    correctOptions: ["single_low", "single_medium", "single_medium_mashout"]
+  },
+  {
+    id: 7,
+    type: "mashRecognition",
+    styleCode: "15B",
+    correctOptions: ["single_medium", "single_medium_mashout"]
+  },
+  {
+    id: 8,
+    type: "mashRecognition",
+    styleCode: "20B",
+    correctOptions: ["single_medium", "single_full", "single_medium_mashout"]
+  },
+  {
+    id: 9,
+    type: "mashRecognition",
+    styleCode: "26C",
+    correctOptions: ["single_low", "single_medium", "single_medium_mashout"]
+  }
+];
+
+
+// MODULE 5 — Fermentation Schedule Recognition
+// Style → select ALL acceptable schedules
+
+const fermentationScheduleOptions = [
+  {
+    id: "traditional_lager",
+    label: "8–12°C primary / 15–18°C cleanup / 0–4°C lager"
+  },
+  {
+    id: "cool_lager",
+    label: "9–11°C primary / 14–16°C cleanup / 0–2°C lager"
+  },
+  {
+    id: "clean_american_ale",
+    label: "17–20°C primary / 18–22°C finish / optional cold crash"
+  },
+  {
+    id: "british_ale",
+    label: "18–22°C primary with modest ester expression / cool conditioning optional"
+  },
+  {
+    id: "belgian_rise",
+    label: "18–20°C start / free rise to 22–26°C / warm finish"
+  }
+];
+
+const module5FermentationQuestions = [
+  {
+    id: 1,
+    type: "fermentationRecognition",
+    styleCode: "5D",
+    correctOptions: ["traditional_lager", "cool_lager"]
+  },
+  {
+    id: 2,
+    type: "fermentationRecognition",
+    styleCode: "4A",
+    correctOptions: ["traditional_lager", "cool_lager"]
+  },
+  {
+    id: 3,
+    type: "fermentationRecognition",
+    styleCode: "7A",
+    correctOptions: ["traditional_lager", "cool_lager"]
+  },
+  {
+    id: 4,
+    type: "fermentationRecognition",
+    styleCode: "6A",
+    correctOptions: ["traditional_lager", "cool_lager"]
+  },
+  {
+    id: 5,
+    type: "fermentationRecognition",
+    styleCode: "18A",
+    correctOptions: ["clean_american_ale"]
+  },
+  {
+    id: 6,
+    type: "fermentationRecognition",
+    styleCode: "18B",
+    correctOptions: ["clean_american_ale"]
+  },
+  {
+    id: 7,
+    type: "fermentationRecognition",
+    styleCode: "21A",
+    correctOptions: ["clean_american_ale"]
+  },
+  {
+    id: 8,
+    type: "fermentationRecognition",
+    styleCode: "11B",
+    correctOptions: ["british_ale"]
+  },
+  {
+    id: 9,
+    type: "fermentationRecognition",
+    styleCode: "15B",
+    correctOptions: ["british_ale"]
+  },
+  {
+    id: 10,
+    type: "fermentationRecognition",
+    styleCode: "26C",
+    correctOptions: ["belgian_rise"]
+  },
+  {
+    id: 11,
+    type: "fermentationRecognition",
+    styleCode: "25A",
+    correctOptions: ["belgian_rise"]
+  },
+  {
+    id: 12,
+    type: "fermentationRecognition",
+    styleCode: "26D",
+    correctOptions: ["belgian_rise"]
+  }
+];
 let currentStyle = null;
 let currentCategory = "strength";
 let currentMode = "foundation";
