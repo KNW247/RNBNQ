@@ -791,6 +791,220 @@ const styles = [
     core: true,
     anchorStatus: "approved"
 },
+{
+    code: "19A",
+    name: "American Amber Ale",
+    strength: { anchor: "Standard", min: 4.5, max: 6.2, unit: "%" },
+    bitterness: { anchor: "Balanced", min: 25, max: 40, unit: "IBU" },
+    body: { anchor: "Medium", min: 1.010, max: 1.015, unit: "FG" },
+    carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium to medium-full body. Moderate to high carbonation." },
+    color: { anchor: "Amber", min: 10, max: 17, unit: "SRM" },
+    og: { min: 1.045, max: 1.060, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
 
+{
+    code: "20A",
+    name: "American Porter",
+    strength: { anchor: "Standard+", min: 4.8, max: 6.5, unit: "%" },
+    bitterness: { anchor: "Balanced", min: 25, max: 50, unit: "IBU" },
+    body: { anchor: "Medium", min: 1.012, max: 1.018, unit: "FG" },
+    carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium to medium-full body. Moderate carbonation." },
+    color: { anchor: "Black", min: 22, max: 40, unit: "SRM" },
+    og: { min: 1.050, max: 1.070, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "20B",
+    name: "American Stout",
+    strength: { anchor: "Standard+", min: 5.0, max: 7.0, unit: "%" },
+    bitterness: { anchor: "Firm Bitter", min: 35, max: 75, unit: "IBU" },
+    body: { anchor: "Medium-Full", min: 1.010, max: 1.022, unit: "FG" },
+    carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium to full body. Moderate to moderately-high carbonation." },
+    color: { anchor: "Black", min: 30, max: 40, unit: "SRM" },
+    og: { min: 1.050, max: 1.075, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "20C",
+    name: "Imperial Stout",
+    strength: { anchor: "Very Strong", min: 8.0, max: 12.0, unit: "%" },
+    bitterness: { anchor: "Firm Bitter", min: 50, max: 90, unit: "IBU" },
+    body: { anchor: "Full", min: 1.018, max: 1.030, unit: "FG" },
+    carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Full to very full body. Low to moderate carbonation." },
+    color: { anchor: "Black", min: 30, max: 40, unit: "SRM" },
+    og: { min: 1.075, max: 1.115, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "21A",
+    name: "American IPA",
+    strength: { anchor: "Standard+", min: 5.5, max: 7.5, unit: "%" },
+    bitterness: { anchor: "Hop-forward", min: 40, max: 70, unit: "IBU" },
+    body: { anchor: "Medium", min: 1.008, max: 1.014, unit: "FG" },
+    carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium-light to medium body. Medium to high carbonation." },
+    color: { anchor: "Gold", min: 6, max: 14, unit: "SRM" },
+    og: { min: 1.056, max: 1.070, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "22A",
+    name: "Double IPA",
+    strength: { anchor: "Strong", min: 7.5, max: 10.0, unit: "%" },
+    bitterness: { anchor: "Aggressive", min: 60, max: 120, unit: "IBU" },
+    body: { anchor: "Medium", min: 1.008, max: 1.018, unit: "FG" },
+    carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium-light to medium body. Medium to high carbonation." },
+    color: { anchor: "Gold", min: 6, max: 14, unit: "SRM" },
+    og: { min: 1.065, max: 1.085, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "13C",
+    name: "English Porter",
+    strength: { anchor: "Standard", min: 4.0, max: 5.4, unit: "%" },
+    bitterness: { anchor: "Balanced", min: 18, max: 35, unit: "IBU" },
+    body: { anchor: "Medium", min: 1.008, max: 1.014, unit: "FG" },
+    carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium-light to medium body. Moderate carbonation." },
+    color: { anchor: "Brown", min: 20, max: 30, unit: "SRM" },
+    og: { min: 1.040, max: 1.052, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "16A",
+    name: "Sweet Stout",
+    strength: { anchor: "Standard", min: 4.0, max: 6.0, unit: "%" },
+    bitterness: { anchor: "Malt-forward", min: 20, max: 40, unit: "IBU" },
+    body: { anchor: "Full", min: 1.012, max: 1.024, unit: "FG" },
+    carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium-full to full body. Low to moderate carbonation." },
+    color: { anchor: "Black", min: 30, max: 40, unit: "SRM" },
+    og: { min: 1.044, max: 1.060, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "16B",
+    name: "Oatmeal Stout",
+    strength: { anchor: "Standard", min: 4.2, max: 5.9, unit: "%" },
+    bitterness: { anchor: "Balanced", min: 25, max: 40, unit: "IBU" },
+    body: { anchor: "Medium-Full", min: 1.010, max: 1.018, unit: "FG" },
+    carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium-full to full body. Low to moderate carbonation." },
+    color: { anchor: "Black", min: 22, max: 40, unit: "SRM" },
+    og: { min: 1.045, max: 1.065, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "24B",
+    name: "Belgian Pale Ale",
+    strength: { anchor: "Standard", min: 4.8, max: 5.5, unit: "%" },
+    bitterness: { anchor: "Balanced", min: 20, max: 30, unit: "IBU" },
+    body: { anchor: "Medium", min: 1.008, max: 1.014, unit: "FG" },
+    carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium body. Moderate to moderately-high carbonation." },
+    color: { anchor: "Amber", min: 8, max: 14, unit: "SRM" },
+    og: { min: 1.048, max: 1.054, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "25A",
+    name: "Belgian Blond Ale",
+    strength: { anchor: "Standard+", min: 6.0, max: 7.5, unit: "%" },
+    bitterness: { anchor: "Balanced", min: 15, max: 30, unit: "IBU" },
+    body: { anchor: "Medium", min: 1.008, max: 1.018, unit: "FG" },
+    carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium body. Medium-high to high carbonation." },
+    color: { anchor: "Gold", min: 4, max: 7, unit: "SRM" },
+    og: { min: 1.062, max: 1.075, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "26A",
+    name: "Belgian Single",
+    strength: { anchor: "Standard", min: 4.8, max: 6.0, unit: "%" },
+    bitterness: { anchor: "Balanced", min: 25, max: 45, unit: "IBU" },
+    body: { anchor: "Medium-Light", min: 1.004, max: 1.010, unit: "FG" },
+    carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium-light body. Medium-high to high carbonation." },
+    color: { anchor: "Gold", min: 3, max: 5, unit: "SRM" },
+    og: { min: 1.044, max: 1.054, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "26C",
+    name: "Belgian Tripel",
+    strength: { anchor: "Strong", min: 7.5, max: 9.5, unit: "%" },
+    bitterness: { anchor: "Balanced", min: 20, max: 40, unit: "IBU" },
+    body: { anchor: "Medium", min: 1.008, max: 1.014, unit: "FG" },
+    carbonation: { anchor: "High", min: null, max: null, unit: null, text: "Medium-light to medium body. High carbonation." },
+    color: { anchor: "Gold", min: 4.5, max: 7, unit: "SRM" },
+    og: { min: 1.075, max: 1.085, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "26D",
+    name: "Belgian Dark Strong Ale",
+    strength: { anchor: "Strong", min: 8.0, max: 12.0, unit: "%" },
+    bitterness: { anchor: "Balanced", min: 20, max: 35, unit: "IBU" },
+    body: { anchor: "Medium-Full", min: 1.010, max: 1.024, unit: "FG" },
+    carbonation: { anchor: "High", min: null, max: null, unit: null, text: "Medium to full body. High carbonation." },
+    color: { anchor: "Brown", min: 12, max: 22, unit: "SRM" },
+    og: { min: 1.075, max: 1.110, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "4B",
+    name: "Festbier",
+    strength: { anchor: "Standard+", min: 5.8, max: 6.3, unit: "%" },
+    bitterness: { anchor: "Balanced", min: 18, max: 25, unit: "IBU" },
+    body: { anchor: "Medium", min: 1.010, max: 1.012, unit: "FG" },
+    carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium body. Medium carbonation." },
+    color: { anchor: "Gold", min: 4, max: 7, unit: "SRM" },
+    og: { min: 1.054, max: 1.057, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "4C",
+    name: "Helles Bock",
+    strength: { anchor: "Strong", min: 6.3, max: 7.4, unit: "%" },
+    bitterness: { anchor: "Balanced", min: 23, max: 35, unit: "IBU" },
+    body: { anchor: "Medium-Full", min: 1.011, max: 1.018, unit: "FG" },
+    carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium body. Moderate to moderately-high carbonation." },
+    color: { anchor: "Gold", min: 6, max: 11, unit: "SRM" },
+    og: { min: 1.064, max: 1.072, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "5B",
+    name: "Kölsch",
+    strength: { anchor: "Standard", min: 4.4, max: 5.2, unit: "%" },
+    bitterness: { anchor: "Balanced", min: 18, max: 30, unit: "IBU" },
+    body: { anchor: "Medium-Light", min: 1.007, max: 1.011, unit: "FG" },
+    carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium-light body. Medium to medium-high carbonation." },
+    color: { anchor: "Pale Gold", min: 3.5, max: 5, unit: "SRM" },
+    og: { min: 1.044, max: 1.050, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
+
+{
+    code: "5C",
+    name: "German Helles Exportbier",
+    strength: { anchor: "Standard+", min: 5.0, max: 6.0, unit: "%" },
+    bitterness: { anchor: "Firm Bitter", min: 20, max: 30, unit: "IBU" },
+    body: { anchor: "Medium", min: 1.008, max: 1.015, unit: "FG" },
+    carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium body. Medium to high carbonation." },
+    color: { anchor: "Pale Gold", min: 4, max: 7, unit: "SRM" },
+    og: { min: 1.048, max: 1.056, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
+},
     
 ];
