@@ -14,6 +14,7 @@ const answerContainer = document.getElementById("answer-container");
 const feedbackBox = document.getElementById("feedback-box");
 const nextQuestionButton = document.getElementById("next-question");
 const category = document.querySelectorAll(".category-select button");
+const studySetButtons = document.querySelectorAll(".button-grid button");
 
 const categoryOptions = {
     strength: ["Session / Low", "Standard", "Standard+", "Strong", "Very Strong"],
@@ -30,11 +31,34 @@ let incorrectCount = 0;
 let missedQuestions = [];
 let activeStudySet = "foundation";
 
-function getRandomStyle() {
-    const approvedStyles = styles.filter(style => style.anchorStatus === "approved");
-    return approvedStyles[Math.floor(Math.random() * approvedStyles.length)];
+function getFilteredStyles() {
+    switch (activeStudySet) {
+        case "highFrequency":
+            return styles.filter(style => style.highFrequencyCompare);
+
+        case "recipe":
+            return styles.filter(style => style.recipeEligible);
+
+        case "comparison":
+            return styles.filter(style => style.comparisonEligible);
+
+        case "missed":
+            return missedQuestions.length > 0
+                ? styles.filter(style =>
+                    missedQuestions.some(missed => missed.style === style.name)
+                  )
+                : styles.filter(style => style.anchorStatus === "approved");
+
+        case "foundation":
+        default:
+            return styles.filter(style => style.anchorStatus === "approved");
+    }
 }
 
+function getRandomStyle() {
+    const filteredStyles = getFilteredStyles();
+    return filteredStyles[Math.floor(Math.random() * filteredStyles.length)];
+}
 function getRandomCategory() {
     const categories = Object.keys(categoryOptions);
     return categories[Math.floor(Math.random() * categories.length)];
