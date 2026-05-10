@@ -1,4 +1,4 @@
-```css
+
 * {
     margin: 0;
     padding: 0;
@@ -180,17 +180,21 @@ h2 {
         min-height: auto;
     }
 
-    
-.score-panel {
-    margin: 1rem 0 2rem 0;
-    padding: 1rem;
-    background: #f3f4f6;
-    border-radius: 10px;
-    font-weight: bold;
-}
+    .score-panel {
+        margin: 1rem 0 2rem 0;
+        padding: 1rem;
+        background: #f3f4f6;
+        border-radius: 10px;
+        font-weight: bold;
+    }
+
     .answers {
         flex-direction: column;
     }
 }
-```
 
+.button-grid button.selected {
+    background: #111827;
+    color: white;
+    border: 1px solid #111827;
+}
