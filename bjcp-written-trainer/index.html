@@ -15,18 +15,18 @@
 
 <main class="container">
 
-<section class="study-sets" id="study-sets">
+    <section class="study-sets" id="study-sets">
         <h2>Study Set</h2>
         <div class="button-grid">
-            <button>Core Styles</button>
-            <button>Recipe Eligible</button>
-            <button>Comparison Eligible</button>
-            <button>Foundation Pool</button>
-            <button>Weak Styles Only</button>
+            <button data-set="highFrequency">High-Frequency Compare</button>
+            <button data-set="recipe">Recipe Styles</button>
+            <button data-set="comparison">Comparison Pool</button>
+            <button data-set="foundation">Foundation Pool</button>
+            <button data-set="missed">Review Misses</button>
         </div>
     </section>
 
-<section class="modules" id="modules">
+    <section class="modules" id="modules">
         <h2>Training Modes</h2>
         <div class="card-grid">
 
@@ -75,15 +75,16 @@
         </div>
     </section>
 
-<section class="drill-panel" id="drill-panel">
-    <h2>Foundation Drill</h2>
-<button id="back-home" class="next-button">← Back to Home</button>
+    <section class="drill-panel" id="drill-panel">
+        <h2>Foundation Drill</h2>
 
-<div id="score-panel" class="score-panel">
-    Correct: <span id="correct-count">0</span> |
-    Missed: <span id="incorrect-count">0</span> |
-    Accuracy: <span id="accuracy">0%</span>
-</div>
+        <button id="back-home" class="next-button">← Back to Home</button>
+
+        <div id="score-panel" class="score-panel">
+            Correct: <span id="correct-count">0</span> |
+            Missed: <span id="incorrect-count">0</span> |
+            Accuracy: <span id="accuracy">0%</span>
+        </div>
 
         <div class="category-select">
             <button data-category="strength">Strength</button>
