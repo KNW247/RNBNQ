@@ -1071,4 +1071,14 @@ styles.forEach(style => {
     style.compareTargets = metadata ? metadata.compareTargets : [];
     style.compareWeight = metadata ? metadata.compareWeight : 0;
     style.highFrequencyCompare = metadata ? metadata.compareWeight >= 9 : false;
+
+    const ogMinPoints = Math.round((style.og.min - 1) * 1000);
+    const ogMaxPoints = Math.round((style.og.max - 1) * 1000);
+
+    style.bugu = {
+        anchor: style.bitterness.anchor,
+        min: +(style.bitterness.min / ogMinPoints).toFixed(3),
+        max: +(style.bitterness.max / ogMaxPoints).toFixed(3),
+        unit: "BU:GU"
+    };
 });
