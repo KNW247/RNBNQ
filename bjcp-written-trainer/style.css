@@ -194,7 +194,7 @@ h2 {
 }
 
 .button-grid button.selected {
-    background: #111827;
-    color: white;
-    border: 1px solid #111827;
+    background: #111827 !important;
+    color: white !important;
+    border: 1px solid #111827 !important;
 }
