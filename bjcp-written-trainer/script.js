@@ -1,5 +1,3 @@
-
-
 const launchFoundationButton = document.getElementById("launch-foundation");
 const launchCompareButton = document.getElementById("launch-compare");
 const launchGravityButton = document.getElementById("launch-gravity");
