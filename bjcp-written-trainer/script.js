@@ -658,9 +658,13 @@ backHomeButton.addEventListener("click", function () {
 nextQuestionButton.addEventListener("click", function () {
     if (currentMode === "compare") {
         renderCompareQuestion();
-    } else if (currentMode === "gravity") {
-        renderGravityQuestion();
-    } else {
-        renderQuestion(currentCategory);
+        return;
     }
+
+    if (currentMode === "gravity") {
+        renderGravityQuestion();
+        return;
+    }
+
+    renderQuestion(currentCategory);
 });
