@@ -159,9 +159,30 @@ function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
+function getStudySetLabel() {
+    switch (activeStudySet) {
+        case "highFrequency":
+            return "High-Frequency Compare";
+
+        case "recipe":
+            return "Recipe Styles";
+
+        case "comparison":
+            return "Comparison Pool";
+
+        case "missed":
+            return "Review Misses";
+
+        case "foundation":
+        default:
+            return "Foundation Pool";
+    }
+}
+
 studySetButtons.forEach(function(button) {
     button.addEventListener("click", function() {
         activeStudySet = button.dataset.set;
+        drillTitle.textContent = `Foundation Drill — ${getStudySetLabel()}`;
     });
 });
 
@@ -169,6 +190,8 @@ studySetButtons.forEach(function(button) {
 launchFoundationButton.addEventListener("click", function () {
     studySets.style.display = "none";
     modules.style.display = "none";
+
+    drillTitle.textContent = `Foundation Drill — ${getStudySetLabel()}`;
 
     drillPanel.style.display = "block";
     renderQuestion("strength");
