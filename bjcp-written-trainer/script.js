@@ -13,7 +13,7 @@ const questionText = document.getElementById("question-text");
 const answerContainer = document.getElementById("answer-container");
 const feedbackBox = document.getElementById("feedback-box");
 const nextQuestionButton = document.getElementById("next-question");
-const categoryButtons = document.querySelectorAll(".category-select button");
+const category = document.querySelectorAll(".category-select button");
 
 const categoryOptions = {
     strength: ["Session / Low", "Standard", "Standard+", "Strong", "Very Strong"],
@@ -28,6 +28,7 @@ let currentCategory = "strength";
 let correctCount = 0;
 let incorrectCount = 0;
 let missedQuestions = [];
+let activeStudySet = "foundation";
 
 function getRandomStyle() {
     const approvedStyles = styles.filter(style => style.anchorStatus === "approved");
@@ -140,7 +141,7 @@ launchFoundationButton.addEventListener("click", function () {
     window.scrollTo(0, 0);
 });
 
-categoryButtons.forEach(function(button) {
+category.forEach(function(button) {
     button.addEventListener("click", function() {
         renderQuestion(button.dataset.category);
     });
