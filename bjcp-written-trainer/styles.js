@@ -281,7 +281,7 @@ const styles = [
     },
 
     body: {
-        anchor: "Light",
+        anchor: "Medium-Light",
         min: 1.008,
         max: 1.014,
         unit: "FG"
@@ -292,7 +292,7 @@ const styles = [
         min: null,
         max: null,
         unit: null,
-        text: "Light to medium-light body. Medium to high carbonation."
+        text: "Moderate carbonation."
     },
 
     color: {
