@@ -1,3 +1,5 @@
+
+
 const launchFoundationButton = document.getElementById("launch-foundation");
 const drillPanel = document.getElementById("drill-panel");
 const studySets = document.getElementById("study-sets");
@@ -155,6 +157,13 @@ function checkAnswer(selectedAnswer, data) {
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
+
+studySetButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        activeStudySet = button.dataset.set;
+    });
+});
+
 
 launchFoundationButton.addEventListener("click", function () {
     studySets.style.display = "none";
