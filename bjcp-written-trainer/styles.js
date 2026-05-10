@@ -1004,7 +1004,71 @@ const styles = [
     carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium body. Medium to high carbonation." },
     color: { anchor: "Pale Gold", min: 4, max: 7, unit: "SRM" },
     og: { min: 1.048, max: 1.056, unit: "OG" },
-    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
-},
-    
+    foundationEligible: true,
+    comparisonEligible: true,
+    recipeEligible: true,
+    core: true,
+    anchorStatus: "approved"
+}
+
 ];
+
+const comparisonMetadata = {
+    "5D": {
+        compareTargets: ["3B", "4A", "5C", "5B"],
+        compareWeight: 10
+    },
+
+    "4A": {
+        compareTargets: ["5D", "3B", "5C", "4B", "4C"],
+        compareWeight: 10
+    },
+
+    "3B": {
+        compareTargets: ["5D", "4A", "3A", "5C"],
+        compareWeight: 9
+    },
+
+    "7A": {
+        compareTargets: ["6A", "4B", "8A"],
+        compareWeight: 9
+    },
+
+    "6A": {
+        compareTargets: ["7A", "4B", "8A"],
+        compareWeight: 9
+    },
+
+    "18B": {
+        compareTargets: ["18A", "21A", "19A", "11C"],
+        compareWeight: 10
+    },
+
+    "21A": {
+        compareTargets: ["18B", "22A", "18A"],
+        compareWeight: 10
+    },
+
+    "11B": {
+        compareTargets: ["11A", "11C", "18B"],
+        compareWeight: 9
+    },
+
+    "15B": {
+        compareTargets: ["16A", "16B", "20B", "13C"],
+        compareWeight: 9
+    },
+
+    "26C": {
+        compareTargets: ["25A", "26A", "26D"],
+        compareWeight: 9
+    }
+};
+
+styles.forEach(style => {
+    const metadata = comparisonMetadata[style.code];
+
+    style.compareTargets = metadata ? metadata.compareTargets : [];
+    style.compareWeight = metadata ? metadata.compareWeight : 0;
+    style.highFrequencyCompare = metadata ? metadata.compareWeight >= 9 : false;
+});
