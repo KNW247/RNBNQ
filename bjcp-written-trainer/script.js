@@ -279,6 +279,19 @@ launchFoundationButton.addEventListener("click", function () {
     window.scrollTo(0, 0);
 });
 
+launchCompareButton.addEventListener("click", function () {
+    currentMode = "compare";
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+
+    drillTitle.textContent = `Compare Drill`;
+
+    drillPanel.style.display = "block";
+    renderCompareQuestion();
+    window.scrollTo(0, 0);
+});
+
 category.forEach(function(button) {
     button.addEventListener("click", function() {
         renderQuestion(button.dataset.category);
@@ -292,5 +305,9 @@ backHomeButton.addEventListener("click", function () {
 });
 
 nextQuestionButton.addEventListener("click", function () {
-    renderQuestion(currentCategory);
+    if (currentMode === "compare") {
+        renderCompareQuestion();
+    } else {
+        renderQuestion(currentCategory);
+    }
 });
