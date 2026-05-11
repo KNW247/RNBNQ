@@ -640,9 +640,9 @@ launchGravityButton.addEventListener("click", function () {
 
     window.scrollTo(0, 0);
 });
-
 category.forEach(function(button) {
     button.addEventListener("click", function() {
+        currentMode = "foundation";
         renderQuestion(button.dataset.category);
     });
 });
