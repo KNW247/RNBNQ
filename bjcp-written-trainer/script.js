@@ -713,7 +713,6 @@ launchGravityButton.addEventListener("click", function () {
 
     window.scrollTo(0, 0);
 });
-
 launchIbuButton.addEventListener("click", function () {
     currentMode = "ibu";
 
@@ -723,14 +722,10 @@ launchIbuButton.addEventListener("click", function () {
     drillTitle.textContent = "IBU Drill";
     drillPanel.style.display = "block";
 
-    styleName.textContent = "IBU Drill";
-    questionText.textContent = "IBU module coming next.";
-    answerContainer.innerHTML = "";
-    feedbackBox.innerHTML = "";
+    renderIbuQuestion();
 
     window.scrollTo(0, 0);
 });
-
 launchGristButton.addEventListener("click", function () {
     currentMode = "grist";
 
