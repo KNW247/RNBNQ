@@ -549,7 +549,6 @@ function checkIbuAnswer(userInput, question, style) {
 
     styleName.textContent = "Grist Drill";
     questionText.textContent =
-      questionText.textContent =
     `Target OG: ${question.og.toFixed(3)} | 21.5 L into fermenter | 70% BHE | Estimate kg grist`;
 
     feedbackBox.innerHTML = "";
@@ -571,7 +570,48 @@ function checkIbuAnswer(userInput, question, style) {
 
     input.focus();
 }
-    
+    function renderMashQuestion() {
+    const question =
+        module4MashQuestions[Math.floor(Math.random() * module4MashQuestions.length)];
+
+    styleName.textContent = `Style: ${question.styleCode} ${question.styleName}`;
+    questionText.textContent = "Choose an appropriate mash schedule.";
+
+    feedbackBox.innerHTML = "";
+    answerContainer.innerHTML = "";
+
+    const correctSet = new Set(question.correctOptions);
+
+    const correctOptions = mashScheduleOptions.filter(option =>
+        correctSet.has(option.id)
+    );
+
+    const incorrectOptions = mashScheduleOptions.filter(option =>
+        !correctSet.has(option.id)
+    );
+
+    const selectedCorrect = correctOptions
+        .sort(() => Math.random() - 0.5)
+        .slice(0, Math.min(3, correctOptions.length));
+
+    const selectedIncorrect = incorrectOptions
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+
+    const choices = [...selectedCorrect, ...selectedIncorrect]
+        .sort(() => Math.random() - 0.5);
+
+    choices.forEach(option => {
+        const button = document.createElement("button");
+        button.textContent = option.label;
+
+        button.addEventListener("click", function () {
+            checkMashAnswer(option, question);
+        });
+
+        answerContainer.appendChild(button);
+    });
+}
 function checkGravityAnswer(userInput, question) {
     let cleaned = userInput.trim();
 
@@ -884,10 +924,7 @@ launchMashButton.addEventListener("click", function () {
     drillTitle.textContent = "Mash Schedule Drill";
     drillPanel.style.display = "block";
 
-    styleName.textContent = "Mash Drill";
-    questionText.textContent = "Mash module coming next.";
-    answerContainer.innerHTML = "";
-    feedbackBox.innerHTML = "";
+    renderMashQuestion();
 
     window.scrollTo(0, 0);
 });
