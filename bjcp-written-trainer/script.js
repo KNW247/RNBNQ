@@ -135,7 +135,7 @@ const mashScheduleOptions = [
     explanation: "A high saccharification mash favors alpha amylase activity, producing more dextrins and fuller body. A mashout helps halt enzymatic activity and can improve lautering efficiency."
   },
   
-  {
+  
    {
     id: "hochkurz",
     label: "Traditional German lager step mash (Hochkurz): 62–64°C / 68–72°C / 76–78°C mashout",
