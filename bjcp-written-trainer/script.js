@@ -1122,6 +1122,8 @@ studySetButtons.forEach(function(button) {
 });
 
 launchFoundationButton.addEventListener("click", function () {
+    currentMode = "foundation";
+    
     studySets.style.display = "none";
     modules.style.display = "none";
     setCategoryVisibility(true);
