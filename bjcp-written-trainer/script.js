@@ -1020,6 +1020,9 @@ nextQuestionButton.addEventListener("click", function () {
         renderGristQuestion();
         return;
     }
-
+if (currentMode === "mash") {
+    renderMashQuestion();
+    return;
+}
     renderQuestion(currentCategory);
 });
