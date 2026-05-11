@@ -439,6 +439,37 @@ function renderGravityQuestion() {
         checkGravityAnswer(input.value, question);
     });
 
+function renderIbuQuestion() {
+    const question =
+        module2IbuQuestions[Math.floor(Math.random() * module2IbuQuestions.length)];
+
+    const style = styles.find(s => s.code === question.styleCode);
+
+    styleName.textContent = `Style: ${style.code} ${style.name}`;
+
+    questionText.textContent =
+        `Target OG: ${question.targetOg.toFixed(3)} | Estimate target IBU`;
+
+    feedbackBox.innerHTML = "";
+    answerContainer.innerHTML = "";
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Enter IBU target";
+
+    const button = document.createElement("button");
+    button.textContent = "Check Answer";
+
+    button.addEventListener("click", function () {
+        checkIbuAnswer(input.value, question, style);
+    });
+
+    answerContainer.appendChild(input);
+    answerContainer.appendChild(button);
+
+    input.focus();
+}
+    
     answerContainer.appendChild(input);
     answerContainer.appendChild(button);
 
@@ -459,7 +490,42 @@ function checkGravityAnswer(userInput, question) {
             cleaned = "1." + cleaned.padStart(3, "0");
         }
     }
+function checkIbuAnswer(userInput, question, style) {
+    const userIbu = parseInt(userInput.trim(), 10);
 
+    if (isNaN(userIbu)) {
+        feedbackBox.innerHTML = `
+            <strong class="incorrect">Enter a number.</strong>
+        `;
+        return;
+    }
+
+    const ogPoints = Math.round((question.targetOg - 1) * 1000);
+
+    const minIbu = Math.round(ogPoints * style.bugu.min);
+    const maxIbu = Math.round(ogPoints * style.bugu.max);
+
+    if (userIbu >= minIbu && userIbu <= maxIbu) {
+        correctCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong class="correct">Correct.</strong><br>
+            Defensible range: ${minIbu}–${maxIbu} IBU<br>
+            Balance: ${style.bugu.anchor}
+        `;
+    } else {
+        incorrectCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong class="incorrect">Incorrect.</strong><br>
+            You entered: ${userIbu} IBU<br>
+            Defensible range: ${minIbu}–${maxIbu} IBU<br>
+            Balance: ${style.bugu.anchor}
+        `;
+    }
+}
     const userOg = parseFloat(cleaned);
 
     const trueOg = question.fg + (question.abv / 131.25);
@@ -733,7 +799,10 @@ nextQuestionButton.addEventListener("click", function () {
         renderCompareQuestion();
         return;
     }
-
+if (currentMode === "ibu") {
+    renderIbuQuestion();
+    return;
+}
     if (currentMode === "gravity") {
         renderGravityQuestion();
         return;
