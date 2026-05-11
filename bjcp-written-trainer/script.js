@@ -435,10 +435,16 @@ function renderGravityQuestion() {
     const button = document.createElement("button");
     button.textContent = "Check Answer";
 
-    button.addEventListener("click", function () {
+        button.addEventListener("click", function () {
         checkGravityAnswer(input.value, question);
     });
+
+    answerContainer.appendChild(input);
+    answerContainer.appendChild(button);
+
+    input.focus();
 }
+
 function renderIbuQuestion() {
     const question =
         module2IbuQuestions[Math.floor(Math.random() * module2IbuQuestions.length)];
