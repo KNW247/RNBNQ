@@ -263,7 +263,6 @@ const yeastFamilyOptions = [
     explanation: "An Irish ale strain supports a clean-to-lightly estery profile appropriate for dry, roast-forward Irish styles."
   },
   {
-{
   id: "german_expressive",
   label: "Expressive German ale strain",
   examples: "Examples: Wyeast 3068, WLP300",
