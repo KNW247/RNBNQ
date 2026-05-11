@@ -229,104 +229,186 @@ const module4MashQuestions = [
   }
 ];
 
-// MODULE 5 — Fermentation Schedule Recognition
-// Style → select ALL acceptable schedules
+// MODULE 5 — Fermentation: Yeast Family + Schedule
+// Style → choose yeast family → choose fermentation schedule
 
-const fermentationScheduleOptions = [
+const yeastFamilyOptions = [
   {
-    id: "traditional_lager",
-    label: "8–12°C primary / 15–18°C cleanup / 0–4°C lager"
+    id: "german_lager",
+    label: "German lager strain",
+    examples: "Examples: W-34/70, WLP830, Wyeast 2124",
+    explanation: "A German lager strain produces a clean fermentation profile suitable for pale and amber German lagers."
   },
   {
-    id: "cool_lager",
-    label: "9–11°C primary / 14–16°C cleanup / 0–2°C lager"
+    id: "czech_lager",
+    label: "Czech lager strain",
+    examples: "Examples: Wyeast 2278, WLP802",
+    explanation: "A Czech lager strain supports a clean profile while preserving the rounded malt and hop balance expected in Czech lager styles."
   },
   {
     id: "clean_american_ale",
-    label: "17–20°C primary / 18–22°C finish / optional cold crash"
+    label: "Clean American ale strain / Chico-type",
+    examples: "Examples: US-05, WLP001, Wyeast 1056",
+    explanation: "A clean American ale strain ferments cleanly and keeps the focus on malt, hops, and attenuation rather than yeast character."
   },
   {
-    id: "british_ale",
-    label: "18–22°C primary with modest ester expression / cool conditioning optional"
+    id: "english_ale",
+    label: "English ale strain",
+    examples: "Examples: Wyeast 1968, WLP002, Lallemand Windsor",
+    explanation: "An English ale strain can provide moderate ester character and malt-supporting fermentation character."
+  },
+  {
+    id: "irish_ale",
+    label: "Irish ale strain",
+    examples: "Examples: Wyeast 1084, WLP004",
+    explanation: "An Irish ale strain supports a clean-to-lightly estery profile appropriate for dry, roast-forward Irish styles."
+  },
+  {
+    id: "german_wheat",
+    label: "German wheat strain",
+    examples: "Examples: Wyeast 3068, WLP300",
+    explanation: "A German wheat strain produces the banana ester and clove phenol character expected in Weissbier."
+  },
+  {
+    id: "belgian_abbey",
+    label: "Belgian abbey strain",
+    examples: "Examples: Wyeast 3787, WLP530",
+    explanation: "A Belgian abbey strain supports high attenuation with the ester and phenolic complexity expected in Belgian strong ales."
+  }
+];
+
+const fermentationScheduleOptions = [
+  {
+    id: "lager_classic",
+    label: "8–12°C primary / diacetyl rest / cold lagering",
+    explanation: "A cool lager fermentation promotes a clean profile, while a diacetyl rest and cold lagering help produce a smooth, refined finish."
+  },
+  {
+    id: "american_clean",
+    label: "18–20°C clean ale fermentation",
+    explanation: "A clean ale fermentation in the 18–20°C range supports neutral yeast character and good attenuation."
+  },
+  {
+    id: "english_moderate",
+    label: "18–21°C English ale fermentation",
+    explanation: "An English ale fermentation in this range supports moderate ester expression while keeping fermentation character controlled."
+  },
+  {
+    id: "irish_clean",
+    label: "17–20°C Irish ale fermentation",
+    explanation: "A controlled Irish ale fermentation keeps esters restrained and lets dry roast character remain the focus."
+  },
+  {
+    id: "wheat_expression",
+    label: "17–22°C German wheat fermentation",
+    explanation: "A German wheat fermentation in this range supports the ester and phenolic expression expected in Weissbier."
   },
   {
     id: "belgian_rise",
-    label: "18–20°C start / free rise to 22–26°C / warm finish"
+    label: "18°C start / controlled rise to 24–26°C",
+    explanation: "A controlled rise encourages Belgian yeast expression and complete attenuation without excessive fusel alcohol."
+  },
+  {
+    id: "hot_uncontrolled",
+    label: "Uncontrolled warm fermentation above 28°C",
+    explanation: "An uncontrolled hot fermentation risks excessive fusels and harsh fermentation character."
+  },
+  {
+    id: "lager_too_warm",
+    label: "18–22°C warm lager fermentation",
+    explanation: "A warm lager fermentation risks excess esters and fermentation character inappropriate for classic lager styles."
+  },
+  {
+    id: "ale_too_cold",
+    label: "8–12°C cold ale fermentation",
+    explanation: "A cold ale fermentation may suppress yeast activity and can lead to poor attenuation or sluggish fermentation."
   }
 ];
 
 const module5FermentationQuestions = [
   {
-    id: 1,
-    type: "fermentationRecognition",
     styleCode: "5D",
-    correctOptions: ["traditional_lager", "cool_lager"]
+    styleName: "German Pils",
+    correctYeast: "german_lager",
+    correctSchedules: ["lager_classic"],
+    rationale: "For German Pils, clean lager fermentation supports the crisp finish, restrained malt profile, and firm bitterness expected in the style."
   },
   {
-    id: 2,
-    type: "fermentationRecognition",
-    styleCode: "4A",
-    correctOptions: ["traditional_lager", "cool_lager"]
+    styleCode: "3B",
+    styleName: "Czech Premium Pale Lager",
+    correctYeast: "czech_lager",
+    correctSchedules: ["lager_classic"],
+    rationale: "For Czech Premium Pale Lager, clean lager fermentation preserves the rounded malt profile and balanced bitterness without adding distracting yeast character."
   },
   {
-    id: 3,
-    type: "fermentationRecognition",
-    styleCode: "7A",
-    correctOptions: ["traditional_lager", "cool_lager"]
-  },
-  {
-    id: 4,
-    type: "fermentationRecognition",
     styleCode: "6A",
-    correctOptions: ["traditional_lager", "cool_lager"]
+    styleName: "Märzen",
+    correctYeast: "german_lager",
+    correctSchedules: ["lager_classic"],
+    rationale: "For Märzen, clean lager fermentation lets rich malt character come forward while keeping the finish smooth and not overly sweet."
   },
   {
-    id: 5,
-    type: "fermentationRecognition",
-    styleCode: "18A",
-    correctOptions: ["clean_american_ale"]
+    styleCode: "4B",
+    styleName: "Festbier",
+    correctYeast: "german_lager",
+    correctSchedules: ["lager_classic"],
+    rationale: "For Festbier, clean lager fermentation supports a smooth, elegant malt profile and high drinkability."
   },
   {
-    id: 6,
-    type: "fermentationRecognition",
-    styleCode: "18B",
-    correctOptions: ["clean_american_ale"]
+    styleCode: "9A",
+    styleName: "Doppelbock",
+    correctYeast: "german_lager",
+    correctSchedules: ["lager_classic"],
+    rationale: "For Doppelbock, clean lager fermentation allows deep malt richness while controlling fermentation byproducts in a high-gravity beer."
   },
   {
-    id: 7,
-    type: "fermentationRecognition",
-    styleCode: "21A",
-    correctOptions: ["clean_american_ale"]
+    styleCode: "10A",
+    styleName: "Weissbier",
+    correctYeast: "german_wheat",
+    correctSchedules: ["wheat_expression"],
+    rationale: "For Weissbier, fermentation should encourage appropriate banana ester and clove phenol character from the wheat yeast."
   },
   {
-    id: 8,
-    type: "fermentationRecognition",
-    styleCode: "11B",
-    correctOptions: ["british_ale"]
-  },
-  {
-    id: 9,
-    type: "fermentationRecognition",
-    styleCode: "15B",
-    correctOptions: ["british_ale"]
-  },
-  {
-    id: 10,
-    type: "fermentationRecognition",
     styleCode: "26C",
-    correctOptions: ["belgian_rise"]
+    styleName: "Belgian Tripel",
+    correctYeast: "belgian_abbey",
+    correctSchedules: ["belgian_rise"],
+    rationale: "For Belgian Tripel, controlled fermentation supports high attenuation and expressive Belgian yeast character without harsh alcohol."
   },
   {
-    id: 11,
-    type: "fermentationRecognition",
-    styleCode: "25A",
-    correctOptions: ["belgian_rise"]
+    styleCode: "15C",
+    styleName: "Irish Stout",
+    correctYeast: "irish_ale",
+    correctSchedules: ["irish_clean"],
+    rationale: "For Irish Stout, restrained ale fermentation keeps the focus on dry roast character and a clean finish."
   },
   {
-    id: 12,
-    type: "fermentationRecognition",
-    styleCode: "26D",
-    correctOptions: ["belgian_rise"]
+    styleCode: "20A",
+    styleName: "American Porter",
+    correctYeast: "clean_american_ale",
+    correctSchedules: ["american_clean"],
+    rationale: "For American Porter, clean American fermentation keeps roast, malt depth, and hop bitterness in focus without prominent yeast character."
+  },
+  {
+    styleCode: "11C",
+    styleName: "Strong Bitter",
+    correctYeast: "english_ale",
+    correctSchedules: ["english_moderate"],
+    rationale: "For Strong Bitter, English ale fermentation supports moderate esters and malt expression while maintaining drinkability."
+  },
+  {
+    styleCode: "21A",
+    styleName: "American IPA",
+    correctYeast: "clean_american_ale",
+    correctSchedules: ["american_clean"],
+    rationale: "For American IPA, clean American fermentation preserves hop aroma, bitterness, and attenuation without distracting yeast character."
+  },
+  {
+    styleCode: "22A",
+    styleName: "Double IPA",
+    correctYeast: "clean_american_ale",
+    correctSchedules: ["american_clean"],
+    rationale: "For Double IPA, clean American fermentation supports high attenuation and hop focus while avoiding excess sweetness or yeast-derived distraction."
   }
 ];
 let currentStyle = null;
@@ -615,6 +697,28 @@ function checkIbuAnswer(userInput, question, style) {
         answerContainer.appendChild(button);
     });
 }
+function renderFermentationYeastQuestion() {
+    const question =
+        module5FermentationQuestions[Math.floor(Math.random() * module5FermentationQuestions.length)];
+
+    styleName.textContent = `Style: ${question.styleCode} ${question.styleName}`;
+    questionText.textContent = "Choose an appropriate yeast family.";
+
+    feedbackBox.innerHTML = "";
+    answerContainer.innerHTML = "";
+
+    yeastFamilyOptions.forEach(option => {
+        const button = document.createElement("button");
+        button.textContent = option.label;
+
+        button.addEventListener("click", function () {
+            checkFermentationYeastAnswer(option, question);
+        });
+
+        answerContainer.appendChild(button);
+    });
+}
+
 function checkGravityAnswer(userInput, question) {
     let cleaned = userInput.trim();
 
@@ -985,10 +1089,7 @@ launchFermentationButton.addEventListener("click", function () {
     drillTitle.textContent = "Fermentation Drill";
     drillPanel.style.display = "block";
 
-    styleName.textContent = "Fermentation Drill";
-    questionText.textContent = "Fermentation module coming next.";
-    answerContainer.innerHTML = "";
-    feedbackBox.innerHTML = "";
+  renderFermentationYeastQuestion();
 
     window.scrollTo(0, 0);
 });
