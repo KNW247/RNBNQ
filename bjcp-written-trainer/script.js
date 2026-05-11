@@ -647,6 +647,74 @@ launchGravityButton.addEventListener("click", function () {
 
     window.scrollTo(0, 0);
 });
+
+launchIbuButton.addEventListener("click", function () {
+    currentMode = "ibu";
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+
+    drillTitle.textContent = "IBU Drill";
+    drillPanel.style.display = "block";
+
+    styleName.textContent = "IBU Drill";
+    questionText.textContent = "IBU module coming next.";
+    answerContainer.innerHTML = "";
+    feedbackBox.innerHTML = "";
+
+    window.scrollTo(0, 0);
+});
+
+launchGristButton.addEventListener("click", function () {
+    currentMode = "grist";
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+
+    drillTitle.textContent = "Grist Drill";
+    drillPanel.style.display = "block";
+
+    styleName.textContent = "Grist Drill";
+    questionText.textContent = "Grist module coming next.";
+    answerContainer.innerHTML = "";
+    feedbackBox.innerHTML = "";
+
+    window.scrollTo(0, 0);
+});
+
+launchMashButton.addEventListener("click", function () {
+    currentMode = "mash";
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+
+    drillTitle.textContent = "Mash Schedule Drill";
+    drillPanel.style.display = "block";
+
+    styleName.textContent = "Mash Drill";
+    questionText.textContent = "Mash module coming next.";
+    answerContainer.innerHTML = "";
+    feedbackBox.innerHTML = "";
+
+    window.scrollTo(0, 0);
+});
+
+launchFermentationButton.addEventListener("click", function () {
+    currentMode = "fermentation";
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+
+    drillTitle.textContent = "Fermentation Drill";
+    drillPanel.style.display = "block";
+
+    styleName.textContent = "Fermentation Drill";
+    questionText.textContent = "Fermentation module coming next.";
+    answerContainer.innerHTML = "";
+    feedbackBox.innerHTML = "";
+
+    window.scrollTo(0, 0);
+});
 category.forEach(function(button) {
     button.addEventListener("click", function() {
         currentMode = "foundation";
