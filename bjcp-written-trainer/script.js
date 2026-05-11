@@ -735,14 +735,11 @@ launchGristButton.addEventListener("click", function () {
     drillTitle.textContent = "Grist Drill";
     drillPanel.style.display = "block";
 
-    styleName.textContent = "Grist Drill";
-    questionText.textContent = "Grist module coming next.";
-    answerContainer.innerHTML = "";
-    feedbackBox.innerHTML = "";
+    renderGristQuestion();
 
     window.scrollTo(0, 0);
 });
-
+});
 launchMashButton.addEventListener("click", function () {
     currentMode = "mash";
 
