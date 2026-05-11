@@ -134,7 +134,7 @@ const mashScheduleOptions = [
     label: "High saccharification mash + mashout",
     explanation: "A high saccharification mash favors alpha amylase activity, producing more dextrins and fuller body. A mashout helps halt enzymatic activity and can improve lautering efficiency."
   },
-  {
+  
   {
    {
     id: "hochkurz",
