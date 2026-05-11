@@ -263,11 +263,12 @@ const yeastFamilyOptions = [
     explanation: "An Irish ale strain supports a clean-to-lightly estery profile appropriate for dry, roast-forward Irish styles."
   },
   {
-    id: "german_wheat",
-    label: "German wheat strain",
-    examples: "Examples: Wyeast 3068, WLP300",
-    explanation: "A German wheat strain produces the banana ester and clove phenol character expected in Weissbier."
-  },
+{
+  id: "german_expressive",
+  label: "Expressive German ale strain",
+  examples: "Examples: Wyeast 3068, WLP300",
+  explanation: "An expressive German ale strain produces the ester and phenolic character expected in traditional German expressive fermentation styles."
+},
   {
     id: "belgian_abbey",
     label: "Belgian abbey strain",
@@ -363,7 +364,7 @@ const module5FermentationQuestions = [
   {
     styleCode: "10A",
     styleName: "Weissbier",
-    correctYeast: "german_wheat",
+    correctYeast: "german_expressive",
     correctSchedules: ["wheat_expression"],
     rationale: "For Weissbier, fermentation should encourage appropriate banana ester and clove phenol character from the wheat yeast."
   },
