@@ -758,6 +758,89 @@ function checkFermentationYeastAnswer(option, question) {
         renderFermentationScheduleQuestion(question);
     }, 1500);
 }
+function renderFermentationScheduleQuestion(question) {
+    styleName.textContent = `Style: ${question.styleCode} ${question.styleName}`;
+    questionText.textContent = "Choose an appropriate fermentation schedule.";
+
+    feedbackBox.innerHTML = "";
+    answerContainer.innerHTML = "";
+
+    const correctSet = new Set(question.correctSchedules);
+
+    const correctOptions = fermentationScheduleOptions.filter(option =>
+        correctSet.has(option.id)
+    );
+
+    const incorrectOptions = fermentationScheduleOptions.filter(option =>
+        !correctSet.has(option.id)
+    );
+
+    const selectedCorrect = correctOptions
+        .sort(() => Math.random() - 0.5)
+        .slice(0, Math.min(2, correctOptions.length));
+
+    const selectedIncorrect = incorrectOptions
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 4);
+
+    const choices = [...selectedCorrect, ...selectedIncorrect]
+        .sort(() => Math.random() - 0.5);
+
+    choices.forEach(option => {
+        const button = document.createElement("button");
+        button.textContent = option.label;
+
+        button.addEventListener("click", function () {
+            checkFermentationScheduleAnswer(option, question);
+        });
+
+        answerContainer.appendChild(button);
+    });
+}
+function checkFermentationScheduleAnswer(option, question) {
+    const isCorrect = question.correctSchedules.includes(option.id);
+
+    const buttons = answerContainer.querySelectorAll("button");
+
+    buttons.forEach(button => {
+        button.disabled = true;
+
+        if (button.textContent === option.label) {
+            button.style.backgroundColor = isCorrect ? "#16a34a" : "#dc2626";
+            button.style.color = "white";
+        }
+    });
+
+    if (isCorrect) {
+        correctCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong class="correct">Correct.</strong><br>
+            ${option.explanation}<br><br>
+            <strong>Style rationale:</strong><br>
+            ${question.rationale}
+        `;
+    } else {
+        incorrectCount++;
+        updateScoreDisplay();
+
+        const correctLabels = question.correctSchedules
+            .map(id => fermentationScheduleOptions.find(option => option.id === id)?.label)
+            .filter(Boolean)
+            .join("<br>");
+
+        feedbackBox.innerHTML = `
+            <strong class="incorrect">Incorrect.</strong><br>
+            ${option.explanation}<br><br>
+            <strong>Better schedule for this style:</strong><br>
+            ${correctLabels}<br><br>
+            <strong>Style rationale:</strong><br>
+            ${question.rationale}
+        `;
+    }
+}
+
 function checkGravityAnswer(userInput, question) {
     let cleaned = userInput.trim();
 
@@ -1165,6 +1248,10 @@ nextQuestionButton.addEventListener("click", function () {
         renderGristQuestion();
         return;
     }
+    if (currentMode === "fermentation") {
+    renderFermentationYeastQuestion();
+    return;
+}
 if (currentMode === "mash") {
     renderMashQuestion();
     return;
