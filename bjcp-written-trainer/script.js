@@ -1135,20 +1135,21 @@ launchFoundationButton.addEventListener("click", function () {
     window.scrollTo(0, 0);
 });
 
-launchCompareButton.addEventListener("click", function () {
-    currentMode = "compare";
+if (launchCompareButton) {
+    launchCompareButton.addEventListener("click", function () {
+        currentMode = "compare";
 
-    studySets.style.display = "none";
-    modules.style.display = "none";
-    setCategoryVisibility(false);
-    
-    drillTitle.textContent = `Compare Drill`;
+        studySets.style.display = "none";
+        modules.style.display = "none";
+        setCategoryVisibility(false);
 
-    drillPanel.style.display = "block";
-    renderCompareQuestion();
-    window.scrollTo(0, 0);
-});
+        drillTitle.textContent = "Compare Drill";
 
+        drillPanel.style.display = "block";
+        renderCompareQuestion();
+        window.scrollTo(0, 0);
+    });
+}
 launchGravityButton.addEventListener("click", function () {
     currentMode = "gravity";
 
