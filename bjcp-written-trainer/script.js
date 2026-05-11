@@ -438,7 +438,7 @@ function renderGravityQuestion() {
     button.addEventListener("click", function () {
         checkGravityAnswer(input.value, question);
     });
-
+}
 function renderIbuQuestion() {
     const question =
         module2IbuQuestions[Math.floor(Math.random() * module2IbuQuestions.length)];
