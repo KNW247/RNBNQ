@@ -718,7 +718,46 @@ function renderFermentationYeastQuestion() {
         answerContainer.appendChild(button);
     });
 }
+function checkFermentationYeastAnswer(option, question) {
+    const isCorrect = option.id === question.correctYeast;
 
+    const buttons = answerContainer.querySelectorAll("button");
+
+    buttons.forEach(button => {
+        button.disabled = true;
+
+        if (button.textContent === option.label) {
+            button.style.backgroundColor = isCorrect ? "#16a34a" : "#dc2626";
+            button.style.color = "white";
+        }
+    });
+
+    if (isCorrect) {
+        correctCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong class="correct">Correct.</strong><br>
+            ${option.explanation}<br>
+            ${option.examples}
+        `;
+    } else {
+        incorrectCount++;
+        updateScoreDisplay();
+
+        const correctYeast = yeastFamilyOptions.find(y => y.id === question.correctYeast);
+
+        feedbackBox.innerHTML = `
+            <strong class="incorrect">Incorrect.</strong><br>
+            ${question.styleName} calls for: <strong>${correctYeast.label}</strong><br>
+            ${correctYeast.examples}
+        `;
+    }
+
+    setTimeout(() => {
+        renderFermentationScheduleQuestion(question);
+    }, 1500);
+}
 function checkGravityAnswer(userInput, question) {
     let cleaned = userInput.trim();
 
