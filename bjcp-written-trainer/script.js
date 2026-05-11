@@ -153,61 +153,78 @@ const mashScheduleOptions = [
 
 const module4MashQuestions = [
   {
-    id: 1,
-    type: "mashRecognition",
     styleCode: "5D",
-    correctOptions: ["single_low", "single_medium", "single_medium_mashout", "hochkurz", "hochkurz_mashout"]
+    styleName: "German Pils",
+    correctOptions: ["single_low", "single_mid", "single_low_mashout", "single_mid_mashout", "hochkurz"],
+    rationale: "For German Pils, a more fermentable wort supports the crisp, dry finish expected in the style while keeping the malt profile clean and restrained."
   },
   {
-    id: 2,
-    type: "mashRecognition",
-    styleCode: "4A",
-    correctOptions: ["single_medium", "single_medium_mashout", "hochkurz", "hochkurz_mashout"]
+    styleCode: "3B",
+    styleName: "Czech Premium Pale Lager",
+    correctOptions: ["single_mid", "single_mid_mashout", "hochkurz", "decoction"],
+    rationale: "For Czech Premium Pale Lager, the mash should support a rounded malt profile while preserving enough attenuation for balance against firm bitterness."
   },
   {
-    id: 3,
-    type: "mashRecognition",
-    styleCode: "7A",
-    correctOptions: ["single_medium", "single_medium_mashout", "hochkurz", "hochkurz_mashout"]
-  },
-  {
-    id: 4,
-    type: "mashRecognition",
     styleCode: "6A",
-    correctOptions: ["single_medium", "single_medium_mashout", "hochkurz", "hochkurz_mashout"]
+    styleName: "Märzen",
+    correctOptions: ["single_mid", "single_mid_mashout", "hochkurz", "decoction"],
+    rationale: "For Märzen, the mash should preserve malt richness and smooth body without becoming heavy or overly sweet."
   },
   {
-    id: 5,
-    type: "mashRecognition",
-    styleCode: "18B",
-    correctOptions: ["single_medium", "single_medium_mashout"]
+    styleCode: "4B",
+    styleName: "Festbier",
+    correctOptions: ["single_mid", "single_mid_mashout", "hochkurz", "decoction"],
+    rationale: "For Festbier, the mash should support a smooth, elegant malt profile with enough attenuation to keep the beer drinkable."
   },
   {
-    id: 6,
-    type: "mashRecognition",
-    styleCode: "21A",
-    correctOptions: ["single_low", "single_medium", "single_medium_mashout"]
+    styleCode: "9A",
+    styleName: "Doppelbock",
+    correctOptions: ["single_mid", "single_high", "single_mid_mashout", "single_high_mashout", "hochkurz", "decoction"],
+    rationale: "For Doppelbock, the mash should support rich malt depth and fuller body while still allowing enough fermentability to avoid a cloying finish."
   },
   {
-    id: 7,
-    type: "mashRecognition",
-    styleCode: "15B",
-    correctOptions: ["single_medium", "single_medium_mashout"]
+    styleCode: "10A",
+    styleName: "Weissbier",
+    correctOptions: ["single_mid", "single_mid_mashout", "hochkurz", "protein_step"],
+    rationale: "For Weissbier, the mash can support a soft wheat body and good fermentability while managing the high-protein wheat grist."
   },
   {
-    id: 8,
-    type: "mashRecognition",
-    styleCode: "20B",
-    correctOptions: ["single_medium", "single_full", "single_medium_mashout"]
-  },
-  {
-    id: 9,
-    type: "mashRecognition",
     styleCode: "26C",
-    correctOptions: ["single_low", "single_medium", "single_medium_mashout"]
+    styleName: "Belgian Tripel",
+    correctOptions: ["single_low", "single_mid", "single_low_mashout", "single_mid_mashout"],
+    rationale: "For Belgian Tripel, a fermentable wort is important to achieve a dry finish despite high gravity and added sugar."
+  },
+  {
+    styleCode: "15C",
+    styleName: "Irish Stout",
+    correctOptions: ["single_mid", "single_mid_mashout"],
+    rationale: "For Irish Stout, a mid saccharification mash supports moderate body while keeping the finish dry enough for a roast-forward beer."
+  },
+  {
+    styleCode: "20A",
+    styleName: "American Porter",
+    correctOptions: ["single_mid", "single_high", "single_mid_mashout", "single_high_mashout"],
+    rationale: "For American Porter, a mid-to-high saccharification mash can support body and malt depth while balancing roast and hop bitterness."
+  },
+  {
+    styleCode: "11C",
+    styleName: "Strong Bitter",
+    correctOptions: ["single_mid", "single_mid_mashout"],
+    rationale: "For Strong Bitter, a mid saccharification mash supports balanced body and drinkability while allowing malt and bitterness to remain integrated."
+  },
+  {
+    styleCode: "21A",
+    styleName: "American IPA",
+    correctOptions: ["single_low", "single_mid", "single_low_mashout", "single_mid_mashout"],
+    rationale: "For American IPA, a lower-to-mid saccharification mash supports attenuation and drinkability so hop bitterness and aroma remain clear."
+  },
+  {
+    styleCode: "22A",
+    styleName: "Double IPA",
+    correctOptions: ["single_low", "single_mid", "single_low_mashout", "single_mid_mashout"],
+    rationale: "For Double IPA, a fermentable wort is important to keep the high-gravity beer from finishing sweet or heavy while preserving hop focus."
   }
 ];
-
 
 // MODULE 5 — Fermentation Schedule Recognition
 // Style → select ALL acceptable schedules
