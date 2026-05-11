@@ -753,9 +753,15 @@ function checkFermentationYeastAnswer(option, question) {
         `;
     }
 
-    setTimeout(() => {
-        renderFermentationScheduleQuestion(question);
-    }, 1500);
+   const proceedButton = document.createElement("button");
+proceedButton.textContent = "Continue to Fermentation Schedule";
+
+proceedButton.addEventListener("click", function () {
+    renderFermentationScheduleQuestion(question);
+});
+
+answerContainer.innerHTML = "";
+answerContainer.appendChild(proceedButton);
 }
 function renderFermentationScheduleQuestion(question) {
     styleName.textContent = `Style: ${question.styleCode} ${question.styleName}`;
