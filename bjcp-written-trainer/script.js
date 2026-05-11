@@ -454,7 +454,7 @@ function renderIbuQuestion() {
     styleName.textContent = `Style: ${style.code} ${style.name}`;
 
     questionText.textContent =
-        `Target OG: ${question.targetOg.toFixed(3)} | Estimate target IBU`;
+        `Target OG: ${question.og.toFixed(3)} | 21.5 L into fermenter | 70% BHE | Estimate kg grist`;
 
     feedbackBox.innerHTML = "";
     answerContainer.innerHTML = "";
