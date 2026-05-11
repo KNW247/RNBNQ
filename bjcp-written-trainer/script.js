@@ -999,24 +999,27 @@ function checkMashAnswer(option, question) {
     
     
 function checkAnswer(selectedAnswer, data) {
+    const selectedAnchor = selectedAnswer.split(" — ")[0];
     const correctAnswer = data.anchor;
     const buttons = answerContainer.querySelectorAll("button");
 
     buttons.forEach(button => {
+        const buttonAnchor = button.textContent.split(" — ")[0];
+
         button.disabled = true;
 
-        if (button.textContent === correctAnswer) {
+        if (buttonAnchor === correctAnswer) {
             button.style.backgroundColor = "#16a34a";
             button.style.color = "white";
         }
 
-        if (button.textContent === selectedAnswer && selectedAnswer !== correctAnswer) {
+        if (button.textContent === selectedAnswer && selectedAnchor !== correctAnswer) {
             button.style.backgroundColor = "#dc2626";
             button.style.color = "white";
         }
     });
 
-    if (selectedAnswer === correctAnswer) {
+    if (selectedAnchor === correctAnswer) {
         correctCount++;
         updateScoreDisplay();
 
@@ -1031,7 +1034,7 @@ function checkAnswer(selectedAnswer, data) {
         missedQuestions.push({
             style: currentStyle.name,
             category: currentCategory,
-            selected: selectedAnswer,
+            selected: selectedAnchor,
             correct: correctAnswer
         });
 
@@ -1045,7 +1048,6 @@ function checkAnswer(selectedAnswer, data) {
         `;
     }
 }
-
 function checkCompareAnswer(selectedAnswer, correctAnswer) {
     const buttons = answerContainer.querySelectorAll("button");
 
