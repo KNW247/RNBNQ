@@ -279,48 +279,48 @@ const yeastFamilyOptions = [
 const fermentationScheduleOptions = [
   {
     id: "lager_classic",
-    label: "8–12°C primary / diacetyl rest / cold lagering",
-    explanation: "A cool lager fermentation promotes a clean profile, while a diacetyl rest and cold lagering help produce a smooth, refined finish."
+    label: "8–12°C primary / cleanup rest / cold conditioning",
+    explanation: "Classic cool fermentation supports clean attenuation and smooth maturation appropriate for lager styles."
   },
   {
     id: "american_clean",
-    label: "18–20°C clean ale fermentation",
-    explanation: "A clean ale fermentation in the 18–20°C range supports neutral yeast character and good attenuation."
+    label: "18–20°C controlled fermentation",
+    explanation: "A controlled fermentation in this range supports clean attenuation with restrained yeast character."
   },
   {
     id: "english_moderate",
-    label: "18–21°C English ale fermentation",
-    explanation: "An English ale fermentation in this range supports moderate ester expression while keeping fermentation character controlled."
+    label: "18–21°C controlled fermentation with moderate ester expression",
+    explanation: "This schedule supports moderate ester development while maintaining control and balance."
   },
   {
     id: "irish_clean",
-    label: "17–20°C Irish ale fermentation",
-    explanation: "A controlled Irish ale fermentation keeps esters restrained and lets dry roast character remain the focus."
+    label: "17–20°C restrained fermentation",
+    explanation: "A restrained fermentation helps preserve clean roast expression and drinkability."
   },
   {
     id: "wheat_expression",
-    label: "17–22°C German wheat fermentation",
-    explanation: "A German wheat fermentation in this range supports the ester and phenolic expression expected in Weissbier."
+    label: "17–22°C fermentation encouraging ester/phenolic expression",
+    explanation: "This range supports expressive yeast character including ester and phenolic development."
   },
   {
     id: "belgian_rise",
     label: "18°C start / controlled rise to 24–26°C",
-    explanation: "A controlled rise encourages Belgian yeast expression and complete attenuation without excessive fusel alcohol."
+    explanation: "A controlled temperature rise encourages expressive Belgian character and complete attenuation."
   },
   {
-    id: "hot_uncontrolled",
-    label: "Uncontrolled warm fermentation above 28°C",
-    explanation: "An uncontrolled hot fermentation risks excessive fusels and harsh fermentation character."
+    id: "warm_clean_fast",
+    label: "20–23°C controlled fermentation for faster completion",
+    explanation: "A plausible clean-fermentation approach, but often warmer than ideal for styles requiring restrained fermentation character."
   },
   {
-    id: "lager_too_warm",
-    label: "18–22°C warm lager fermentation",
-    explanation: "A warm lager fermentation risks excess esters and fermentation character inappropriate for classic lager styles."
+    id: "cool_restrained",
+    label: "14–16°C restrained fermentation with extended conditioning",
+    explanation: "A plausible restrained schedule, but often mismatched for styles requiring either colder lagering or warmer expressive ale fermentation."
   },
   {
-    id: "ale_too_cold",
-    label: "8–12°C cold ale fermentation",
-    explanation: "A cold ale fermentation may suppress yeast activity and can lead to poor attenuation or sluggish fermentation."
+    id: "steady_room_temp",
+    label: "19–21°C steady fermentation through completion",
+    explanation: "A plausible general-purpose ale schedule, but not always appropriate for style-specific fermentation goals."
   }
 ];
 
