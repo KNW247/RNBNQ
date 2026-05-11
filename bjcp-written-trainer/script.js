@@ -762,26 +762,7 @@ function checkMashAnswer(option, question) {
         `;
     }
 }
-    const ogPoints = Math.round((question.og - 1) * 1000);
-    const correctKg = ogPoints / 10;
-
-    if (Math.abs(userKg - correctKg) <= 0.2) {
-        correctCount++;
-        updateScoreDisplay();
-
-        feedbackBox.innerHTML =
-            `<strong class="correct">Correct.</strong><br>
-             Expected kg: ${correctKg.toFixed(1)}`;
-    } else {
-        incorrectCount++;
-        updateScoreDisplay();
-
-        feedbackBox.innerHTML =
-            `<strong class="incorrect">Incorrect.</strong><br>
-             You entered: ${userKg.toFixed(1)}<br>
-             Expected kg: ${correctKg.toFixed(1)}`;
-    }
-}
+    
     
 function checkAnswer(selectedAnswer, data) {
     const correctAnswer = data.anchor;
