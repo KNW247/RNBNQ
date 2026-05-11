@@ -136,22 +136,21 @@ const mashScheduleOptions = [
   },
   {
   {
-  id: "hochkurz",
-  label: "Traditional German lager step mash (Hochkurz): 62–64°C / 68–72°C / 76–78°C mashout",
-  explanation: "A traditional German Hochkurz step mash moves from beta to alpha saccharification, then finishes with mashout for fermentability control, efficiency, and classic continental lager process alignment."
-},
+   {
+    id: "hochkurz",
+    label: "Traditional German lager step mash (Hochkurz): 62–64°C / 68–72°C / 76–78°C mashout",
+    explanation: "A traditional German Hochkurz step mash moves from beta to alpha saccharification, then finishes with mashout for fermentability control, efficiency, and classic continental lager process alignment."
+  },
   {
-{
-  id: "protein_step",
-  label: "Protein rest 50–55°C + step mash",
-  explanation: "A 50–55°C protein rest can aid protein breakdown before moving into saccharification rests, which is useful with high-protein grists such as wheat."
-},
+    id: "protein_step",
+    label: "Protein rest 50–55°C + step mash",
+    explanation: "A 50–55°C protein rest can aid protein breakdown before moving into saccharification rests, which is useful with high-protein grists such as wheat."
+  },
   {
-{
-  id: "decoction",
-  label: "Decoction mash: 62–64°C saccharification, decoction rise to 68–72°C, mashout",
-  explanation: "A decoction mash begins with a lower saccharification rest, then uses a boiled mash pull to raise the main mash into a higher alpha-amylase rest before mashout, promoting malt depth, melanoidin development, and traditional continental lager character."
-}
+    id: "decoction",
+    label: "Decoction mash: 62–64°C saccharification, decoction rise to 68–72°C, mashout",
+    explanation: "A decoction mash begins with a lower saccharification rest, then uses a boiled mash pull to raise the main mash into a higher alpha-amylase rest before mashout, promoting malt depth, melanoidin development, and traditional continental lager character."
+  }
 ];
 
 const module4MashQuestions = [
