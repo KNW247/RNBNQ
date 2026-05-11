@@ -777,7 +777,8 @@ studySetButtons.forEach(function(button) {
 launchFoundationButton.addEventListener("click", function () {
     studySets.style.display = "none";
     modules.style.display = "none";
-
+    setCategoryVisibility(true);
+    
     drillTitle.textContent = `Foundation Drill — ${getStudySetLabel()}`;
 
     drillPanel.style.display = "block";
@@ -790,7 +791,8 @@ launchCompareButton.addEventListener("click", function () {
 
     studySets.style.display = "none";
     modules.style.display = "none";
-
+    setCategoryVisibility(false);
+    
     drillTitle.textContent = `Compare Drill`;
 
     drillPanel.style.display = "block";
@@ -803,7 +805,8 @@ launchGravityButton.addEventListener("click", function () {
 
     studySets.style.display = "none";
     modules.style.display = "none";
-
+    setCategoryVisibility(false);
+    
     drillTitle.textContent = "Gravity Drill";
 
     drillPanel.style.display = "block";
@@ -817,7 +820,8 @@ launchIbuButton.addEventListener("click", function () {
 
     studySets.style.display = "none";
     modules.style.display = "none";
-
+    setCategoryVisibility(false);
+    
     drillTitle.textContent = "IBU Drill";
     drillPanel.style.display = "block";
 
@@ -830,7 +834,8 @@ launchGristButton.addEventListener("click", function () {
 
     studySets.style.display = "none";
     modules.style.display = "none";
-
+    setCategoryVisibility(false);
+    
     drillTitle.textContent = "Grist Drill";
     drillPanel.style.display = "block";
 
@@ -844,7 +849,8 @@ launchMashButton.addEventListener("click", function () {
 
     studySets.style.display = "none";
     modules.style.display = "none";
-
+    setCategoryVisibility(false);
+    
     drillTitle.textContent = "Mash Schedule Drill";
     drillPanel.style.display = "block";
 
@@ -861,7 +867,8 @@ launchFermentationButton.addEventListener("click", function () {
 
     studySets.style.display = "none";
     modules.style.display = "none";
-
+    setCategoryVisibility(false);
+    
     drillTitle.textContent = "Fermentation Drill";
     drillPanel.style.display = "block";
 
