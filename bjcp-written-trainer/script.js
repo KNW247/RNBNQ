@@ -135,20 +135,23 @@ const mashScheduleOptions = [
     explanation: "A high saccharification mash favors alpha amylase activity, producing more dextrins and fuller body. A mashout helps halt enzymatic activity and can improve lautering efficiency."
   },
   {
-    id: "hochkurz",
-    label: "Hochkurz step mash",
-    explanation: "A Hochkurz mash uses distinct beta and alpha rests followed by mashout, improving fermentability while retaining sufficient malt structure and body."
-  },
   {
-    id: "protein_step",
-    label: "Protein rest + step mash",
-    explanation: "A protein rest can aid protein breakdown, particularly with high-protein grists."
-  },
+  id: "hochkurz",
+  label: "Traditional German lager step mash (Hochkurz): 62–64°C / 68–72°C / 76–78°C mashout",
+  explanation: "A traditional German Hochkurz step mash moves from beta to alpha saccharification, then finishes with mashout for fermentability control, efficiency, and classic continental lager process alignment."
+},
   {
-    id: "decoction",
-    label: "Decoction mash",
-    explanation: "A decoction mash promotes melanoidin development and traditional malt complexity."
-  }
+{
+  id: "protein_step",
+  label: "Protein rest 50–55°C + step mash",
+  explanation: "A 50–55°C protein rest can aid protein breakdown before moving into saccharification rests, which is useful with high-protein grists such as wheat."
+},
+  {
+{
+  id: "decoction",
+  label: "Decoction mash: 62–64°C saccharification, decoction rise to 68–72°C, mashout",
+  explanation: "A decoction mash begins with a lower saccharification rest, then uses a boiled mash pull to raise the main mash into a higher alpha-amylase rest before mashout, promoting malt depth, melanoidin development, and traditional continental lager character."
+}
 ];
 
 const module4MashQuestions = [
