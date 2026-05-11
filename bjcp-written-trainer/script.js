@@ -469,12 +469,35 @@ function renderIbuQuestion() {
 
     input.focus();
 }
-    
+
+    function renderGristQuestion() {
+    const question =
+        module3GristQuestions[Math.floor(Math.random() * module3GristQuestions.length)];
+
+    styleName.textContent = "Grist Drill";
+    questionText.textContent =
+        `Target OG: ${question.og.toFixed(3)} | Estimate kg grist`;
+
+    feedbackBox.innerHTML = "";
+    answerContainer.innerHTML = "";
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Enter kg";
+
+    const button = document.createElement("button");
+    button.textContent = "Check Answer";
+
+    button.addEventListener("click", function () {
+        checkGristAnswer(input.value, question);
+    });
+
     answerContainer.appendChild(input);
     answerContainer.appendChild(button);
 
     input.focus();
 }
+    
 function checkGravityAnswer(userInput, question) {
     let cleaned = userInput.trim();
 
@@ -514,7 +537,7 @@ function checkIbuAnswer(userInput, question, style) {
             Defensible range: ${minIbu}–${maxIbu} IBU<br>
             Balance: ${style.bugu.anchor}
         `;
-    } else {
+    }else {
         incorrectCount++;
         updateScoreDisplay();
 
@@ -524,6 +547,35 @@ function checkIbuAnswer(userInput, question, style) {
             Defensible range: ${minIbu}–${maxIbu} IBU<br>
             Balance: ${style.bugu.anchor}
         `;
+    }
+}
+    function checkGristAnswer(userInput, question) {
+    const userKg = parseFloat(userInput);
+
+    if (isNaN(userKg)) {
+        feedbackBox.innerHTML =
+            `<strong class="incorrect">Enter a number.</strong>`;
+        return;
+    }
+
+    const ogPoints = Math.round((question.og - 1) * 1000);
+    const correctKg = ogPoints / 10;
+
+    if (Math.abs(userKg - correctKg) <= 0.2) {
+        correctCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML =
+            `<strong class="correct">Correct.</strong><br>
+             Expected kg: ${correctKg.toFixed(1)}`;
+    } else {
+        incorrectCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML =
+            `<strong class="incorrect">Incorrect.</strong><br>
+             You entered: ${userKg.toFixed(1)}<br>
+             Expected kg: ${correctKg.toFixed(1)}`;
     }
 }
     const userOg = parseFloat(cleaned);
@@ -739,7 +791,7 @@ launchGristButton.addEventListener("click", function () {
 
     window.scrollTo(0, 0);
 });
-});
+
 launchMashButton.addEventListener("click", function () {
     currentMode = "mash";
 
@@ -791,12 +843,19 @@ nextQuestionButton.addEventListener("click", function () {
         renderCompareQuestion();
         return;
     }
-if (currentMode === "ibu") {
-    renderIbuQuestion();
-    return;
-}
+
     if (currentMode === "gravity") {
         renderGravityQuestion();
+        return;
+    }
+
+    if (currentMode === "ibu") {
+        renderIbuQuestion();
+        return;
+    }
+
+    if (currentMode === "grist") {
+        renderGristQuestion();
         return;
     }
 
