@@ -1,35 +1,7 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-.intro-panel {
-    background: white;
-    border: 1px solid #d1d5db;
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 30px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.intro-panel p {
-    max-width: 800px;
-    margin: 0 auto 16px;
-    line-height: 1.5;
-    color: #4b5563;
-}
-
-.method-link {
-    color: #2563eb;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.method-link:hover {
-    text-decoration: underline;
 }
 
 body {
@@ -71,6 +43,37 @@ h2 {
     font-size: 1.8rem;
 }
 
+.intro-panel {
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.intro-panel h2 {
+    margin-bottom: 12px;
+}
+
+.intro-panel p {
+    max-width: 800px;
+    margin: 0 auto 16px;
+    line-height: 1.5;
+    color: #4b5563;
+}
+
+.method-link {
+    color: #2563eb;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.method-link:hover {
+    text-decoration: underline;
+}
+
 .button-grid {
     display: flex;
     flex-wrap: wrap;
@@ -96,6 +99,12 @@ h2 {
 
 .button-grid button:hover {
     background: #e5e7eb;
+}
+
+.button-grid button.selected {
+    background: #111827 !important;
+    color: white !important;
+    border: 1px solid #111827 !important;
 }
 
 .card-grid {
@@ -150,6 +159,14 @@ h2 {
     padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.score-panel {
+    margin: 1rem 0 2rem 0;
+    padding: 1rem;
+    background: #f3f4f6;
+    border-radius: 10px;
+    font-weight: bold;
 }
 
 .category-select {
@@ -207,21 +224,7 @@ h2 {
         min-height: auto;
     }
 
-    .score-panel {
-        margin: 1rem 0 2rem 0;
-        padding: 1rem;
-        background: #f3f4f6;
-        border-radius: 10px;
-        font-weight: bold;
-    }
-
     .answers {
         flex-direction: column;
     }
-}
-
-.button-grid button.selected {
-    background: #111827 !important;
-    color: white !important;
-    border: 1px solid #111827 !important;
 }
