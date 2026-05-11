@@ -1248,13 +1248,16 @@ nextQuestionButton.addEventListener("click", function () {
         renderGristQuestion();
         return;
     }
+
     if (currentMode === "fermentation") {
-    renderFermentationYeastQuestion();
-    return;
-}
-if (currentMode === "mash") {
-    renderMashQuestion();
-    return;
-}
+        renderFermentationYeastQuestion();
+        return;
+    }
+
+    if (currentMode === "mash") {
+        renderMashQuestion();
+        return;
+    }
+
     renderQuestion(currentCategory);
 });
