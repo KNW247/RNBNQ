@@ -106,35 +106,48 @@ const module3GristQuestions = [
 const mashScheduleOptions = [
   {
     id: "single_low",
-    label: "62–64°C single infusion"
+    label: "Low saccharification mash (62–64°C)",
+    explanation: "A low saccharification mash favors beta amylase activity, producing a more fermentable wort and a drier finish."
   },
   {
-    id: "single_medium",
-    label: "64–67°C single infusion"
+    id: "single_mid",
+    label: "Mid saccharification mash (64–67°C)",
+    explanation: "A mid saccharification mash balances beta and alpha amylase activity, producing moderate fermentability with balanced body."
   },
   {
-    id: "single_full",
-    label: "67–70°C single infusion"
+    id: "single_high",
+    label: "High saccharification mash (67–70°C)",
+    explanation: "A high saccharification mash favors alpha amylase activity, producing more dextrins and fuller body."
   },
   {
-    id: "single_medium_mashout",
-    label: "64–67°C single infusion + 76–78°C mashout"
+    id: "single_low_mashout",
+    label: "Low saccharification mash + mashout",
+    explanation: "A low saccharification mash favors beta amylase activity, producing a more fermentable wort and a drier finish. A mashout helps halt enzymatic activity and can improve lautering efficiency."
+  },
+  {
+    id: "single_mid_mashout",
+    label: "Mid saccharification mash + mashout",
+    explanation: "A mid saccharification mash balances beta and alpha amylase activity, producing moderate fermentability with balanced body. A mashout helps halt enzymatic activity and can improve lautering efficiency."
+  },
+  {
+    id: "single_high_mashout",
+    label: "High saccharification mash + mashout",
+    explanation: "A high saccharification mash favors alpha amylase activity, producing more dextrins and fuller body. A mashout helps halt enzymatic activity and can improve lautering efficiency."
   },
   {
     id: "hochkurz",
-    label: "61–64°C beta rest / 68–72°C alpha rest"
-  },
-  {
-    id: "hochkurz_mashout",
-    label: "61–64°C beta rest / 68–72°C alpha rest / 76–78°C mashout"
+    label: "Hochkurz step mash",
+    explanation: "A Hochkurz mash uses distinct beta and alpha rests followed by mashout, improving fermentability while retaining sufficient malt structure and body."
   },
   {
     id: "protein_step",
-    label: "50–55°C protein rest / 62–65°C beta rest / 68–72°C alpha rest"
+    label: "Protein rest + step mash",
+    explanation: "A protein rest can aid protein breakdown, particularly with high-protein grists."
   },
   {
-    id: "protein_step_mashout",
-    label: "50–55°C protein rest / 62–65°C beta rest / 68–72°C alpha rest / 76–78°C mashout"
+    id: "decoction",
+    label: "Decoction mash",
+    explanation: "A decoction mash promotes melanoidin development and traditional malt complexity."
   }
 ];
 
