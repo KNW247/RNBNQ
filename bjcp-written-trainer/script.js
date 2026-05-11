@@ -699,7 +699,48 @@ function checkIbuAnswer(userInput, question, style) {
             `<strong class="incorrect">Enter a number.</strong>`;
         return;
     }
+function checkMashAnswer(option, question) {
+    const isCorrect = question.correctOptions.includes(option.id);
 
+    const buttons = answerContainer.querySelectorAll("button");
+    buttons.forEach(button => {
+        button.disabled = true;
+
+        if (button.textContent === option.label) {
+            button.style.backgroundColor = isCorrect ? "#16a34a" : "#dc2626";
+            button.style.color = "white";
+        }
+    });
+
+    if (isCorrect) {
+        correctCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong class="correct">Correct.</strong><br>
+            ${option.explanation}<br><br>
+            <strong>Style rationale:</strong><br>
+            ${question.rationale}
+        `;
+    } else {
+        incorrectCount++;
+        updateScoreDisplay();
+
+        const correctLabels = question.correctOptions
+            .map(id => mashScheduleOptions.find(option => option.id === id)?.label)
+            .filter(Boolean)
+            .join("<br>");
+
+        feedbackBox.innerHTML = `
+            <strong class="incorrect">Incorrect.</strong><br>
+            ${option.explanation}<br><br>
+            <strong>Better choices for this style include:</strong><br>
+            ${correctLabels}<br><br>
+            <strong>Style rationale:</strong><br>
+            ${question.rationale}
+        `;
+    }
+}
     const ogPoints = Math.round((question.og - 1) * 1000);
     const correctKg = ogPoints / 10;
 
