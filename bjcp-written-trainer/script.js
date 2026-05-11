@@ -691,7 +691,7 @@ function checkIbuAnswer(userInput, question, style) {
         `;
     }
 }
-    function checkGristAnswer(userInput, question) {
+function checkGristAnswer(userInput, question) {
     const userKg = parseFloat(userInput);
 
     if (isNaN(userKg)) {
@@ -699,6 +699,27 @@ function checkIbuAnswer(userInput, question, style) {
             `<strong class="incorrect">Enter a number.</strong>`;
         return;
     }
+
+    const ogPoints = Math.round((question.og - 1) * 1000);
+    const correctKg = ogPoints / 10;
+
+    if (Math.abs(userKg - correctKg) <= 0.2) {
+        correctCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML =
+            `<strong class="correct">Correct.</strong><br>
+             Expected kg: ${correctKg.toFixed(1)}`;
+    } else {
+        incorrectCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML =
+            `<strong class="incorrect">Incorrect.</strong><br>
+             You entered: ${userKg.toFixed(1)}<br>
+             Expected kg: ${correctKg.toFixed(1)}`;
+    }
+}
 function checkMashAnswer(option, question) {
     const isCorrect = question.correctOptions.includes(option.id);
 
