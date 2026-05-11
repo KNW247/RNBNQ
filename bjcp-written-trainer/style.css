@@ -5,6 +5,33 @@
     box-sizing: border-box;
 }
 
+.intro-panel {
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.intro-panel p {
+    max-width: 800px;
+    margin: 0 auto 16px;
+    line-height: 1.5;
+    color: #4b5563;
+}
+
+.method-link {
+    color: #2563eb;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.method-link:hover {
+    text-decoration: underline;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #f3f4f6;
