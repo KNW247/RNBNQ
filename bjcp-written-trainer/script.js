@@ -16,6 +16,7 @@ const answerContainer = document.getElementById("answer-container");
 const feedbackBox = document.getElementById("feedback-box");
 const nextQuestionButton = document.getElementById("next-question");
 const category = document.querySelectorAll(".category-select button");
+const categorySelect = document.querySelector(".category-select");
 const studySetButtons = document.querySelectorAll(".button-grid button");
 const drillTitle = document.getElementById("drill-title");
 
@@ -348,7 +349,9 @@ function updateScoreDisplay() {
     incorrectCountDisplay.textContent = incorrectCount;
     accuracyDisplay.textContent = `${accuracy}%`;
 }
-
+function setCategoryVisibility(show) {
+    categorySelect.style.display = show ? "flex" : "none";
+}
 function renderQuestion(category = currentCategory) {
     currentCategory = category === "mixed" ? getRandomCategory() : category;
     currentStyle = getRandomStyle();
