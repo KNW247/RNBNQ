@@ -551,11 +551,39 @@ function checkGravityAnswer(userInput, question) {
         return;
     }
 
-    if (!cleaned.startsWith("1.")) {
+        if (!cleaned.startsWith("1.")) {
         if (cleaned.length <= 3) {
             cleaned = "1." + cleaned.padStart(3, "0");
         }
     }
+
+    const userOg = parseFloat(cleaned);
+
+    const trueOg = question.fg + (question.abv / 131.25);
+
+    const userPoints = Math.round((userOg - 1) * 1000);
+    const truePoints = Math.round((trueOg - 1) * 1000);
+
+    if (Math.abs(userPoints - truePoints) <= 1) {
+        correctCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong class="correct">Correct.</strong><br>
+            Expected OG: 1.${truePoints}
+        `;
+    } else {
+        incorrectCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong class="incorrect">Incorrect.</strong><br>
+            You entered: ${userOg.toFixed(3)}<br>
+            Expected OG: 1.${truePoints}
+        `;
+    }
+}
+
 function checkIbuAnswer(userInput, question, style) {
     const userIbu = parseInt(userInput.trim(), 10);
 
@@ -621,32 +649,7 @@ function checkIbuAnswer(userInput, question, style) {
              Expected kg: ${correctKg.toFixed(1)}`;
     }
 }
-    const userOg = parseFloat(cleaned);
-
-    const trueOg = question.fg + (question.abv / 131.25);
-
-    const userPoints = Math.round((userOg - 1) * 1000);
-    const truePoints = Math.round((trueOg - 1) * 1000);
-
-    if (Math.abs(userPoints - truePoints) <= 1) {
-        correctCount++;
-        updateScoreDisplay();
-
-        feedbackBox.innerHTML = `
-            <strong class="correct">Correct.</strong><br>
-            Expected OG: 1.${truePoints}
-        `;
-    } else {
-        incorrectCount++;
-        updateScoreDisplay();
-
-        feedbackBox.innerHTML = `
-            <strong class="incorrect">Incorrect.</strong><br>
-            You entered: ${userOg.toFixed(3)}<br>
-            Expected OG: 1.${truePoints}
-        `;
-    }
-}
+    
 function checkAnswer(selectedAnswer, data) {
     const correctAnswer = data.anchor;
     const buttons = answerContainer.querySelectorAll("button");
