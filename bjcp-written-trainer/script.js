@@ -1252,3 +1252,15 @@ nextQuestionButton.addEventListener("click", function () {
 
     renderQuestion(currentCategory);
 });
+document.addEventListener("keydown", function(e) {
+    if (e.key !== "Enter") return;
+
+    const activeElement = document.activeElement;
+    const isTypingInInput = activeElement && activeElement.tagName === "INPUT";
+
+    if (isTypingInInput) return;
+
+    if (drillPanel.style.display === "block" && nextQuestionButton.style.display !== "none") {
+        nextQuestionButton.click();
+    }
+});
