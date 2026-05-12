@@ -543,7 +543,7 @@ function renderGravityQuestion() {
     answerContainer.innerHTML = "";
 
     const input = document.createElement("input");
-    input.type = "text";
+    input.type = "number";
     input.placeholder = "Enter OG (example: 1.050)";
 
     const button = document.createElement("button");
@@ -579,7 +579,7 @@ questionText.textContent =
     answerContainer.innerHTML = "";
 
     const input = document.createElement("input");
-    input.type = "text";
+   input.type = "number";
     input.placeholder = "Enter IBU target";
 
     const button = document.createElement("button");
@@ -613,7 +613,7 @@ questionText.textContent =
     answerContainer.innerHTML = "";
 
     const input = document.createElement("input");
-    input.type = "text";
+    input.type = "number";
     input.placeholder = "Enter kg";
 
     const button = document.createElement("button");
