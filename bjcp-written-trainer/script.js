@@ -26,7 +26,7 @@ const drillTitle = document.getElementById("drill-title");
 
 const categoryOptions = {
     strength: ["Session / Low", "Standard", "Standard+", "Strong", "Very Strong"],
-    bitterness: ["Malt-forward", "Balanced", "Firm Bitter", "Hop-forward", "Aggressive"],
+    bitterness: ["Rich Malt", "Malt-forward", "Slightly Malt-forward", "Balanced", "Firm Bitter", "Medium-High Bitter", "Hop-forward", "Aggressive"],
     body: ["Very Light", "Light", "Medium-Light", "Medium", "Medium-Full", "Full"],
     carbonation: ["Low", "Moderate", "Medium-High", "High"],
     color: ["Straw", "Pale Gold", "Gold", "Amber", "Copper", "Brown", "Black"]
