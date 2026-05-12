@@ -209,59 +209,18 @@ const styles = [
     anchorStatus: "approved"
 },
 
-   {
+  {
     code: "15B",
     name: "Irish Stout",
-
-    strength: {
-        anchor: "Session / Low",
-        min: 3.8,
-        max: 5.0,
-        unit: "%"
-    },
-
-    bitterness: {
-        anchor: "Firm Bitter",
-        min: 25,
-        max: 45,
-        unit: "IBU"
-    },
-
-    body: {
-        anchor: "Medium-Light",
-        min: 1.007,
-        max: 1.011,
-        unit: "FG"
-    },
-
-    carbonation: {
-        anchor: "Moderate",
-        min: null,
-        max: null,
-        unit: null,
-        text: "Medium-light to medium body. Moderate carbonation. Smooth."
-    },
-
-    color: {
-        anchor: "Black",
-        min: 25,
-        max: 40,
-        unit: "SRM"
-    },
-
-    og: {
-        min: 1.036,
-        max: 1.044,
-        unit: "OG"
-    },
-
-    foundationEligible: true,
-    comparisonEligible: true,
-    recipeEligible: true,
-    core: true,
-    anchorStatus: "approved"
+    strength: { anchor: "Session / Low", min: 3.8, max: 5.0, unit: "%" },
+    bitterness: { anchor: "Medium-High Bitter", min: 25, max: 45, unit: "IBU" },
+    body: { anchor: "Medium-Light", min: 1.007, max: 1.011, unit: "FG" },
+    carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium-light to medium body. Moderate carbonation. Smooth." },
+    color: { anchor: "Black", min: 25, max: 40, unit: "SRM" },
+    og: { min: 1.036, max: 1.044, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
 },
-
+    
 {
     code: "3A",
     name: "Czech Pale Lager",
@@ -475,111 +434,16 @@ const styles = [
 },
 
 {
-    code: "8B",
-    name: "Schwarzbier",
-
-    strength: {
-        anchor: "Standard",
-        min: 4.4,
-        max: 5.4,
-        unit: "%"
-    },
-
-    bitterness: {
-        anchor: "Balanced",
-        min: 20,
-        max: 35,
-        unit: "IBU"
-    },
-
-    body: {
-        anchor: "Medium-Light",
-        min: 1.010,
-        max: 1.016,
-        unit: "FG"
-    },
-
-    carbonation: {
-        anchor: "Moderate",
-        min: null,
-        max: null,
-        unit: null,
-        text: "Moderate to moderately-high carbonation"
-    },
-
-    color: {
-        anchor: "Black",
-        min: 19,
-        max: 30,
-        unit: "SRM"
-    },
-
-    og: {
-        min: 1.046,
-        max: 1.052,
-        unit: "OG"
-    },
-
-    foundationEligible: true,
-    comparisonEligible: true,
-    recipeEligible: true,
-    core: true,
-    anchorStatus: "approved"
-},
-
-{
     code: "11A",
     name: "Ordinary Bitter",
-
-    strength: {
-        anchor: "Session / Low",
-        min: 3.2,
-        max: 3.8,
-        unit: "%"
-    },
-
-    bitterness: {
-        anchor: "Balanced",
-        min: 25,
-        max: 35,
-        unit: "IBU"
-    },
-
-    body: {
-        anchor: "Light",
-        min: 1.007,
-        max: 1.011,
-        unit: "FG"
-    },
-
-    carbonation: {
-        anchor: "Low",
-        min: null,
-        max: null,
-        unit: null,
-        text: "Low carbonation, although bottled examples can have moderate carbonation"
-    },
-
-    color: {
-        anchor: "Amber",
-        min: 8,
-        max: 14,
-        unit: "SRM"
-    },
-
-    og: {
-        min: 1.030,
-        max: 1.039,
-        unit: "OG"
-    },
-
-    foundationEligible: true,
-    comparisonEligible: true,
-    recipeEligible: true,
-    core: true,
-    anchorStatus: "approved"
+    strength: { anchor: "Session / Low", min: 3.2, max: 3.8, unit: "%" },
+    bitterness: { anchor: "Firm Bitter", min: 25, max: 35, unit: "IBU", designNote: "Low gravity supports higher bitterness, but softer English hop character keeps the beer from presenting aggressively." },
+    body: { anchor: "Light", min: 1.007, max: 1.011, unit: "FG" },
+    carbonation: { anchor: "Low", min: null, max: null, unit: null, text: "Low carbonation, although bottled examples can have moderate carbonation" },
+    color: { anchor: "Amber", min: 8, max: 14, unit: "SRM" },
+    og: { min: 1.030, max: 1.039, unit: "OG" },
+    foundationEligible: true, comparisonEligible: true, recipeEligible: true, core: true, anchorStatus: "approved"
 },
-
 {
     code: "11B",
     name: "Best Bitter",
@@ -939,7 +803,7 @@ const styles = [
     code: "26C",
     name: "Belgian Tripel",
     strength: { anchor: "Strong", min: 7.5, max: 9.5, unit: "%" },
-    bitterness: { anchor: "Slightly Malt-forward", min: 20, max: 40, unit: "IBU" },
+    bitterness: { anchor: "Slightly Malt-forward", min: 20, max: 40, unit: "IBU", designNote: "High attenuation and a dry finish make the bitterness seem firmer than the IBU alone suggests." },
     body: { anchor: "Medium", min: 1.008, max: 1.014, unit: "FG" },
     carbonation: { anchor: "High", min: null, max: null, unit: null, text: "Medium-light to medium body. High carbonation." },
     color: { anchor: "Gold", min: 4.5, max: 7, unit: "SRM" },
