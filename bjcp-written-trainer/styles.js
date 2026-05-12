@@ -683,7 +683,7 @@ const styles = [
     code: "20B",
     name: "American Stout",
     strength: { anchor: "Standard+", min: 5.0, max: 7.0, unit: "%" },
-    bitterness: { anchor: "Medium-High Bitter, min: 35, max: 75, unit: "IBU" },
+    bitterness: { anchor: "Medium-High Bitter", min: 35, max: 75, unit: "IBU" },
     body: { anchor: "Medium-Full", min: 1.010, max: 1.022, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium to full body. Moderate to moderately-high carbonation." },
     color: { anchor: "Black", min: 30, max: 40, unit: "SRM" },
