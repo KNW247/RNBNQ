@@ -695,7 +695,7 @@ const styles = [
     code: "20C",
     name: "Imperial Stout",
     strength: { anchor: "Very Strong", min: 8.0, max: 12.0, unit: "%" },
-    bitterness: { anchor: "Firm Bitter", min: 50, max: 90, unit: "IBU" },
+    bitterness: { anchor: "Medium-High Bitter", min: 50, max: 90, unit: "IBU" },
     body: { anchor: "Full", min: 1.018, max: 1.030, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Full to very full body. Low to moderate carbonation." },
     color: { anchor: "Black", min: 30, max: 40, unit: "SRM" },
