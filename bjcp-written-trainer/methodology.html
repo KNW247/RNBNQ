@@ -31,82 +31,194 @@
     </section>
 
     <section class="intro-panel">
-        <h2>The System Behind the Trainer</h2>
+        <h2>The Method Behind the Trainer</h2>
         <p>
-            This trainer teaches a repeatable framework for building technically defensible BJCP Written Exam answers under time pressure.
+            This trainer was built around my own written exam study process. Instead of memorizing every vital statistic for every style, I focus on a smaller set of anchor points I can apply quickly under time pressure.
         </p>
         <a href="index.html" class="method-link">← Back to Trainer</a>
     </section>
 
     <section class="card">
-        <h3>What This Trainer Teaches</h3>
+        <h3>The Core Anchors</h3>
         <p>
-            Strong written exam recipe answers are not random ingredient lists. They are coherent beer designs built from connected decisions.
+            The process starts with three style characteristics:
         </p>
 
         <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
-            <li>Build gravity targets from strength and finish goals</li>
-            <li>Set bitterness from gravity and style balance</li>
-            <li>Estimate grist requirements quickly and consistently</li>
-            <li>Select mash schedules that support body and attenuation goals</li>
-            <li>Select fermentation profiles that match style intent</li>
-            <li>Compare similar styles using exam-ready language</li>
+            <li><strong>Relative strength</strong> — how strong the beer should be</li>
+            <li><strong>Body / finish</strong> — how dry or full the beer should finish</li>
+            <li><strong>Overall balance</strong> — whether the beer is malt-forward, balanced, or bitterness-driven</li>
         </ul>
+
+        <p style="margin-top: 1rem;">
+            From those anchors, I can estimate the rest of the recipe: original gravity, grist weight, bitterness, mash approach, and fermentation profile.
+        </p>
     </section>
 
     <section class="card">
-        <h3>Trainer Assumptions</h3>
-        <ul style="margin-left: 2rem; line-height: 2;">
-            <li>Metric recipe construction</li>
+        <h3>1. Estimate Original Gravity</h3>
+        <p>
+            Once I know the target ABV and expected finishing gravity, I estimate original gravity using fast mental math.
+        </p>
+
+        <p style="margin-top: 1rem;">
+            The Gravity Drill accepts answers within <strong>±1 gravity point</strong>, so the goal is not software-level precision. The goal is a reliable estimate that can be done quickly.
+        </p>
+
+        <p style="margin-top: 1rem;">
+            The formal relationship is:
+        </p>
+
+        <p>
+            <strong>ABV = (OG − FG) × 131</strong>
+        </p>
+
+        <p>
+            Rearranged:
+        </p>
+
+        <p>
+            <strong>Gravity drop = ABV ÷ 0.131</strong>
+        </p>
+
+        <p style="margin-top: 1rem;">
+            A common shortcut is:
+        </p>
+
+        <p>
+            <strong>ABV × 8</strong>
+        </p>
+
+        <p>
+            This is fast, but it consistently runs high compared to the formal calculation.
+        </p>
+
+        <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+            <thead>
+                <tr>
+                    <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid #ccc;">ABV</th>
+                    <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid #ccc;">×8 Shortcut</th>
+                    <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid #ccc;">Formal ÷0.131</th>
+                    <th style="text-align: left; padding: 0.5rem; border-bottom: 1px solid #ccc;">Difference</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 0.5rem;">4.0%</td>
+                    <td style="padding: 0.5rem;">32</td>
+                    <td style="padding: 0.5rem;">30.5</td>
+                    <td style="padding: 0.5rem;">+1.5</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem;">5.0%</td>
+                    <td style="padding: 0.5rem;">40</td>
+                    <td style="padding: 0.5rem;">38.2</td>
+                    <td style="padding: 0.5rem;">+1.8</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem;">6.0%</td>
+                    <td style="padding: 0.5rem;">48</td>
+                    <td style="padding: 0.5rem;">45.8</td>
+                    <td style="padding: 0.5rem;">+2.2</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem;">7.0%</td>
+                    <td style="padding: 0.5rem;">56</td>
+                    <td style="padding: 0.5rem;">53.4</td>
+                    <td style="padding: 0.5rem;">+2.6</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p style="margin-top: 1rem;">
+            Because of that drift, I use a modified shortcut:
+        </p>
+
+        <p>
+            <strong>ABV × 8, then subtract 2 gravity points</strong>
+        </p>
+
+        <p style="margin-top: 1rem;">
+            Example: 5.0% ABV × 8 = 40 gravity points. Subtract 2, and the estimated gravity drop is 38 points.
+        </p>
+
+        <p>
+            With an expected FG of 1.010, that gives an estimated OG of <strong>1.048</strong>.
+        </p>
+
+        <p>
+            The formal calculation gives 38.2 points, so the adjusted shortcut is close while staying easy to do mentally.
+        </p>
+    </section>
+
+    <section class="card">
+        <h3>2. Estimate Grist Weight</h3>
+        <p>
+            Once OG is estimated, I use a simplified metric grist estimate.
+        </p>
+
+        <p style="margin-top: 1rem;">
+            This trainer assumes:
+        </p>
+
+        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
             <li>21.5 liters into fermenter</li>
             <li>70% brewhouse efficiency</li>
-            <li>ABV targets in 0.25% increments</li>
-            <li>Exam-speed approximation over software precision</li>
+            <li>common base malt yield assumptions</li>
         </ul>
-    </section>
-
-    <section class="card">
-        <h3>The Gravity Shortcut</h3>
-        <p><strong>ABV × 8 = approximate gravity drop</strong></p>
 
         <p style="margin-top: 1rem;">
-            Example: 5.0% ABV × 8 = 40 gravity points
+            Under those assumptions, the shortcut is:
         </p>
 
         <p>
-            Expected FG 1.010 → Estimated OG 1.050
+            <strong>OG points ÷ 10 ≈ kilograms of grist</strong>
         </p>
 
         <p style="margin-top: 1rem;">
-            Fast, repeatable, and close enough for exam construction.
+            Example: 1.048 OG has 48 gravity points, so the estimated grist weight is about <strong>4.8 kg</strong>.
         </p>
     </section>
 
     <section class="card">
-        <h3>Why Balance Matters</h3>
+        <h3>3. Estimate Bitterness</h3>
         <p>
-            The written exam rewards coherent beer design, not isolated memorized numbers.
+            This module does not require one specific method for learning IBUs.
         </p>
 
         <p style="margin-top: 1rem;">
-            A German Pils should carry firmer bitterness than a Munich Helles. A Märzen should present lower bitterness relative to gravity. A Sweet Stout needs enough bitterness to offset residual sweetness.
+            I use BU:GU as a practical guide: original gravity gives the size of the beer, and style balance helps determine how much bitterness makes sense for that gravity.
         </p>
 
         <p style="margin-top: 1rem;">
-            This trainer teaches bitterness as recipe structure, not trivia.
+            The goal is not to memorize isolated IBU numbers. The goal is to estimate a defensible bitterness range that fits the beer’s strength, finish, and style balance.
         </p>
+    </section>
+
+    <section class="card">
+        <h3>4. Select Mash and Fermentation Choices</h3>
+        <p>
+            Once the beer’s structure is established, the mash and fermentation choices should support the target result.
+        </p>
+
+        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 2;">
+            <li>A dry beer generally needs a more fermentable wort</li>
+            <li>A fuller beer may need a more body-supporting mash</li>
+            <li>A clean lager needs restrained fermentation</li>
+            <li>An expressive Belgian style needs the right yeast and fermentation profile</li>
+        </ul>
     </section>
 
     <section class="card">
         <h3>Recommended Training Path</h3>
         <ol style="margin-left: 2rem; line-height: 2;">
+            <li>Foundation Drill</li>
             <li>Gravity Drill</li>
             <li>IBU Drill</li>
             <li>Grist Drill</li>
             <li>Mash Schedule Drill</li>
             <li>Fermentation Drill</li>
             <li>Compare Drill</li>
-            <li>Foundation Drill</li>
         </ol>
     </section>
 
