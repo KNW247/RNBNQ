@@ -553,6 +553,11 @@ function renderGravityQuestion() {
         checkGravityAnswer(input.value, question);
     });
 
+    input.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        button.click();
+    }
+});
     answerContainer.appendChild(input);
     answerContainer.appendChild(button);
 
@@ -584,6 +589,11 @@ questionText.textContent =
         checkIbuAnswer(input.value, question, style);
     });
 
+    input.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        button.click();
+    }
+});
     answerContainer.appendChild(input);
     answerContainer.appendChild(button);
 
@@ -613,6 +623,11 @@ questionText.textContent =
         checkGristAnswer(input.value, question);
     });
 
+    input.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        button.click();
+    }
+});
     answerContainer.appendChild(input);
     answerContainer.appendChild(button);
 
