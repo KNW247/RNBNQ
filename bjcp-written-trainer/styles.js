@@ -64,7 +64,7 @@ const styles = [
     },
 
     bitterness: {
-        anchor: "Malt-forward",
+        anchor: "Slightly Malt-forward",
         min: 16,
         max: 22,
         unit: "IBU"
@@ -168,7 +168,7 @@ const styles = [
     },
 
     bitterness: {
-        anchor: "Balanced",
+        anchor: "Slightly Malt-forward",
         min: 18,
         max: 24,
         unit: "IBU"
@@ -274,7 +274,7 @@ const styles = [
     },
 
     bitterness: {
-        anchor: "Balanced",
+        anchor: "Hop-forward",
         min: 20,
         max: 35,
         unit: "IBU"
@@ -380,7 +380,7 @@ const styles = [
     },
 
     bitterness: {
-        anchor: "Malt-forward",
+        anchor: "Slightly Malt-forward",
         min: 18,
         max: 28,
         unit: "IBU"
@@ -433,7 +433,7 @@ const styles = [
     },
 
     bitterness: {
-        anchor: "Balanced",
+        anchor: "Rich Malt", 
         min: 16,
         max: 26,
         unit: "IBU"
@@ -592,7 +592,7 @@ const styles = [
     },
 
     bitterness: {
-        anchor: "Balanced",
+        anchor: "Firm Bitter",
         min: 25,
         max: 40,
         unit: "IBU"
@@ -807,7 +807,7 @@ const styles = [
     code: "20A",
     name: "American Porter",
     strength: { anchor: "Standard+", min: 4.8, max: 6.5, unit: "%" },
-    bitterness: { anchor: "Balanced", min: 25, max: 50, unit: "IBU" },
+    bitterness: { anchor: "Firm Bitter", min: 25, max: 50, unit: "IBU" },
     body: { anchor: "Medium", min: 1.012, max: 1.018, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium to medium-full body. Moderate carbonation." },
     color: { anchor: "Black", min: 22, max: 40, unit: "SRM" },
@@ -915,7 +915,7 @@ const styles = [
     code: "25A",
     name: "Belgian Blond Ale",
     strength: { anchor: "Standard+", min: 6.0, max: 7.5, unit: "%" },
-    bitterness: { anchor: "Balanced", min: 15, max: 30, unit: "IBU" },
+    bitterness: { anchor: "Malt-forward", min: 15, max: 30, unit: "IBU" },
     body: { anchor: "Medium", min: 1.008, max: 1.018, unit: "FG" },
     carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium body. Medium-high to high carbonation." },
     color: { anchor: "Gold", min: 4, max: 7, unit: "SRM" },
@@ -927,7 +927,7 @@ const styles = [
     code: "26A",
     name: "Belgian Single",
     strength: { anchor: "Standard", min: 4.8, max: 6.0, unit: "%" },
-    bitterness: { anchor: "Balanced", min: 25, max: 45, unit: "IBU" },
+    bitterness: { anchor: "Firm Bitter", min: 25, max: 45, unit: "IBU" },
     body: { anchor: "Medium-Light", min: 1.004, max: 1.010, unit: "FG" },
     carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium-light body. Medium-high to high carbonation." },
     color: { anchor: "Gold", min: 3, max: 5, unit: "SRM" },
@@ -939,7 +939,7 @@ const styles = [
     code: "26C",
     name: "Belgian Tripel",
     strength: { anchor: "Strong", min: 7.5, max: 9.5, unit: "%" },
-    bitterness: { anchor: "Balanced", min: 20, max: 40, unit: "IBU" },
+    bitterness: { anchor: "Slightly Malt-forward", min: 20, max: 40, unit: "IBU" },
     body: { anchor: "Medium", min: 1.008, max: 1.014, unit: "FG" },
     carbonation: { anchor: "High", min: null, max: null, unit: null, text: "Medium-light to medium body. High carbonation." },
     color: { anchor: "Gold", min: 4.5, max: 7, unit: "SRM" },
@@ -951,7 +951,7 @@ const styles = [
     code: "26D",
     name: "Belgian Dark Strong Ale",
     strength: { anchor: "Strong", min: 8.0, max: 12.0, unit: "%" },
-    bitterness: { anchor: "Balanced", min: 20, max: 35, unit: "IBU" },
+    bitterness: { anchor: "Malt-forward", min: 20, max: 35, unit: "IBU" },
     body: { anchor: "Medium-Full", min: 1.010, max: 1.024, unit: "FG" },
     carbonation: { anchor: "High", min: null, max: null, unit: null, text: "Medium to full body. High carbonation." },
     color: { anchor: "Brown", min: 12, max: 22, unit: "SRM" },
@@ -963,7 +963,7 @@ const styles = [
     code: "4B",
     name: "Festbier",
     strength: { anchor: "Standard+", min: 5.8, max: 6.3, unit: "%" },
-    bitterness: { anchor: "Balanced", min: 18, max: 25, unit: "IBU" },
+    bitterness: { anchor: "Slightly Malt-forward", min: 18, max: 25, unit: "IBU" },
     body: { anchor: "Medium", min: 1.010, max: 1.012, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium body. Medium carbonation." },
     color: { anchor: "Gold", min: 4, max: 7, unit: "SRM" },
@@ -975,7 +975,7 @@ const styles = [
     code: "4C",
     name: "Helles Bock",
     strength: { anchor: "Strong", min: 6.3, max: 7.4, unit: "%" },
-    bitterness: { anchor: "Balanced", min: 23, max: 35, unit: "IBU" },
+    bitterness: { anchor: "Slightly Malt-forward", min: 23, max: 35, unit: "IBU" },
     body: { anchor: "Medium-Full", min: 1.011, max: 1.018, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium body. Moderate to moderately-high carbonation." },
     color: { anchor: "Gold", min: 6, max: 11, unit: "SRM" },
@@ -999,7 +999,7 @@ const styles = [
     code: "5C",
     name: "German Helles Exportbier",
     strength: { anchor: "Standard+", min: 5.0, max: 6.0, unit: "%" },
-    bitterness: { anchor: "Firm Bitter", min: 20, max: 30, unit: "IBU" },
+    bitterness: { anchor: "Balanced", min: 20, max: 30, unit: "IBU" },
     body: { anchor: "Medium", min: 1.008, max: 1.015, unit: "FG" },
     carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium body. Medium to high carbonation." },
     color: { anchor: "Pale Gold", min: 4, max: 7, unit: "SRM" },
