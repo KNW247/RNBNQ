@@ -197,7 +197,7 @@ const module4MashQuestions = [
     rationale: "For Belgian Tripel, a fermentable wort is important to achieve a dry finish despite high gravity and added sugar."
   },
   {
-    styleCode: "15C",
+    styleCode: "15B",
     styleName: "Irish Stout",
     correctOptions: ["single_mid", "single_mid_mashout"],
     rationale: "For Irish Stout, a mid saccharification mash supports moderate body while keeping the finish dry enough for a roast-forward beer."
@@ -375,7 +375,7 @@ const module5FermentationQuestions = [
     rationale: "For Belgian Tripel, controlled fermentation supports high attenuation and expressive Belgian yeast character without harsh alcohol."
   },
   {
-    styleCode: "15C",
+    styleCode: "15B",
     styleName: "Irish Stout",
     correctYeast: "irish_ale",
     correctSchedules: ["irish_clean"],
