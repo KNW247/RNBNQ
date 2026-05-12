@@ -590,42 +590,6 @@ questionText.textContent =
   input.focus();
 }
 
-function checkIbuAnswer(userInput, question, style) {
-    const userIbu = parseInt(userInput.trim(), 10);
-
-    if (isNaN(userIbu)) {
-        feedbackBox.innerHTML = `
-            <strong class="incorrect">Enter a number.</strong>
-        `;
-        return;
-    }
-
-    const ogPoints = Math.round((question.targetOg - 1) * 1000);
-
-    const minIbu = Math.round(ogPoints * style.bugu.min);
-    const maxIbu = Math.round(ogPoints * style.bugu.max);
-
-    if (userIbu >= minIbu && userIbu <= maxIbu) {
-        correctCount++;
-        updateScoreDisplay();
-
-        feedbackBox.innerHTML = `
-            <strong class="correct">Correct.</strong><br>
-            Defensible range: ${minIbu}–${maxIbu} IBU<br>
-            Balance: ${style.bugu.anchor}
-        `;
-    } else {
-        incorrectCount++;
-        updateScoreDisplay();
-
-        feedbackBox.innerHTML = `
-            <strong class="incorrect">Incorrect.</strong><br>
-            You entered: ${userIbu} IBU<br>
-            Defensible range: ${minIbu}–${maxIbu} IBU<br>
-            Balance: ${style.bugu.anchor}
-        `;
-    }
-}
 
     function renderGristQuestion() {
     const question =
@@ -911,7 +875,8 @@ function checkIbuAnswer(userInput, question, style) {
         feedbackBox.innerHTML = `
             <strong class="correct">Correct.</strong><br>
             Defensible range: ${minIbu}–${maxIbu} IBU<br>
-            Balance: ${style.bugu.anchor}
+          Balance: ${style.bugu.anchor}
+         ${style.bitterness.designNote ? `<br><em>${style.bitterness.designNote}</em>` : ""}
         `;
     }else {
         incorrectCount++;
@@ -922,6 +887,7 @@ function checkIbuAnswer(userInput, question, style) {
             You entered: ${userIbu} IBU<br>
             Defensible range: ${minIbu}–${maxIbu} IBU<br>
             Balance: ${style.bugu.anchor}
+             ${style.bitterness.designNote ? `<br><em>${style.bitterness.designNote}</em>` : ""}
         `;
     }
 }
