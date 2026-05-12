@@ -791,7 +791,7 @@ const styles = [
     code: "26A",
     name: "Belgian Single",
     strength: { anchor: "Standard", min: 4.8, max: 6.0, unit: "%" },
-    bitterness: { anchor: "Firm Bitter", min: 25, max: 45, unit: "IBU" },
+    bitterness: { anchor: "Medium-High Bitter", min: 25, max: 45, unit: "IBU" },
     body: { anchor: "Medium-Light", min: 1.004, max: 1.010, unit: "FG" },
     carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium-light body. Medium-high to high carbonation." },
     color: { anchor: "Gold", min: 3, max: 5, unit: "SRM" },
