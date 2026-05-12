@@ -879,7 +879,7 @@ const styles = [
     code: "16A",
     name: "Sweet Stout",
     strength: { anchor: "Standard", min: 4.0, max: 6.0, unit: "%" },
-    bitterness: { anchor: "Malt-forward", min: 20, max: 40, unit: "IBU" },
+    bitterness: { anchor: "Malt-forward", min: 20, max: 40, unit: "IBU", designNote: "Residual lactose sweetness requires firmer bitterness to prevent a cloying finish." },
     body: { anchor: "Full", min: 1.012, max: 1.024, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium-full to full body. Low to moderate carbonation." },
     color: { anchor: "Black", min: 30, max: 40, unit: "SRM" },
