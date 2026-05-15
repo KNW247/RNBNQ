@@ -100,131 +100,227 @@ const module3GristQuestions = [
 ];
 
 
-// MODULE 4 — Mash Schedule Recognition
-// Style → select ALL acceptable schedules
+// MODULE 4 — Mash Strategy
+// Prompt: choose the strongest exam-safe mash strategy
 
-const mashScheduleOptions = [
-  {
-    id: "single_low",
-    label: "Low saccharification mash (62–64°C)",
-    explanation: "A low saccharification mash favors beta amylase activity, producing a more fermentable wort and a drier finish."
-  },
-  {
-    id: "single_mid",
-    label: "Mid saccharification mash (64–67°C)",
-    explanation: "A mid saccharification mash balances beta and alpha amylase activity, producing moderate fermentability with balanced body."
-  },
-  {
-    id: "single_high",
-    label: "High saccharification mash (67–70°C)",
-    explanation: "A high saccharification mash favors alpha amylase activity, producing more dextrins and fuller body."
-  },
-  {
-    id: "single_low_mashout",
-    label: "Low saccharification mash + mashout",
-    explanation: "A low saccharification mash favors beta amylase activity, producing a more fermentable wort and a drier finish. A mashout helps halt enzymatic activity and can improve lautering efficiency."
-  },
-  {
-    id: "single_mid_mashout",
-    label: "Mid saccharification mash + mashout",
-    explanation: "A mid saccharification mash balances beta and alpha amylase activity, producing moderate fermentability with balanced body. A mashout helps halt enzymatic activity and can improve lautering efficiency."
-  },
-  {
-    id: "single_high_mashout",
-    label: "High saccharification mash + mashout",
-    explanation: "A high saccharification mash favors alpha amylase activity, producing more dextrins and fuller body. A mashout helps halt enzymatic activity and can improve lautering efficiency."
-  },
-  
-  
-   {
-    id: "hochkurz",
-    label: "Traditional German lager step mash (Hochkurz): 62–64°C / 68–72°C / 76–78°C mashout",
-    explanation: "A traditional German Hochkurz step mash moves from beta to alpha saccharification, then finishes with mashout for fermentability control, efficiency, and classic continental lager process alignment."
-  },
-  {
-    id: "protein_step",
-    label: "Protein rest 50–55°C + step mash",
-    explanation: "A 50–55°C protein rest can aid protein breakdown before moving into saccharification rests, which is useful with high-protein grists such as wheat."
-  },
-  {
-    id: "decoction",
-    label: "Decoction mash: 62–64°C saccharification, decoction rise to 68–72°C, mashout",
-    explanation: "A decoction mash begins with a lower saccharification rest, then uses a boiled mash pull to raise the main mash into a higher alpha-amylase rest before mashout, promoting malt depth, melanoidin development, and traditional continental lager character."
-  }
-];
+const mashStrategyOptions = {
+  low: "Low Saccharification Mash (62–64°C)",
+  mid: "Mid Saccharification Mash (64–67°C)",
+  high: "High Saccharification Mash (67–70°C)",
+  hochkurz: "Hochkurz Step Mash",
+  decoction: "Decoction Mash",
+  proteinStep: "Protein Rest + Step Mash"
+};
 
 const module4MashQuestions = [
   {
     styleCode: "5D",
     styleName: "German Pils",
-    correctOptions: ["single_low", "single_mid", "single_low_mashout", "single_mid_mashout", "hochkurz"],
-    rationale: "For German Pils, a more fermentable wort supports the crisp, dry finish expected in the style while keeping the malt profile clean and restrained."
+    strong: [
+      { id: "low", response: "A lower saccharification mash promotes a highly fermentable wort, directly supporting the crisp dry finish, lean body, and firm drinkability expected in German Pils." },
+      { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach for German Pils when fully specified. A lower beta-amylase rest establishes fermentability, followed by a higher alpha-amylase rest to preserve structure without sacrificing the dry finish expected in the style." }
+    ],
+    defensible: [
+      { id: "decoction", response: "Incorrect for this drill, but defensible. A decoction mash can be a strong traditional choice for German Pils if fully justified and properly detailed. However, it requires more explanation, process clarity, and writing time, making it higher-risk if left incomplete." }
+    ],
+    risky: [
+      { id: "mid", response: "A mid saccharification mash can work, but it is less direct for achieving the crisp dry finish expected in German Pils and may preserve more body than ideal." }
+    ],
+    inconsistent: [
+      { id: "high", response: "A high saccharification mash favors dextrin production and fuller body, which conflicts with the lean, crisp, highly attenuated profile expected in German Pils." }
+    ]
   },
+
   {
     styleCode: "3B",
     styleName: "Czech Premium Pale Lager",
-    correctOptions: ["single_mid", "single_mid_mashout", "hochkurz", "decoction"],
-    rationale: "For Czech Premium Pale Lager, the mash should support a rounded malt profile while preserving enough attenuation for balance against firm bitterness."
+    strong: [
+      { id: "mid", response: "A mid saccharification mash balances fermentability and dextrin production, preserving the rounded malt body expected in Czech Premium Pale Lager while still allowing sufficient attenuation to balance firm bitterness." },
+      { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest provides balanced fermentability and body while aligning with classic continental lager process." }
+    ],
+    defensible: [
+      { id: "decoction", response: "Incorrect for this drill, but defensible. A decoction mash can be a strong traditional choice for Czech Premium Pale Lager if fully justified and properly detailed. However, it requires more explanation, process clarity, and writing time, making it higher-risk if left incomplete." }
+    ],
+    risky: [
+      { id: "low", response: "A lower saccharification mash may overemphasize fermentability and push the beer drier than intended, reducing the rounded malt character expected in the style." }
+    ],
+    inconsistent: [
+      { id: "high", response: "A high saccharification mash may preserve excessive dextrins, pushing the beer toward a heavier finish that works against the intended balance and drinkability." }
+    ]
   },
+
   {
     styleCode: "6A",
     styleName: "Märzen",
-    correctOptions: ["single_mid", "single_mid_mashout", "hochkurz", "decoction"],
-    rationale: "For Märzen, the mash should preserve malt richness and smooth body without becoming heavy or overly sweet."
+    strong: [
+      { id: "mid", response: "A mid saccharification mash balances fermentability and dextrin production, preserving the smooth malt richness expected in Märzen while still allowing sufficient attenuation to avoid a heavy or sweet finish." },
+      { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest provides balanced fermentability and malt structure while aligning with traditional continental lager process." }
+    ],
+    defensible: [
+      { id: "decoction", response: "Incorrect for this drill, but defensible. A decoction mash can be a strong traditional choice for Märzen if fully justified and properly detailed. However, it requires more explanation, process clarity, and writing time, making it higher-risk if left incomplete." }
+    ],
+    risky: [
+      { id: "low", response: "A lower saccharification mash may overemphasize fermentability and dry the beer out more than intended, reducing the smooth malt richness expected in Märzen." }
+    ],
+    inconsistent: [
+      { id: "high", response: "A high saccharification mash may preserve excessive dextrins and push the beer toward a heavier or sweeter finish, reducing drinkability." }
+    ]
   },
+
   {
     styleCode: "4B",
     styleName: "Festbier",
-    correctOptions: ["single_mid", "single_mid_mashout", "hochkurz", "decoction"],
-    rationale: "For Festbier, the mash should support a smooth, elegant malt profile with enough attenuation to keep the beer drinkable."
+    strong: [
+      { id: "low", response: "A lower saccharification mash promotes a highly fermentable wort, supporting the dry, highly drinkable finish expected in Festbier while preserving enough malt structure through the grist and lager fermentation profile." },
+      { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest supports strong attenuation while preserving structure and aligning with traditional continental lager process." }
+    ],
+    defensible: [
+      { id: "decoction", response: "Incorrect for this drill, but defensible. A decoction mash can be a strong traditional choice for Festbier if fully justified and properly detailed. However, it requires more explanation, process clarity, and writing time, making it higher-risk if left incomplete." }
+    ],
+    risky: [
+      { id: "mid", response: "A mid saccharification mash can work, but it may preserve more body than ideal for a style that should finish cleaner and more attenuated than Märzen." }
+    ],
+    inconsistent: [
+      { id: "high", response: "A high saccharification mash favors dextrin production and fuller body, which conflicts with the clean, highly drinkable finish expected in Festbier." }
+    ]
   },
+
   {
     styleCode: "9A",
     styleName: "Doppelbock",
-    correctOptions: ["single_mid", "single_high", "single_mid_mashout", "single_high_mashout", "hochkurz", "decoction"],
-    rationale: "For Doppelbock, the mash should support rich malt depth and fuller body while still allowing enough fermentability to avoid a cloying finish."
+    strong: [
+      { id: "mid", response: "A mid saccharification mash balances fermentability and dextrin production, preserving the rich malt depth and fuller body expected in Doppelbock while still allowing enough attenuation to avoid a cloying finish." },
+      { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest provides balanced fermentability and malt structure while aligning with traditional continental lager brewing practice." }
+    ],
+    defensible: [
+      { id: "decoction", response: "Incorrect for this drill, but defensible. A decoction mash can be a strong traditional choice for Doppelbock if fully justified and properly detailed. However, it requires more explanation, process clarity, and writing time, making it higher-risk if left incomplete." }
+    ],
+    risky: [
+      { id: "high", response: "A high saccharification mash may preserve excessive dextrins in an already high-gravity beer, increasing the risk of a heavy, cloying finish." }
+    ],
+    inconsistent: [
+      { id: "low", response: "A lower saccharification mash may overemphasize fermentability and dry the beer out more than intended, reducing the rich malt fullness expected in Doppelbock." }
+    ]
   },
+
   {
     styleCode: "10A",
     styleName: "Weissbier",
-    correctOptions: ["single_mid", "single_mid_mashout", "hochkurz", "protein_step"],
-    rationale: "For Weissbier, the mash can support a soft wheat body and good fermentability while managing the high-protein wheat grist."
+    strong: [
+      { id: "mid", response: "A mid saccharification mash balances fermentability and dextrin production, supporting drinkability while preserving the soft wheat body expected in Weissbier." },
+      { id: "proteinStep", response: "A protein rest followed by a step mash can be a strong traditional choice for Weissbier when fully justified, as the high wheat grist may benefit from protein management while still supporting balanced fermentability." }
+    ],
+    defensible: [
+      { id: "hochkurz", response: "Incorrect for this drill, but defensible. A Hochkurz step mash can be defended when fully specified, particularly as a structured step approach, though it is less directly tied to the wheat-driven process considerations than a protein-inclusive schedule." }
+    ],
+    risky: [
+      { id: "low", response: "A lower saccharification mash may overemphasize fermentability and thin the beer more than intended, reducing the soft rounded body expected in Weissbier." }
+    ],
+    inconsistent: [
+      { id: "high", response: "A high saccharification mash may preserve excessive dextrins and reduce drinkability in a style that should remain lively and refreshing." }
+    ]
   },
+
   {
     styleCode: "26C",
     styleName: "Belgian Tripel",
-    correctOptions: ["single_low", "single_mid", "single_low_mashout", "single_mid_mashout"],
-    rationale: "For Belgian Tripel, a fermentable wort is important to achieve a dry finish despite high gravity and added sugar."
+    strong: [
+      { id: "low", response: "A lower saccharification mash promotes a highly fermentable wort, helping achieve the dry finish expected in Belgian Tripel while allowing the expressive yeast and sugar contribution to work toward high attenuation." }
+    ],
+    defensible: [
+      { id: "mid", response: "Incorrect for this drill, but defensible. A mid saccharification mash can be defended if paired with a highly attenuative Belgian strain and meaningful simple sugar contribution, but it is less direct than a lower mash for reliably achieving the dry finish expected in style." }
+    ],
+    risky: [
+      { id: "high", response: "A high saccharification mash preserves more dextrins and increases the risk of a fuller, sweeter finish that conflicts with the highly attenuated profile expected in Belgian Tripel." }
+    ],
+    inconsistent: [
+      { id: "proteinStep", response: "A protein-focused mash approach adds unnecessary process complexity without supporting the primary fermentability or grist needs of Belgian Tripel." }
+    ]
   },
+
   {
     styleCode: "15B",
     styleName: "Irish Stout",
-    correctOptions: ["single_mid", "single_mid_mashout"],
-    rationale: "For Irish Stout, a mid saccharification mash supports moderate body while keeping the finish dry enough for a roast-forward beer."
+    strong: [
+      { id: "low", response: "A lower saccharification mash promotes sufficient fermentability to achieve the dry finish expected in Irish Stout, while flaked barley preserves body and mouthfeel so the beer does not become thin." }
+    ],
+    defensible: [
+      { id: "mid", response: "Incorrect for this drill, but defensible. A mid saccharification mash can work, but because Irish Stout already gains body from flaked barley and less fermentable roasted grains, a slightly lower mash temperature is generally the stronger design choice for achieving a crisp dry finish." }
+    ],
+    risky: [
+      { id: "high", response: "A high saccharification mash favors dextrin production and fuller body, which may fight the dry finish expected in Irish Stout." }
+    ],
+    inconsistent: [
+      { id: "proteinStep", response: "A protein rest adds unnecessary process complexity without supporting the style’s fermentability or grist needs." }
+    ]
   },
+
   {
     styleCode: "20A",
     styleName: "American Porter",
-    correctOptions: ["single_mid", "single_high", "single_mid_mashout", "single_high_mashout"],
-    rationale: "For American Porter, a mid-to-high saccharification mash can support body and malt depth while balancing roast and hop bitterness."
+    strong: [
+      { id: "mid", response: "A mid saccharification mash balances fermentability and dextrin production, preserving sufficient body and malt depth for American Porter while still allowing enough attenuation to avoid a heavy or overly sweet finish." }
+    ],
+    defensible: [
+      { id: "low", response: "Incorrect for this drill, but defensible. A lower saccharification mash can still be defended, particularly if the goal is a drier interpretation with sharper roast expression, but it is less aligned with the typical fuller malt structure expected in American Porter." }
+    ],
+    risky: [
+      { id: "high", response: "A high saccharification mash may preserve excessive dextrins and push the beer toward a heavier, sweeter finish, reducing drinkability and throwing the balance off." }
+    ],
+    inconsistent: [
+      { id: "proteinStep", response: "A protein rest adds unnecessary complexity without supporting the fermentability or grist needs of a typical American Porter recipe." }
+    ]
   },
+
   {
     styleCode: "11C",
     styleName: "Strong Bitter",
-    correctOptions: ["single_mid", "single_mid_mashout"],
-    rationale: "For Strong Bitter, a mid saccharification mash supports balanced body and drinkability while allowing malt and bitterness to remain integrated."
+    strong: [
+      { id: "mid", response: "A mid saccharification mash balances fermentability and dextrin production, preserving enough malt body to support the style while maintaining the drinkability and bitterness balance expected in Strong Bitter." }
+    ],
+    defensible: [
+      { id: "low", response: "Incorrect for this drill, but defensible. A lower saccharification mash can be defended if targeting a drier interpretation, but it is less aligned with the moderate malt body and balanced character typically expected in Strong Bitter." }
+    ],
+    risky: [
+      { id: "high", response: "A high saccharification mash may preserve excessive dextrins, pushing the beer toward a fuller or sweeter finish that can disrupt drinkability and bitterness balance." }
+    ],
+    inconsistent: [
+      { id: "decoction", response: "A decoction mash adds unnecessary process complexity without meaningfully supporting the core design goals of Strong Bitter, which are balance, drinkability, and clean recipe execution." }
+    ]
   },
+
   {
     styleCode: "21A",
     styleName: "American IPA",
-    correctOptions: ["single_low", "single_mid", "single_low_mashout", "single_mid_mashout"],
-    rationale: "For American IPA, a lower-to-mid saccharification mash supports attenuation and drinkability so hop bitterness and aroma remain clear."
+    strong: [
+      { id: "low", response: "A lower saccharification mash promotes a highly fermentable wort, supporting the dry finish, clean drinkability, and strong hop expression expected in American IPA." }
+    ],
+    defensible: [
+      { id: "mid", response: "Incorrect for this drill, but defensible. A mid saccharification mash can be defended, particularly if targeting a slightly fuller modern interpretation, but it is less direct than a lower mash for maximizing hop clarity and drinkability." }
+    ],
+    risky: [
+      { id: "high", response: "A high saccharification mash may preserve excessive dextrins, creating sweetness and fullness that can interfere with hop balance and reduce drinkability." }
+    ],
+    inconsistent: [
+      { id: "decoction", response: "A decoction mash adds unnecessary process complexity without meaningfully supporting the primary design goals of American IPA, which are high attenuation, clean fermentation, and hop-forward balance." }
+    ]
   },
+
   {
     styleCode: "22A",
     styleName: "Double IPA",
-    correctOptions: ["single_low", "single_mid", "single_low_mashout", "single_mid_mashout"],
-    rationale: "For Double IPA, a fermentable wort is important to keep the high-gravity beer from finishing sweet or heavy while preserving hop focus."
+    strong: [
+      { id: "low", response: "A lower saccharification mash promotes a highly fermentable wort, helping achieve the dry finish and high drinkability needed to keep a strong Double IPA focused on hop expression rather than residual sweetness." }
+    ],
+    defensible: [
+      { id: "mid", response: "Incorrect for this drill, but defensible. A mid saccharification mash can be defended if paired with a highly attenuative yeast and optional sugar contribution, but it is less direct than a lower mash for achieving the dry, hop-focused balance expected in Double IPA." }
+    ],
+    risky: [
+      { id: "high", response: "A high saccharification mash may preserve excessive dextrins in an already high-gravity beer, increasing the risk of sweetness, heaviness, and reduced hop clarity." }
+    ],
+    inconsistent: [
+      { id: "decoction", response: "A decoction mash adds unnecessary process complexity without meaningfully supporting the primary design goals of Double IPA, which are high attenuation, clean fermentation, and hop-forward drinkability." }
+    ]
   }
 ];
 
@@ -633,43 +729,37 @@ questionText.textContent =
 
     input.focus();
 }
-    function renderMashQuestion() {
+function pickRandom(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+function shuffleArray(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
+function renderMashQuestion() {
     const question =
         module4MashQuestions[Math.floor(Math.random() * module4MashQuestions.length)];
 
     styleName.textContent = `Style: ${question.styleCode} ${question.styleName}`;
-    questionText.textContent = "Choose an appropriate mash schedule.";
+    questionText.textContent = "Choose the strongest mash strategy for this recipe.";
 
     feedbackBox.innerHTML = "";
     answerContainer.innerHTML = "";
 
-    const correctSet = new Set(question.correctOptions);
+    const choices = [
+        { ...pickRandom(question.strong), tier: "strong" },
+        { ...pickRandom(question.defensible), tier: "defensible" },
+        { ...pickRandom(question.risky), tier: "risky" },
+        { ...pickRandom(question.inconsistent), tier: "inconsistent" }
+    ];
 
-    const correctOptions = mashScheduleOptions.filter(option =>
-        correctSet.has(option.id)
-    );
-
-    const incorrectOptions = mashScheduleOptions.filter(option =>
-        !correctSet.has(option.id)
-    );
-
-    const selectedCorrect = correctOptions
-        .sort(() => Math.random() - 0.5)
-        .slice(0, Math.min(3, correctOptions.length));
-
-    const selectedIncorrect = incorrectOptions
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 3);
-
-    const choices = [...selectedCorrect, ...selectedIncorrect]
-        .sort(() => Math.random() - 0.5);
-
-    choices.forEach(option => {
+    shuffleArray(choices).forEach(choice => {
         const button = document.createElement("button");
-        button.textContent = option.label;
+        button.textContent = mashStrategyOptions[choice.id];
 
         button.addEventListener("click", function () {
-            checkMashAnswer(option, question);
+            checkMashAnswer(choice, choices);
         });
 
         answerContainer.appendChild(button);
@@ -935,15 +1025,27 @@ function checkGristAnswer(userInput, question) {
              Expected kg: ${correctKg.toFixed(1)}`;
     }
 }
-function checkMashAnswer(option, question) {
-    const isCorrect = question.correctOptions.includes(option.id);
+function checkMashAnswer(selectedChoice, displayedChoices) {
+    const isCorrect = selectedChoice.tier === "strong";
+
+    const strongChoice = displayedChoices.find(choice => choice.tier === "strong");
+    const strongLabel = mashStrategyOptions[strongChoice.id];
 
     const buttons = answerContainer.querySelectorAll("button");
+
     buttons.forEach(button => {
         button.disabled = true;
 
-        if (button.textContent === option.label) {
-            button.style.backgroundColor = isCorrect ? "#16a34a" : "#dc2626";
+        if (button.textContent === strongLabel) {
+            button.style.backgroundColor = "#16a34a";
+            button.style.color = "white";
+        }
+
+        if (
+            button.textContent === mashStrategyOptions[selectedChoice.id] &&
+            !isCorrect
+        ) {
+            button.style.backgroundColor = "#dc2626";
             button.style.color = "white";
         }
     });
@@ -954,30 +1056,21 @@ function checkMashAnswer(option, question) {
 
         feedbackBox.innerHTML = `
             <strong class="correct">Correct.</strong><br>
-            ${option.explanation}<br><br>
-            <strong>Style rationale:</strong><br>
-            ${question.rationale}
+            ${selectedChoice.response}
         `;
     } else {
         incorrectCount++;
         updateScoreDisplay();
 
-        const correctLabels = question.correctOptions
-            .map(id => mashScheduleOptions.find(option => option.id === id)?.label)
-            .filter(Boolean)
-            .join("<br>");
-
         feedbackBox.innerHTML = `
             <strong class="incorrect">Incorrect.</strong><br>
-            ${option.explanation}<br><br>
-            <strong>Better choices for this style include:</strong><br>
-            ${correctLabels}<br><br>
-            <strong>Style rationale:</strong><br>
-            ${question.rationale}
+            ${selectedChoice.response}<br><br>
+            <strong>Stronger answer shown:</strong><br>
+            ${strongLabel}<br><br>
+            ${strongChoice.response}
         `;
     }
 }
-    
     
 function checkAnswer(selectedAnswer, data) {
     const selectedAnchor = selectedAnswer.split(" — ")[0];
@@ -1184,7 +1277,7 @@ launchMashButton.addEventListener("click", function () {
     modules.style.display = "none";
     setCategoryVisibility(false);
     
-    drillTitle.textContent = "Mash Schedule Drill";
+    drillTitle.textContent = "Mash Strategy Drill";
     drillPanel.style.display = "block";
 
     renderMashQuestion();
