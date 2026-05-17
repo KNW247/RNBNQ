@@ -1706,7 +1706,6 @@ const compareClusters = [
       "Dark malt-forward ales with chocolate complexity, restrained roast, and smooth easy drinkability"
     ]
   },
-},
 
     anchor: {
       correct: "Foreign Extra Stout",
