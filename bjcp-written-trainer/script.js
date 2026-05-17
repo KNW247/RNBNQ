@@ -1288,7 +1288,7 @@ const primaryAnswer = correctAnswers[0];
             button.style.color = "white";
         }
 
-        if (button.textContent === selectedAnswer && selectedAnchor !== correctAnswer) {
+    if (button.textContent === selectedAnswer && !correctAnswers.includes(selectedAnchor)) {
             button.style.backgroundColor = "#dc2626";
             button.style.color = "white";
         }
