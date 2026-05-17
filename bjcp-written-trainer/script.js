@@ -1273,7 +1273,7 @@ function checkMashAnswer(selectedChoice, displayedChoices) {
 }
     
 function checkAnswer(selectedAnswer, data) {
-    const selectedAnchor = selectedAnswer.split(" — ")[0];
+  const selectedAnchor = selectedAnswer.replace(/\s*\(.*?\)\s*$/, "").split(" — ")[0];
     const correctAnswer = data.anchor;
     const buttons = answerContainer.querySelectorAll("button");
 
