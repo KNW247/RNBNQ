@@ -921,20 +921,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "stout-family",
-    title: "Stout Family",
-    styles: ["Irish Stout", "Sweet Stout", "Foreign Extra Stout"],
+{
+  id: "stout-family",
+  title: "Stout Family",
+  styles: ["Foreign Extra Stout", "Irish Stout", "Sweet Stout"],
 
-    sharedIdentity: {
-      best: "Dark stout ales with prominent roasted malt character and roast-driven bitterness",
-      weaker: [
-        "Roasty dark ales",
-        "Stout beers",
-        "Dark British-derived ales",
-        "Roasted ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "Dark stout ales with prominent roasted malt character and roast-driven bitterness",
+    weaker: [
+      "Dark stout ales with soft sweetness, fuller body, and restrained roast bitterness",
+      "Roasted dark ales with lean body, dry finish, and highly sessionable presentation",
+      "Strong export dark ales with elevated alcohol, richer body, and greater complexity",
+      "Dark British ales with chocolate malt character, moderate bitterness, and smooth drinkability"
+    ]
+  },
 
     anchor: {
       correct: "Irish Stout",
@@ -1001,20 +1001,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "stout-variants-family",
-    title: "Stout Family Variants",
-    styles: ["American Stout", "Irish Stout", "Oatmeal Stout"],
+{
+  id: "stout-variants-family",
+  title: "Stout Family Variants",
+  styles: ["American Stout", "Irish Stout", "Oatmeal Stout"],
 
-    sharedIdentity: {
-      best: "Dark stout ales with prominent roasted malt character and roast-driven bitterness",
-      weaker: [
-        "Roasty stout ales",
-        "Dark roasted ales",
-        "Stout beers",
-        "Dark bitter ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "Dark stout ales with prominent roasted malt character and roast-driven bitterness",
+    weaker: [
+      "Dark stout ales with aggressive American hop bitterness and assertive roast intensity",
+      "Roasted dark ales with lean body, dry finish, and highly sessionable drinkability",
+      "Smooth dark ales with fuller body, creamy texture, and softened roast presentation",
+      "Dark malt-forward ales with chocolate complexity, restrained roast, and smooth drinkability"
+    ]
+  },
 
     anchor: {
       correct: "Irish Stout",
@@ -1078,21 +1078,21 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "american-lager-family",
-    title: "American Lager Family",
-    styles: ["American Lager", "International Pale Lager", "Cream Ale"],
+{
+  id: "american-lager-family",
+  title: "American Lager Family",
+  styles: ["American Lager", "Cream Ale", "International Pale Lager"],
 
-    sharedIdentity: {
-      best: "Clean, highly drinkable pale beers built around subtle flavor and easy consumption",
-      weaker: [
-        "Light drinkable beers",
-        "Clean pale beers",
-        "Easy-drinking pale styles",
-        "Subtle pale beers"
-      ]
-    },
-
+  sharedIdentity: {
+    best: "Clean, highly drinkable pale beers built around subtle flavor and easy consumption",
+    weaker: [
+      "Clean pale beers with soft ale fermentation character and balanced malt presentation",
+      "Highly drinkable pale lagers with stronger malt flavor and firmer hop bitterness",
+      "Light-bodied pale beers with very low flavor intensity and highly neutral presentation",
+      "Easy-drinking hybrid beers with restrained fermentation and slightly fuller body"
+    ]
+  },
+ 
     anchor: {
       correct: "International Pale Lager",
       feedback: {
@@ -1154,20 +1154,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "american-strong-family",
-    title: "American Strong Family",
-    styles: ["American Strong Ale", "Double IPA", "American Barleywine"],
+ {
+  id: "american-strong-family",
+  title: "American Strong Family",
+  styles: ["American Barleywine", "American Strong Ale", "Double IPA"],
 
-    sharedIdentity: {
-      best: "High-intensity American ales with prominent alcohol, bold flavor, and assertive bitterness",
-      weaker: [
-        "Strong American ales",
-        "High-gravity American beers",
-        "Big bitter ales",
-        "Intense American styles"
-      ]
-    },
+  sharedIdentity: {
+    best: "High-intensity American ales with prominent alcohol, bold flavor, and assertive bitterness",
+    weaker: [
+      "High-gravity American ales with rich malt complexity, warming alcohol, and softer hop balance",
+      "Aggressively hop-forward American ales with dry finish, sharp bitterness, and lean malt support",
+      "Strong American ales with moderate bitterness, clean fermentation, and balanced drinkability",
+      "Big American beers with dark malt richness, roast intensity, and warming alcohol presence"
+    ]
+  },
 
     anchor: {
       correct: "American Strong Ale",
@@ -1231,20 +1231,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "belgian-abbey-family",
-    title: "Belgian Abbey / Strong Family",
-    styles: ["Belgian Blond Ale", "Belgian Dubbel", "Belgian Tripel"],
+{
+  id: "belgian-abbey-family",
+  title: "Belgian Abbey / Strong Family",
+  styles: ["Belgian Blond Ale", "Belgian Dubbel", "Belgian Tripel"],
 
-    sharedIdentity: {
-      best: "Strong Belgian ales with fruity/spicy fermentation character and high drinkability relative to strength",
-      weaker: [
-        "Belgian strong ales",
-        "Belgian ester-forward ales",
-        "Strong monastery-style ales",
-        "Expressive Belgian ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "Strong Belgian ales with fruity/spicy fermentation character and high drinkability relative to strength",
+    weaker: [
+      "Strong Belgian ales with darker malt richness, layered dark fruit complexity, and fuller sweetness",
+      "Highly attenuated Belgian ales with lean body, bright dryness, and champagne-like presentation",
+      "Expressive Belgian ales with moderate strength, soft malt balance, and restrained alcohol presence",
+      "Belgian monastery ales with aggressive phenolics, sharp dryness, and highly rustic fermentation character"
+    ]
+  },
 
     anchor: {
       correct: "Belgian Blond Ale",
@@ -1309,20 +1309,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "traditional-sour-family",
-    title: "Traditional Sour Ale Family",
-    styles: ["Berliner Weisse", "Lambic", "Gueuze"],
+{
+  id: "traditional-sour-family",
+  title: "Traditional Sour Ale Family",
+  styles: ["Berliner Weisse", "Gueuze", "Lambic"],
 
-    sharedIdentity: {
-      best: "Traditional pale sour ales with fermentation-derived acidity and high refreshment",
-      weaker: [
-        "Pale sour ales",
-        "Traditional sour ales",
-        "Refreshing sour ales",
-        "European sour ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "Traditional pale sour ales with fermentation-derived acidity and high refreshment",
+    weaker: [
+      "Pale sour ales with simple lactic acidity, light body, and highly refreshing presentation",
+      "Traditional sour ales with complex funk character, aged fermentation, and developed acidity",
+      "Blended sour ales with high carbonation, integrated acidity, and refined mature complexity",
+      "European sour beers with darker malt character, rich body, and restrained acidity"
+    ]
+  },
 
     anchor: {
       correct: "Lambic",
@@ -1387,20 +1387,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "ipa-family",
-    title: "IPA Family",
-    styles: ["American IPA", "Double IPA", "English IPA"],
+ {
+  id: "ipa-family",
+  title: "IPA Family",
+  styles: ["American IPA", "Double IPA", "English IPA"],
 
-    sharedIdentity: {
-      best: "Hop-forward ales with firm-to-expressive bitterness and hop character as a defining trait",
-      weaker: [
-        "Hop-forward ales",
-        "Bitter hop-driven ales",
-        "Assertively hopped ales",
-        "Strongly hopped ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "Hop-forward ales with firm-to-expressive bitterness and hop character as a defining trait",
+    weaker: [
+      "Aggressively hop-forward ales with elevated alcohol, lean body, and intense bitterness",
+      "Traditional hop-forward ales with stronger malt balance, estery fermentation, and rounded bitterness",
+      "Clean American hop ales with citrus-forward aroma, dry finish, and assertive bitterness",
+      "Strong bitter ales with restrained hop aroma, fuller malt body, and moderate bitterness"
+    ]
+  },
 
     anchor: {
       correct: "American IPA",
@@ -1464,20 +1464,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "strong-malt-ale-family",
-    title: "Strong Malt Ale Family",
-    styles: ["American Barleywine", "English Barleywine", "Wee Heavy"],
+{
+  id: "strong-malt-ale-family",
+  title: "Strong Malt Ale Family",
+  styles: ["American Barleywine", "English Barleywine", "Wee Heavy"],
 
-    sharedIdentity: {
-      best: "Big malt-forward ales with substantial body and intense flavor complexity",
-      weaker: [
-        "Strong ales",
-        "High-gravity ales",
-        "Malt-forward strong ales",
-        "Intense strong ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "Big malt-forward ales with substantial body and intense flavor complexity",
+    weaker: [
+      "High-gravity ales with aggressive hop bitterness, lean malt balance, and assertive dryness",
+      "Strong malt ales with rich English character, layered sweetness, and rounded drinkability",
+      "Big Scottish ales with deep caramel richness, restrained bitterness, and warming malt intensity",
+      "Dark strong ales with prominent roast bitterness, sharp dryness, and intense roasted complexity"
+    ]
+  },
 
     anchor: {
       correct: "English Barleywine",
@@ -1540,20 +1540,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "pale-lager-family",
-    title: "Pale Lager Family",
-    styles: ["American Lager", "American Light Lager", "International Pale Lager"],
+{
+  id: "pale-lager-family",
+  title: "Pale Lager Family",
+  styles: ["American Lager", "American Light Lager", "International Pale Lager"],
 
-    sharedIdentity: {
-      best: "Pale highly drinkable lagers with clean fermentation and restrained flavor profiles",
-      weaker: [
-        "Pale lagers",
-        "Clean pale lagers",
-        "Light-bodied lagers",
-        "Easy-drinking lagers"
-      ]
-    },
+  sharedIdentity: {
+    best: "Pale highly drinkable lagers with clean fermentation and restrained flavor profiles",
+    weaker: [
+      "Ultra-light pale lagers with very low flavor intensity, lean body, and highly neutral presentation",
+      "Pale international lagers with stronger malt presence, fuller body, and firmer hop balance",
+      "Clean pale lagers with moderate alcohol, broader malt flavor, and more assertive overall character",
+      "Pale easy-drinking beers with subtle ale fermentation character and slightly fuller body"
+    ]
+  },
 
     anchor: {
       correct: "American Lager",
@@ -1616,20 +1616,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "amber-balanced-family",
-    title: "Amber Balanced Family",
-    styles: ["Altbier", "Märzen", "Vienna Lager"],
+{
+  id: "amber-balanced-family",
+  title: "Amber Balanced Family",
+  styles: ["Altbier", "Märzen", "Vienna Lager"],
 
-    sharedIdentity: {
-      best: "Amber balanced beers with noticeable malt character and high drinkability",
-      weaker: [
-        "Amber beers",
-        "Balanced amber styles",
-        "Malt-forward amber beers",
-        "Drinkable amber beers"
-      ]
-    },
+  sharedIdentity: {
+    best: "Amber balanced beers with noticeable malt character and high drinkability",
+    weaker: [
+      "Amber beers with firm bitterness, dry finish, and clean ale fermentation character",
+      "Amber lagers with richer malt depth, fuller body, and pronounced toast-driven complexity",
+      "Clean amber lagers with softer malt balance, delicate toast character, and refined drinkability",
+      "Amber malt-forward beers with aggressive caramel sweetness, low bitterness, and heavy body"
+    ]
+  },
 
     anchor: {
       correct: "Vienna Lager",
@@ -1692,20 +1692,21 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "stout-intensity-family",
-    title: "Stout Intensity Family",
-    styles: ["American Stout", "Foreign Extra Stout", "Sweet Stout"],
+{
+  id: "stout-intensity-family",
+  title: "Stout Intensity Family",
+  styles: ["American Stout", "Foreign Extra Stout", "Sweet Stout"],
 
-    sharedIdentity: {
-      best: "Dark stout ales with prominent roasted malt character and roast-driven bitterness",
-      weaker: [
-        "Roasty stout ales",
-        "Dark stout beers",
-        "Roasted dark ales",
-        "Bitter dark ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "Dark stout ales with prominent roasted malt character and roast-driven bitterness",
+    weaker: [
+      "Dark stout ales with aggressive American hop bitterness, assertive roast intensity, and clean fermentation",
+      "Strong export stouts with elevated alcohol, richer body, and greater dark fruit complexity",
+      "Sweet dark stouts with fuller body, residual sweetness, and softened roast bitterness",
+      "Dark malt-forward ales with chocolate complexity, restrained roast, and smooth easy drinkability"
+    ]
+  },
+},
 
     anchor: {
       correct: "Foreign Extra Stout",
@@ -1768,20 +1769,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "bock-family",
-    title: "Bock Family",
-    styles: ["Doppelbock", "Dunkles Bock", "Helles Bock"],
+{
+  id: "bock-family",
+  title: "Bock Family",
+  styles: ["Doppelbock", "Dunkles Bock", "Helles Bock"],
 
-    sharedIdentity: {
-      best: "Strong German lagers with prominent malt character and clean fermentation",
-      weaker: [
-        "Strong German lagers",
-        "Malt-forward German lagers",
-        "Big German lagers",
-        "Strong continental lagers"
-      ]
-    },
+  sharedIdentity: {
+    best: "Strong German lagers with prominent malt character and clean fermentation",
+    weaker: [
+      "Strong German lagers with intense dark malt richness, warming alcohol, and substantial body",
+      "Pale strong German lagers with brighter malt profile, lighter color, and firmer hop presence",
+      "Amber German lagers with rich toast character, moderate strength, and smooth malt-forward balance",
+      "Strong continental lagers with expressive fermentation character, fruity esters, and warming complexity"
+    ]
+  },
 
     anchor: {
       correct: "Dunkles Bock",
@@ -1845,20 +1846,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "strong-german-ale-lager-family",
-    title: "Strong German Ale/Lager Family",
-    styles: ["Doppelbock", "Dunkles Bock", "Weizenbock"],
+{
+  id: "strong-german-ale-lager-family",
+  title: "Strong German Ale/Lager Family",
+  styles: ["Doppelbock", "Dunkles Bock", "Weizenbock"],
 
-    sharedIdentity: {
-      best: "Big malt-forward German beers with substantial body and elevated strength",
-      weaker: [
-        "Strong German beers",
-        "Big malt-driven German styles",
-        "High-strength German beers",
-        "Intense German malt styles"
-      ]
-    },
+  sharedIdentity: {
+    best: "Big malt-forward German beers with substantial body and elevated strength",
+    weaker: [
+      "Strong German lagers with clean fermentation, deep malt richness, and warming alcohol presence",
+      "German wheat ales with expressive banana/clove fermentation and elevated strength",
+      "Amber German lagers with moderate strength, balanced drinkability, and smooth toast-driven malt character",
+      "Strong German beers with aggressive hop bitterness, dry finish, and lean malt balance"
+    ]
+  },
 
     anchor: {
       correct: "Dunkles Bock",
