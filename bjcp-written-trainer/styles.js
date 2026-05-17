@@ -819,7 +819,7 @@ strength: { anchor: ["Standard", "Standard+"], min: 4.5, max: 6.2, unit: "%" }
 {
     code: "4C",
     name: "Helles Bock",
-    strength: { anchor: "Strong", min: 6.3, max: 7.4, unit: "%" },
+    strength: { anchor: ["Standard+", "Strong"], min: 6.3, max: 7.4, unit: "%" }
     bitterness: { anchor: "Slightly Malt-forward", min: 23, max: 35, unit: "IBU" },
     body: { anchor: "Medium-Full", min: 1.011, max: 1.018, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium body. Moderate to moderately-high carbonation." },
