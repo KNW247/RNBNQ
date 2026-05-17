@@ -459,20 +459,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "belgian-strong-pale-family",
-    title: "Belgian Strong Pale Family",
-    styles: ["Belgian Blonde Ale", "Belgian Tripel", "Belgian Golden Strong Ale"],
+{
+  id: "belgian-strong-pale-family",
+  title: "Belgian Strong Pale Family",
+  styles: ["Belgian Blonde Ale", "Belgian Golden Strong Ale", "Belgian Tripel"],
 
-    sharedIdentity: {
-      best: "Strong pale Belgian ales where expressive fermentation and high attenuation define the family",
-      weaker: [
-        "Strong Belgian ales",
-        "Belgian pale ales",
-        "Expressive strong ales",
-        "High-attenuation Belgian beers"
-      ]
-    },
+  sharedIdentity: {
+    best: "Strong pale Belgian ales where expressive fermentation and high attenuation define the family",
+    weaker: [
+      "Strong Belgian ales with darker malt richness and layered dark fruit complexity",
+      "Highly attenuated Belgian ales with lean body and champagne-like presentation",
+      "Expressive Belgian ales with moderate strength and softer malt-forward balance",
+      "Belgian strong ales with fuller sweetness and restrained fermentation character"
+    ]
+  },
 
     anchor: {
       correct: "Belgian Tripel",
@@ -536,20 +536,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "british-bitters-family",
-    title: "British Bitters Family",
-    styles: ["Ordinary Bitter", "Best Bitter", "Strong Bitter"],
+ {
+  id: "british-bitters-family",
+  title: "British Bitters Family",
+  styles: ["Best Bitter", "Ordinary Bitter", "Strong Bitter"],
 
-    sharedIdentity: {
-      best: "British bitter ales with balanced drinkability and traditional British fermentation character",
-      weaker: [
-        "British bitter ales",
-        "Moderate-strength British ales",
-        "Balanced British pale ales",
-        "Traditional British session ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "British bitter ales with balanced drinkability and traditional British fermentation character",
+    weaker: [
+      "Traditional British session ales with low alcohol and restrained flavor intensity",
+      "British pale ales with stronger alcohol, fuller body, and richer malt expression",
+      "Balanced British ales with firm bitterness and cleaner fermentation character",
+      "Moderate-strength British ales with aggressive hop bitterness and dry finish"
+    ]
+  },
 
     anchor: {
       correct: "Best Bitter",
@@ -614,20 +614,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "german-wheat-family",
-    title: "German Wheat Family",
-    styles: ["Weissbier", "Dunkles Weissbier", "Weizenbock"],
+{
+  id: "german-wheat-family",
+  title: "German Wheat Family",
+  styles: ["Dunkles Weissbier", "Weissbier", "Weizenbock"],
 
-    sharedIdentity: {
-      best: "German wheat ales with distinctive banana/clove fermentation character and a prominent wheat profile",
-      weaker: [
-        "German wheat ales",
-        "Wheat-forward German ales",
-        "German wheat beers with expressive fermentation",
-        "Traditional German wheat styles"
-      ]
-    },
+  sharedIdentity: {
+    best: "German wheat ales with distinctive banana/clove fermentation character and a prominent wheat profile",
+    weaker: [
+      "German wheat ales with darker malt richness and restrained fermentation character",
+      "Strong German wheat ales with elevated alcohol and intense warming malt complexity",
+      "Traditional wheat ales with expressive fermentation and light refreshing body",
+      "German ales with prominent wheat character and clean restrained fermentation"
+    ]
+  },
 
     anchor: {
       correct: "Weissbier",
@@ -692,20 +692,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "abbey-dark-family",
-    title: "Abbey Dark Family",
-    styles: ["Belgian Dubbel", "Belgian Dark Strong Ale", "Old Ale"],
+{
+  id: "abbey-dark-family",
+  title: "Abbey Dark Family",
+  styles: ["Belgian Dark Strong Ale", "Belgian Dubbel", "Old Ale"],
 
-    sharedIdentity: {
-      best: "Strong malt-forward ales with layered dark fruit complexity and expressive fermentation character",
-      weaker: [
-        "Strong dark ales",
-        "Malt-forward strong ales",
-        "Complex dark ales",
-        "High-strength traditional ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "Strong malt-forward ales with layered dark fruit complexity and expressive fermentation character",
+    weaker: [
+      "Strong dark ales with clean fermentation and roast-driven bitterness",
+      "Malt-forward English ales with restrained fermentation and aged oxidative complexity",
+      "Belgian strong ales with pale malt profile, high attenuation, and expressive fruity fermentation",
+      "High-strength dark ales with aggressive roast character and sharp dry finish"
+    ]
+  },
 
     anchor: {
       correct: "Belgian Dark Strong Ale",
@@ -769,20 +769,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "british-dark-family",
-    title: "British Dark Family",
-    styles: ["Dark Mild", "Brown Porter", "Sweet Stout"],
+{
+  id: "british-dark-family",
+  title: "British Dark Family",
+  styles: ["Brown Porter", "Dark Mild", "Sweet Stout"],
 
-    sharedIdentity: {
-      best: "Malt-driven dark British ales emphasizing drinkability over aggressive roast",
-      weaker: [
-        "Dark British ales",
-        "Malt-forward dark beers",
-        "Traditional dark ales",
-        "Session dark beers"
-      ]
-    },
+  sharedIdentity: {
+    best: "Malt-driven dark British ales emphasizing drinkability over aggressive roast",
+    weaker: [
+      "Dark British ales with aggressive roast bitterness and sharp dry finish",
+      "Traditional British session ales with low alcohol and restrained dark malt character",
+      "Sweet dark ales with fuller body, residual sweetness, and soft roast character",
+      "Malt-forward dark beers with stronger alcohol and assertive hop bitterness"
+    ]
+  },
 
     anchor: {
       correct: "Brown Porter",
@@ -845,20 +845,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "american-hop-family",
-    title: "American Hop Family",
-    styles: ["American Pale Ale", "American Amber Ale", "American IPA"],
+{
+  id: "american-hop-family",
+  title: "American Hop Family",
+  styles: ["American Amber Ale", "American IPA", "American Pale Ale"],
 
-    sharedIdentity: {
-      best: "Hop-forward American ales with clean fermentation and assertive bitterness",
-      weaker: [
-        "American hop ales",
-        "Hop-forward ales",
-        "American bitter ales",
-        "Clean American ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "Hop-forward American ales with clean fermentation and assertive bitterness",
+    weaker: [
+      "American ales with prominent caramel malt character and balanced hop bitterness",
+      "Strong American hop ales with elevated alcohol and aggressive bitterness",
+      "Clean American ales with restrained bitterness and broad drinkability",
+      "Hop-forward ales with expressive fermentation character and softer bitterness"
+    ]
+  },
 
     anchor: {
       correct: "American Amber Ale",
