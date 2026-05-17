@@ -1,18 +1,18 @@
 const compareClusters = [
-  {
-    id: "strong-hop-forward-family",
-    title: "Strong Hop-Forward Family",
-    styles: ["American IPA", "Double IPA", "American Barleywine"],
+ {
+  id: "strong-hop-forward-family",
+  title: "Strong Hop-Forward Family",
+  styles: ["American Barleywine", "American IPA", "Double IPA"],
 
-    sharedIdentity: {
-      best: "Strong hop-forward American ales with assertive bitterness and prominent hop character",
-     weaker: [
-  "Strong American ales with bold flavor and elevated alcohol",
-  "Hop-forward American ales with noticeable bitterness",
-  "American ales with prominent hops and firm bitterness",
-  "High-intensity American ales with assertive flavor character"
-]
-    },
+  sharedIdentity: {
+    best: "Strong hop-forward American ales with assertive bitterness and prominent hop character",
+    weaker: [
+      "Strong American ales with bold malt flavor and elevated alcohol",
+      "Hop-forward American ales with clean fermentation and moderate strength",
+      "American ales with prominent hops but restrained alcohol presence",
+      "High-intensity American ales with rich malt complexity and warming strength"
+    ]
+  },
 
     anchor: {
       correct: "Double IPA",
@@ -85,10 +85,10 @@ const compareClusters = [
   sharedIdentity: {
     best: "Dark malt-forward beers with restrained-to-prominent roast character and smooth drinkability",
     weaker: [
-      "Dark malt-forward beers with noticeable roast character and layered drinkability",
-      "Traditional dark beers with prominent malt character and smooth presentation",
-      "Dark beers with roast character, malt complexity, and balanced drinkability",
-      "Malt-driven dark beers with varying roast intensity and smooth overall character"
+      "Dark American and British ales with noticeable roast character and firm bitterness",
+      "Strong dark lager beers with smooth malt complexity and restrained roast character",
+      "Traditional dark ales with moderate strength, roast character, and easy drinkability",
+      "Dark malt-driven beers with aggressive roast bitterness and sharp dry finish"
     ]
   },
   
@@ -163,10 +163,10 @@ const compareClusters = [
   sharedIdentity: {
     best: "Pale continental lagers with clean fermentation, high drinkability, and refined balance",
     weaker: [
-      "Pale continental lagers with strong drinkability and balanced presentation",
-      "Traditional continental lagers with clean fermentation and pale malt character",
-      "Pale lager beers with refined balance and classic continental drinkability",
-      "Clean pale continental lagers with noticeable malt and hop balance"
+      "Pale bitter continental lagers with assertive hop character and dry finish",
+      "Soft malt-forward continental lagers with delicate bitterness and smooth drinkability",
+      "Traditional pale lagers with prominent noble hop bitterness and crisp dry balance",
+      "Clean pale European lagers with fuller malt expression and restrained hop bitterness"
     ]
   },
 
@@ -239,13 +239,12 @@ const compareClusters = [
   sharedIdentity: {
     best: "Traditional continental ales where fermentation drives defining aroma and flavor characteristics",
     weaker: [
-      "Traditional continental ales with expressive fermentation and distinctive overall character",
-      "European ale styles with fermentation-derived aroma and recognizable regional identity",
-      "Moderate-strength continental ales with notable fermentation character and drinkable balance",
-      "Fermentation-driven traditional ales with expressive aroma and stylistic continental character"
+      "Traditional continental ales with restrained fermentation and stronger malt-driven balance",
+      "European farmhouse ales with highly expressive rustic fermentation and dry finish",
+      "Moderate-strength Belgian ales with clean fermentation and balanced malt character",
+      "Continental ales with rich malt expression, soft bitterness, and restrained yeast character"
     ]
   },
-
     anchor: {
       correct: "Belgian Pale Ale",
       feedback: {
@@ -307,21 +306,20 @@ const compareClusters = [
       "Saison": ["Saison Dupont", "Saison Voisin"]
     }
   },
+{
+  id: "blonde-cream-kolsch-family",
+  title: "Pale Clean Ale Family",
+  styles: ["Blonde Ale", "Cream Ale", "Kölsch"],
 
-  {
-    id: "blonde-cream-kolsch-family",
-    title: "Pale Clean Ale Family",
-    styles: ["Blonde Ale", "Cream Ale", "Kölsch"],
-
-    sharedIdentity: {
-      best: "Pale, approachable, easy-drinking ales with clean fermentation character",
-      weaker: [
-        "Pale easy-drinking ales",
-        "Standard-strength pale ales",
-        "Clean pale ales",
-        "Approachable ale styles"
-      ]
-    },
+  sharedIdentity: {
+    best: "Pale, approachable, easy-drinking ales with clean fermentation character",
+    weaker: [
+      "Pale American ales with soft malt balance and restrained hop bitterness",
+      "Hybrid-style pale beers with lager-like smoothness and subtle fermentation character",
+      "Traditional European pale ales with delicate fermentation and crisp drinkability",
+      "Pale refreshing ales with sharper bitterness and drier overall presentation"
+    ]
+  },
 
     anchor: {
       correct: "Blonde Ale",
@@ -385,20 +383,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "german-pale-lager-family",
-    title: "German Pale Lager Family",
-    styles: ["German Pils", "German Helles Exportbier", "Munich Helles"],
+{
+  id: "german-pale-lager-family",
+  title: "German Pale Lager Family",
+  styles: ["German Helles Exportbier", "German Pils", "Munich Helles"],
 
-    sharedIdentity: {
-      best: "Pale German lagers with clean fermentation, high drinkability, and refined balance",
-      weaker: [
-        "German pale lagers",
-        "Clean German lagers",
-        "Drinkable pale German lagers",
-        "Balanced German lagers"
-      ]
-    },
+  sharedIdentity: {
+    best: "Pale German lagers with clean fermentation, high drinkability, and refined balance",
+    weaker: [
+      "Pale German lagers with assertive bitterness and crisp dry finish",
+      "Soft malt-forward German lagers with delicate bitterness and smooth drinkability",
+      "Stronger pale German lagers with fuller body and elevated malt intensity",
+      "Clean German lagers with prominent hop bitterness and firm dry balance"
+    ]
+  },
 
     anchor: {
       correct: "German Helles Exportbier",
