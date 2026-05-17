@@ -212,7 +212,7 @@ const styles = [
   {
     code: "15B",
     name: "Irish Stout",
-    strength: { anchor: "Session / Low", min: 3.8, max: 5.0, unit: "%" },
+    strength: { anchor: ["Session / Low", "Standard"], min: 3.8, max: 5.0, unit: "%" },
     bitterness: { anchor: "Medium-High Bitter", min: 25, max: 45, unit: "IBU" },
     body: { anchor: "Medium-Light", min: 1.007, max: 1.011, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium-light to medium body. Moderate carbonation. Smooth." },
@@ -225,13 +225,7 @@ const styles = [
     code: "3A",
     name: "Czech Pale Lager",
 
-    strength: {
-        anchor: "Session / Low",
-        min: 3.0,
-        max: 4.1,
-        unit: "%"
-    },
-
+   strength: { anchor: ["Session / Low", "Standard"], min: 3.0, max: 4.1, unit: "%" }
     bitterness: {
         anchor: "Hop-forward",
         min: 20,
@@ -501,12 +495,7 @@ const styles = [
     code: "11C",
     name: "Strong Bitter",
 
-    strength: {
-        anchor: "Standard+",
-        min: 4.6,
-        max: 6.2,
-        unit: "%"
-    },
+    strength: { anchor: ["Standard+", "Standard"], min: 4.6, max: 6.2, unit: "%" }
 
     bitterness: {
         anchor: "Firm Bitter",
@@ -607,12 +596,8 @@ const styles = [
     code: "18B",
     name: "American Pale Ale",
 
-    strength: {
-        anchor: "Standard",
-        min: 4.5,
-        max: 6.2,
-        unit: "%"
-    },
+   
+strength: { anchor: ["Standard", "Standard+"], min: 4.5, max: 6.2, unit: "%" }
 
     bitterness: {
         anchor: "Hop-forward",
