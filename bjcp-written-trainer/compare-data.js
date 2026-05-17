@@ -1922,20 +1922,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "wheat-ale-family",
-    title: "Wheat Ale Family",
-    styles: ["American Wheat Beer", "Weissbier", "Witbier"],
+{
+  id: "wheat-ale-family",
+  title: "Wheat Ale Family",
+  styles: ["American Wheat Beer", "Weissbier", "Witbier"],
 
-    sharedIdentity: {
-      best: "Refreshing wheat-based ales with similar pale base profiles and high drinkability",
-      weaker: [
-        "Wheat ales",
-        "Pale wheat beers",
-        "Refreshing wheat beers",
-        "Easy-drinking wheat ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "Refreshing wheat-based ales with similar pale base profiles and high drinkability",
+    weaker: [
+      "Wheat ales with expressive banana/clove fermentation character and traditional German yeast profile",
+      "Refreshing wheat ales with Belgian fermentation, spice complexity, and soft citrus character",
+      "Clean pale wheat ales with restrained fermentation and subtle hop-balanced drinkability",
+      "Pale refreshing ales with firm bitterness, dry finish, and prominent hop aroma"
+    ]
+  },
 
     anchor: {
       correct: "American Wheat Beer",
@@ -1998,20 +1998,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "big-dark-complex-family",
-    title: "Big Dark Complex Family",
-    styles: ["Baltic Porter", "Belgian Dark Strong Ale", "Imperial Stout"],
+{
+  id: "big-dark-complex-family",
+  title: "Big Dark Complex Family",
+  styles: ["Baltic Porter", "Belgian Dark Strong Ale", "Imperial Stout"],
 
-    sharedIdentity: {
-      best: "Big dark beers with bold malt-driven flavor and layered malt complexity",
-      weaker: [
-        "Strong dark beers",
-        "Big dark beers",
-        "High-strength dark styles",
-        "Rich dark beers"
-      ]
-    },
+  sharedIdentity: {
+    best: "Big dark beers with bold malt-driven flavor and layered malt complexity",
+    weaker: [
+      "Strong dark ales with expressive Belgian fermentation, dark fruit complexity, and warming alcohol presence",
+      "Big roasted dark beers with aggressive bitterness, intense roast character, and assertive dark malt dryness",
+      "Strong smooth dark lagers with restrained roast, clean fermentation, and rich malt complexity",
+      "Dark beers with moderate strength, soft chocolate malt character, and easy drinkability"
+    ]
+  },
 
     anchor: {
       correct: "Baltic Porter",
@@ -2074,20 +2074,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "amber-ale-lager-family",
-    title: "Amber Balanced Ale/Lager Family",
-    styles: ["California Common", "Irish Red Ale", "Märzen"],
+{
+  id: "amber-ale-lager-family",
+  title: "Amber Balanced Ale/Lager Family",
+  styles: ["California Common", "Irish Red Ale", "Märzen"],
 
-    sharedIdentity: {
-      best: "Amber balanced beers with noticeable malt character, drinkability, and restrained complexity",
-      weaker: [
-        "Amber balanced beers",
-        "Amber malt-forward beers",
-        "Drinkable amber beers",
-        "Traditional amber styles"
-      ]
-    },
+  sharedIdentity: {
+    best: "Amber balanced beers with noticeable malt character, drinkability, and restrained complexity",
+    weaker: [
+      "Amber beers with firm bitterness, dry finish, and distinctive Northern Brewer hop character",
+      "Amber ales with soft caramel malt balance, restrained bitterness, and easy session drinkability",
+      "Amber lagers with richer toast-driven malt complexity, fuller body, and smooth clean fermentation",
+      "Amber malt-forward beers with aggressive sweetness, low bitterness, and heavy full-bodied presentation"
+    ]
+  },
 
     anchor: {
       correct: "Irish Red Ale",
@@ -2150,20 +2150,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "irish-export-stout-family",
-    title: "Irish / Export Stout Family",
-    styles: ["Foreign Extra Stout", "Irish Extra Stout", "Irish Stout"],
+{
+  id: "irish-export-stout-family",
+  title: "Irish / Export Stout Family",
+  styles: ["Foreign Extra Stout", "Irish Extra Stout", "Irish Stout"],
 
-    sharedIdentity: {
-      best: "Dark stout ales with prominent roasted malt character and roast-driven bitterness",
-      weaker: [
-        "Roasty stout ales",
-        "Dark stout beers",
-        "Roasted dark ales",
-        "Bitter dark ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "Dark stout ales with prominent roasted malt character and roast-driven bitterness",
+    weaker: [
+      "Lean dry stout ales with lower alcohol, sharp roast bitterness, and highly sessionable drinkability",
+      "Strong export stouts with elevated alcohol, richer body, and layered dark fruit complexity",
+      "Roasted stout ales with fuller body, softened bitterness, and noticeable residual sweetness",
+      "Dark malt-forward ales with chocolate complexity, restrained roast, and smooth porter-like drinkability"
+    ]
+  },
 
     anchor: {
       correct: "Irish Extra Stout",
@@ -2226,21 +2226,20 @@ const compareClusters = [
       "Irish Stout": ["Guinness Draught", "Murphy’s Stout"]
     }
   },
+{
+  id: "german-malt-lager-family",
+  title: "German Malt Lager Family",
+  styles: ["Märzen", "Munich Dunkel", "Munich Helles"],
 
-  {
-    id: "german-malt-lager-family",
-    title: "German Malt Lager Family",
-    styles: ["Munich Helles", "Munich Dunkel", "Märzen"],
-
-    sharedIdentity: {
-      best: "German malt-accented lagers with clean fermentation, high drinkability, and balanced malt character",
-      weaker: [
-        "German lagers",
-        "Malt-forward German lagers",
-        "Balanced German lagers",
-        "Traditional German lager styles"
-      ]
-    },
+  sharedIdentity: {
+    best: "German malt-accented lagers with clean fermentation, high drinkability, and balanced malt character",
+    weaker: [
+      "Pale German lagers with delicate malt expression, lower alcohol, and restrained bitterness",
+      "Amber German lagers with richer toast character, fuller body, and festival-style malt balance",
+      "Dark German lagers with smooth malt richness, clean fermentation, and restrained roast character",
+      "German lagers with expressive fruity fermentation, soft sweetness, and ale-like complexity"
+    ]
+  },
 
     anchor: {
       correct: "Munich Dunkel",
@@ -2304,21 +2303,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "amber-lager-strength-family",
-    title: "Amber Lager Strength Family",
-    styles: ["Czech Amber Lager", "Dunkles Bock", "Märzen"],
+{
+  id: "amber-lager-strength-family",
+  title: "Amber Lager Strength Family",
+  styles: ["Czech Amber Lager", "Dunkles Bock", "Märzen"],
 
-    sharedIdentity: {
-      best: "Amber lager beers with clean fermentation, prominent malt character, and balanced drinkability",
-      weaker: [
-        "Amber lagers",
-        "Malt-forward lagers",
-        "Clean amber lagers",
-        "Traditional amber lager styles"
-      ]
-    },
-
+  sharedIdentity: {
+    best: "Amber lager beers with clean fermentation, prominent malt character, and balanced drinkability",
+    weaker: [
+      "Amber lagers with firmer hop bitterness, Czech hop character, and leaner balanced presentation",
+      "Strong amber lagers with elevated alcohol, richer malt depth, and fuller warming body",
+      "Amber lagers with deep toast-driven malt complexity, fuller body, and richer festival-style drinkability",
+      "Amber beers with expressive fruity fermentation, soft malt sweetness, and restrained bitterness"
+    ]
+  },
     anchor: {
       correct: "Märzen",
       feedback: {
@@ -2382,20 +2380,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "pale-strong-german-lager-family",
-    title: "Pale Strong German Lager Family",
-    styles: ["Festbier", "Helles Bock", "Munich Helles"],
+{
+  id: "pale-strong-german-lager-family",
+  title: "Pale Strong German Lager Family",
+  styles: ["Festbier", "Helles Bock", "Munich Helles"],
 
-    sharedIdentity: {
-      best: "Pale German lagers with clean fermentation, strong drinkability, and malt-forward balance",
-      weaker: [
-        "Pale German lagers",
-        "German malt-accented lagers",
-        "Clean pale lagers",
-        "Traditional German lager styles"
-      ]
-    },
+  sharedIdentity: {
+    best: "Pale German lagers with clean fermentation, strong drinkability, and malt-forward balance",
+    weaker: [
+      "Pale German lagers with delicate malt expression, lower alcohol, and highly restrained overall intensity",
+      "Strong pale German lagers with elevated alcohol, fuller body, and warming malt-driven richness",
+      "Festival pale lagers with smooth drinkability, rounded malt balance, and moderate celebratory strength",
+      "Pale lagers with expressive fruity fermentation, soft sweetness, and restrained clean lager character"
+    ]
+  },
 
     anchor: {
       correct: "Festbier",
@@ -2458,20 +2456,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "english-strong-malt-family",
-    title: "English Strong Malt Family",
-    styles: ["British Strong Ale", "English Barleywine", "Old Ale"],
+{
+  id: "english-strong-malt-family",
+  title: "English Strong Malt Family",
+  styles: ["British Strong Ale", "English Barleywine", "Old Ale"],
 
-    sharedIdentity: {
-      best: "Strong malt-forward British ales with expressive malt complexity and traditional English fermentation character",
-      weaker: [
-        "Strong British ales",
-        "Malt-forward British ales",
-        "Traditional English strong ales",
-        "Rich British ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "Strong malt-forward British ales with expressive malt complexity and traditional English fermentation character",
+    weaker: [
+      "Strong British ales with cleaner malt profile, moderate strength, and restrained complexity",
+      "Rich English ales with intense alcohol warmth, fuller body, and layered malt sweetness",
+      "Traditional British ales with aged oxidative complexity, dark fruit character, and softer bitterness",
+      "Strong dark ales with aggressive roast bitterness, dry finish, and intense roasted complexity"
+    ]
+  },
 
     anchor: {
       correct: "Old Ale",
