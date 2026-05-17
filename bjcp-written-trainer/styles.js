@@ -126,7 +126,7 @@ const styles = [
 {
     code: "9A",
     name: "Doppelbock",
-    strength: { anchor: "Strong", min: 7.0, max: 10.0, unit: "%" },
+    strength: { anchor: ["Strong", "Very Strong"], min: 7.0, max: 10.0, unit: "%" },
     bitterness: { anchor: "Rich Malt", min: 16, max: 26, unit: "IBU" },
     body: { anchor: "Full", min: 1.016, max: 1.024, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium-low to moderate carbonation." },
@@ -276,7 +276,7 @@ const styles = [
 {
     code: "22A",
     name: "Double IPA",
-    strength: { anchor: ["Strong", "Very Strong"], min: 7.5, max: 10.0, unit: "%" }
+    strength: { anchor: ["Strong", "Very Strong"], min: 7.5, max: 10.0, unit: "%" },
     bitterness: { anchor: "Aggressive", min: 60, max: 120, unit: "IBU" },
     body: { anchor: "Medium", min: 1.008, max: 1.018, unit: "FG" },
     carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium-light to medium body. Medium to high carbonation." },
