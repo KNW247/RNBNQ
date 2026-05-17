@@ -647,12 +647,13 @@ function renderCompareSharedIdentity() {
                 button.style.backgroundColor = "#f59e0b";
                 button.style.color = "white";
 
-                feedbackBox.innerHTML = `
-                    <strong>True, but incomplete.</strong><br>
-                    "${option.text}" is defensible, but the stronger answer is:<br>
-                    <strong>${currentCompareCluster.sharedIdentity.best}</strong><br><br>
-                    Try again.
-                `;
+             feedbackBox.innerHTML = `
+                <strong>Incorrect.</strong><br>
+                "${option.text}" may fit part of the group, but it does not accurately define all three styles.<br><br>
+                Strongest answer:<br>
+                <strong>${currentCompareCluster.sharedIdentity.best}</strong><br><br>
+              Try again.
+`;
 
                 return;
             }
