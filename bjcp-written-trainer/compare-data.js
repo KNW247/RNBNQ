@@ -1997,5 +1997,157 @@ const compareClusters = [
       "Weissbier": ["Weihenstephaner Hefeweissbier", "Paulaner Hefe-Weizen"],
       "Witbier": ["Hoegaarden Wit", "St. Bernardus Wit"]
     }
+  },
+
+  {
+    id: "big-dark-complex-family",
+    title: "Big Dark Complex Family",
+    styles: ["Baltic Porter", "Belgian Dark Strong Ale", "Imperial Stout"],
+
+    sharedIdentity: {
+      best: "Big dark beers with bold malt-driven flavor and layered malt complexity",
+      weaker: [
+        "Strong dark beers",
+        "Big dark beers",
+        "High-strength dark styles",
+        "Rich dark beers"
+      ]
+    },
+
+    anchor: {
+      correct: "Baltic Porter",
+      feedback: {
+        "Belgian Dark Strong Ale":
+          "Usable, but not ideal. Belgian Dark Strong introduces a very specific fermentation-driven Belgian profile, making it less neutral as the comparison midpoint.",
+
+        "Imperial Stout":
+          "Not the strongest anchor. Imperial Stout is the most aggressively roasted and intense expression, making comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Belgian Dark Strong Ale",
+        prompt: "Compared to Baltic Porter, Belgian Dark Strong Ale is:",
+        correct: [
+          "Belgian fruity/spicy fermentation character",
+          "less roast emphasis",
+          "more expressive yeast complexity",
+          "lighter roast profile",
+          "more fermentation-driven complexity"
+        ],
+        distractors: [
+          "clean lager fermentation",
+          "stronger roast emphasis",
+          "neutral fermentation",
+          "less expressive yeast",
+          "clean malt-driven profile"
+        ]
+      },
+
+      {
+        style: "Imperial Stout",
+        prompt: "Compared to Baltic Porter, Imperial Stout is:",
+        correct: [
+          "stronger roast intensity",
+          "greater bitterness",
+          "more aggressive dark malt profile",
+          "heavier overall intensity",
+          "more assertive roast bitterness"
+        ],
+        distractors: [
+          "less roast intensity",
+          "lower bitterness",
+          "cleaner malt profile",
+          "lighter overall presentation",
+          "more restrained roast"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are big dark beers with bold malt-driven flavor and layered malt complexity. Compared to Baltic Porter, Belgian Dark Strong Ale shifts toward expressive Belgian fermentation complexity with less roast emphasis, while Imperial Stout becomes more aggressively roasted, more bitter, and heavier in overall presentation.",
+
+    commercialExamples: {
+      "Baltic Porter": ["Zywiec Porter", "Okocim Porter"],
+      "Belgian Dark Strong Ale": ["Chimay Blue", "Rochefort 10"],
+      "Imperial Stout": ["North Coast Old Rasputin"]
+    }
+  },
+
+  {
+    id: "amber-ale-lager-family",
+    title: "Amber Balanced Ale/Lager Family",
+    styles: ["California Common", "Irish Red Ale", "Märzen"],
+
+    sharedIdentity: {
+      best: "Amber balanced beers with noticeable malt character, drinkability, and restrained complexity",
+      weaker: [
+        "Amber balanced beers",
+        "Amber malt-forward beers",
+        "Drinkable amber beers",
+        "Traditional amber styles"
+      ]
+    },
+
+    anchor: {
+      correct: "Irish Red Ale",
+      feedback: {
+        "California Common":
+          "Usable, but not ideal. California Common introduces a distinctive hop/fermentation profile that makes it less neutral as the central baseline.",
+
+        "Märzen":
+          "Not the strongest anchor. Märzen pushes further into richer lager malt expression, making midpoint comparison less efficient."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "California Common",
+        prompt: "Compared to Irish Red Ale, California Common is:",
+        correct: [
+          "firmer bitterness",
+          "clean lager fermentation character",
+          "Northern Brewer hop character",
+          "more assertive bitterness balance",
+          "more toasty dryness"
+        ],
+        distractors: [
+          "softer bitterness",
+          "greater caramel sweetness",
+          "fuller malt richness",
+          "less hop presence",
+          "rounder malt balance"
+        ]
+      },
+
+      {
+        style: "Märzen",
+        prompt: "Compared to Irish Red Ale, Märzen is:",
+        correct: [
+          "richer malt expression",
+          "fuller body",
+          "deeper toast/bread crust character",
+          "clean lager fermentation",
+          "greater malt intensity"
+        ],
+        distractors: [
+          "lighter body",
+          "firmer bitterness",
+          "more hop-forward balance",
+          "leaner malt profile",
+          "less malt intensity"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are amber balanced beers with noticeable malt character and strong drinkability. Compared to Irish Red Ale, California Common is firmer in bitterness, drier in balance, and distinguished by its clean lager fermentation and Northern Brewer hop character. Märzen moves toward richer malt expression, fuller body, and deeper toast-driven lager malt complexity.",
+
+    commercialExamples: {
+      "California Common": ["Anchor Steam"],
+      "Irish Red Ale": ["Smithwick’s"],
+      "Märzen": ["Ayinger Oktober Fest-Märzen", "Paulaner Oktoberfest Märzen"]
+    }
   }
 ];
