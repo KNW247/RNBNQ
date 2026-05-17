@@ -1273,22 +1273,68 @@ function checkMashAnswer(selectedChoice, displayedChoices) {
 }
     
 function checkAnswer(selectedAnswer, data) {
-  const selectedAnchor = selectedAnswer.replace(/\s*\(.*?\)\s*$/, "").split(" — ")[0];
-const correctAnswers = Array.isArray(data.anchor) ? data.anchor : [data.anchor];
-const primaryAnswer = correctAnswers[0];
+    const selectedAnchor = selectedAnswer.split(" — ")[0].replace(/\s*\(.*?\)\s*$/, "").trim();
+    const correctAnswers = Array.isArray(data.anchor) ? data.anchor : [data.anchor];
+    const primaryAnswer = correctAnswers[0];
     const buttons = answerContainer.querySelectorAll("button");
 
     buttons.forEach(button => {
-        const buttonAnchor = button.textContent.replace(/\s*\(.*?\)\s*$/, "").split(" — ")[0];
+        const buttonAnchor = button.textContent.split(" — ")[0].replace(/\s*\(.*?\)\s*$/, "").trim();
 
         button.disabled = true;
 
-     if (buttonAnchor === primaryAnswer) {
-    button.style.backgroundColor = "#16a34a";
-    button.style.color = "white";
-} else if (correctAnswers.includes(buttonAnchor)) {
-    button.style.backgroundColor = "#eab308";
-    button.style.color = "black";
+        if (buttonAnchor === primaryAnswer) {
+            button.style.backgroundColor = "#16a34a";
+            button.style.color = "white";
+        } else if (correctAnswers.includes(buttonAnchor)) {
+            button.style.backgroundColor = "#eab308";
+            button.style.color = "black";
+        }
+
+        if (button.textContent === selectedAnswer && !correctAnswers.includes(selectedAnchor)) {
+            button.style.backgroundColor = "#dc2626";
+            button.style.color = "white";
+        }
+    });
+
+    if (selectedAnchor === primaryAnswer) {
+        correctCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong class="correct">Correct.</strong><br>
+            ${primaryAnswer}<br>
+            Range: ${formatRange(data)}
+        `;
+    } else if (correctAnswers.includes(selectedAnchor)) {
+        incorrectCount++;
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong>Acceptable crossover, but not the strongest anchor.</strong><br>
+            You selected: ${selectedAnchor}<br>
+            Strongest anchor: ${primaryAnswer}<br>
+            Range: ${formatRange(data)}
+        `;
+    } else {
+        incorrectCount++;
+
+        missedQuestions.push({
+            style: currentStyle.name,
+            category: currentCategory,
+            selected: selectedAnchor,
+            correct: primaryAnswer
+        });
+
+        updateScoreDisplay();
+
+        feedbackBox.innerHTML = `
+            <strong class="incorrect">Incorrect.</strong><br>
+            You selected: ${selectedAnswer}<br>
+            Correct answer: ${primaryAnswer}<br>
+            Range: ${formatRange(data)}
+        `;
+    }
 }
 
     if (button.textContent === selectedAnswer && !correctAnswers.includes(selectedAnchor)) {
