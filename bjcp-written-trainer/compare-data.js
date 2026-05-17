@@ -614,5 +614,83 @@ const compareClusters = [
       "Best Bitter": ["Fuller’s London Pride", "Adnams Southwold Bitter"],
       "Strong Bitter": ["Fuller’s ESB", "Shepherd Neame Bishop’s Finger"]
     }
+  },
+
+  {
+    id: "german-wheat-family",
+    title: "German Wheat Family",
+    styles: ["Weissbier", "Dunkles Weissbier", "Weizenbock"],
+
+    sharedIdentity: {
+      best: "German wheat ales with distinctive banana/clove fermentation character and a prominent wheat profile",
+      weaker: [
+        "German wheat ales",
+        "Wheat-forward German ales",
+        "German wheat beers with expressive fermentation",
+        "Traditional German wheat styles"
+      ]
+    },
+
+    anchor: {
+      correct: "Weissbier",
+      feedback: {
+        "Dunkles Weissbier":
+          "Usable, but not ideal. Dunkles Weissbier adds malt complexity that makes it less effective as the clean baseline reference.",
+
+        "Weizenbock":
+          "Not the strongest anchor. Weizenbock is the largest and most intense expression of the family. A simpler baseline makes comparison cleaner."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Dunkles Weissbier",
+        prompt: "Compared to Weissbier, Dunkles Weissbier is:",
+        correct: [
+          "darker malt profile",
+          "greater malt richness",
+          "more bread crust character",
+          "more caramelized malt expression",
+          "less emphasis on pale wheat brightness"
+        ],
+        distractors: [
+          "lighter body",
+          "less malt presence",
+          "cleaner fermentation",
+          "less expressive yeast character",
+          "lower malt complexity"
+        ]
+      },
+
+      {
+        style: "Weizenbock",
+        prompt: "Compared to Weissbier, Weizenbock is:",
+        correct: [
+          "higher alcohol",
+          "fuller body",
+          "greater malt intensity",
+          "richer overall flavor",
+          "stronger warming character",
+          "more intense expression"
+        ],
+        distractors: [
+          "lower alcohol",
+          "lighter body",
+          "less malt depth",
+          "more restrained profile",
+          "more sessionable",
+          "cleaner finish"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are German wheat ales with distinctive banana/clove fermentation character and a prominent wheat profile. Compared to Weissbier, Dunkles Weissbier retains the same yeast-driven character but adds darker malt richness and greater bread crust complexity. Weizenbock is the strongest and fullest expression of the family, with higher alcohol, richer malt intensity, and a more warming, intense overall presentation.",
+
+    commercialExamples: {
+      "Weissbier": ["Weihenstephaner Hefeweissbier", "Paulaner Hefe-Weizen"],
+      "Dunkles Weissbier": ["Franziskaner Dunkel", "Ayinger Urweisse"],
+      "Weizenbock": ["Schneider Aventinus", "Weihenstephaner Vitus"]
+    }
   }
 ];
