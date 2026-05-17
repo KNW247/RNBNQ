@@ -25,7 +25,7 @@ const studySetButtons = document.querySelectorAll(".button-grid button");
 const drillTitle = document.getElementById("drill-title");
 
 const categoryOptions = {
-    strength: ["Session / Low", "Standard", "Standard+", "Strong", "Very Strong"],
+    strength: ["Session / Low (≤4%)","Standard (≤6%)","Standard+ (≤7.5%)","Strong (≤9%)","Very Strong (>9%)"],
     bitterness: ["Rich Malt", "Malt-forward", "Slightly Malt-forward", "Balanced", "Firm Bitter", "Medium-High Bitter", "Hop-forward", "Aggressive"],
     body: ["Very Light", "Light", "Medium-Light", "Medium", "Medium-Full", "Full"],
     carbonation: ["Low", "Low-Moderate", "Moderate", "Medium-High", "High"],
