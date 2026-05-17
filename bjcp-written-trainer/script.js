@@ -1274,7 +1274,8 @@ function checkMashAnswer(selectedChoice, displayedChoices) {
     
 function checkAnswer(selectedAnswer, data) {
   const selectedAnchor = selectedAnswer.replace(/\s*\(.*?\)\s*$/, "").split(" — ")[0];
-    const correctAnswer = data.anchor;
+const correctAnswers = Array.isArray(data.anchor) ? data.anchor : [data.anchor];
+const primaryAnswer = correctAnswers[0];
     const buttons = answerContainer.querySelectorAll("button");
 
     buttons.forEach(button => {
