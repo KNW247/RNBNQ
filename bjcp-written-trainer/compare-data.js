@@ -75,5 +75,83 @@ const compareClusters = [
       "Double IPA": ["Russian River Pliny the Elder", "Stone Ruination"],
       "American Barleywine": ["Sierra Nevada Bigfoot", "Anchor Old Foghorn"]
     }
+  },
+
+  {
+    id: "porter-family",
+    title: "Porter Family",
+    styles: ["English Porter", "American Porter", "Baltic Porter"],
+
+    sharedIdentity: {
+      best: "Dark malt-forward beers with restrained-to-prominent roast character and smooth drinkability",
+      weaker: [
+        "Dark beers",
+        "Porter-family beers",
+        "Roasty dark beers",
+        "Malt-forward dark beers"
+      ]
+    },
+
+    anchor: {
+      correct: "English Porter",
+      feedback: {
+        "American Porter":
+          "Usable, but not ideal. American Porter pushes roast, bitterness, and hop expression upward, making it less neutral as the baseline.",
+
+        "Baltic Porter":
+          "Not the strongest anchor. Baltic Porter is the stronger, smoother, lagered expression, making midpoint comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "American Porter",
+        prompt: "Compared to English Porter, American Porter is:",
+        correct: [
+          "stronger roast character",
+          "firmer bitterness",
+          "more hop presence",
+          "more assertive American character",
+          "greater overall intensity"
+        ],
+        distractors: [
+          "softer roast",
+          "lower bitterness",
+          "less hop presence",
+          "more restrained profile",
+          "lighter overall intensity"
+        ]
+      },
+
+      {
+        style: "Baltic Porter",
+        prompt: "Compared to English Porter, Baltic Porter is:",
+        correct: [
+          "higher alcohol",
+          "fuller body",
+          "cleaner lager fermentation",
+          "smoother profile",
+          "richer dark malt complexity",
+          "stronger overall presentation"
+        ],
+        distractors: [
+          "lower alcohol",
+          "lighter body",
+          "more ale-like fermentation",
+          "sharper roast",
+          "leaner presentation",
+          "less malt richness"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are dark malt-forward beers with restrained-to-prominent roast character and smooth drinkability. Compared to English Porter, American Porter becomes more assertive, with stronger roast, firmer bitterness, and more hop presence. Baltic Porter moves in a different direction, becoming stronger, fuller, smoother, and cleaner-fermented, with richer dark malt complexity.",
+
+    commercialExamples: {
+      "English Porter": ["Fuller’s London Porter", "Samuel Smith Taddy Porter"],
+      "American Porter": ["Founders Porter", "Deschutes Black Butte Porter"],
+      "Baltic Porter": ["Zywiec Porter", "Okocim Porter"]
+    }
   }
 ];
