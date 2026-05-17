@@ -443,11 +443,7 @@ const styles = [
     name: "Best Bitter",
 
     strength: {
-        anchor: "Standard",
-        min: 3.8,
-        max: 4.6,
-        unit: "%"
-    },
+        strength: { anchor: ["Standard", "Session / Low"], min: 3.8, max: 4.6, unit: "%" }
 
     bitterness: {
         anchor: "Firm Bitter",
@@ -643,7 +639,7 @@ strength: { anchor: ["Standard", "Standard+"], min: 4.5, max: 6.2, unit: "%" }
 {
     code: "19A",
     name: "American Amber Ale",
-    strength: { anchor: "Standard", min: 4.5, max: 6.2, unit: "%" },
+    strength: { anchor: ["Standard", "Standard+"], min: 4.5, max: 6.2, unit: "%" }
     bitterness: { anchor: "Balanced", min: 25, max: 40, unit: "IBU" },
     body: { anchor: "Medium-Full", min: 1.010, max: 1.015, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium to medium-full body. Moderate to high carbonation." },
@@ -655,7 +651,7 @@ strength: { anchor: ["Standard", "Standard+"], min: 4.5, max: 6.2, unit: "%" }
 {
     code: "20A",
     name: "American Porter",
-    strength: { anchor: "Standard+", min: 4.8, max: 6.5, unit: "%" },
+    strength: { anchor: ["Standard+", "Standard"], min: 4.8, max: 6.5, unit: "%" }
     bitterness: { anchor: "Firm Bitter", min: 25, max: 50, unit: "IBU" },
     body: { anchor: "Medium-Full", min: 1.012, max: 1.018, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium to medium-full body. Moderate carbonation." },
@@ -667,7 +663,7 @@ strength: { anchor: ["Standard", "Standard+"], min: 4.5, max: 6.2, unit: "%" }
 {
     code: "20B",
     name: "American Stout",
-    strength: { anchor: "Standard+", min: 5.0, max: 7.0, unit: "%" },
+    strength: { anchor: ["Standard+", "Standard"], min: 5.0, max: 7.0, unit: "%" }
     bitterness: { anchor: "Medium-High Bitter", min: 35, max: 75, unit: "IBU" },
     body: { anchor: "Medium-Full", min: 1.010, max: 1.022, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium to full body. Moderate to moderately-high carbonation." },
@@ -703,7 +699,7 @@ strength: { anchor: ["Standard", "Standard+"], min: 4.5, max: 6.2, unit: "%" }
 {
     code: "22A",
     name: "Double IPA",
-    strength: { anchor: "Strong", min: 7.5, max: 10.0, unit: "%" },
+    strength: { anchor: ["Strong", "Very Strong"], min: 7.5, max: 10.0, unit: "%" }
     bitterness: { anchor: "Aggressive", min: 60, max: 120, unit: "IBU" },
     body: { anchor: "Medium", min: 1.008, max: 1.018, unit: "FG" },
     carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium-light to medium body. Medium to high carbonation." },
@@ -787,7 +783,7 @@ strength: { anchor: ["Standard", "Standard+"], min: 4.5, max: 6.2, unit: "%" }
 {
     code: "26C",
     name: "Belgian Tripel",
-    strength: { anchor: "Strong", min: 7.5, max: 9.5, unit: "%" },
+    strength: { anchor: ["Strong", "Very Strong"], min: 7.5, max: 9.5, unit: "%" }
     bitterness: { anchor: "Slightly Malt-forward", min: 20, max: 40, unit: "IBU", designNote: "High attenuation and a dry finish make the bitterness seem firmer than the IBU alone suggests." },
     body: { anchor: "Medium", min: 1.008, max: 1.014, unit: "FG" },
     carbonation: { anchor: "High", min: null, max: null, unit: null, text: "Medium-light to medium body. High carbonation." },
@@ -799,7 +795,7 @@ strength: { anchor: ["Standard", "Standard+"], min: 4.5, max: 6.2, unit: "%" }
 {
     code: "26D",
     name: "Belgian Dark Strong Ale",
-    strength: { anchor: "Strong", min: 8.0, max: 12.0, unit: "%" },
+    strength: { anchor: ["Strong", "Very Strong"], min: 8.0, max: 12.0, unit: "%" }
     bitterness: { anchor: "Malt-forward", min: 20, max: 35, unit: "IBU" },
     body: { anchor: "Medium-Full", min: 1.010, max: 1.024, unit: "FG" },
     carbonation: { anchor: "High", min: null, max: null, unit: null, text: "Medium to full body. High carbonation." },
