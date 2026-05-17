@@ -692,5 +692,82 @@ const compareClusters = [
       "Dunkles Weissbier": ["Franziskaner Dunkel", "Ayinger Urweisse"],
       "Weizenbock": ["Schneider Aventinus", "Weihenstephaner Vitus"]
     }
+  },
+
+  {
+    id: "abbey-dark-family",
+    title: "Abbey Dark Family",
+    styles: ["Belgian Dubbel", "Belgian Dark Strong Ale", "Old Ale"],
+
+    sharedIdentity: {
+      best: "Strong malt-forward ales with layered dark fruit complexity and expressive fermentation character",
+      weaker: [
+        "Strong dark ales",
+        "Malt-forward strong ales",
+        "Complex dark ales",
+        "High-strength traditional ales"
+      ]
+    },
+
+    anchor: {
+      correct: "Belgian Dark Strong Ale",
+      feedback: {
+        "Belgian Dubbel":
+          "Usable, but not ideal. Belgian Dubbel is the smaller, less intense expression, making it less effective as the central comparison point.",
+
+        "Old Ale":
+          "Not the strongest anchor. Old Ale shifts toward English malt complexity and restrained fermentation, making midpoint comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Belgian Dubbel",
+        prompt: "Compared to Belgian Dark Strong Ale, Belgian Dubbel is:",
+        correct: [
+          "lower alcohol",
+          "lighter body",
+          "less overall intensity",
+          "less dark fruit complexity",
+          "less warming character",
+          "smaller overall presentation"
+        ],
+        distractors: [
+          "higher alcohol",
+          "fuller body",
+          "greater malt richness",
+          "stronger fermentation intensity",
+          "larger presentation"
+        ]
+      },
+
+      {
+        style: "Old Ale",
+        prompt: "Compared to Belgian Dark Strong Ale, Old Ale is:",
+        correct: [
+          "more restrained fermentation character",
+          "more English malt complexity",
+          "less expressive fruity/spicy fermentation",
+          "lower carbonation",
+          "rounder malt presentation"
+        ],
+        distractors: [
+          "more expressive Belgian fermentation",
+          "higher carbonation",
+          "stronger phenolic character",
+          "lighter malt complexity",
+          "more effervescent presentation"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are strong malt-forward ales with layered dark fruit complexity and expressive fermentation character. Compared to Belgian Dark Strong Ale, Belgian Dubbel is smaller, less intense, and less warming, while Old Ale moves toward a rounder English malt-driven expression with more restrained fermentation character.",
+
+    commercialExamples: {
+      "Belgian Dubbel": ["Westmalle Dubbel", "Chimay Red"],
+      "Belgian Dark Strong Ale": ["Chimay Blue", "Rochefort 10"],
+      "Old Ale": ["Theakston Old Peculier", "Greene King Strong Suffolk Ale"]
+    }
   }
 ];
