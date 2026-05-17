@@ -153,5 +153,311 @@ const compareClusters = [
       "American Porter": ["Founders Porter", "Deschutes Black Butte Porter"],
       "Baltic Porter": ["Zywiec Porter", "Okocim Porter"]
     }
+  },
+
+  {
+    id: "pils-pale-lager-family",
+    title: "Pils / Pale Lager Family",
+    styles: ["German Pils", "Czech Premium Pale Lager", "Munich Helles"],
+
+    sharedIdentity: {
+      best: "Pale continental lagers with clean fermentation, high drinkability, and refined balance",
+      weaker: [
+        "Pale lagers",
+        "Continental pale lagers",
+        "Balanced pale lagers",
+        "Traditional pale lagers"
+      ]
+    },
+
+    anchor: {
+      correct: "Czech Premium Pale Lager",
+      feedback: {
+        "German Pils":
+          "Usable, but not ideal. German Pils pushes bitterness and dryness upward, making it less effective as the central comparison point.",
+
+        "Munich Helles":
+          "Not the strongest anchor. Munich Helles is the softest, most malt-forward member of the group, making midpoint comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "German Pils",
+        prompt: "Compared to Czech Premium Pale Lager, German Pils is:",
+        correct: [
+          "firmer bitterness",
+          "drier finish",
+          "sharper hop expression",
+          "leaner malt profile",
+          "crisper presentation"
+        ],
+        distractors: [
+          "softer bitterness",
+          "rounder malt profile",
+          "richer malt body",
+          "less hop emphasis",
+          "fuller finish"
+        ]
+      },
+
+      {
+        style: "Munich Helles",
+        prompt: "Compared to Czech Premium Pale Lager, Munich Helles is:",
+        correct: [
+          "softer bitterness",
+          "greater malt roundness",
+          "less hop emphasis",
+          "more delicate presentation",
+          "smoother finish"
+        ],
+        distractors: [
+          "firmer bitterness",
+          "greater hop intensity",
+          "drier finish",
+          "leaner body",
+          "sharper bitterness"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are pale continental lagers with clean fermentation, high drinkability, and refined balance. Compared to Czech Premium Pale Lager, German Pils becomes drier, firmer in bitterness, and sharper in hop expression. Munich Helles moves in the opposite direction, becoming softer, rounder, more malt-accented, and more delicate in presentation.",
+
+    commercialExamples: {
+      "German Pils": ["Bitburger", "Jever"],
+      "Czech Premium Pale Lager": ["Pilsner Urquell", "Budvar"],
+      "Munich Helles": ["Augustiner Helles", "Weihenstephaner Original"]
+    }
+  },
+
+  {
+    id: "farmhouse-belgian-pale-family",
+    title: "Farmhouse / Belgian Pale Family",
+    styles: ["Belgian Pale Ale", "Bière de Garde", "Saison"],
+
+    sharedIdentity: {
+      best: "Traditional continental ales where fermentation drives defining aroma and flavor characteristics",
+      weaker: [
+        "Expressive continental ales",
+        "European ale styles",
+        "Moderate-strength traditional ales",
+        "Fermentation-driven ales"
+      ]
+    },
+
+    anchor: {
+      correct: "Belgian Pale Ale",
+      feedback: {
+        "Bière de Garde":
+          "Usable, but not ideal. Bière de Garde shifts toward a more malt-accented and less fermentation-expressive profile, making it less effective as the central comparison point.",
+
+        "Saison":
+          "Not the strongest anchor. Saison is the most fermentation-driven and stylistically distinctive expression, making midpoint comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Bière de Garde",
+        prompt: "Compared to Belgian Pale Ale, Bière de Garde is:",
+        correct: [
+          "greater malt emphasis",
+          "cleaner fermentation profile",
+          "less expressive yeast character",
+          "fuller malt presentation",
+          "more restrained phenolic/ester expression"
+        ],
+        distractors: [
+          "more expressive fermentation",
+          "drier finish",
+          "higher phenolic intensity",
+          "lighter body",
+          "more rustic presentation"
+        ]
+      },
+
+      {
+        style: "Saison",
+        prompt: "Compared to Belgian Pale Ale, Saison is:",
+        correct: [
+          "drier finish",
+          "more expressive fermentation",
+          "stronger phenolic character",
+          "leaner body",
+          "more rustic presentation",
+          "higher attenuation"
+        ],
+        distractors: [
+          "cleaner fermentation",
+          "greater malt richness",
+          "rounder sweeter finish",
+          "more restrained yeast expression",
+          "fuller malt balance"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are traditional continental ales where fermentation drives defining aroma and flavor characteristics. Compared to Belgian Pale Ale, Bière de Garde becomes more malt-accented and fermentation-restrained, while Saison becomes drier, leaner, more highly attenuated, and far more fermentation-driven.",
+
+    commercialExamples: {
+      "Belgian Pale Ale": ["De Koninck", "Palm Speciale"],
+      "Bière de Garde": ["Jenlain Ambrée", "St. Sylvestre 3 Monts"],
+      "Saison": ["Saison Dupont", "Saison Voisin"]
+    }
+  },
+
+  {
+    id: "blonde-cream-kolsch-family",
+    title: "Pale Clean Ale Family",
+    styles: ["Blonde Ale", "Cream Ale", "Kölsch"],
+
+    sharedIdentity: {
+      best: "Pale, approachable, easy-drinking ales with clean fermentation character",
+      weaker: [
+        "Pale easy-drinking ales",
+        "Standard-strength pale ales",
+        "Clean pale ales",
+        "Approachable ale styles"
+      ]
+    },
+
+    anchor: {
+      correct: "Blonde Ale",
+      feedback: {
+        "Cream Ale":
+          "Usable, but not ideal. Cream Ale introduces hybrid/lager-like traits that make it less effective as the broad comparison baseline.",
+
+        "Kölsch":
+          "Not the strongest anchor. Kölsch is a more specialized, delicate expression. A broader central reference makes comparison cleaner."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Cream Ale",
+        prompt: "Compared to Blonde Ale, Cream Ale is:",
+        correct: [
+          "cleaner fermentation profile",
+          "more lager-like impression",
+          "possible adjunct character",
+          "lighter-bodied",
+          "more neutral profile"
+        ],
+        distractors: [
+          "more expressive yeast character",
+          "stronger fruity esters",
+          "fuller body",
+          "richer malt expression",
+          "more fermentation complexity"
+        ]
+      },
+
+      {
+        style: "Kölsch",
+        prompt: "Compared to Blonde Ale, Kölsch is:",
+        correct: [
+          "more delicate",
+          "crisper",
+          "more highly attenuated",
+          "more refined",
+          "subtle fruit character",
+          "more lager-like conditioning impression"
+        ],
+        distractors: [
+          "heavier body",
+          "sweeter finish",
+          "stronger ester profile",
+          "richer malt expression",
+          "broader fermentation profile"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are pale, approachable, easy-drinking ales with clean fermentation character. Compared to Blonde Ale, Cream Ale is generally cleaner, lighter, and often presents a more lager-like impression, sometimes with subtle adjunct character. Kölsch is the most delicate and refined of the group, with a crisper, more highly attenuated finish and subtle fermentation character.",
+
+    commercialExamples: {
+      "Blonde Ale": [],
+      "Cream Ale": ["Genesee Cream Ale"],
+      "Kölsch": ["Reissdorf Kölsch", "Früh Kölsch"]
+    }
+  },
+
+  {
+    id: "german-pale-lager-family",
+    title: "German Pale Lager Family",
+    styles: ["German Pils", "German Helles Exportbier", "Munich Helles"],
+
+    sharedIdentity: {
+      best: "Pale German lagers with clean fermentation, high drinkability, and refined balance",
+      weaker: [
+        "German pale lagers",
+        "Clean German lagers",
+        "Drinkable pale German lagers",
+        "Balanced German lagers"
+      ]
+    },
+
+    anchor: {
+      correct: "German Helles Exportbier",
+      feedback: {
+        "German Pils":
+          "Usable, but not ideal. German Pils sits at the sharper bitter end of the family, making it less effective as the central comparison point.",
+
+        "Munich Helles":
+          "Not the strongest anchor. Munich Helles sits at the softer malt-forward end of the family. A central midpoint makes comparison cleaner."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "German Pils",
+        prompt: "Compared to German Helles Exportbier, German Pils is:",
+        correct: [
+          "more assertive bitterness",
+          "drier finish",
+          "sharper hop expression",
+          "leaner malt profile",
+          "crisper overall presentation"
+        ],
+        distractors: [
+          "softer bitterness",
+          "fuller malt expression",
+          "rounder finish",
+          "lower bitterness",
+          "more malt-forward balance"
+        ]
+      },
+
+      {
+        style: "Munich Helles",
+        prompt: "Compared to German Helles Exportbier, Munich Helles is:",
+        correct: [
+          "softer bitterness",
+          "more malt-forward",
+          "rounder malt profile",
+          "less hop emphasis",
+          "more delicate presentation"
+        ],
+        distractors: [
+          "more assertive bitterness",
+          "drier finish",
+          "stronger hop expression",
+          "leaner malt balance",
+          "sharper finish"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are pale German lagers with clean fermentation, high drinkability, and refined balance. Compared to German Helles Exportbier, German Pils is drier, crisper, and more assertively bitter, with stronger hop emphasis. Munich Helles moves in the opposite direction, with softer bitterness, greater malt roundness, and a more delicate overall presentation.",
+
+    commercialExamples: {
+      "German Pils": ["Bitburger", "Jever"],
+      "German Helles Exportbier": ["Dortmunder Actien Export", "Great Lakes Dortmunder Gold"],
+      "Munich Helles": ["Augustiner Helles", "Weihenstephaner Original"]
+    }
   }
 ];
