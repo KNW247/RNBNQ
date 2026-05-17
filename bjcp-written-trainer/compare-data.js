@@ -1231,5 +1231,161 @@ const compareClusters = [
       "Double IPA": ["Pliny the Elder", "Stone Ruination"],
       "American Barleywine": ["Sierra Nevada Bigfoot", "Anchor Old Foghorn"]
     }
+  },
+
+  {
+    id: "belgian-abbey-family",
+    title: "Belgian Abbey / Strong Family",
+    styles: ["Belgian Blond Ale", "Belgian Dubbel", "Belgian Tripel"],
+
+    sharedIdentity: {
+      best: "Strong Belgian ales with fruity/spicy fermentation character and high drinkability relative to strength",
+      weaker: [
+        "Belgian strong ales",
+        "Belgian ester-forward ales",
+        "Strong monastery-style ales",
+        "Expressive Belgian ales"
+      ]
+    },
+
+    anchor: {
+      correct: "Belgian Blond Ale",
+      feedback: {
+        "Belgian Dubbel":
+          "Usable, but not ideal. Belgian Dubbel introduces darker malt complexity that makes it less effective as the broad baseline reference.",
+
+        "Belgian Tripel":
+          "Not the strongest anchor. Belgian Tripel is a more specialized high-strength expression. A broader midpoint comparison is cleaner."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Belgian Dubbel",
+        prompt: "Compared to Belgian Blond Ale, Belgian Dubbel is:",
+        correct: [
+          "darker malt profile",
+          "richer malt complexity",
+          "more caramelized/dark fruit malt expression",
+          "deeper color",
+          "greater malt richness",
+          "less pale presentation"
+        ],
+        distractors: [
+          "lighter color",
+          "drier finish",
+          "more highly attenuated",
+          "leaner malt profile",
+          "less malt depth"
+        ]
+      },
+
+      {
+        style: "Belgian Tripel",
+        prompt: "Compared to Belgian Blond Ale, Belgian Tripel is:",
+        correct: [
+          "higher alcohol",
+          "drier finish",
+          "more highly attenuated",
+          "lighter body relative to strength",
+          "stronger fruity/spicy fermentation character",
+          "greater overall intensity"
+        ],
+        distractors: [
+          "lower alcohol",
+          "fuller sweeter finish",
+          "less attenuation",
+          "more restrained fermentation",
+          "lower intensity"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are strong Belgian ales with fruity/spicy fermentation character and impressive drinkability for their strength. Compared to Belgian Blond Ale, Belgian Dubbel shifts toward darker malt richness, deeper color, and greater caramelized complexity. Belgian Tripel moves in the opposite direction, becoming stronger, drier, more highly attenuated, and more intensely expressive in fermentation character.",
+
+    commercialExamples: {
+      "Belgian Blond Ale": ["Leffe Blond", "Affligem Blond"],
+      "Belgian Dubbel": ["Westmalle Dubbel", "Chimay Red"],
+      "Belgian Tripel": ["Westmalle Tripel", "Tripel Karmeliet"]
+    }
+  },
+
+  {
+    id: "traditional-sour-family",
+    title: "Traditional Sour Ale Family",
+    styles: ["Berliner Weisse", "Lambic", "Gueuze"],
+
+    sharedIdentity: {
+      best: "Traditional pale sour ales with fermentation-derived acidity and high refreshment",
+      weaker: [
+        "Pale sour ales",
+        "Traditional sour ales",
+        "Refreshing sour ales",
+        "European sour ales"
+      ]
+    },
+
+    anchor: {
+      correct: "Lambic",
+      feedback: {
+        "Berliner Weisse":
+          "Usable, but not ideal. Berliner Weisse is a lighter, more narrowly focused expression that makes broader family comparison less effective.",
+
+        "Gueuze":
+          "Not the strongest anchor. Gueuze is a blended derivative expression rather than the foundational baseline style."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Berliner Weisse",
+        prompt: "Compared to Lambic, Berliner Weisse is:",
+        correct: [
+          "lighter body",
+          "cleaner acidity profile",
+          "lower complexity",
+          "less funk character",
+          "more refreshment-focused",
+          "simpler fermentation profile"
+        ],
+        distractors: [
+          "greater funk intensity",
+          "fuller body",
+          "higher complexity",
+          "more developed aged character",
+          "greater fermentation complexity"
+        ]
+      },
+
+      {
+        style: "Gueuze",
+        prompt: "Compared to Lambic, Gueuze is:",
+        correct: [
+          "higher carbonation",
+          "blended expression",
+          "greater complexity",
+          "more integrated acidity",
+          "more developed fermentation character",
+          "more refined overall presentation"
+        ],
+        distractors: [
+          "still presentation",
+          "simpler fermentation",
+          "lower carbonation",
+          "less complexity",
+          "less developed acidity"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are traditional pale sour ales with fermentation-derived acidity and high refreshment. Lambic serves as the foundational baseline style for comparison. Compared to Lambic, Berliner Weisse is lighter, cleaner, and more refreshment-focused, with less fermentation complexity. Gueuze is a more developed blended expression, with higher carbonation, greater integration, and increased overall complexity.",
+
+    commercialExamples: {
+      "Berliner Weisse": ["Berliner Kindl Weisse", "Schultheiss Berliner Weisse"],
+      "Lambic": ["Cantillon Grand Cru Bruocsella", "Boon Lambic"],
+      "Gueuze": ["Cantillon Gueuze", "Boon Oude Gueuze"]
+    }
   }
 ];
