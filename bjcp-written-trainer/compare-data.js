@@ -2149,5 +2149,159 @@ const compareClusters = [
       "Irish Red Ale": ["Smithwick’s"],
       "Märzen": ["Ayinger Oktober Fest-Märzen", "Paulaner Oktoberfest Märzen"]
     }
+  },
+
+  {
+    id: "irish-export-stout-family",
+    title: "Irish / Export Stout Family",
+    styles: ["Foreign Extra Stout", "Irish Extra Stout", "Irish Stout"],
+
+    sharedIdentity: {
+      best: "Dark stout ales with prominent roasted malt character and roast-driven bitterness",
+      weaker: [
+        "Roasty stout ales",
+        "Dark stout beers",
+        "Roasted dark ales",
+        "Bitter dark ales"
+      ]
+    },
+
+    anchor: {
+      correct: "Irish Extra Stout",
+      feedback: {
+        "Foreign Extra Stout":
+          "Usable, but not ideal. Foreign Extra Stout pushes strength and intensity upward, making it less effective as the midpoint reference.",
+
+        "Irish Stout":
+          "Not the strongest anchor. Irish Stout is the leanest and driest family member, making midpoint comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Foreign Extra Stout",
+        prompt: "Compared to Irish Extra Stout, Foreign Extra Stout is:",
+        correct: [
+          "higher alcohol",
+          "greater overall intensity",
+          "more complex flavor profile",
+          "stronger dark fruit complexity",
+          "richer body",
+          "larger overall presentation"
+        ],
+        distractors: [
+          "lower alcohol",
+          "leaner body",
+          "less complexity",
+          "lighter overall presentation",
+          "more restrained profile"
+        ]
+      },
+
+      {
+        style: "Irish Stout",
+        prompt: "Compared to Irish Extra Stout, Irish Stout is:",
+        correct: [
+          "drier finish",
+          "leaner body",
+          "lower alcohol",
+          "sharper roast presentation",
+          "more sessionable profile"
+        ],
+        distractors: [
+          "fuller body",
+          "greater sweetness",
+          "higher alcohol",
+          "richer complexity",
+          "larger overall profile"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are dark stout ales with prominent roasted malt character and roast-driven bitterness. Compared to Irish Extra Stout, Foreign Extra Stout becomes stronger, richer, and more complex, with higher alcohol and greater overall intensity. Irish Stout moves in the opposite direction, becoming leaner, drier, and more sessionable, with a sharper roast presentation.",
+
+    commercialExamples: {
+      "Foreign Extra Stout": ["Guinness Foreign Extra"],
+      "Irish Extra Stout": ["O’Hara’s Irish Stout", "Beamish Irish Stout"],
+      "Irish Stout": ["Guinness Draught", "Murphy’s Stout"]
+    }
+  },
+
+  {
+    id: "german-malt-lager-family",
+    title: "German Malt Lager Family",
+    styles: ["Munich Helles", "Munich Dunkel", "Märzen"],
+
+    sharedIdentity: {
+      best: "German malt-accented lagers with clean fermentation, high drinkability, and balanced malt character",
+      weaker: [
+        "German lagers",
+        "Malt-forward German lagers",
+        "Balanced German lagers",
+        "Traditional German lager styles"
+      ]
+    },
+
+    anchor: {
+      correct: "Munich Dunkel",
+      feedback: {
+        "Munich Helles":
+          "Usable, but not ideal. Munich Helles sits at the lighter, softer end of the family, making it less effective as the central comparison point.",
+
+        "Märzen":
+          "Not the strongest anchor. Märzen is the richer, fuller expression, making midpoint comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Munich Helles",
+        prompt: "Compared to Munich Dunkel, Munich Helles is:",
+        correct: [
+          "lighter color",
+          "softer malt expression",
+          "less toast character",
+          "more delicate presentation",
+          "lower malt intensity",
+          "less richness"
+        ],
+        distractors: [
+          "darker malt profile",
+          "greater toast character",
+          "fuller malt expression",
+          "richer presentation",
+          "higher malt intensity"
+        ]
+      },
+
+      {
+        style: "Märzen",
+        prompt: "Compared to Munich Dunkel, Märzen is:",
+        correct: [
+          "fuller body",
+          "richer malt expression",
+          "greater toast/bread crust character",
+          "higher malt intensity",
+          "more robust presentation"
+        ],
+        distractors: [
+          "lighter body",
+          "less toast character",
+          "more delicate presentation",
+          "lower malt intensity",
+          "leaner malt profile"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are German malt-accented lagers with clean fermentation, high drinkability, and balanced malt character. Compared to Munich Dunkel, Munich Helles is lighter, softer, and less toasty, with a more delicate malt presentation. Märzen moves in the opposite direction, becoming richer, fuller, and more intensely malt-driven, with stronger toast and bread crust character.",
+
+    commercialExamples: {
+      "Munich Helles": ["Augustiner Helles", "Weihenstephaner Original"],
+      "Munich Dunkel": ["Ayinger Altbairisch Dunkel", "Weltenburger Kloster Barock Dunkel"],
+      "Märzen": ["Paulaner Oktoberfest Märzen", "Ayinger Oktober Fest-Märzen"]
+    }
   }
 ];
