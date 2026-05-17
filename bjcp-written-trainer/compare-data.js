@@ -6,12 +6,12 @@ const compareClusters = [
 
     sharedIdentity: {
       best: "Strong hop-forward American ales with assertive bitterness and prominent hop character",
-      weaker: [
-        "Hop-forward strong ales",
-        "Strong American ales",
-        "Bitter American ales",
-        "High-intensity hop ales"
-      ]
+     weaker: [
+  "Strong American ales with bold flavor and elevated alcohol",
+  "Hop-forward American ales with noticeable bitterness",
+  "American ales with prominent hops and firm bitterness",
+  "High-intensity American ales with assertive flavor character"
+]
     },
 
     anchor: {
@@ -77,21 +77,21 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "porter-family",
-    title: "Porter Family",
-    styles: ["English Porter", "American Porter", "Baltic Porter"],
+{
+  id: "porter-family",
+  title: "Porter Family",
+  styles: ["American Porter", "Baltic Porter", "English Porter"],
 
-    sharedIdentity: {
-      best: "Dark malt-forward beers with restrained-to-prominent roast character and smooth drinkability",
-      weaker: [
-        "Dark beers",
-        "Porter-family beers",
-        "Roasty dark beers",
-        "Malt-forward dark beers"
-      ]
-    },
-
+  sharedIdentity: {
+    best: "Dark malt-forward beers with restrained-to-prominent roast character and smooth drinkability",
+    weaker: [
+      "Dark malt-forward beers with noticeable roast character and layered drinkability",
+      "Traditional dark beers with prominent malt character and smooth presentation",
+      "Dark beers with roast character, malt complexity, and balanced drinkability",
+      "Malt-driven dark beers with varying roast intensity and smooth overall character"
+    ]
+  },
+  
     anchor: {
       correct: "English Porter",
       feedback: {
@@ -155,20 +155,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "pils-pale-lager-family",
-    title: "Pils / Pale Lager Family",
-    styles: ["German Pils", "Czech Premium Pale Lager", "Munich Helles"],
+{
+  id: "pils-pale-lager-family",
+  title: "Pils / Pale Lager Family",
+  styles: ["Czech Premium Pale Lager", "German Pils", "Munich Helles"],
 
-    sharedIdentity: {
-      best: "Pale continental lagers with clean fermentation, high drinkability, and refined balance",
-      weaker: [
-        "Pale lagers",
-        "Continental pale lagers",
-        "Balanced pale lagers",
-        "Traditional pale lagers"
-      ]
-    },
+  sharedIdentity: {
+    best: "Pale continental lagers with clean fermentation, high drinkability, and refined balance",
+    weaker: [
+      "Pale continental lagers with strong drinkability and balanced presentation",
+      "Traditional continental lagers with clean fermentation and pale malt character",
+      "Pale lager beers with refined balance and classic continental drinkability",
+      "Clean pale continental lagers with noticeable malt and hop balance"
+    ]
+  },
 
     anchor: {
       correct: "Czech Premium Pale Lager",
@@ -231,20 +231,20 @@ const compareClusters = [
     }
   },
 
-  {
-    id: "farmhouse-belgian-pale-family",
-    title: "Farmhouse / Belgian Pale Family",
-    styles: ["Belgian Pale Ale", "Bière de Garde", "Saison"],
+ {
+  id: "farmhouse-belgian-pale-family",
+  title: "Farmhouse / Belgian Pale Family",
+  styles: ["Belgian Pale Ale", "Bière de Garde", "Saison"],
 
-    sharedIdentity: {
-      best: "Traditional continental ales where fermentation drives defining aroma and flavor characteristics",
-      weaker: [
-        "Expressive continental ales",
-        "European ale styles",
-        "Moderate-strength traditional ales",
-        "Fermentation-driven ales"
-      ]
-    },
+  sharedIdentity: {
+    best: "Traditional continental ales where fermentation drives defining aroma and flavor characteristics",
+    weaker: [
+      "Traditional continental ales with expressive fermentation and distinctive overall character",
+      "European ale styles with fermentation-derived aroma and recognizable regional identity",
+      "Moderate-strength continental ales with notable fermentation character and drinkable balance",
+      "Fermentation-driven traditional ales with expressive aroma and stylistic continental character"
+    ]
+  },
 
     anchor: {
       correct: "Belgian Pale Ale",
