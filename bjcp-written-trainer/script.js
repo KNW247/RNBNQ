@@ -1283,7 +1283,7 @@ const primaryAnswer = correctAnswers[0];
 
         button.disabled = true;
 
-        if (buttonAnchor === correctAnswer) {
+     if (correctAnswers.includes(buttonAnchor)) {
             button.style.backgroundColor = "#16a34a";
             button.style.color = "white";
         }
