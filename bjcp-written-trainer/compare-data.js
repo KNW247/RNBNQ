@@ -459,5 +459,160 @@ const compareClusters = [
       "German Helles Exportbier": ["Dortmunder Actien Export", "Great Lakes Dortmunder Gold"],
       "Munich Helles": ["Augustiner Helles", "Weihenstephaner Original"]
     }
+  },
+
+  {
+    id: "belgian-strong-pale-family",
+    title: "Belgian Strong Pale Family",
+    styles: ["Belgian Blonde Ale", "Belgian Tripel", "Belgian Golden Strong Ale"],
+
+    sharedIdentity: {
+      best: "Strong pale Belgian ales where expressive fermentation and high attenuation define the family",
+      weaker: [
+        "Strong Belgian ales",
+        "Belgian pale ales",
+        "Expressive strong ales",
+        "High-attenuation Belgian beers"
+      ]
+    },
+
+    anchor: {
+      correct: "Belgian Tripel",
+      feedback: {
+        "Belgian Blonde Ale":
+          "Usable, but not ideal. Belgian Blonde Ale is the softer, less intense member of the family, making it less effective as the central comparison point.",
+
+        "Belgian Golden Strong Ale":
+          "Not the strongest anchor. Belgian Golden Strong Ale is the driest and most highly attenuated extreme, making midpoint comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Belgian Blonde Ale",
+        prompt: "Compared to Belgian Tripel, Belgian Blonde Ale is:",
+        correct: [
+          "lower alcohol",
+          "softer presentation",
+          "less intense fermentation expression",
+          "rounder malt profile",
+          "less aggressive attenuation"
+        ],
+        distractors: [
+          "higher alcohol",
+          "drier finish",
+          "leaner body",
+          "more intense fermentation",
+          "greater attenuation"
+        ]
+      },
+
+      {
+        style: "Belgian Golden Strong Ale",
+        prompt: "Compared to Belgian Tripel, Belgian Golden Strong Ale is:",
+        correct: [
+          "drier finish",
+          "higher attenuation",
+          "leaner body",
+          "lighter malt structure",
+          "more champagne-like presentation",
+          "sharper drinkability despite strength"
+        ],
+        distractors: [
+          "fuller malt richness",
+          "rounder body",
+          "lower attenuation",
+          "heavier malt balance",
+          "sweeter finish"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are strong pale Belgian ales where expressive fermentation and high attenuation define the family. Compared to Belgian Tripel, Belgian Blonde Ale is softer, lower in alcohol, and less intense overall. Belgian Golden Strong Ale becomes drier, leaner, more highly attenuated, and more champagne-like in presentation.",
+
+    commercialExamples: {
+      "Belgian Blonde Ale": ["Leffe Blonde", "Affligem Blonde"],
+      "Belgian Tripel": ["Westmalle Tripel", "St. Bernardus Tripel"],
+      "Belgian Golden Strong Ale": ["Duvel", "Delirium Tremens"]
+    }
+  },
+
+  {
+    id: "british-bitters-family",
+    title: "British Bitters Family",
+    styles: ["Ordinary Bitter", "Best Bitter", "Strong Bitter"],
+
+    sharedIdentity: {
+      best: "British bitter ales with balanced drinkability and traditional British fermentation character",
+      weaker: [
+        "British bitter ales",
+        "Moderate-strength British ales",
+        "Balanced British pale ales",
+        "Traditional British session ales"
+      ]
+    },
+
+    anchor: {
+      correct: "Best Bitter",
+      feedback: {
+        "Ordinary Bitter":
+          "Usable, but not ideal. Ordinary Bitter sits at one edge of the family. A central reference makes comparison cleaner.",
+
+        "Strong Bitter":
+          "Not the strongest anchor. Strong Bitter represents the upper end of the family. Choose the more central comparison point."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Ordinary Bitter",
+        prompt: "Compared to Best Bitter, Ordinary Bitter is:",
+        correct: [
+          "lower gravity",
+          "lower alcohol",
+          "lighter body",
+          "less flavor intensity",
+          "more sessionable"
+        ],
+        distractors: [
+          "higher gravity",
+          "higher alcohol",
+          "fuller body",
+          "greater flavor intensity",
+          "less sessionable"
+        ]
+      },
+
+      {
+        style: "Strong Bitter",
+        prompt: "Compared to Best Bitter, Strong Bitter is:",
+        correct: [
+          "higher gravity",
+          "higher alcohol",
+          "fuller body",
+          "greater malt presence",
+          "stronger flavor intensity",
+          "more hop expression"
+        ],
+        distractors: [
+          "lower gravity",
+          "lower alcohol",
+          "lighter body",
+          "less flavor intensity",
+          "less malt presence",
+          "less hop expression"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are British bitter ales with traditional British fermentation character and balanced drinkability. Compared to Best Bitter, Ordinary Bitter is lower in gravity, alcohol, body, and overall flavor intensity, making it the most sessionable member of the family. Strong Bitter is the largest and most robust expression, with higher gravity, fuller body, and greater malt and hop intensity.",
+
+    commercialExamples: {
+      "Ordinary Bitter": ["Banks’s Mild", "Brains Bitter"],
+      "Best Bitter": ["Fuller’s London Pride", "Adnams Southwold Bitter"],
+      "Strong Bitter": ["Fuller’s ESB", "Shepherd Neame Bishop’s Finger"]
+    }
   }
 ];
