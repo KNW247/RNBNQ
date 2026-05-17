@@ -769,5 +769,157 @@ const compareClusters = [
       "Belgian Dark Strong Ale": ["Chimay Blue", "Rochefort 10"],
       "Old Ale": ["Theakston Old Peculier", "Greene King Strong Suffolk Ale"]
     }
+  },
+
+  {
+    id: "british-dark-family",
+    title: "British Dark Family",
+    styles: ["Dark Mild", "Brown Porter", "Sweet Stout"],
+
+    sharedIdentity: {
+      best: "Malt-driven dark British ales emphasizing drinkability over aggressive roast",
+      weaker: [
+        "Dark British ales",
+        "Malt-forward dark beers",
+        "Traditional dark ales",
+        "Session dark beers"
+      ]
+    },
+
+    anchor: {
+      correct: "Brown Porter",
+      feedback: {
+        "Dark Mild":
+          "Usable, but not ideal. Dark Mild is the smallest, lightest member of the family, making it less effective as the central comparison point.",
+
+        "Sweet Stout":
+          "Not the strongest anchor. Sweet Stout pushes roast and fullness upward, making midpoint comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Dark Mild",
+        prompt: "Compared to Brown Porter, Dark Mild is:",
+        correct: [
+          "lower alcohol",
+          "lighter body",
+          "less roast intensity",
+          "less overall intensity",
+          "more sessionable"
+        ],
+        distractors: [
+          "higher alcohol",
+          "fuller body",
+          "stronger roast",
+          "greater intensity",
+          "less drinkable"
+        ]
+      },
+
+      {
+        style: "Sweet Stout",
+        prompt: "Compared to Brown Porter, Sweet Stout is:",
+        correct: [
+          "fuller body",
+          "sweeter finish",
+          "greater roast intensity",
+          "more residual sweetness",
+          "heavier presentation"
+        ],
+        distractors: [
+          "drier finish",
+          "lighter body",
+          "less roast",
+          "leaner presentation",
+          "lower sweetness"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are malt-driven dark British ales emphasizing drinkability over aggressive roast. Compared to Brown Porter, Dark Mild is lighter, lower in alcohol, and more sessionable. Sweet Stout becomes fuller, sweeter, and more roast-forward, with a heavier overall presentation.",
+
+    commercialExamples: {
+      "Dark Mild": ["Theakston Traditional Mild"],
+      "Brown Porter": ["Fuller’s London Porter", "Samuel Smith Taddy Porter"],
+      "Sweet Stout": ["Mackeson XXX", "Left Hand Milk Stout"]
+    }
+  },
+
+  {
+    id: "american-hop-family",
+    title: "American Hop Family",
+    styles: ["American Pale Ale", "American Amber Ale", "American IPA"],
+
+    sharedIdentity: {
+      best: "Hop-forward American ales with clean fermentation and assertive bitterness",
+      weaker: [
+        "American hop ales",
+        "Hop-forward ales",
+        "American bitter ales",
+        "Clean American ales"
+      ]
+    },
+
+    anchor: {
+      correct: "American Amber Ale",
+      feedback: {
+        "American Pale Ale":
+          "Usable, but not ideal. American Pale Ale sits toward the lighter end of the family.",
+
+        "American IPA":
+          "Not the strongest anchor. American IPA is the most intense hop-forward expression."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "American Pale Ale",
+        prompt: "Compared to American Amber Ale, American Pale Ale is:",
+        correct: [
+          "lighter body",
+          "less malt richness",
+          "paler color",
+          "leaner presentation",
+          "less caramel character"
+        ],
+        distractors: [
+          "fuller body",
+          "greater malt richness",
+          "darker color",
+          "more caramel malt",
+          "heavier presentation"
+        ]
+      },
+
+      {
+        style: "American IPA",
+        prompt: "Compared to American Amber Ale, American IPA is:",
+        correct: [
+          "higher bitterness",
+          "stronger hop aroma",
+          "leaner malt balance",
+          "more aggressive hop expression",
+          "drier finish"
+        ],
+        distractors: [
+          "lower bitterness",
+          "more malt sweetness",
+          "less hop aroma",
+          "rounder malt profile",
+          "fuller sweeter finish"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are hop-forward American ales with clean fermentation and assertive bitterness. Compared to American Amber Ale, American Pale Ale is lighter, leaner, and less malt-driven. American IPA becomes more bitter, drier, and much more aggressively hop-forward.",
+
+    commercialExamples: {
+      "American Pale Ale": ["Sierra Nevada Pale Ale", "Deschutes Mirror Pond"],
+      "American Amber Ale": ["Bell’s Amber Ale", "Anderson Valley Boont Amber"],
+      "American IPA": ["Stone IPA", "Bell’s Two Hearted"]
+    }
   }
 ];
