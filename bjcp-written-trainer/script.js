@@ -1294,7 +1294,7 @@ const primaryAnswer = correctAnswers[0];
         }
     });
 
-    if (selectedAnchor === correctAnswer) {
+ if (selectedAnchor === primaryAnswer) {
         correctCount++;
         updateScoreDisplay();
 
