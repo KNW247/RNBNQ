@@ -675,7 +675,9 @@ function renderCompareAnchor() {
 
     answerContainer.innerHTML = "";
 
-    currentCompareCluster.styles.forEach(style => {
+    const shuffledStyles = [...currentCompareCluster.styles].sort(() => Math.random() - 0.5);
+
+        shuffledStyles.forEach(style => {
         const button = document.createElement("button");
         button.textContent = style;
 
