@@ -1692,5 +1692,158 @@ const compareClusters = [
       "Märzen": ["Ayinger Oktober Fest-Märzen", "Paulaner Oktoberfest Märzen"],
       "Vienna Lager": ["Great Lakes Eliot Ness", "Devils Backbone Vienna Lager"]
     }
+  },
+
+  {
+    id: "stout-intensity-family",
+    title: "Stout Intensity Family",
+    styles: ["American Stout", "Foreign Extra Stout", "Sweet Stout"],
+
+    sharedIdentity: {
+      best: "Dark stout ales with prominent roasted malt character and roast-driven bitterness",
+      weaker: [
+        "Roasty stout ales",
+        "Dark stout beers",
+        "Roasted dark ales",
+        "Bitter dark ales"
+      ]
+    },
+
+    anchor: {
+      correct: "Foreign Extra Stout",
+      feedback: {
+        "American Stout":
+          "Usable, but not ideal. American Stout introduces stronger American hop character, making it less neutral as the midpoint.",
+
+        "Sweet Stout":
+          "Not the strongest anchor. Sweet Stout sits at the softer sweeter end of the family, making comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "American Stout",
+        prompt: "Compared to Foreign Extra Stout, American Stout is:",
+        correct: [
+          "more assertive American hop character",
+          "cleaner fermentation profile",
+          "more aggressive bitterness",
+          "less dark fruit complexity",
+          "more modern hop expression"
+        ],
+        distractors: [
+          "lower bitterness",
+          "softer roast",
+          "greater sweetness",
+          "less hop character",
+          "more restrained bitterness"
+        ]
+      },
+
+      {
+        style: "Sweet Stout",
+        prompt: "Compared to Foreign Extra Stout, Sweet Stout is:",
+        correct: [
+          "sweeter",
+          "fuller smoother body",
+          "less dry",
+          "softer roast bitterness",
+          "greater residual sweetness"
+        ],
+        distractors: [
+          "drier finish",
+          "stronger bitterness",
+          "leaner body",
+          "more aggressive roast",
+          "higher attenuation"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are dark stout ales with prominent roasted malt character and roast-driven bitterness. Compared to Foreign Extra Stout, American Stout shifts toward a cleaner, more aggressively hopped American expression. Sweet Stout moves in the opposite direction, becoming sweeter, fuller, softer in bitterness, and less dry overall.",
+
+    commercialExamples: {
+      "American Stout": ["Sierra Nevada Stout", "Bell’s Kalamazoo Stout"],
+      "Foreign Extra Stout": ["Guinness Foreign Extra", "Dragon Stout"],
+      "Sweet Stout": ["Mackeson XXX Stout", "Left Hand Milk Stout"]
+    }
+  },
+
+  {
+    id: "bock-family",
+    title: "Bock Family",
+    styles: ["Doppelbock", "Dunkles Bock", "Helles Bock"],
+
+    sharedIdentity: {
+      best: "Strong German lagers with prominent malt character and clean fermentation",
+      weaker: [
+        "Strong German lagers",
+        "Malt-forward German lagers",
+        "Big German lagers",
+        "Strong continental lagers"
+      ]
+    },
+
+    anchor: {
+      correct: "Dunkles Bock",
+      feedback: {
+        "Doppelbock":
+          "Not the strongest anchor. Doppelbock is the largest and richest expression of the family, making it less effective as a midpoint reference.",
+
+        "Helles Bock":
+          "Usable, but not ideal. Helles Bock shifts toward a paler, lighter expression, making it less central for family comparison."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Doppelbock",
+        prompt: "Compared to Dunkles Bock, Doppelbock is:",
+        correct: [
+          "higher alcohol",
+          "fuller body",
+          "greater malt intensity",
+          "richer malt depth",
+          "more intense overall presentation",
+          "stronger warming character"
+        ],
+        distractors: [
+          "lower alcohol",
+          "lighter body",
+          "less malt richness",
+          "more delicate presentation",
+          "lower intensity"
+        ]
+      },
+
+      {
+        style: "Helles Bock",
+        prompt: "Compared to Dunkles Bock, Helles Bock is:",
+        correct: [
+          "lighter color",
+          "leaner malt profile",
+          "less dark malt richness",
+          "more hop presence",
+          "cleaner brighter presentation"
+        ],
+        distractors: [
+          "darker malt profile",
+          "greater malt richness",
+          "deeper toast character",
+          "heavier presentation",
+          "lower hop presence"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are strong German lagers with prominent malt character and clean fermentation. Compared to Dunkles Bock, Doppelbock increases alcohol, malt richness, and overall intensity, becoming the largest and richest family member. Helles Bock moves in the opposite direction, with a lighter malt profile, brighter presentation, and relatively greater hop presence.",
+
+    commercialExamples: {
+      "Doppelbock": ["Paulaner Salvator", "Ayinger Celebrator"],
+      "Dunkles Bock": ["Einbecker Ur-Bock Dunkel", "Ayinger Bock"],
+      "Helles Bock": ["Einbecker Mai-Ur-Bock", "Ayinger Maibock"]
+    }
   }
 ];
