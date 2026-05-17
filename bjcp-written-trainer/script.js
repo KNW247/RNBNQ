@@ -1294,16 +1294,26 @@ const primaryAnswer = correctAnswers[0];
         }
     });
 
- if (selectedAnchor === primaryAnswer) {
-        correctCount++;
-        updateScoreDisplay();
+if (selectedAnchor === primaryAnswer) {
+    correctCount++;
+    updateScoreDisplay();
 
-        feedbackBox.innerHTML = `
-            <strong class="correct">Correct.</strong><br>
-            ${correctAnswer}<br>
-            Range: ${formatRange(data)}
-        `;
-    } else {
+    feedbackBox.innerHTML = `
+        <strong class="correct">Correct.</strong><br>
+        ${primaryAnswer}<br>
+        Range: ${formatRange(data)}
+    `;
+} else if (correctAnswers.includes(selectedAnchor)) {
+    incorrectCount++;
+    updateScoreDisplay();
+
+    feedbackBox.innerHTML = `
+        <strong>Acceptable crossover, but not the strongest anchor.</strong><br>
+        You selected: ${selectedAnchor}<br>
+        Strongest anchor: ${primaryAnswer}<br>
+        Range: ${formatRange(data)}
+    `;
+} else {
         incorrectCount++;
 
         missedQuestions.push({
