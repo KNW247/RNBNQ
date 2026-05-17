@@ -921,5 +921,315 @@ const compareClusters = [
       "American Amber Ale": ["Bell’s Amber Ale", "Anderson Valley Boont Amber"],
       "American IPA": ["Stone IPA", "Bell’s Two Hearted"]
     }
+  },
+
+  {
+    id: "stout-family",
+    title: "Stout Family",
+    styles: ["Irish Stout", "Sweet Stout", "Foreign Extra Stout"],
+
+    sharedIdentity: {
+      best: "Dark stout ales with prominent roasted malt character and roast-driven bitterness",
+      weaker: [
+        "Roasty dark ales",
+        "Stout beers",
+        "Dark British-derived ales",
+        "Roasted ales"
+      ]
+    },
+
+    anchor: {
+      correct: "Irish Stout",
+      feedback: {
+        "Sweet Stout":
+          "Usable, but not ideal. Sweet Stout introduces sweetness as a defining variable, making it less neutral as a comparison baseline.",
+
+        "Foreign Extra Stout":
+          "Not the strongest anchor. Foreign Extra Stout represents the largest and most intense expression of the group. A simpler baseline makes comparison cleaner."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Sweet Stout",
+        prompt: "Compared to Irish Stout, Sweet Stout is:",
+        correct: [
+          "sweeter",
+          "fuller-bodied",
+          "less dry",
+          "lower roast sharpness",
+          "creamier impression",
+          "greater residual sweetness"
+        ],
+        distractors: [
+          "drier",
+          "leaner body",
+          "higher alcohol",
+          "sharper roast",
+          "more assertive bitterness",
+          "more attenuated"
+        ]
+      },
+
+      {
+        style: "Foreign Extra Stout",
+        prompt: "Compared to Irish Stout, Foreign Extra Stout is:",
+        correct: [
+          "higher alcohol",
+          "stronger roast intensity",
+          "fuller body",
+          "greater overall flavor intensity",
+          "more complex profile",
+          "stronger bitterness"
+        ],
+        distractors: [
+          "lower alcohol",
+          "lighter body",
+          "less roast character",
+          "softer profile",
+          "less bitterness",
+          "more restrained expression"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are dark stout ales with prominent roasted malt character and roast-driven bitterness. Compared to Irish Stout, Sweet Stout is fuller-bodied, sweeter, and less dry, with a softer roast presentation. Foreign Extra Stout moves in the opposite direction, with higher alcohol, stronger roast intensity, greater bitterness, and a more intense overall profile.",
+
+    commercialExamples: {
+      "Irish Stout": ["Guinness Draught", "Murphy’s Stout"],
+      "Sweet Stout": ["Mackeson XXX Stout", "Left Hand Milk Stout"],
+      "Foreign Extra Stout": ["Guinness Foreign Extra", "Dragon Stout"]
+    }
+  },
+
+  {
+    id: "stout-variants-family",
+    title: "Stout Family Variants",
+    styles: ["American Stout", "Irish Stout", "Oatmeal Stout"],
+
+    sharedIdentity: {
+      best: "Dark stout ales with prominent roasted malt character and roast-driven bitterness",
+      weaker: [
+        "Roasty stout ales",
+        "Dark roasted ales",
+        "Stout beers",
+        "Dark bitter ales"
+      ]
+    },
+
+    anchor: {
+      correct: "Irish Stout",
+      feedback: {
+        "American Stout":
+          "Usable, but not ideal. American Stout introduces stronger American bitterness and intensity, making it less neutral as a baseline.",
+
+        "Oatmeal Stout":
+          "Not the strongest anchor. Oatmeal Stout introduces texture/body shifts that make it less ideal as the central comparison point."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "American Stout",
+        prompt: "Compared to Irish Stout, American Stout is:",
+        correct: [
+          "stronger bitterness",
+          "more assertive hop character",
+          "greater roast intensity",
+          "higher overall flavor intensity",
+          "more aggressive overall profile",
+          "stronger American hop influence"
+        ],
+        distractors: [
+          "lower bitterness",
+          "softer roast",
+          "less intense flavor",
+          "more restrained bitterness",
+          "lighter profile"
+        ]
+      },
+
+      {
+        style: "Oatmeal Stout",
+        prompt: "Compared to Irish Stout, Oatmeal Stout is:",
+        correct: [
+          "fuller body",
+          "smoother mouthfeel",
+          "creamier texture",
+          "less dry finish",
+          "softer roast presentation"
+        ],
+        distractors: [
+          "leaner body",
+          "sharper roast",
+          "drier finish",
+          "lighter mouthfeel",
+          "more aggressive bitterness"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are dark stout ales with prominent roasted malt character and roast-driven bitterness. Compared to Irish Stout, American Stout is more assertive, with stronger bitterness, more pronounced hop character, and greater overall roast intensity. Oatmeal Stout moves toward fullness and texture, with a creamier body, softer roast presentation, and less dryness than Irish Stout.",
+
+    commercialExamples: {
+      "American Stout": ["Sierra Nevada Stout", "Bell’s Kalamazoo Stout"],
+      "Irish Stout": ["Guinness Draught", "Murphy’s Stout"],
+      "Oatmeal Stout": ["Samuel Smith Oatmeal Stout"]
+    }
+  },
+
+  {
+    id: "american-lager-family",
+    title: "American Lager Family",
+    styles: ["American Lager", "International Pale Lager", "Cream Ale"],
+
+    sharedIdentity: {
+      best: "Clean, highly drinkable pale beers built around subtle flavor and easy consumption",
+      weaker: [
+        "Light drinkable beers",
+        "Clean pale beers",
+        "Easy-drinking pale styles",
+        "Subtle pale beers"
+      ]
+    },
+
+    anchor: {
+      correct: "International Pale Lager",
+      feedback: {
+        "American Lager":
+          "Usable, but not ideal. American Lager is the lightest and most neutral edge of the group, making it less useful as a central comparison point.",
+
+        "Cream Ale":
+          "Not the strongest anchor. Cream Ale introduces ale fermentation and hybrid characteristics, making it less neutral as the comparison baseline."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "American Lager",
+        prompt: "Compared to International Pale Lager, American Lager is:",
+        correct: [
+          "lighter-bodied",
+          "more neutral",
+          "lower flavor intensity",
+          "less malt presence",
+          "more restrained overall"
+        ],
+        distractors: [
+          "fuller-bodied",
+          "greater flavor intensity",
+          "stronger malt presence",
+          "more characterful fermentation",
+          "richer overall profile"
+        ]
+      },
+
+      {
+        style: "Cream Ale",
+        prompt: "Compared to International Pale Lager, Cream Ale is:",
+        correct: [
+          "more ale-like",
+          "slightly more fermentation character",
+          "more body",
+          "less neutral",
+          "more stylistic complexity"
+        ],
+        distractors: [
+          "cleaner lager character",
+          "lighter body",
+          "less fermentation presence",
+          "more neutral profile",
+          "lower complexity"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are clean, highly drinkable pale beers built around subtle flavor and easy consumption. Compared to International Pale Lager, American Lager is lighter, more neutral, and more restrained overall. Cream Ale moves toward slightly greater body, subtle fermentation character, and a less neutral hybrid presentation.",
+
+    commercialExamples: {
+      "American Lager": ["Miller High Life", "Coors Banquet"],
+      "International Pale Lager": ["Heineken", "Stella Artois"],
+      "Cream Ale": ["Genesee Cream Ale"]
+    }
+  },
+
+  {
+    id: "american-strong-family",
+    title: "American Strong Family",
+    styles: ["American Strong Ale", "Double IPA", "American Barleywine"],
+
+    sharedIdentity: {
+      best: "High-intensity American ales with prominent alcohol, bold flavor, and assertive bitterness",
+      weaker: [
+        "Strong American ales",
+        "High-gravity American beers",
+        "Big bitter ales",
+        "Intense American styles"
+      ]
+    },
+
+    anchor: {
+      correct: "American Strong Ale",
+      feedback: {
+        "Double IPA":
+          "Usable, but not ideal. Double IPA shifts hard toward hop dominance, making it less balanced as the baseline.",
+
+        "American Barleywine":
+          "Not the strongest anchor. American Barleywine is the richest and heaviest extreme of the family."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Double IPA",
+        prompt: "Compared to American Strong Ale, Double IPA is:",
+        correct: [
+          "more hop-forward",
+          "drier",
+          "more aggressively bitter",
+          "leaner malt balance",
+          "more aromatic hop intensity"
+        ],
+        distractors: [
+          "more malt-driven",
+          "rounder sweetness",
+          "less bitterness",
+          "heavier malt balance",
+          "less hop intensity"
+        ]
+      },
+
+      {
+        style: "American Barleywine",
+        prompt: "Compared to American Strong Ale, American Barleywine is:",
+        correct: [
+          "fuller-bodied",
+          "richer malt profile",
+          "heavier presentation",
+          "greater alcohol warmth",
+          "more malt-forward balance",
+          "greater dark fruit/caramel complexity"
+        ],
+        distractors: [
+          "leaner body",
+          "lighter malt profile",
+          "more hop-driven dryness",
+          "less alcohol warmth",
+          "more restrained malt character"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are high-intensity American ales with prominent alcohol, bold flavor, and assertive bitterness. Compared to American Strong Ale, Double IPA becomes drier, more aggressively bitter, and far more hop-driven. American Barleywine moves in the opposite direction, becoming fuller, richer, heavier, and more malt-forward.",
+
+    commercialExamples: {
+      "American Strong Ale": ["Stone Arrogant Bastard Ale"],
+      "Double IPA": ["Pliny the Elder", "Stone Ruination"],
+      "American Barleywine": ["Sierra Nevada Bigfoot", "Anchor Old Foghorn"]
+    }
   }
 ];
