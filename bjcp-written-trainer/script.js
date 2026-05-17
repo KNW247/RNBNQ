@@ -1279,14 +1279,17 @@ const primaryAnswer = correctAnswers[0];
     const buttons = answerContainer.querySelectorAll("button");
 
     buttons.forEach(button => {
-        const buttonAnchor = button.textContent.split(" — ")[0];
+        const buttonAnchor = button.textContent.replace(/\s*\(.*?\)\s*$/, "").split(" — ")[0];
 
         button.disabled = true;
 
-     if (correctAnswers.includes(buttonAnchor)) {
-            button.style.backgroundColor = "#16a34a";
-            button.style.color = "white";
-        }
+     if (buttonAnchor === primaryAnswer) {
+    button.style.backgroundColor = "#16a34a";
+    button.style.color = "white";
+} else if (correctAnswers.includes(buttonAnchor)) {
+    button.style.backgroundColor = "#eab308";
+    button.style.color = "black";
+}
 
     if (button.textContent === selectedAnswer && !correctAnswers.includes(selectedAnchor)) {
             button.style.backgroundColor = "#dc2626";
