@@ -1330,59 +1330,12 @@ function checkAnswer(selectedAnswer, data) {
 
         feedbackBox.innerHTML = `
             <strong class="incorrect">Incorrect.</strong><br>
-            You selected: ${selectedAnswer}<br>
+            You selected: ${selectedAnchor}<br>
             Correct answer: ${primaryAnswer}<br>
             Range: ${formatRange(data)}
         `;
     }
 }
-
-    if (button.textContent === selectedAnswer && !correctAnswers.includes(selectedAnchor)) {
-            button.style.backgroundColor = "#dc2626";
-            button.style.color = "white";
-        }
-    });
-
-if (selectedAnchor === primaryAnswer) {
-    correctCount++;
-    updateScoreDisplay();
-
-    feedbackBox.innerHTML = `
-        <strong class="correct">Correct.</strong><br>
-        ${primaryAnswer}<br>
-        Range: ${formatRange(data)}
-    `;
-} else if (correctAnswers.includes(selectedAnchor)) {
-    incorrectCount++;
-    updateScoreDisplay();
-
-    feedbackBox.innerHTML = `
-        <strong>Acceptable crossover, but not the strongest anchor.</strong><br>
-        You selected: ${selectedAnchor}<br>
-        Strongest anchor: ${primaryAnswer}<br>
-        Range: ${formatRange(data)}
-    `;
-} else {
-        incorrectCount++;
-
-        missedQuestions.push({
-            style: currentStyle.name,
-            category: currentCategory,
-            selected: selectedAnchor,
-            correct: primaryAnswer
-        });
-
-        updateScoreDisplay();
-
-        feedbackBox.innerHTML = `
-            <strong class="incorrect">Incorrect.</strong><br>
-            You selected: ${selectedAnswer}<br>
-            Correct answer: ${primaryAnswer}<br>
-            Range: ${formatRange(data)}
-        `;
-    }
-}
-
 
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
