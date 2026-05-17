@@ -2303,5 +2303,237 @@ const compareClusters = [
       "Munich Dunkel": ["Ayinger Altbairisch Dunkel", "Weltenburger Kloster Barock Dunkel"],
       "Märzen": ["Paulaner Oktoberfest Märzen", "Ayinger Oktober Fest-Märzen"]
     }
+  },
+
+  {
+    id: "amber-lager-strength-family",
+    title: "Amber Lager Strength Family",
+    styles: ["Czech Amber Lager", "Dunkles Bock", "Märzen"],
+
+    sharedIdentity: {
+      best: "Amber lager beers with clean fermentation, prominent malt character, and balanced drinkability",
+      weaker: [
+        "Amber lagers",
+        "Malt-forward lagers",
+        "Clean amber lagers",
+        "Traditional amber lager styles"
+      ]
+    },
+
+    anchor: {
+      correct: "Märzen",
+      feedback: {
+        "Czech Amber Lager":
+          "Usable, but not ideal. Czech Amber Lager introduces a more Czech hop/malt balance and generally lower strength, making it less effective as the midpoint comparison.",
+
+        "Dunkles Bock":
+          "Not the strongest anchor. Dunkles Bock is the stronger, richer end of the family, making comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Czech Amber Lager",
+        prompt: "Compared to Märzen, Czech Amber Lager is:",
+        correct: [
+          "lower alcohol",
+          "leaner body",
+          "more Czech hop character",
+          "firmer hop presence",
+          "less malt intensity",
+          "more balanced bitterness expression"
+        ],
+        distractors: [
+          "higher alcohol",
+          "fuller body",
+          "greater malt richness",
+          "lower hop presence",
+          "heavier presentation"
+        ]
+      },
+
+      {
+        style: "Dunkles Bock",
+        prompt: "Compared to Märzen, Dunkles Bock is:",
+        correct: [
+          "higher alcohol",
+          "fuller body",
+          "greater malt richness",
+          "more intense malt presentation",
+          "stronger warming character",
+          "larger overall profile"
+        ],
+        distractors: [
+          "lower alcohol",
+          "leaner body",
+          "less malt richness",
+          "lighter presentation",
+          "lower intensity"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are amber lager beers with clean fermentation, prominent malt character, and balanced drinkability. Compared to Märzen, Czech Amber Lager is leaner, lower in strength, and shows firmer hop presence with a more Czech balance profile. Dunkles Bock moves upward in strength, body, and malt richness, becoming the largest and most intense member of the group.",
+
+    commercialExamples: {
+      "Czech Amber Lager": ["Bernard Jantarový Ležák", "Primátor Amber Lager"],
+      "Dunkles Bock": ["Einbecker Ur-Bock Dunkel", "Ayinger Bock"],
+      "Märzen": ["Paulaner Oktoberfest Märzen", "Ayinger Oktober Fest-Märzen"]
+    }
+  },
+
+  {
+    id: "pale-strong-german-lager-family",
+    title: "Pale Strong German Lager Family",
+    styles: ["Festbier", "Helles Bock", "Munich Helles"],
+
+    sharedIdentity: {
+      best: "Pale German lagers with clean fermentation, strong drinkability, and malt-forward balance",
+      weaker: [
+        "Pale German lagers",
+        "German malt-accented lagers",
+        "Clean pale lagers",
+        "Traditional German lager styles"
+      ]
+    },
+
+    anchor: {
+      correct: "Festbier",
+      feedback: {
+        "Helles Bock":
+          "Usable, but not ideal. Helles Bock pushes the family upward in strength and intensity, making it less effective as the midpoint comparison.",
+
+        "Munich Helles":
+          "Not the strongest anchor. Munich Helles is the smallest and most delicate expression, making midpoint comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Helles Bock",
+        prompt: "Compared to Festbier, Helles Bock is:",
+        correct: [
+          "higher alcohol",
+          "fuller body",
+          "greater malt intensity",
+          "stronger warming character",
+          "larger overall presentation"
+        ],
+        distractors: [
+          "lower alcohol",
+          "lighter body",
+          "more delicate profile",
+          "lower malt intensity",
+          "more restrained presentation"
+        ]
+      },
+
+      {
+        style: "Munich Helles",
+        prompt: "Compared to Festbier, Munich Helles is:",
+        correct: [
+          "lower alcohol",
+          "lighter body",
+          "more delicate malt expression",
+          "softer overall presentation",
+          "less intensity"
+        ],
+        distractors: [
+          "higher alcohol",
+          "greater malt richness",
+          "fuller body",
+          "stronger warming character",
+          "larger presentation"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are pale German lagers with clean fermentation, strong drinkability, and malt-forward balance. Compared to Festbier, Helles Bock increases strength, body, and malt intensity, becoming the richer and stronger expression. Munich Helles moves in the opposite direction, becoming lighter, softer, and more delicate in overall presentation.",
+
+    commercialExamples: {
+      "Festbier": ["Augustiner Oktoberfestbier", "Paulaner Festbier"],
+      "Helles Bock": ["Einbecker Mai-Ur-Bock", "Ayinger Maibock"],
+      "Munich Helles": ["Augustiner Helles", "Weihenstephaner Original"]
+    }
+  },
+
+  {
+    id: "english-strong-malt-family",
+    title: "English Strong Malt Family",
+    styles: ["British Strong Ale", "English Barleywine", "Old Ale"],
+
+    sharedIdentity: {
+      best: "Strong malt-forward British ales with expressive malt complexity and traditional English fermentation character",
+      weaker: [
+        "Strong British ales",
+        "Malt-forward British ales",
+        "Traditional English strong ales",
+        "Rich British ales"
+      ]
+    },
+
+    anchor: {
+      correct: "Old Ale",
+      feedback: {
+        "British Strong Ale":
+          "Usable, but not ideal. British Strong Ale tends to be somewhat cleaner and less complex, making it less effective as the midpoint comparison.",
+
+        "English Barleywine":
+          "Not the strongest anchor. English Barleywine is the largest and richest expression, making midpoint comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "British Strong Ale",
+        prompt: "Compared to Old Ale, British Strong Ale is:",
+        correct: [
+          "lower alcohol",
+          "cleaner malt profile",
+          "less complexity",
+          "lighter body",
+          "less aged character",
+          "more restrained overall presentation"
+        ],
+        distractors: [
+          "higher alcohol",
+          "greater malt richness",
+          "fuller body",
+          "more intense complexity",
+          "heavier presentation"
+        ]
+      },
+
+      {
+        style: "English Barleywine",
+        prompt: "Compared to Old Ale, English Barleywine is:",
+        correct: [
+          "higher alcohol",
+          "fuller body",
+          "greater malt intensity",
+          "richer malt complexity",
+          "larger overall presentation",
+          "stronger warming character"
+        ],
+        distractors: [
+          "lower alcohol",
+          "lighter body",
+          "less malt richness",
+          "more restrained presentation",
+          "lower complexity"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are strong malt-forward British ales with expressive malt complexity and traditional English fermentation character. Compared to Old Ale, British Strong Ale is somewhat cleaner, lighter, and less complex, while English Barleywine becomes larger, richer, fuller-bodied, and more intensely malt-driven.",
+
+    commercialExamples: {
+      "British Strong Ale": ["Samuel Smith’s Winter Welcome", "Fuller’s 1845"],
+      "English Barleywine": ["JW Lees Harvest Ale", "Thomas Hardy’s Ale"],
+      "Old Ale": ["Theakston Old Peculier", "Greene King Strong Suffolk Ale"]
+    }
   }
 ];
