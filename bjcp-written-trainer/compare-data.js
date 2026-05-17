@@ -1387,5 +1387,158 @@ const compareClusters = [
       "Lambic": ["Cantillon Grand Cru Bruocsella", "Boon Lambic"],
       "Gueuze": ["Cantillon Gueuze", "Boon Oude Gueuze"]
     }
+  },
+
+  {
+    id: "ipa-family",
+    title: "IPA Family",
+    styles: ["American IPA", "Double IPA", "English IPA"],
+
+    sharedIdentity: {
+      best: "Hop-forward ales with firm-to-expressive bitterness and hop character as a defining trait",
+      weaker: [
+        "Hop-forward ales",
+        "Bitter hop-driven ales",
+        "Assertively hopped ales",
+        "Strongly hopped ales"
+      ]
+    },
+
+    anchor: {
+      correct: "American IPA",
+      feedback: {
+        "Double IPA":
+          "Usable, but not ideal. Double IPA pushes strength, bitterness, and intensity upward, making it less effective as the central comparison baseline.",
+
+        "English IPA":
+          "Not the strongest anchor. English IPA shifts toward traditional British malt and fermentation character, making it less central as the midpoint reference."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Double IPA",
+        prompt: "Compared to American IPA, Double IPA is:",
+        correct: [
+          "higher alcohol",
+          "greater hop intensity",
+          "fuller body",
+          "greater bitterness",
+          "more intense overall profile",
+          "stronger malt support"
+        ],
+        distractors: [
+          "lower alcohol",
+          "lighter body",
+          "less bitterness",
+          "more restrained hop character",
+          "lower intensity"
+        ]
+      },
+
+      {
+        style: "English IPA",
+        prompt: "Compared to American IPA, English IPA is:",
+        correct: [
+          "more traditional British hop character",
+          "greater malt presence",
+          "more estery fermentation character",
+          "less aggressive hop intensity",
+          "rounder bitterness profile"
+        ],
+        distractors: [
+          "cleaner fermentation",
+          "stronger American citrus hop profile",
+          "leaner malt balance",
+          "sharper modern hop expression",
+          "more aggressive bitterness"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are hop-forward ales with firm-to-expressive bitterness and hop character as a defining trait. Compared to American IPA, Double IPA increases strength, bitterness, body, and overall hop intensity. English IPA moves toward a more traditional British expression, with greater malt presence, more estery fermentation character, and less aggressively modern hop character.",
+
+    commercialExamples: {
+      "American IPA": ["Stone IPA", "Bell’s Two Hearted"],
+      "Double IPA": ["Russian River Pliny the Elder", "Stone Ruination"],
+      "English IPA": ["Samuel Smith India Ale"]
+    }
+  },
+
+  {
+    id: "strong-malt-ale-family",
+    title: "Strong Malt Ale Family",
+    styles: ["American Barleywine", "English Barleywine", "Wee Heavy"],
+
+    sharedIdentity: {
+      best: "Big malt-forward ales with substantial body and intense flavor complexity",
+      weaker: [
+        "Strong ales",
+        "High-gravity ales",
+        "Malt-forward strong ales",
+        "Intense strong ales"
+      ]
+    },
+
+    anchor: {
+      correct: "English Barleywine",
+      feedback: {
+        "American Barleywine":
+          "Usable, but not ideal. American Barleywine shifts the family toward stronger hop intensity, making it less neutral as the comparison midpoint.",
+
+        "Wee Heavy":
+          "Not the strongest anchor. Wee Heavy emphasizes a richer malt-forward Scottish expression, making it less central for comparison."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "American Barleywine",
+        prompt: "Compared to English Barleywine, American Barleywine is:",
+        correct: [
+          "greater hop bitterness",
+          "more assertive hop character",
+          "leaner malt balance",
+          "more aggressive overall presentation",
+          "stronger American hop expression"
+        ],
+        distractors: [
+          "lower bitterness",
+          "softer hop expression",
+          "greater malt sweetness",
+          "rounder balance",
+          "less hop intensity"
+        ]
+      },
+
+      {
+        style: "Wee Heavy",
+        prompt: "Compared to English Barleywine, Wee Heavy is:",
+        correct: [
+          "lower hop emphasis",
+          "richer malt-forward balance",
+          "more caramelized malt character",
+          "less bitterness",
+          "rounder malt presentation"
+        ],
+        distractors: [
+          "greater hop intensity",
+          "leaner malt balance",
+          "drier bitterness-driven profile",
+          "more aggressive hop character",
+          "sharper bitterness"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are big malt-forward ales with substantial body and intense flavor complexity. Compared to English Barleywine, American Barleywine shifts toward stronger bitterness, more assertive hop character, and a more aggressive overall presentation. Wee Heavy moves in the opposite direction, emphasizing richer malt expression, lower hop emphasis, and a rounder, more malt-driven profile.",
+
+    commercialExamples: {
+      "American Barleywine": ["Sierra Nevada Bigfoot", "Anchor Old Foghorn"],
+      "English Barleywine": ["JW Lees Harvest Ale", "Thomas Hardy’s Ale"],
+      "Wee Heavy": ["Traquair House Ale", "Belhaven Wee Heavy"]
+    }
   }
 ];
