@@ -1540,5 +1540,157 @@ const compareClusters = [
       "English Barleywine": ["JW Lees Harvest Ale", "Thomas Hardy’s Ale"],
       "Wee Heavy": ["Traquair House Ale", "Belhaven Wee Heavy"]
     }
+  },
+
+  {
+    id: "pale-lager-family",
+    title: "Pale Lager Family",
+    styles: ["American Lager", "American Light Lager", "International Pale Lager"],
+
+    sharedIdentity: {
+      best: "Pale highly drinkable lagers with clean fermentation and restrained flavor profiles",
+      weaker: [
+        "Pale lagers",
+        "Clean pale lagers",
+        "Light-bodied lagers",
+        "Easy-drinking lagers"
+      ]
+    },
+
+    anchor: {
+      correct: "American Lager",
+      feedback: {
+        "American Light Lager":
+          "Not the strongest anchor. American Light Lager is the smallest and most restrained expression, making it less effective as the central baseline.",
+
+        "International Pale Lager":
+          "Usable, but not ideal. International Pale Lager often increases malt or hop presence beyond the neutral American midpoint."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "American Light Lager",
+        prompt: "Compared to American Lager, American Light Lager is:",
+        correct: [
+          "lighter body",
+          "lower flavor intensity",
+          "lower alcohol",
+          "more highly attenuated",
+          "more restrained malt presence"
+        ],
+        distractors: [
+          "fuller body",
+          "greater malt flavor",
+          "higher alcohol",
+          "greater flavor intensity",
+          "richer profile"
+        ]
+      },
+
+      {
+        style: "International Pale Lager",
+        prompt: "Compared to American Lager, International Pale Lager is:",
+        correct: [
+          "greater malt flavor",
+          "fuller body",
+          "higher overall flavor intensity",
+          "stronger hop/malt presence",
+          "more characterful overall presentation"
+        ],
+        distractors: [
+          "lighter body",
+          "lower flavor intensity",
+          "more neutral profile",
+          "less malt presence",
+          "more restrained flavor"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are pale highly drinkable lagers with clean fermentation and restrained flavor profiles. Compared to American Lager, American Light Lager is lighter-bodied, lower in flavor intensity, and even more restrained in overall character. International Pale Lager moves in the opposite direction, with fuller body, greater malt presence, and a more characterful overall presentation.",
+
+    commercialExamples: {
+      "American Lager": ["Miller High Life", "Coors Banquet"],
+      "American Light Lager": ["Bud Light", "Miller Lite"],
+      "International Pale Lager": ["Heineken", "Stella Artois"]
+    }
+  },
+
+  {
+    id: "amber-balanced-family",
+    title: "Amber Balanced Family",
+    styles: ["Altbier", "Märzen", "Vienna Lager"],
+
+    sharedIdentity: {
+      best: "Amber balanced beers with noticeable malt character and high drinkability",
+      weaker: [
+        "Amber beers",
+        "Balanced amber styles",
+        "Malt-forward amber beers",
+        "Drinkable amber beers"
+      ]
+    },
+
+    anchor: {
+      correct: "Vienna Lager",
+      feedback: {
+        "Altbier":
+          "Usable, but not ideal. Altbier introduces ale fermentation character that makes it less neutral as the central comparison point.",
+
+        "Märzen":
+          "Not the strongest anchor. Märzen sits at the richer malt-forward end of the family, making a midpoint comparison less efficient."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Altbier",
+        prompt: "Compared to Vienna Lager, Altbier is:",
+        correct: [
+          "ale fermentation character",
+          "firmer bitterness",
+          "drier finish",
+          "leaner malt profile",
+          "more assertive bitterness balance"
+        ],
+        distractors: [
+          "clean lager fermentation",
+          "softer bitterness",
+          "rounder malt profile",
+          "fuller malt richness",
+          "lower bitterness"
+        ]
+      },
+
+      {
+        style: "Märzen",
+        prompt: "Compared to Vienna Lager, Märzen is:",
+        correct: [
+          "richer malt expression",
+          "fuller body",
+          "deeper toast/bread crust character",
+          "more robust malt profile",
+          "greater malt intensity"
+        ],
+        distractors: [
+          "lighter body",
+          "leaner malt profile",
+          "less toast character",
+          "more delicate presentation",
+          "lower malt intensity"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are amber balanced beers with noticeable malt character and strong drinkability. Compared to Vienna Lager, Altbier is drier, more bitter, and distinguished by clean ale fermentation rather than lager fermentation. Märzen moves in the opposite direction, with richer malt expression, fuller body, and deeper toast-driven malt complexity.",
+
+    commercialExamples: {
+      "Altbier": ["Uerige Alt", "Schlüssel Alt"],
+      "Märzen": ["Ayinger Oktober Fest-Märzen", "Paulaner Oktoberfest Märzen"],
+      "Vienna Lager": ["Great Lakes Eliot Ness", "Devils Backbone Vienna Lager"]
+    }
   }
 ];
