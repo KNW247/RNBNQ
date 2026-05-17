@@ -32,6 +32,87 @@ const categoryOptions = {
     color: ["Straw", "Pale Gold", "Gold", "Amber", "Copper", "Brown", "Black"]
 };
 
+const compareClusters = [
+  {
+    id: "strong-hop-forward-family",
+    title: "Strong Hop-Forward Family",
+    styles: ["American IPA", "Double IPA", "American Barleywine"],
+
+    sharedIdentity: {
+      best: "Strong hop-forward American ales with assertive bitterness and prominent hop character",
+      weaker: [
+        "Hop-forward strong ales",
+        "Strong American ales",
+        "Bitter American ales",
+        "High-intensity hop ales"
+      ]
+    },
+
+    anchor: {
+      correct: "Double IPA",
+      feedback: {
+        "American IPA": "Usable, but not ideal. American IPA is the smaller, less intense member of the family, making it less effective as the midpoint comparison.",
+        "American Barleywine": "Not the strongest anchor. American Barleywine shifts toward heavier malt richness and broader malt complexity, making midpoint comparison less balanced."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "American IPA",
+        prompt: "Compared to Double IPA, American IPA is:",
+        correct: [
+          "lower alcohol",
+          "lighter body",
+          "lower hop intensity",
+          "less overall bitterness",
+          "smaller overall presentation",
+          "less malt support"
+        ],
+        distractors: [
+          "higher alcohol",
+          "fuller body",
+          "greater hop intensity",
+          "larger presentation",
+          "stronger malt backbone"
+        ]
+      },
+      {
+        style: "American Barleywine",
+        prompt: "Compared to Double IPA, American Barleywine is:",
+        correct: [
+          "greater malt richness",
+          "fuller body",
+          "heavier presentation",
+          "more malt-forward balance",
+          "less hop-driven dryness",
+          "richer dark fruit/caramel complexity"
+        ],
+        distractors: [
+          "leaner body",
+          "more hop-driven balance",
+          "lighter malt structure",
+          "sharper bitterness focus",
+          "cleaner drier presentation"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are strong hop-forward American ales with assertive bitterness and prominent hop character. Compared to Double IPA, American IPA is lighter, lower in alcohol, and less intense overall. American Barleywine moves in the opposite direction, becoming fuller, richer, and more malt-driven, while still maintaining strong hop presence.",
+
+    commercialExamples: {
+      "American IPA": ["Stone IPA", "Bell’s Two Hearted"],
+      "Double IPA": ["Russian River Pliny the Elder", "Stone Ruination"],
+      "American Barleywine": ["Sierra Nevada Bigfoot", "Anchor Old Foghorn"]
+    }
+  }
+];
+
+let currentCompareCluster = null;
+let compareStep = "shared";
+let compareIndex = 0;
+let selectedCompareOptions = [];
+
 
 // ==============================
 // RECIPE CONSTRUCTION MODULES 1–5
@@ -590,39 +671,229 @@ function renderQuestion(category = currentCategory) {
 }
 
 function renderCompareQuestion() {
-    const profile =
-        compareProfiles[Math.floor(Math.random() * compareProfiles.length)];
+    currentCompareCluster =
+        compareClusters[Math.floor(Math.random() * compareClusters.length)];
 
-    const focus =
-        profile.focus[Math.floor(Math.random() * profile.focus.length)];
+    compareStep = "shared";
+    compareIndex = 0;
+    selectedCompareOptions = [];
 
-    styleName.textContent = `Compare Drill`;
+    renderCompareSharedIdentity();
+}
 
-    questionText.textContent = focus.question;
+function renderCompareSharedIdentity() {
+    styleName.textContent = "Compare Drill";
+    questionText.textContent = currentCompareCluster.styles.join(" / ");
 
-    feedbackBox.innerHTML = "";
+    feedbackBox.innerHTML = `
+        <strong>Step 1:</strong> Choose the best shared identity.
+    `;
+
     answerContainer.innerHTML = "";
 
-    const choices = [
-        "Higher",
-        "Lower",
-        "Similar",
-        "Lighter",
-        "Fuller",
-        "More malt emphasis",
-        "Less malt emphasis"
-    ];
+    const options = [
+        {
+            text: currentCompareCluster.sharedIdentity.best,
+            type: "best"
+        },
+        ...currentCompareCluster.sharedIdentity.weaker.map(text => ({
+            text,
+            type: "weaker"
+        }))
+    ].sort(() => Math.random() - 0.5);
 
-    choices.forEach(choice => {
+    options.forEach(option => {
         const button = document.createElement("button");
-        button.textContent = choice;
+        button.textContent = option.text;
 
         button.addEventListener("click", function () {
-            checkCompareAnswer(choice, focus.correct);
+            if (option.type === "best") {
+                button.style.backgroundColor = "#16a34a";
+                button.style.color = "white";
+
+                feedbackBox.innerHTML = `
+                    <strong class="correct">Correct.</strong><br>
+                    This is the strongest shared identity because it captures the family clearly and gives useful compare language.
+                `;
+
+                setTimeout(renderCompareAnchor, 700);
+                        } else {
+                button.style.backgroundColor = "#f59e0b";
+                button.style.color = "white";
+
+                feedbackBox.innerHTML = `
+                    <strong>True, but incomplete.</strong><br>
+                    "${option.text}" is defensible, but the stronger answer is:<br>
+                    <strong>${currentCompareCluster.sharedIdentity.best}</strong><br><br>
+                    Try again.
+                `;
+
+                return;
+            }
         });
 
         answerContainer.appendChild(button);
     });
+}
+
+function renderCompareAnchor() {
+    compareStep = "anchor";
+    selectedCompareOptions = [];
+
+    styleName.textContent = "Compare Drill";
+    questionText.textContent = "Choose the best mental anchor.";
+
+    feedbackBox.innerHTML = `
+        <strong>Step 2:</strong> Pick the style that works best as the comparison anchor.
+    `;
+
+    answerContainer.innerHTML = "";
+
+    currentCompareCluster.styles.forEach(style => {
+        const button = document.createElement("button");
+        button.textContent = style;
+
+        button.addEventListener("click", function () {
+            if (style === currentCompareCluster.anchor.correct) {
+                button.style.backgroundColor = "#16a34a";
+                button.style.color = "white";
+
+                feedbackBox.innerHTML = `
+                    <strong class="correct">Correct.</strong><br>
+                    ${style} is the best anchor.
+                `;
+
+                setTimeout(renderCompareDescriptorStep, 700);
+            } else {
+                button.style.backgroundColor = "#dc2626";
+                button.style.color = "white";
+
+                feedbackBox.innerHTML = `
+                    <strong class="incorrect">Not the best anchor.</strong><br>
+                    ${currentCompareCluster.anchor.feedback[style] || "Choose the more central comparison point."}<br><br>
+                    Try again.
+                `;
+            }
+        });
+
+        answerContainer.appendChild(button);
+    });
+}
+
+function renderCompareDescriptorStep() {
+    compareStep = "descriptors";
+    selectedCompareOptions = [];
+
+    const comparison = currentCompareCluster.comparisons[compareIndex];
+
+    styleName.textContent = "Compare Drill";
+    questionText.textContent = comparison.prompt;
+
+    feedbackBox.innerHTML = `
+        <strong>Step ${compareIndex + 3}:</strong> Pick all that apply.
+    `;
+
+    answerContainer.innerHTML = "";
+
+    const allOptions = [...comparison.correct, ...comparison.distractors]
+        .sort(() => Math.random() - 0.5);
+
+    allOptions.forEach(optionText => {
+        const button = document.createElement("button");
+        button.textContent = optionText;
+        button.classList.add("compare-chip");
+
+        button.addEventListener("click", function () {
+            button.classList.toggle("selected");
+
+            if (selectedCompareOptions.includes(optionText)) {
+                selectedCompareOptions = selectedCompareOptions.filter(item => item !== optionText);
+            } else {
+                selectedCompareOptions.push(optionText);
+            }
+        });
+
+        answerContainer.appendChild(button);
+    });
+
+    const submitButton = document.createElement("button");
+    submitButton.textContent = "Submit";
+    submitButton.classList.add("submit-answer");
+
+    submitButton.addEventListener("click", function () {
+        checkCompareDescriptors(comparison);
+    });
+
+    answerContainer.appendChild(submitButton);
+}
+
+function checkCompareDescriptors(comparison) {
+    const correctSet = new Set(comparison.correct);
+    const selectedSet = new Set(selectedCompareOptions);
+
+    const correctSelected = selectedCompareOptions.filter(item => correctSet.has(item));
+    const wrongSelected = selectedCompareOptions.filter(item => !correctSet.has(item));
+    const missed = comparison.correct.filter(item => !selectedSet.has(item));
+
+    if (wrongSelected.length === 0 && missed.length === 0) {
+        correctCount++;
+    } else {
+        incorrectCount++;
+    }
+
+    updateScoreDisplay();
+
+    feedbackBox.innerHTML = `
+        <strong>Review for ${comparison.style}</strong><br><br>
+
+        <strong class="correct">Correct selections:</strong><br>
+        ${correctSelected.length ? correctSelected.join("<br>") : "None"}<br><br>
+
+        <strong class="incorrect">Wrong selections:</strong><br>
+        ${wrongSelected.length ? wrongSelected.join("<br>") : "None"}<br><br>
+
+        <strong>Missed correct answers:</strong><br>
+        ${missed.length ? missed.join("<br>") : "None"}
+    `;
+
+    answerContainer.innerHTML = "";
+
+    const continueButton = document.createElement("button");
+
+    if (compareIndex < currentCompareCluster.comparisons.length - 1) {
+        continueButton.textContent = "Continue";
+        continueButton.addEventListener("click", function () {
+            compareIndex++;
+            renderCompareDescriptorStep();
+        });
+    } else {
+        continueButton.textContent = "Show Model Answer";
+        continueButton.addEventListener("click", renderCompareModelAnswer);
+    }
+
+    answerContainer.appendChild(continueButton);
+}
+
+function renderCompareModelAnswer() {
+    styleName.textContent = currentCompareCluster.title;
+    questionText.textContent = currentCompareCluster.styles.join(" / ");
+
+    const examplesHtml = Object.entries(currentCompareCluster.commercialExamples)
+        .map(([style, examples]) => `
+            <strong>${style}:</strong><br>
+            ${examples.join("<br>")}
+        `)
+        .join("<br><br>");
+
+    feedbackBox.innerHTML = `
+        <strong>Model Answer:</strong><br>
+        ${currentCompareCluster.modelAnswer}<br><br>
+
+        <strong>Classic Commercial Examples:</strong><br>
+        ${examplesHtml}
+    `;
+
+    answerContainer.innerHTML = "";
 }
 function renderGravityQuestion() {
     const question =
@@ -1122,42 +1393,7 @@ function checkAnswer(selectedAnswer, data) {
         `;
     }
 }
-function checkCompareAnswer(selectedAnswer, correctAnswer) {
-    const buttons = answerContainer.querySelectorAll("button");
 
-    buttons.forEach(button => {
-        button.disabled = true;
-
-        if (button.textContent === correctAnswer) {
-            button.style.backgroundColor = "#16a34a";
-            button.style.color = "white";
-        }
-
-        if (button.textContent === selectedAnswer && selectedAnswer !== correctAnswer) {
-            button.style.backgroundColor = "#dc2626";
-            button.style.color = "white";
-        }
-    });
-
-    if (selectedAnswer === correctAnswer) {
-        correctCount++;
-        updateScoreDisplay();
-
-        feedbackBox.innerHTML = `
-            <strong class="correct">Correct.</strong><br>
-            ${correctAnswer}
-        `;
-    } else {
-        incorrectCount++;
-        updateScoreDisplay();
-
-        feedbackBox.innerHTML = `
-            <strong class="incorrect">Incorrect.</strong><br>
-            You selected: ${selectedAnswer}<br>
-            Correct answer: ${correctAnswer}
-        `;
-    }
-}
 
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
