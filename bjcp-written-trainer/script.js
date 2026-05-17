@@ -1320,7 +1320,7 @@ if (selectedAnchor === primaryAnswer) {
             style: currentStyle.name,
             category: currentCategory,
             selected: selectedAnchor,
-            correct: correctAnswer
+            correct: primaryAnswer
         });
 
         updateScoreDisplay();
@@ -1328,7 +1328,7 @@ if (selectedAnchor === primaryAnswer) {
         feedbackBox.innerHTML = `
             <strong class="incorrect">Incorrect.</strong><br>
             You selected: ${selectedAnswer}<br>
-            Correct answer: ${correctAnswer}<br>
+            Correct answer: ${primaryAnswer}<br>
             Range: ${formatRange(data)}
         `;
     }
