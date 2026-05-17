@@ -1845,5 +1845,157 @@ const compareClusters = [
       "Dunkles Bock": ["Einbecker Ur-Bock Dunkel", "Ayinger Bock"],
       "Helles Bock": ["Einbecker Mai-Ur-Bock", "Ayinger Maibock"]
     }
+  },
+
+  {
+    id: "strong-german-ale-lager-family",
+    title: "Strong German Ale/Lager Family",
+    styles: ["Doppelbock", "Dunkles Bock", "Weizenbock"],
+
+    sharedIdentity: {
+      best: "Big malt-forward German beers with substantial body and elevated strength",
+      weaker: [
+        "Strong German beers",
+        "Big malt-driven German styles",
+        "High-strength German beers",
+        "Intense German malt styles"
+      ]
+    },
+
+    anchor: {
+      correct: "Dunkles Bock",
+      feedback: {
+        "Doppelbock":
+          "Not the strongest anchor. Doppelbock is the richest and most intense lager expression, making midpoint comparison less efficient.",
+
+        "Weizenbock":
+          "Usable, but not ideal. Weizenbock introduces a distinct wheat ale fermentation character that makes it less neutral as the central comparison point."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Doppelbock",
+        prompt: "Compared to Dunkles Bock, Doppelbock is:",
+        correct: [
+          "higher alcohol",
+          "greater malt richness",
+          "fuller body",
+          "more intense overall presentation",
+          "stronger warming character"
+        ],
+        distractors: [
+          "lower alcohol",
+          "lighter body",
+          "less malt depth",
+          "more delicate presentation",
+          "lower intensity"
+        ]
+      },
+
+      {
+        style: "Weizenbock",
+        prompt: "Compared to Dunkles Bock, Weizenbock is:",
+        correct: [
+          "expressive wheat fermentation character",
+          "banana/clove fermentation profile",
+          "wheat-derived body contribution",
+          "ale fermentation",
+          "less clean lager profile"
+        ],
+        distractors: [
+          "clean lager fermentation",
+          "neutral fermentation",
+          "less expressive yeast character",
+          "no wheat contribution",
+          "cleaner malt-only profile"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are big malt-forward German beers with substantial body and elevated strength. Compared to Dunkles Bock, Doppelbock becomes richer, stronger, and more intensely malt-driven. Weizenbock differentiates through expressive wheat ale fermentation character, with banana/clove yeast expression, wheat contribution, and a less clean lager presentation.",
+
+    commercialExamples: {
+      "Doppelbock": ["Paulaner Salvator", "Ayinger Celebrator"],
+      "Dunkles Bock": ["Einbecker Ur-Bock Dunkel", "Ayinger Bock"],
+      "Weizenbock": ["Schneider Aventinus", "Weihenstephaner Vitus"]
+    }
+  },
+
+  {
+    id: "wheat-ale-family",
+    title: "Wheat Ale Family",
+    styles: ["American Wheat Beer", "Weissbier", "Witbier"],
+
+    sharedIdentity: {
+      best: "Refreshing wheat-based ales with similar pale base profiles and high drinkability",
+      weaker: [
+        "Wheat ales",
+        "Pale wheat beers",
+        "Refreshing wheat beers",
+        "Easy-drinking wheat ales"
+      ]
+    },
+
+    anchor: {
+      correct: "American Wheat Beer",
+      feedback: {
+        "Weissbier":
+          "Usable, but not ideal. Weissbier introduces a much stronger yeast-driven fermentation signature, making it less neutral as the comparison baseline.",
+
+        "Witbier":
+          "Not the strongest anchor. Witbier adds Belgian fermentation and spice complexity, making it less ideal as the central reference."
+      }
+    },
+
+    comparisons: [
+      {
+        style: "Weissbier",
+        prompt: "Compared to American Wheat Beer, Weissbier is:",
+        correct: [
+          "banana/clove fermentation character",
+          "more expressive yeast profile",
+          "greater fermentation complexity",
+          "German wheat ale character",
+          "less neutral fermentation"
+        ],
+        distractors: [
+          "clean neutral fermentation",
+          "less expressive yeast",
+          "lower fermentation complexity",
+          "cleaner American ale profile",
+          "more restrained fermentation"
+        ]
+      },
+
+      {
+        style: "Witbier",
+        prompt: "Compared to American Wheat Beer, Witbier is:",
+        correct: [
+          "coriander/orange spice character",
+          "Belgian fermentation character",
+          "more expressive yeast profile",
+          "spiced complexity",
+          "softer presentation"
+        ],
+        distractors: [
+          "neutral fermentation",
+          "no spice contribution",
+          "clean American fermentation",
+          "restrained yeast character",
+          "less expressive complexity"
+        ]
+      }
+    ],
+
+    modelAnswer:
+      "All three are refreshing wheat-based ales with similar pale base profiles and high drinkability. Compared to American Wheat Beer, Weissbier introduces expressive banana/clove fermentation character and a much stronger yeast-driven profile. Witbier differentiates through Belgian fermentation character, spice additions, and a softer, more complex spiced presentation.",
+
+    commercialExamples: {
+      "American Wheat Beer": ["Bell’s Oberon", "Widmer Hefeweizen"],
+      "Weissbier": ["Weihenstephaner Hefeweissbier", "Paulaner Hefe-Weizen"],
+      "Witbier": ["Hoegaarden Wit", "St. Bernardus Wit"]
+    }
   }
 ];
