@@ -1535,12 +1535,9 @@ function renderRecipeBuild() {
 
         <label>
             Yeast:
-            <select id="recipe-yeast">
-                ${yeastFamilyOptions.map(option => `
-                    <option value="${option.id}">
-                        ${option.label}
-                    </option>
-                `).join("")}
+            ${recipeYeastOptions.map(yeast => `
+            <option value="${yeast}">${yeast}</option>
+            `).join("")}
             </select>
         </label>
 
