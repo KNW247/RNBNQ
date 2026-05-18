@@ -1438,6 +1438,28 @@ function renderRecipeSetup() {
     });
 }
 
+function renderRecipeBuild() {
+    styleName.textContent = `Style: ${currentRecipeStyle.name}`;
+
+    questionText.innerHTML = `
+        Build a defensible recipe for this style.
+
+        <p><strong>Setup:</strong>
+        ${recipeSetup.postBoilVolume} L @ ${recipeSetup.efficiency}% BHE
+        </p>
+    `;
+
+    feedbackBox.innerHTML = `
+        <em>Recipe evaluator coming next.</em>
+    `;
+
+    answerContainer.innerHTML = `
+        <p>Recipe Construction Lab is launching correctly.</p>
+    `;
+
+    nextQuestionButton.style.display = "none";
+}
+
 function renderTrueFalseQuestion() {
     if (currentTrueFalseIndex >= trueFalseSession.length) {
         showTrueFalseSummary();
