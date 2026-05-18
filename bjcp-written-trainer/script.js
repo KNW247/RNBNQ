@@ -1721,6 +1721,12 @@ if (gristDelta > 0.6) {
         ${ogMathMessage}<br><br>
         ${formatRecipeResult(ibuResult)}
         ${formatRecipeResult(srmResult)}
+
+    <strong>Total Grist:</strong> ${gristStatus}<br>
+        ${gristMessage}<br><br>
+
+    <strong>Grain Bill %:</strong> ${grainPctStatus}<br>
+        ${grainPctMessage}<br><br>
     `;
 
     nextQuestionButton.style.display = "inline-block";
