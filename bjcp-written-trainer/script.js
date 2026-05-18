@@ -1648,6 +1648,41 @@ function evaluateRecipeSubmission() {
     `;
 }
 
+function evaluateRange(label, value, min, max, closeTolerance) {
+    if (value >= min && value <= max) {
+        return {
+            label,
+            status: "Strong",
+            message: `${value} is within the style range (${min}–${max}).`
+        };
+    }
+
+    const belowBy = min - value;
+    const aboveBy = value - max;
+    const distance = value < min ? belowBy : aboveBy;
+
+    if (distance <= closeTolerance) {
+        return {
+            label,
+            status: "Close",
+            message: `${value} is just outside the style range (${min}–${max}).`
+        };
+    }
+
+    return {
+        label,
+        status: "Likely point loss",
+        message: `${value} is outside the style range (${min}–${max}).`
+    };
+}
+
+function formatRecipeResult(result) {
+    return `
+        <strong>${result.label}:</strong> ${result.status}<br>
+        ${result.message}<br><br>
+    `;
+}
+
 function renderTrueFalseQuestion() {
     if (currentTrueFalseIndex >= trueFalseSession.length) {
         showTrueFalseSummary();
