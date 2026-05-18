@@ -9,7 +9,7 @@ const drillPanel = document.getElementById("drill-panel");
 const studySets = document.getElementById("study-sets");
 const modules = document.getElementById("modules");
 const backHomeButton = document.getElementById("back-home");
-
+const launchTrueFalseButton = document.getElementById("launch-truefalse");
 const correctCountDisplay = document.getElementById("correct-count");
 const incorrectCountDisplay = document.getElementById("incorrect-count");
 const accuracyDisplay = document.getElementById("accuracy");
