@@ -1597,9 +1597,54 @@ function renderRecipeBuild() {
 }
 
 function evaluateRecipeSubmission() {
+    const abv = parseFloat(document.getElementById("recipe-abv").value);
+    const fg = parseFloat(document.getElementById("recipe-fg").value);
+    const og = parseFloat(document.getElementById("recipe-og").value);
+    const ibu = parseFloat(document.getElementById("recipe-ibu").value);
+    const srm = parseFloat(document.getElementById("recipe-srm").value);
+
+    if ([abv, fg, og, ibu, srm].some(value => isNaN(value))) {
+        feedbackBox.innerHTML = `
+            <strong class="incorrect">Enter all target numbers before evaluating.</strong>
+        `;
+        return;
+    }
+
+    const abvResult = evaluateRange("ABV", abv, currentRecipeStyle.strength.min, currentRecipeStyle.strength.max, 0.5);
+    const fgResult = evaluateRange("FG", fg, currentRecipeStyle.body.min, currentRecipeStyle.body.max, 0.003);
+    const ibuResult = evaluateRange("IBU", ibu, currentRecipeStyle.bitterness.min, currentRecipeStyle.bitterness.max, 5);
+    const srmResult = evaluateRange("SRM", srm, currentRecipeStyle.color.min, currentRecipeStyle.color.max, 3);
+
+    const expectedOg = fg + (abv / 131.25);
+    const userOgPoints = Math.round((og - 1) * 1000);
+    const expectedOgPoints = Math.round((expectedOg - 1) * 1000);
+    const ogMathDelta = Math.abs(userOgPoints - expectedOgPoints);
+
+    let ogMathStatus = "Strong";
+    let ogMathMessage = `OG math is internally consistent. Expected about 1.${String(expectedOgPoints).padStart(3, "0")}.`;
+
+    if (ogMathDelta > 3 && ogMathDelta <= 5) {
+        ogMathStatus = "Close";
+        ogMathMessage = `OG is close, but ABV / FG / OG do not fully align. Expected about 1.${String(expectedOgPoints).padStart(3, "0")}.`;
+    }
+
+    if (ogMathDelta > 5) {
+        ogMathStatus = "Likely point loss";
+        ogMathMessage = `OG math does not add up. Based on ABV and FG, expected about 1.${String(expectedOgPoints).padStart(3, "0")}.`;
+    }
+
+    const ogRangeResult = evaluateRange("OG", og, currentRecipeStyle.og.min, currentRecipeStyle.og.max, 0.003);
+
     feedbackBox.innerHTML = `
-        <strong>Recipe submitted.</strong><br>
-        Evaluation logic is the next build step.
+        <strong>Recipe Evaluation</strong><br><br>
+
+        ${formatRecipeResult(abvResult)}
+        ${formatRecipeResult(fgResult)}
+        ${formatRecipeResult(ogRangeResult)}
+        <strong>OG Math:</strong> ${ogMathStatus}<br>
+        ${ogMathMessage}<br><br>
+        ${formatRecipeResult(ibuResult)}
+        ${formatRecipeResult(srmResult)}
     `;
 }
 
