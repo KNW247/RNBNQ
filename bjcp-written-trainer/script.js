@@ -63,6 +63,53 @@ const recipeMashOptions = [
 ];
 
 const recipeHopScheduleRows = ["FWH", "60", "30", "15", "5", "HP/WP"];
+const recipeYeastOptions = [
+    "W-34/70",
+    "Wyeast 2124",
+    "WLP830",
+    "Diamond Lager",
+    "Wyeast 2278",
+    "WLP802",
+    "US-05",
+    "WLP001",
+    "Wyeast 1056",
+    "BRY-97",
+    "Nottingham",
+    "S-04",
+    "Wyeast 1968",
+    "WLP002",
+    "Wyeast 1084",
+    "WLP004",
+    "Wyeast 3068",
+    "WLP300",
+    "Wyeast 3787",
+    "WLP530",
+    "BE-256",
+    "Belle Saison",
+    "Wyeast 3711",
+    "Lutra",
+    "K-97"
+];
+
+const recipeHopOptions = [
+    "Hallertau Mittelfruh",
+    "Tettnang",
+    "Spalt",
+    "Saaz",
+    "Perle",
+    "Magnum",
+    "East Kent Goldings",
+    "Fuggles",
+    "Willamette",
+    "Centennial",
+    "Cascade",
+    "Columbus",
+    "Chinook",
+    "Citra",
+    "Mosaic",
+    "Simcoe",
+    "Galaxy"
+];
 
 let currentRecipeStyle = null;
 
