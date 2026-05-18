@@ -1672,7 +1672,7 @@ function evaluateRecipeSubmission() {
     const wheatPct = parseFloat(document.getElementById("recipe-wheatpct").value);
 
     
-   if ([abv, fg, og, ibu, srm, gristKg, basePct, specialtyPct, adjunctPct, roastPct, wheatPct].some(value => isNaN(value))) {
+   if ([abv, fg, og, ibu, srm, gristInput, basePct, specialtyPct, adjunctPct, roastPct, wheatPct].some(value => isNaN(value))) {
         feedbackBox.innerHTML = `
             <strong class="incorrect">Enter all target numbers before evaluating.</strong>
         `;
