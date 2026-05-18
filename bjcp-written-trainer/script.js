@@ -1439,25 +1439,90 @@ function renderRecipeSetup() {
 }
 
 function renderRecipeBuild() {
-    styleName.textContent = `Style: ${currentRecipeStyle.name}`;
+    styleName.textContent = `Style: ${currentRecipeStyle.code} ${currentRecipeStyle.name}`;
 
     questionText.innerHTML = `
-        Build a defensible recipe for this style.
+        Build a defensible exam recipe.
 
         <p><strong>Setup:</strong>
         ${recipeSetup.postBoilVolume} L @ ${recipeSetup.efficiency}% BHE
         </p>
     `;
 
-    feedbackBox.innerHTML = `
-        <em>Recipe evaluator coming next.</em>
-    `;
+    feedbackBox.innerHTML = "";
 
     answerContainer.innerHTML = `
-        <p>Recipe Construction Lab is launching correctly.</p>
+        <label>
+            Target ABV:
+            <input id="recipe-abv" type="number" step="0.1" placeholder="5.2">
+        </label>
+
+        <label>
+            Target FG:
+            <input id="recipe-fg" type="number" step="0.001" placeholder="1.010">
+        </label>
+
+        <label>
+            Target OG:
+            <input id="recipe-og" type="number" step="0.001" placeholder="1.050">
+        </label>
+
+        <label>
+            Target IBU:
+            <input id="recipe-ibu" type="number" step="1" placeholder="32">
+        </label>
+
+        <label>
+            Target SRM:
+            <input id="recipe-srm" type="number" step="1" placeholder="5">
+        </label>
+
+        <label>
+            Mash Strategy:
+            <select id="recipe-mash">
+                ${recipeMashOptions.map(option => `
+                    <option value="${option.id}">${option.label}</option>
+                `).join("")}
+            </select>
+        </label>
+
+        <label>
+            Yeast:
+            <select id="recipe-yeast">
+                ${yeastFamilyOptions.map(option => `
+                    <option value="${option.id}">
+                        ${option.label}
+                    </option>
+                `).join("")}
+            </select>
+        </label>
+
+        <label>
+            Fermentation Start Temp:
+            <select id="recipe-ferment-start">
+                ${recipeTempOptionsC.map(temp => `
+                    <option value="${temp}">${temp}°C</option>
+                `).join("")}
+            </select>
+        </label>
+
+        <label>
+            Fermentation Finish Temp:
+            <select id="recipe-ferment-finish">
+                ${recipeTempOptionsC.map(temp => `
+                    <option value="${temp}">${temp}°C</option>
+                `).join("")}
+            </select>
+        </label>
+
+        <button id="evaluate-recipe">Evaluate Recipe</button>
     `;
 
     nextQuestionButton.style.display = "none";
+
+    document.getElementById("evaluate-recipe").addEventListener("click", function () {
+        evaluateRecipeSubmission();
+    });
 }
 
 function renderTrueFalseQuestion() {
