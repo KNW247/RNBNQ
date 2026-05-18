@@ -42,6 +42,37 @@ let trueFalseSession = [];
 let currentTrueFalseIndex = 0;
 const TRUE_FALSE_SESSION_SIZE = 20;
 
+const recipeStyleCodes = [
+    "26C", "9A", "20A", "15B", "6A", "21A",
+    "10A", "11C", "4B", "3B", "5D", "22A"
+];
+
+const recipeVolumeOptionsLiters = [19, 21.5, 23, 25, 38, 43, 46];
+
+const recipeEfficiencyOptions = [55, 58, 61, 64, 67, 70, 73, 76, 79, 82, 85];
+
+const recipeTempOptionsC = [6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32];
+
+const recipeMashOptions = [
+    { id: "low", label: "Low Saccharification" },
+    { id: "mid", label: "Mid Saccharification" },
+    { id: "high", label: "High Saccharification" },
+    { id: "hochkurz", label: "Hochkurz Step Mash" },
+    { id: "decoction", label: "Decoction Mash" },
+    { id: "protein", label: "Protein Rest + Step Mash" }
+];
+
+const recipeHopScheduleRows = ["FWH", "60", "30", "15", "5", "HP/WP"];
+
+let currentRecipeStyle = null;
+
+let recipeSetup = {
+    units: "metric",
+    postBoilVolume: 21.5,
+    efficiency: 73
+};
+
+
 // ==============================
 // RECIPE CONSTRUCTION MODULES 1–5
 // ==============================
