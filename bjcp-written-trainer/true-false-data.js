@@ -8,7 +8,7 @@ const trueFalseQuestions = [
   { id: 7, answer: true, statement: "An individual with knowledge of the association between entries and entrants may not serve as a judge." },
   { id: 8, answer: false, statement: "A member of the competition staff with access to information that associates entries with entrants may serve as a judge, provided this person does not divulge information about entries and entrants to other judges." },
   { id: 9, answer: true, statement: "The head judge at a table should try to tutor apprentice or lower-rank judges if time permits." },
-  { id: 10, answer: false, statement: "The steward at the table has sole responsibility for completing the Cover Sheets for beers in each flight." }
+  { id: 10, answer: false, statement: "The steward at the table has sole responsibility for completing the Cover Sheets for beers in each flight." },
   { id: 11, answer: true, statement: "The head judge at a table has sole responsibility for completing the Cover Sheets for beers in each flight." },
   { id: 12, answer: true, statement: "The head judge at a table should fill out Cover Sheets for beers in his or her flight as directed by the competition management." },
   { id: 13, answer: false, statement: "The head judge at a table has no responsibility for filling out Cover Sheets for beers in his or her flight unless directed to do so by the competition management." },
