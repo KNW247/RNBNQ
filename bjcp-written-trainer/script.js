@@ -1643,6 +1643,29 @@ launchTrueFalseButton.addEventListener("click", function () {
     window.scrollTo(0, 0);
 });
 
+launchRecipeButton.addEventListener("click", function () {
+    currentMode = "recipe";
+
+    correctCount = 0;
+    incorrectCount = 0;
+    missedQuestions = [];
+    updateScoreDisplay();
+
+    currentRecipeStyle = getRandomRecipeStyle();
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+    setCategoryVisibility(false);
+
+    drillTitle.textContent = "Recipe Construction Lab";
+    drillPanel.style.display = "block";
+
+    renderRecipeSetup();
+
+    window.scrollTo(0, 0);
+});
+
+
 category.forEach(function(button) {
     button.addEventListener("click", function() {
         currentMode = "foundation";
