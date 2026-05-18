@@ -1515,7 +1515,7 @@ function renderRecipeBuild() {
 
     questionText.innerHTML = `
         Build a defensible exam recipe.
-        <p><strong>Setup:</strong> ${recipeSetup.postBoilVolume} L @ ${recipeSetup.efficiency}% BHE</p>
+        <p><strong>Setup:</strong> ${formatRecipeVolume(recipeSetup.postBoilVolume)} @ ${recipeSetup.efficiency}% BHE</p>
     `;
 
     feedbackBox.innerHTML = "";
