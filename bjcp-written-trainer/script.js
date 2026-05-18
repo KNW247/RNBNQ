@@ -1479,7 +1479,7 @@ function renderRecipeSetup() {
             <select id="recipe-volume">
                 ${recipeVolumeOptionsLiters.map(volume => `
                     <option value="${volume}" ${volume === 21.5 ? "selected" : ""}>
-                        ${volume} L
+                   ${formatVolumeOption(volume)}
                     </option>
                 `).join("")}
             </select>
