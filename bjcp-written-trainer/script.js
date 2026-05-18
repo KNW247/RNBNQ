@@ -1633,6 +1633,14 @@ function evaluateRecipeSubmission() {
     const ibu = parseFloat(document.getElementById("recipe-ibu").value);
     const srm = parseFloat(document.getElementById("recipe-srm").value);
 
+    const gristKg = parseFloat(document.getElementById("recipe-grist").value);
+    const basePct = parseFloat(document.getElementById("recipe-basepct").value);
+    const specialtyPct = parseFloat(document.getElementById("recipe-specialtypct").value);
+    const adjunctPct = parseFloat(document.getElementById("recipe-adjunctpct").value);
+    const roastPct = parseFloat(document.getElementById("recipe-roastpct").value);
+    const wheatPct = parseFloat(document.getElementById("recipe-wheatpct").value);
+
+    
     if ([abv, fg, og, ibu, srm].some(value => isNaN(value))) {
         feedbackBox.innerHTML = `
             <strong class="incorrect">Enter all target numbers before evaluating.</strong>
