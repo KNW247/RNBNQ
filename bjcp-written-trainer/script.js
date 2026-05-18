@@ -1521,6 +1521,36 @@ function renderRecipeBuild() {
             <input id="recipe-srm" type="number" step="1" placeholder="5">
         </label>
 
+    <label>
+        Total Grist (kg):
+        <input id="recipe-grist" type="number" step="0.1" placeholder="5.0">
+    </label>
+
+  <label>
+      Base Malt %:
+      <input id="recipe-basepct" type="number" step="1" placeholder="85">
+  </label>
+
+    <label>
+        Specialty Malt %:
+        <input id="recipe-specialtypct" type="number" step="1" placeholder="10">
+    </label>
+
+    <label>
+        Sugar / Adjunct %:
+        <input id="recipe-adjunctpct" type="number" step="1" placeholder="0">
+    </label>
+
+    <label>
+        Roast Malt %:
+        <input id="recipe-roastpct" type="number" step="1" placeholder="0">
+    </label>
+
+    <label>
+        Wheat %:
+        <input id="recipe-wheatpct" type="number" step="1" placeholder="0">
+    </label>
+
         <label>
             Mash Strategy:
             <select id="recipe-mash">
