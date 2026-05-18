@@ -1646,6 +1646,12 @@ nextQuestionButton.addEventListener("click", function () {
         return;
     }
 
+    if (currentMode === "truefalse") {
+    currentTrueFalseIndex++;
+    renderTrueFalseQuestion();
+    return;
+}
+    
     renderQuestion(currentCategory);
 });
 document.addEventListener("keydown", function(e) {
