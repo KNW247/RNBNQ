@@ -1646,6 +1646,9 @@ function evaluateRecipeSubmission() {
         ${formatRecipeResult(ibuResult)}
         ${formatRecipeResult(srmResult)}
     `;
+
+    nextQuestionButton.style.display = "inline-block";
+    
 }
 
 function evaluateRange(label, value, min, max, closeTolerance) {
