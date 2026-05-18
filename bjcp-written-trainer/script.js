@@ -13,7 +13,7 @@ const launchTrueFalseButton = document.getElementById("launch-truefalse");
 const correctCountDisplay = document.getElementById("correct-count");
 const incorrectCountDisplay = document.getElementById("incorrect-count");
 const accuracyDisplay = document.getElementById("accuracy");
-
+const launchRecipeButton = document.getElementById("launch-recipe");
 const styleName = document.getElementById("style-name");
 const questionText = document.getElementById("question-text");
 const answerContainer = document.getElementById("answer-container");
