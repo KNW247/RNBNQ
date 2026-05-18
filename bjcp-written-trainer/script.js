@@ -1383,6 +1383,61 @@ function checkAnswer(selectedAnswer, data) {
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
+
+function renderRecipeSetup() {
+    styleName.textContent = "Recipe Setup";
+
+    questionText.innerHTML = `
+        Choose your recipe calculation assumptions.
+    `;
+
+    feedbackBox.innerHTML = "";
+
+    answerContainer.innerHTML = `
+        <label>
+            Units:
+            <select id="recipe-units">
+                <option value="metric">Metric</option>
+                <option value="imperial">Imperial</option>
+            </select>
+        </label>
+
+        <label>
+            Post-Boil Kettle Volume:
+            <select id="recipe-volume">
+                ${recipeVolumeOptionsLiters.map(volume => `
+                    <option value="${volume}" ${volume === 21.5 ? "selected" : ""}>
+                        ${volume} L
+                    </option>
+                `).join("")}
+            </select>
+        </label>
+
+        <label>
+            Brewhouse Efficiency:
+            <select id="recipe-efficiency">
+                ${recipeEfficiencyOptions.map(efficiency => `
+                    <option value="${efficiency}" ${efficiency === 73 ? "selected" : ""}>
+                        ${efficiency}%
+                    </option>
+                `).join("")}
+            </select>
+        </label>
+
+        <button id="continue-recipe-setup">Continue</button>
+    `;
+
+    nextQuestionButton.style.display = "none";
+
+    document.getElementById("continue-recipe-setup").addEventListener("click", function () {
+        recipeSetup.units = document.getElementById("recipe-units").value;
+        recipeSetup.postBoilVolume = parseFloat(document.getElementById("recipe-volume").value);
+        recipeSetup.efficiency = parseInt(document.getElementById("recipe-efficiency").value, 10);
+
+        renderRecipeBuild();
+    });
+}
+
 function renderTrueFalseQuestion() {
     if (currentTrueFalseIndex >= trueFalseSession.length) {
         showTrueFalseSummary();
