@@ -1546,10 +1546,15 @@ function renderRecipeBuild() {
             <input id="recipe-srm" type="number" step="1" placeholder="5">
         </label>
 
-    <label>
-        Total Grist (kg):
-        <input id="recipe-grist" type="number" step="0.1" placeholder="5.0">
-    </label>
+        <label>
+            Total Grist (${recipeSetup.units === "imperial" ? "lb" : "kg"}):
+        <input
+            id="recipe-grist"
+            type="number"
+            step="0.1"
+            placeholder="${recipeSetup.units === "imperial" ? "11.0" : "5.0"}"
+        >
+</label>
 
   <label>
       Base Malt %:
