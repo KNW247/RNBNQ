@@ -649,9 +649,34 @@ function formatRange(data) {
         return data.text || "Qualitative BJCP descriptor";
     }
 
+
+    
     return `${data.min}–${data.max} ${data.unit}`;
 }
 
+function litersToGallons(liters) {
+    return liters * 0.264172;
+}
+
+function kgToLb(kg) {
+    return kg * 2.20462;
+}
+
+function lbToKg(lb) {
+    return lb / 2.20462;
+}
+
+function formatRecipeVolume(liters) {
+    if (recipeSetup.units === "imperial") {
+        return `${litersToGallons(liters).toFixed(1)} gal`;
+    }
+
+    return `${liters} L`;
+}
+
+function formatVolumeOption(liters) {
+    return `${liters} L / ${litersToGallons(liters).toFixed(1)} gal`;
+}
 function updateScoreDisplay() {
     const total = correctCount + incorrectCount;
     const accuracy = total === 0 ? 0 : Math.round((correctCount / total) * 100);
