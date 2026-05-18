@@ -1374,7 +1374,7 @@ function renderTrueFalseQuestion() {
 }
 
 function checkTrueFalseAnswer(selectedAnswer, question) {
-    const correctAnswer = question.answer;
+    const correctAnswer = question.answer ? "True" : "False";
     const buttons = answerContainer.querySelectorAll("button");
 
     buttons.forEach(button => {
