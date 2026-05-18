@@ -124,4 +124,3 @@ const trueFalseQuestions = [
   { id: 123, answer: false, statement: "Stewards at homebrew competitions earn BJCP judging points if they taste the beers with the judges." },
   { id: 124, answer: true, statement: "Stewards at homebrew competitions earn BJCP experience points." }
 ]; 
-];
