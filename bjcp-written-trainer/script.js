@@ -1575,6 +1575,33 @@ launchFermentationButton.addEventListener("click", function () {
 
     window.scrollTo(0, 0);
 });
+
+launchTrueFalseButton.addEventListener("click", function () {
+    currentMode = "truefalse";
+
+    correctCount = 0;
+    incorrectCount = 0;
+    missedQuestions = [];
+    updateScoreDisplay();
+
+    trueFalseSession = [...trueFalseQuestions]
+        .sort(() => Math.random() - 0.5)
+        .slice(0, TRUE_FALSE_SESSION_SIZE);
+
+    currentTrueFalseIndex = 0;
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+    setCategoryVisibility(false);
+
+    drillTitle.textContent = "True / False Drill";
+    drillPanel.style.display = "block";
+
+    renderTrueFalseQuestion();
+
+    window.scrollTo(0, 0);
+});
+
 category.forEach(function(button) {
     button.addEventListener("click", function() {
         currentMode = "foundation";
