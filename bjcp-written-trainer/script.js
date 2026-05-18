@@ -1525,6 +1525,13 @@ function renderRecipeBuild() {
     });
 }
 
+function evaluateRecipeSubmission() {
+    feedbackBox.innerHTML = `
+        <strong>Recipe submitted.</strong><br>
+        Evaluation logic is the next build step.
+    `;
+}
+
 function renderTrueFalseQuestion() {
     if (currentTrueFalseIndex >= trueFalseSession.length) {
         showTrueFalseSummary();
