@@ -1342,7 +1342,103 @@ function checkAnswer(selectedAnswer, data) {
 function capitalize(word) {
     return word.charAt(0).toUpperCase() + word.slice(1);
 }
+function renderTrueFalseQuestion() {
+    if (currentTrueFalseIndex >= trueFalseSession.length) {
+        showTrueFalseSummary();
+        return;
+    }
 
+    const question = trueFalseSession[currentTrueFalseIndex];
+
+    styleName.textContent = "True / False Drill";
+    questionText.innerHTML = `
+        <div>Question ${currentTrueFalseIndex + 1} of ${TRUE_FALSE_SESSION_SIZE}</div>
+        <div>${question.statement}</div>
+    `;
+
+    feedbackBox.innerHTML = "";
+    answerContainer.innerHTML = "";
+
+    ["True", "False"].forEach(answer => {
+        const button = document.createElement("button");
+        button.textContent = answer;
+
+        button.addEventListener("click", function () {
+            checkTrueFalseAnswer(answer, question);
+        });
+
+        answerContainer.appendChild(button);
+    });
+
+    nextQuestionButton.style.display = "none";
+}
+
+function checkTrueFalseAnswer(selectedAnswer, question) {
+    const correctAnswer = question.answer;
+    const buttons = answerContainer.querySelectorAll("button");
+
+    buttons.forEach(button => {
+        button.disabled = true;
+
+        if (button.textContent === correctAnswer) {
+            button.style.backgroundColor = "#16a34a";
+            button.style.color = "white";
+        }
+
+        if (
+            button.textContent === selectedAnswer &&
+            selectedAnswer !== correctAnswer
+        ) {
+            button.style.backgroundColor = "#dc2626";
+            button.style.color = "white";
+        }
+    });
+
+    if (selectedAnswer === correctAnswer) {
+        correctCount++;
+        feedbackBox.innerHTML = `
+            <strong class="correct">Correct.</strong>
+        `;
+    } else {
+        incorrectCount++;
+
+        missedQuestions.push({
+            category: "True / False",
+            selected: selectedAnswer,
+            correct: correctAnswer,
+            question: question.statement
+        });
+
+        feedbackBox.innerHTML = `
+            <strong class="incorrect">Incorrect.</strong><br>
+            Correct answer: ${correctAnswer}
+        `;
+    }
+
+    updateScoreDisplay();
+    nextQuestionButton.style.display = "inline-block";
+}
+
+function showTrueFalseSummary() {
+    styleName.textContent = "Session Complete";
+
+    questionText.innerHTML = `
+        Final Score: ${correctCount} / ${TRUE_FALSE_SESSION_SIZE}
+    `;
+
+    feedbackBox.innerHTML = "";
+
+    answerContainer.innerHTML = `
+        <button id="restart-truefalse">Restart Session</button>
+    `;
+
+    nextQuestionButton.style.display = "none";
+
+    document.getElementById("restart-truefalse")
+        .addEventListener("click", function () {
+            launchTrueFalseButton.click();
+        });
+}
 function getStudySetLabel() {
     switch (activeStudySet) {
         case "highFrequency":
