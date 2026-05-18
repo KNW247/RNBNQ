@@ -582,6 +582,16 @@ function getRandomStyle() {
     const filteredStyles = getFilteredStyles();
     return filteredStyles[Math.floor(Math.random() * filteredStyles.length)];
 }
+
+function getRecipeStyles() {
+    return styles.filter(style => recipeStyleCodes.includes(style.code));
+}
+
+function getRandomRecipeStyle() {
+    const recipeStyles = getRecipeStyles();
+    return recipeStyles[Math.floor(Math.random() * recipeStyles.length)];
+}
+
 function getRandomCategory() {
     const categories = Object.keys(categoryOptions);
     return categories[Math.floor(Math.random() * categories.length)];
