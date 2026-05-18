@@ -1533,13 +1533,14 @@ function renderRecipeBuild() {
             </select>
         </label>
 
-        <label>
-            Yeast:
-            ${recipeYeastOptions.map(yeast => `
+     <label>
+    Yeast:
+    <select id="recipe-yeast">
+        ${recipeYeastOptions.map(yeast => `
             <option value="${yeast}">${yeast}</option>
-            `).join("")}
-            </select>
-        </label>
+        `).join("")}
+    </select>
+</label>
 
         <label>
             Fermentation Start Temp:
