@@ -1490,10 +1490,7 @@ function renderRecipeBuild() {
 
     questionText.innerHTML = `
         Build a defensible exam recipe.
-
-        <p><strong>Setup:</strong>
-        ${recipeSetup.postBoilVolume} L @ ${recipeSetup.efficiency}% BHE
-        </p>
+        <p><strong>Setup:</strong> ${recipeSetup.postBoilVolume} L @ ${recipeSetup.efficiency}% BHE</p>
     `;
 
     feedbackBox.innerHTML = "";
@@ -1533,14 +1530,14 @@ function renderRecipeBuild() {
             </select>
         </label>
 
-     <label>
-    Yeast:
-    <select id="recipe-yeast">
-        ${recipeYeastOptions.map(yeast => `
-            <option value="${yeast}">${yeast}</option>
-        `).join("")}
-    </select>
-</label>
+        <label>
+            Yeast:
+            <select id="recipe-yeast">
+                ${recipeYeastOptions.map(yeast => `
+                    <option value="${yeast}">${yeast}</option>
+                `).join("")}
+            </select>
+        </label>
 
         <label>
             Fermentation Start Temp:
@@ -1560,32 +1557,36 @@ function renderRecipeBuild() {
             </select>
         </label>
 
-       <div>
-    <h4>Hop Schedule</h4>
-    <p>Enter estimated IBU contribution for each addition. HP/WP is reviewed separately and not counted as core boil bitterness.</p>
+        <div class="hop-schedule">
+            <h4>Hop Schedule</h4>
+            <p>Enter estimated IBU contribution for each addition. HP/WP is reviewed separately and not counted as core boil bitterness.</p>
 
-    ${recipeHopScheduleRows.map(row => `
-        <div>
-            <strong>${row}</strong>
+            ${recipeHopScheduleRows.map(row => {
+                const cleanRow = row.replace("/", "").replace(" ", "").toLowerCase();
 
-            <select id="recipe-hop-${row.replace("/", "").replace(" ", "").toLowerCase()}">
-                <option value="">No addition</option>
-                ${recipeHopOptions.map(hop => `
-                    <option value="${hop}">${hop}</option>
-                `).join("")}
-            </select>
+                return `
+                    <div class="hop-row">
+                        <strong>${row}</strong>
 
-            <input
-                id="recipe-hop-ibu-${row.replace("/", "").replace(" ", "").toLowerCase()}"
-                type="number"
-                step="1"
-                placeholder="IBU"
-            >
+                        <select id="recipe-hop-${cleanRow}">
+                            <option value="">No addition</option>
+                            ${recipeHopOptions.map(hop => `
+                                <option value="${hop}">${hop}</option>
+                            `).join("")}
+                        </select>
+
+                        <input
+                            id="recipe-hop-ibu-${cleanRow}"
+                            type="number"
+                            step="1"
+                            placeholder="IBU"
+                        >
+                    </div>
+                `;
+            }).join("")}
         </div>
-    `).join("")}
-</div>
 
-<button id="evaluate-recipe">Evaluate Recipe</button>
+        <button id="evaluate-recipe">Evaluate Recipe</button>
     `;
 
     nextQuestionButton.style.display = "none";
