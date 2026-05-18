@@ -1559,7 +1559,32 @@ function renderRecipeBuild() {
             </select>
         </label>
 
-        <button id="evaluate-recipe">Evaluate Recipe</button>
+       <div>
+    <h4>Hop Schedule</h4>
+    <p>Enter estimated IBU contribution for each addition. HP/WP is reviewed separately and not counted as core boil bitterness.</p>
+
+    ${recipeHopScheduleRows.map(row => `
+        <div>
+            <strong>${row}</strong>
+
+            <select id="recipe-hop-${row.replace("/", "").replace(" ", "").toLowerCase()}">
+                <option value="">No addition</option>
+                ${recipeHopOptions.map(hop => `
+                    <option value="${hop}">${hop}</option>
+                `).join("")}
+            </select>
+
+            <input
+                id="recipe-hop-ibu-${row.replace("/", "").replace(" ", "").toLowerCase()}"
+                type="number"
+                step="1"
+                placeholder="IBU"
+            >
+        </div>
+    `).join("")}
+</div>
+
+<button id="evaluate-recipe">Evaluate Recipe</button>
     `;
 
     nextQuestionButton.style.display = "none";
