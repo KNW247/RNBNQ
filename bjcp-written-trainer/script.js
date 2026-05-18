@@ -1652,7 +1652,45 @@ function evaluateRecipeSubmission() {
     const fgResult = evaluateRange("FG", fg, currentRecipeStyle.body.min, currentRecipeStyle.body.max, 0.003);
     const ibuResult = evaluateRange("IBU", ibu, currentRecipeStyle.bitterness.min, currentRecipeStyle.bitterness.max, 5);
     const srmResult = evaluateRange("SRM", srm, currentRecipeStyle.color.min, currentRecipeStyle.color.max, 3);
+    const ogPoints = Math.round((og - 1) * 1000);
 
+    const expectedGristKg =
+        (ogPoints / 10)
+        * (recipeSetup.postBoilVolume / 21.5)
+        * (73 / recipeSetup.efficiency);
+
+    const gristDelta = Math.abs(gristKg - expectedGristKg);
+
+    let gristStatus = "Strong";
+    let gristMessage = `${gristKg.toFixed(1)} kg is close to the expected ${expectedGristKg.toFixed(1)} kg for ${recipeSetup.postBoilVolume} L @ ${recipeSetup.efficiency}% BHE.`;
+
+    if (gristDelta > 0.3 && gristDelta <= 0.6) {
+    gristStatus = "Close";
+    gristMessage = `${gristKg.toFixed(1)} kg is close, but expected about ${expectedGristKg.toFixed(1)} kg based on OG, volume, and BHE.`;
+}
+
+if (gristDelta > 0.6) {
+    gristStatus = "Likely point loss";
+    gristMessage = `${gristKg.toFixed(1)} kg does not support the target OG. Expected about ${expectedGristKg.toFixed(1)} kg.`;
+}
+
+    const grainPctTotal = basePct + specialtyPct + adjunctPct + roastPct + wheatPct;
+
+    let grainPctStatus = "Strong";
+    let grainPctMessage = `Grain bill percentages total ${grainPctTotal}%.`;
+
+    if (Math.abs(grainPctTotal - 100) > 2 && Math.abs(grainPctTotal - 100) <= 5) {
+        grainPctStatus = "Close";
+        grainPctMessage = `Grain bill totals ${grainPctTotal}%. Tighten this closer to 100%.`;
+}
+
+    if (Math.abs(grainPctTotal - 100) > 5) {
+        grainPctStatus = "Likely point loss";
+        grainPctMessage = `Grain bill totals ${grainPctTotal}%, which does not add up cleanly.`;
+}
+
+
+    
     const expectedOg = fg + (abv / 131.25);
     const userOgPoints = Math.round((og - 1) * 1000);
     const expectedOgPoints = Math.round((expectedOg - 1) * 1000);
