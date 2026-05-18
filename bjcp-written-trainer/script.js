@@ -2018,6 +2018,12 @@ nextQuestionButton.addEventListener("click", function () {
     renderTrueFalseQuestion();
     return;
 }
+
+    if (currentMode === "recipe") {
+    currentRecipeStyle = getRandomRecipeStyle();
+    renderRecipeBuild();
+    return;
+}
     
     renderQuestion(currentCategory);
 });
