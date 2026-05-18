@@ -1663,7 +1663,8 @@ function evaluateRecipeSubmission() {
     const ibu = parseFloat(document.getElementById("recipe-ibu").value);
     const srm = parseFloat(document.getElementById("recipe-srm").value);
 
-    const gristKg = parseFloat(document.getElementById("recipe-grist").value);
+    const gristInput = parseFloat(document.getElementById("recipe-grist").value);
+    const gristKg = recipeSetup.units === "imperial" ? lbToKg(gristInput) : gristInput;
     const basePct = parseFloat(document.getElementById("recipe-basepct").value);
     const specialtyPct = parseFloat(document.getElementById("recipe-specialtypct").value);
     const adjunctPct = parseFloat(document.getElementById("recipe-adjunctpct").value);
