@@ -38,7 +38,9 @@ let currentCompareCluster = null;
 let compareStep = "shared";
 let compareIndex = 0;
 let selectedCompareOptions = [];
-
+let trueFalseSession = [];
+let currentTrueFalseIndex = 0;
+const TRUE_FALSE_SESSION_SIZE = 20;
 
 // ==============================
 // RECIPE CONSTRUCTION MODULES 1–5
