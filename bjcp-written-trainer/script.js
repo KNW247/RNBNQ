@@ -2393,11 +2393,12 @@ const gristInput = parseFloat(document.getElementById("recipe-grist").value);
         <strong>Fermentable % Total:</strong> ${grainPctStatus}<br>
         ${grainPctMessage}<br><br>
 
-        ${formatGrainRuleFeedback(grainRuleResult)}<br><br>
-    `;
-    ${formatYeastFeedback(yeastResult, selectedYeast)}<br><br>
-    
-    nextQuestionButton.style.display = "inline-block";
+     ${formatGrainRuleFeedback(grainRuleResult)}<br><br>
+
+${formatYeastFeedback(yeastResult, selectedYeast)}<br><br>
+`;
+
+nextQuestionButton.style.display = "inline-block";
 }
 function evaluateRange(label, value, min, max, closeTolerance) {
     if (value >= min && value <= max) {
