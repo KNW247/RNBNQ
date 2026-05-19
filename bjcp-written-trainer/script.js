@@ -2456,7 +2456,10 @@ const gristInput = parseFloat(document.getElementById("recipe-grist").value);
 
      ${formatGrainRuleFeedback(grainRuleResult)}<br><br>
 
+
 ${formatYeastFeedback(yeastResult, selectedYeast)}<br><br>
+
+${formatFermentationTempFeedback(fermentationTempResult, fermentationStartTemp, fermentationFinishTemp)}<br><br>
 `;
 
 nextQuestionButton.style.display = "inline-block";
