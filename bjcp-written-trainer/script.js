@@ -1181,13 +1181,17 @@ function formatCategoryName(category) {
 }
 
 function formatGrainRuleFeedback(grainRuleResult) {
-    const categoryHtml = grainRuleResult.categoryResults
+    const visibleResults = grainRuleResult.categoryResults.filter(result => {
+        return result.value > 0 || result.status !== "Strong";
+    });
+
+    const categoryHtml = visibleResults
         .map(result => `
             ${formatCategoryName(result.category)}: ${result.value}% — <strong>${result.status}</strong>
         `)
         .join("<br>");
 
-    const coachingNotes = grainRuleResult.categoryResults
+    const coachingNotes = visibleResults
         .filter(result => result.status !== "Strong")
         .map(result => {
             switch (result.category) {
