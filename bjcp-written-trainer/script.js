@@ -2027,14 +2027,16 @@ function renderRecipeBuild() {
         </div>
     `).join("")}
 </div>
- <label>
-            Mash Strategy:
-            <select id="recipe-mash">
-                ${recipeMashOptions.map(option => `
-                    <option value="${option.id}">${option.label}</option>
-                `).join("")}
-            </select>
-        </label>
+ <div class="recipe-subsection">
+    <label>
+        Mash Strategy:
+        <select id="recipe-mash">
+            ${recipeMashOptions.map(option => `
+                <option value="${option.id}">${option.label}</option>
+            `).join("")}
+        </select>
+    </label>
+</div>
 
        <div class="hop-schedule">
             <h4>Hop Schedule</h4>
