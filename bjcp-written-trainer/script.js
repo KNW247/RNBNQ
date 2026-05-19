@@ -2330,8 +2330,11 @@ const og = parseFloat(document.getElementById("recipe-og").value);
 const ibu = parseFloat(document.getElementById("recipe-ibu").value);
 const srm = parseFloat(document.getElementById("recipe-srm").value);
 const selectedYeast = document.getElementById("recipe-yeast").value;
+const fermentationStartTemp = parseFloat(document.getElementById("recipe-ferment-start").value);
+const fermentationFinishTemp = parseFloat(document.getElementById("recipe-ferment-finish").value);
 
 const gristInput = parseFloat(document.getElementById("recipe-grist").value);
+const fermentables = collectFermentables();
 
     const fermentables = [];
 
@@ -2395,6 +2398,11 @@ const gristInput = parseFloat(document.getElementById("recipe-grist").value);
     const grainPctTotal = fermentables.reduce((sum, item) => sum + item.pct, 0);
     const grainRuleResult = evaluateStyleGrainRules(currentRecipeStyle.code, fermentables);
     const yeastResult = evaluateYeastSelection(currentRecipeStyle.code, selectedYeast);
+    const fermentationTempResult = evaluateFermentationTemps(
+    currentRecipeStyle.code,
+    fermentationStartTemp,
+    fermentationFinishTemp
+);
     
     let grainPctStatus = "Strong";
     let grainPctMessage = `Fermentable total is ${grainPctTotal}%.`;
