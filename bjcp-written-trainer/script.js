@@ -91,6 +91,42 @@ const recipeYeastOptions = [
     "K-97"
 ];
 
+const yeastFamilyMap = {
+    "W-34/70": "german_lager",
+    "Wyeast 2124": "german_lager",
+    "WLP830": "german_lager",
+    "Diamond Lager": "german_lager",
+
+    "Wyeast 2278": "czech_lager",
+    "WLP802": "czech_lager",
+
+    "US-05": "clean_american",
+    "WLP001": "clean_american",
+    "Wyeast 1056": "clean_american",
+    "BRY-97": "clean_american",
+
+    "Nottingham": "english",
+    "S-04": "english",
+    "Wyeast 1968": "english",
+    "WLP002": "english",
+
+    "Wyeast 1084": "irish",
+    "WLP004": "irish",
+
+    "Wyeast 3068": "wheat_expressive",
+    "WLP300": "wheat_expressive",
+
+    "Wyeast 3787": "belgian_abbey",
+    "WLP530": "belgian_abbey",
+    "BE-256": "belgian_abbey",
+
+    "Belle Saison": "belgian_saison",
+    "Wyeast 3711": "belgian_saison",
+
+    "Lutra": "neutral_kveik",
+    "K-97": "hybrid_clean"
+};
+
 const recipeHopOptions = [
     "Hallertau Mittelfruh",
     "Tettnang",
