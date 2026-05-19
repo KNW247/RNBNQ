@@ -208,6 +208,8 @@ const grainTotalRules = {
     defendMax: 105
 };
 
+Later refinement: split Roasted Barley out from generic roast so Irish Stout can evaluate roasted barley as a style-defining ingredient instead of treating all roast malts equally.
+
 const recipeGrainCategoryRules = {
     "5D": {
         name: "German Pils",
