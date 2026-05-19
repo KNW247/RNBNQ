@@ -2004,6 +2004,7 @@ function renderRecipeBuild() {
     >
 </label>
 
+
 <div class="fermentable-section">
     <h4>Fermentables</h4>
     <p>Build your grain bill using actual fermentables. Leave unused rows blank.</p>
@@ -2026,9 +2027,7 @@ function renderRecipeBuild() {
         </div>
     `).join("")}
 </div>
-
-
-        <label>
+ <label>
             Mash Strategy:
             <select id="recipe-mash">
                 ${recipeMashOptions.map(option => `
@@ -2036,6 +2035,36 @@ function renderRecipeBuild() {
                 `).join("")}
             </select>
         </label>
+
+       <div class="hop-schedule">
+            <h4>Hop Schedule</h4>
+            <p>Enter estimated IBU contribution for each addition. HP/WP is reviewed separately and not counted as core boil bitterness.</p>
+
+            ${recipeHopScheduleRows.map(row => {
+                const cleanRow = row.replace("/", "").replace(" ", "").toLowerCase();
+
+                return `
+                    <div class="hop-row">
+                        <strong>${row}</strong>
+
+                        <select id="recipe-hop-${cleanRow}">
+                            <option value="">No addition</option>
+                            ${recipeHopOptions.map(hop => `
+                                <option value="${hop}">${hop}</option>
+                            `).join("")}
+                        </select>
+
+                        <input
+                            id="recipe-hop-ibu-${cleanRow}"
+                            type="number"
+                            step="1"
+                            placeholder="IBU"
+                        >
+                    </div>
+                `;
+            }).join("")}
+        </div>
+       
 
         <label>
             Yeast:
@@ -2064,34 +2093,7 @@ function renderRecipeBuild() {
             </select>
         </label>
 
-        <div class="hop-schedule">
-            <h4>Hop Schedule</h4>
-            <p>Enter estimated IBU contribution for each addition. HP/WP is reviewed separately and not counted as core boil bitterness.</p>
-
-            ${recipeHopScheduleRows.map(row => {
-                const cleanRow = row.replace("/", "").replace(" ", "").toLowerCase();
-
-                return `
-                    <div class="hop-row">
-                        <strong>${row}</strong>
-
-                        <select id="recipe-hop-${cleanRow}">
-                            <option value="">No addition</option>
-                            ${recipeHopOptions.map(hop => `
-                                <option value="${hop}">${hop}</option>
-                            `).join("")}
-                        </select>
-
-                        <input
-                            id="recipe-hop-ibu-${cleanRow}"
-                            type="number"
-                            step="1"
-                            placeholder="IBU"
-                        >
-                    </div>
-                `;
-            }).join("")}
-        </div>
+ 
 
         <button id="evaluate-recipe">Evaluate Recipe</button>
     `;
