@@ -1383,6 +1383,66 @@ function formatYeastFeedback(yeastResult, selectedYeast) {
     `;
 }
 
+function evaluateFermentationTemps(styleCode, startTemp, finishTemp) {
+    const fermentationTempRules = {
+        "5D": { strongStartMin: 8, strongStartMax: 12, defendStartMin: 6, defendStartMax: 14, strongFinishMin: 8, strongFinishMax: 14, defendFinishMin: 6, defendFinishMax: 16, note: "German Pils should use cool, clean lager fermentation." },
+        "3B": { strongStartMin: 8, strongStartMax: 12, defendStartMin: 6, defendStartMax: 14, strongFinishMin: 8, strongFinishMax: 14, defendFinishMin: 6, defendFinishMax: 16, note: "Czech Premium Pale Lager should use clean lager fermentation." },
+        "4B": { strongStartMin: 8, strongStartMax: 12, defendStartMin: 6, defendStartMax: 14, strongFinishMin: 8, strongFinishMax: 14, defendFinishMin: 6, defendFinishMax: 16, note: "Festbier should use cool, clean lager fermentation." },
+        "6A": { strongStartMin: 8, strongStartMax: 12, defendStartMin: 6, defendStartMax: 14, strongFinishMin: 8, strongFinishMax: 14, defendFinishMin: 6, defendFinishMax: 16, note: "Märzen should use clean lager fermentation to showcase malt." },
+        "9A": { strongStartMin: 8, strongStartMax: 12, defendStartMin: 6, defendStartMax: 14, strongFinishMin: 8, strongFinishMax: 14, defendFinishMin: 6, defendFinishMax: 16, note: "Doppelbock needs cool fermentation and controlled cleanup." },
+
+        "10A": { strongStartMin: 16, strongStartMax: 20, defendStartMin: 14, defendStartMax: 22, strongFinishMin: 18, strongFinishMax: 22, defendFinishMin: 16, defendFinishMax: 24, note: "Weissbier fermentation should support expressive ester and phenolic character." },
+
+        "26C": { strongStartMin: 17, strongStartMax: 20, defendStartMin: 16, defendStartMax: 22, strongFinishMin: 22, strongFinishMax: 26, defendFinishMin: 20, defendFinishMax: 28, note: "Tripel benefits from a controlled warm rise for attenuation and Belgian expression." },
+
+        "15B": { strongStartMin: 17, strongStartMax: 20, defendStartMin: 15, defendStartMax: 22, strongFinishMin: 17, strongFinishMax: 21, defendFinishMin: 15, defendFinishMax: 22, note: "Irish Stout should use restrained ale fermentation." },
+
+        "20A": { strongStartMin: 17, strongStartMax: 20, defendStartMin: 15, defendStartMax: 22, strongFinishMin: 17, strongFinishMax: 21, defendFinishMin: 15, defendFinishMax: 22, note: "American Porter should use controlled ale fermentation." },
+
+        "11C": { strongStartMin: 18, strongStartMax: 21, defendStartMin: 16, defendStartMax: 22, strongFinishMin: 18, strongFinishMax: 22, defendFinishMin: 16, defendFinishMax: 23, note: "Strong Bitter should allow restrained English ester expression without getting hot." },
+
+        "21A": { strongStartMin: 17, strongStartMax: 20, defendStartMin: 15, defendStartMax: 22, strongFinishMin: 17, strongFinishMax: 21, defendFinishMin: 15, defendFinishMax: 22, note: "American IPA should use clean controlled fermentation to preserve hop focus." },
+
+        "22A": { strongStartMin: 17, strongStartMax: 20, defendStartMin: 15, defendStartMax: 22, strongFinishMin: 18, strongFinishMax: 22, defendFinishMin: 16, defendFinishMax: 24, note: "Double IPA should use controlled fermentation and allow full attenuation without hot alcohol." }
+    };
+
+    const rules = fermentationTempRules[styleCode];
+
+    if (!rules) {
+        return {
+            status: "Defensible",
+            message: "No fermentation temperature rules found for this style."
+        };
+    }
+
+    const startStrong = startTemp >= rules.strongStartMin && startTemp <= rules.strongStartMax;
+    const finishStrong = finishTemp >= rules.strongFinishMin && finishTemp <= rules.strongFinishMax;
+
+    const startDefensible = startTemp >= rules.defendStartMin && startTemp <= rules.defendStartMax;
+    const finishDefensible = finishTemp >= rules.defendFinishMin && finishTemp <= rules.defendFinishMax;
+
+    let status = "Strong";
+
+    if (!startDefensible || !finishDefensible) {
+        status = "Difficult to Defend";
+    } else if (!startStrong || !finishStrong) {
+        status = "Defensible";
+    }
+
+    return {
+        status,
+        message: rules.note
+    };
+}
+
+function formatFermentationTempFeedback(tempResult, startTemp, finishTemp) {
+    return `
+        <strong>Fermentation Temperature:</strong> ${tempResult.status}<br>
+        Start: ${startTemp}°C | Finish: ${finishTemp}°C<br>
+        ${tempResult.message}
+    `;
+}
+
 function renderCompareAnchor() {
     compareStep = "anchor";
     selectedCompareOptions = [];
