@@ -1380,14 +1380,6 @@ function evaluateYeastSelection(styleCode, selectedYeast) {
     };
 }
 
-function formatYeastFeedback(yeastResult, selectedYeast) {
-    return `
-        <strong>Yeast Selection:</strong> ${yeastResult.status}<br>
-        Selected yeast: ${selectedYeast}<br>
-        ${yeastResult.message}
-    `;
-}
-
 function evaluateFermentationTemps(styleCode, startTemp, finishTemp) {
     const lagerStyles = ["5D", "3B", "4B", "6A", "9A"];
 
@@ -1398,6 +1390,20 @@ function evaluateFermentationTemps(styleCode, startTemp, finishTemp) {
         "6A": "Märzen should use cool primary fermentation followed by a warm cleanup rest or an explicitly extended cold maturation plan.",
         "9A": "Doppelbock should use cool primary fermentation followed by a warm cleanup rest or an explicitly extended cold maturation plan."
     };
+
+    if (finishTemp === null) {
+        if (lagerStyles.includes(styleCode)) {
+            return {
+                status: "Defensible",
+                message: "End of active fermentation was not specified. Cold crash may be included, but for a stronger written answer, explicitly describe a warm cleanup rest or extended maturation plan before chilling."
+            };
+        }
+
+        return {
+            status: "Defensible",
+            message: "End of active fermentation was not specified. Cold crash may be included, but for a stronger written answer, describe how fermentation finishes before chilling."
+        };
+    }
 
     if (lagerStyles.includes(styleCode)) {
         const coldPrimaryStrong = startTemp >= 8 && startTemp <= 12;
@@ -1452,7 +1458,6 @@ function evaluateFermentationTemps(styleCode, startTemp, finishTemp) {
         };
     }
 
-  
     const startStrong = startTemp >= rules.strongStartMin && startTemp <= rules.strongStartMax;
     const finishStrong = finishTemp >= rules.strongFinishMin && finishTemp <= rules.strongFinishMax;
 
