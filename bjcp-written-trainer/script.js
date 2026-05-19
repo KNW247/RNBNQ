@@ -40,6 +40,7 @@ let compareIndex = 0;
 let selectedCompareOptions = [];
 let trueFalseSession = [];
 let currentTrueFalseIndex = 0;
+let selectedRecipeStyleCode = "random";
 const TRUE_FALSE_SESSION_SIZE = 20;
 
 const recipeStyleCodes = [
@@ -2169,10 +2170,24 @@ function renderRecipeSetup() {
 
     answerContainer.innerHTML = `
         <label>
+            Recipe Style:
+            <select id="recipe-style-select">
+                <option value="random" ${selectedRecipeStyleCode === "random" ? "selected" : ""}>
+                    Random Style
+                </option>
+                ${getRecipeStyles().map(style => `
+                    <option value="${style.code}" ${selectedRecipeStyleCode === style.code ? "selected" : ""}>
+                        ${style.code} ${style.name}
+                    </option>
+                `).join("")}
+            </select>
+        </label>
+
+        <label>
             Units:
             <select id="recipe-units">
-                <option value="metric">Metric</option>
-                <option value="imperial">Imperial</option>
+                <option value="metric" ${recipeSetup.units === "metric" ? "selected" : ""}>Metric</option>
+                <option value="imperial" ${recipeSetup.units === "imperial" ? "selected" : ""}>Imperial</option>
             </select>
         </label>
 
@@ -2180,8 +2195,8 @@ function renderRecipeSetup() {
             Post-Boil Kettle Volume:
             <select id="recipe-volume">
                 ${recipeVolumeOptionsLiters.map(volume => `
-                    <option value="${volume}" ${volume === 21.5 ? "selected" : ""}>
-                   ${formatVolumeOption(volume)}
+                    <option value="${volume}" ${volume === recipeSetup.postBoilVolume ? "selected" : ""}>
+                        ${formatVolumeOption(volume)}
                     </option>
                 `).join("")}
             </select>
@@ -2191,7 +2206,7 @@ function renderRecipeSetup() {
             Brewhouse Efficiency:
             <select id="recipe-efficiency">
                 ${recipeEfficiencyOptions.map(efficiency => `
-                    <option value="${efficiency}" ${efficiency === 73 ? "selected" : ""}>
+                    <option value="${efficiency}" ${efficiency === recipeSetup.efficiency ? "selected" : ""}>
                         ${efficiency}%
                     </option>
                 `).join("")}
@@ -2204,6 +2219,7 @@ function renderRecipeSetup() {
     nextQuestionButton.style.display = "none";
 
     document.getElementById("continue-recipe-setup").addEventListener("click", function () {
+        selectedRecipeStyleCode = document.getElementById("recipe-style-select").value;
         recipeSetup.units = document.getElementById("recipe-units").value;
         recipeSetup.postBoilVolume = parseFloat(document.getElementById("recipe-volume").value);
         recipeSetup.efficiency = parseInt(document.getElementById("recipe-efficiency").value, 10);
