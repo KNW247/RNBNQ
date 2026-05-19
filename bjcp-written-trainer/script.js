@@ -2398,6 +2398,13 @@ const fermentables = collectFermentables();
     const grainPctTotal = fermentables.reduce((sum, item) => sum + item.pct, 0);
     const grainRuleResult = evaluateStyleGrainRules(currentRecipeStyle.code, fermentables);
     const yeastResult = evaluateYeastSelection(currentRecipeStyle.code, selectedYeast);
+
+    const fermentationTempResult = evaluateFermentationTemps(
+    currentRecipeStyle.code,
+    fermentationStartTemp,
+    fermentationFinishTemp
+);
+    
     const fermentationTempResult = evaluateFermentationTemps(
     currentRecipeStyle.code,
     fermentationStartTemp,
