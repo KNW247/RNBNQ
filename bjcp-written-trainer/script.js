@@ -1447,25 +1447,7 @@ function evaluateFermentationTemps(styleCode, startTemp, finishTemp) {
         };
     }
 
-    const startStrong = startTemp >= rules.strongStartMin && startTemp <= rules.strongStartMax;
-    const finishStrong = finishTemp >= rules.strongFinishMin && finishTemp <= rules.strongFinishMax;
-
-    const startDefensible = startTemp >= rules.defendStartMin && startTemp <= rules.defendStartMax;
-    const finishDefensible = finishTemp >= rules.defendFinishMin && finishTemp <= rules.defendFinishMax;
-
-    let status = "Strong";
-
-    if (!startDefensible || !finishDefensible) {
-        status = "Difficult to Defend";
-    } else if (!startStrong || !finishStrong) {
-        status = "Defensible";
-    }
-
-    return {
-        status,
-        message: rules.note
-    };
-}
+  
     const startStrong = startTemp >= rules.strongStartMin && startTemp <= rules.strongStartMax;
     const finishStrong = finishTemp >= rules.strongFinishMin && finishTemp <= rules.strongFinishMax;
 
