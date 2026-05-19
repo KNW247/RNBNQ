@@ -2333,6 +2333,7 @@ const gristInput = parseFloat(document.getElementById("recipe-grist").value);
 
     const grainPctTotal = fermentables.reduce((sum, item) => sum + item.pct, 0);
     const grainRuleResult = evaluateStyleGrainRules(currentRecipeStyle.code, fermentables);
+    const yeastResult = evaluateYeastSelection(currentRecipeStyle.code, selectedYeast);
     
     let grainPctStatus = "Strong";
     let grainPctMessage = `Fermentable total is ${grainPctTotal}%.`;
