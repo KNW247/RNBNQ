@@ -207,8 +207,13 @@ const grainTotalRules = {
     defendMin: 95,
     defendMax: 105
 };
-
-Later refinement: split Roasted Barley out from generic roast so Irish Stout can evaluate roasted barley as a style-defining ingredient instead of treating all roast malts equally.
+// FUTURE REFINEMENT:
+// Split style-defining ingredients from broad categories where needed.
+// Example: Irish Stout currently treats all roast malts equally.
+// Pale Chocolate counts toward "roast", but classic exam logic may expect
+// specific roasted barley presence as a stronger style signal.
+// Potential future category:
+// "Roasted Barley": "roastedBarley"
 
 const recipeGrainCategoryRules = {
     "5D": {
