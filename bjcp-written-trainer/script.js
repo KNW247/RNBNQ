@@ -111,6 +111,103 @@ const recipeHopOptions = [
     "Galaxy"
 ];
 
+const fermentableOptions = [
+    "Pilsner",
+    "2-Row",
+    "Pale Ale Malt",
+    "Maris Otter",
+    "Vienna",
+    "Munich I",
+    "Munich II",
+    "Wheat Malt",
+    "Chit Malt",
+    "Carafoam",
+    "Dextrin Malt",
+    "Acid Malt",
+    "Flaked Barley",
+    "Flaked Oats",
+    "Flaked Wheat",
+    "Flaked Maize",
+    "Flaked Rice",
+    "Crystal 10",
+    "Crystal 40",
+    "Crystal 60",
+    "Crystal 80",
+    "Crystal 120",
+    "Biscuit",
+    "Victory",
+    "Aromatic",
+    "Melanoidin",
+    "Special B",
+    "Brown Malt",
+    "Chocolate Malt",
+    "Pale Chocolate",
+    "Roasted Barley",
+    "Black Patent",
+    "Carafa II",
+    "Carafa III",
+    "Table Sugar",
+    "Dextrose",
+    "Candi Sugar",
+    "Turbinado"
+];
+
+const fermentableCategoryMap = {
+    "Pilsner": "base",
+    "2-Row": "base",
+    "Pale Ale Malt": "base",
+    "Maris Otter": "base",
+    "Vienna": "base",
+    "Munich I": "base",
+    "Munich II": "base",
+
+    "Wheat Malt": "wheat",
+
+    "Chit Malt": "structuralHelper",
+    "Carafoam": "structuralHelper",
+    "Dextrin Malt": "structuralHelper",
+
+    "Acid Malt": "processHelper",
+
+    "Flaked Barley": "flakedAdjunct",
+    "Flaked Oats": "flakedAdjunct",
+    "Flaked Wheat": "flakedAdjunct",
+    "Flaked Maize": "flakedAdjunct",
+    "Flaked Rice": "flakedAdjunct",
+
+    "Crystal 10": "character",
+    "Crystal 40": "character",
+    "Crystal 60": "character",
+    "Crystal 80": "character",
+    "Crystal 120": "character",
+    "Biscuit": "character",
+    "Victory": "character",
+    "Aromatic": "character",
+    "Melanoidin": "character",
+
+    "Special B": "darkCharacter",
+    "Brown Malt": "darkCharacter",
+
+    "Chocolate Malt": "roast",
+    "Pale Chocolate": "roast",
+    "Roasted Barley": "roast",
+    "Black Patent": "roast",
+    "Carafa II": "roast",
+    "Carafa III": "roast",
+
+    "Table Sugar": "sugar",
+    "Dextrose": "sugar",
+    "Candi Sugar": "sugar",
+    "Turbinado": "sugar"
+};
+
+const grainTotalRules = {
+    strongMin: 98,
+    strongMax: 102,
+    defendMin: 95,
+    defendMax: 105
+};
+
 let currentRecipeStyle = null;
 
 let recipeSetup = {
