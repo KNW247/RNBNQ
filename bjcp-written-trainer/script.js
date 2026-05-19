@@ -1070,14 +1070,54 @@ function formatGrainRuleFeedback(grainRuleResult) {
         `)
         .join("<br>");
 
+    const coachingNotes = grainRuleResult.categoryResults
+        .filter(result => result.status !== "Strong")
+        .map(result => {
+            switch (result.category) {
+                case "base":
+                    return "Base malt structure is outside the strongest range. Be prepared to justify the overall foundation of the recipe.";
+
+                case "wheat":
+                    return "Wheat usage is outside the strongest range. Be prepared to justify its structural role.";
+
+                case "structuralHelper":
+                    return "Structural helper usage is elevated or absent relative to ideal style expression.";
+
+                case "processHelper":
+                    return "Process helper usage may need justification.";
+
+                case "flakedAdjunct":
+                    return "Flaked adjunct usage may not strongly support expected mouthfeel or texture.";
+
+                case "character":
+                    return "Character malt usage may shift the malt profile away from the strongest style expression.";
+
+                case "darkCharacter":
+                    return "Dark character malt usage may push the beer beyond the intended style expression.";
+
+                case "roast":
+                    return "Roast contribution may not align cleanly with the expected style profile.";
+
+                case "sugar":
+                    return "Sugar usage may require justification relative to attenuation and style intent.";
+
+                default:
+                    return null;
+            }
+        })
+        .filter(Boolean);
+
+    const notesHtml = coachingNotes.length
+        ? `<br><br><strong>Notes:</strong><br>${coachingNotes.join("<br>")}`
+        : "";
+
     return `
-        <strong>Grain Architecture:</strong> ${grainRuleResult.status}<br>
-        ${grainRuleResult.styleNote}<br><br>
+        <strong>Grain Architecture:</strong> ${grainRuleResult.status}<br><br>
         ${categoryHtml}
+        ${notesHtml}
         ${grainRuleResult.complexityNote ? `<br><br><em>${grainRuleResult.complexityNote}</em>` : ""}
     `;
 }
-
 function updateScoreDisplay() {
     const total = correctCount + incorrectCount;
     const accuracy = total === 0 ? 0 : Math.round((correctCount / total) * 100);
