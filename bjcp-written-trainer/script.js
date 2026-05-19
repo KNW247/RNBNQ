@@ -2359,7 +2359,7 @@ function renderRecipeBuild() {
         </label>
 
   
-          <label>
+                <label>
             Fermentation Start Temp:
             <select id="recipe-ferment-start">
                 ${recipeTempOptionsC.map(temp => `
@@ -2372,15 +2372,12 @@ function renderRecipeBuild() {
             End of Active Fermentation:
             <select id="recipe-ferment-finish">
                 <option value="na" selected>N/A</option>
-                ${recipeTempOptionsC
-                    .filter(temp => temp >= 10)
-                    .map(temp => `
-                        <option value="${temp}">${temp}°C</option>
-                    `).join("")}
+                ${recipeTempOptionsC.map(temp => `
+                    ${temp >= 10 ? `<option value="${temp}">${temp}°C</option>` : ""}
+                `).join("")}
             </select>
         </label>
 
-    
         <label>
             Cold Crash Included:
             <select id="recipe-cold-crash">
@@ -2388,16 +2385,6 @@ function renderRecipeBuild() {
                 <option value="no">No</option>
             </select>
         </label>
-
-        <button id="evaluate-recipe">Evaluate Recipe</button>
-    `;
-
-    nextQuestionButton.style.display = "none";
-
-    document.getElementById("evaluate-recipe").addEventListener("click", function () {
-        evaluateRecipeSubmission();
-    });
-}
 
 function collectFermentables() {
     const fermentables = [];
