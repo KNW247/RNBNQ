@@ -1336,6 +1336,53 @@ function renderCompareSharedIdentity() {
     });
 }
 
+function evaluateYeastSelection(styleCode, selectedYeast) {
+    const styleRules = recipeYeastRules[styleCode];
+
+    if (!styleRules) {
+        return {
+            status: "Defensible",
+            message: "No yeast rules found for this style."
+        };
+    }
+
+    const yeastFamily = yeastFamilyMap[selectedYeast];
+
+    if (!yeastFamily) {
+        return {
+            status: "Defensible",
+            message: "Unknown yeast family. Be prepared to justify your choice."
+        };
+    }
+
+    if (styleRules.strong.includes(yeastFamily)) {
+        return {
+            status: "Strong",
+            message: styleRules.note
+        };
+    }
+
+    if (styleRules.defensible.includes(yeastFamily)) {
+        return {
+            status: "Defensible",
+            message: `${styleRules.note} This strain can be defended with clear justification.`
+        };
+    }
+
+    return {
+        status: "Difficult to Defend",
+        message: `${styleRules.note} This yeast family is a poor stylistic fit.`
+    };
+}
+
+function formatYeastFeedback(yeastResult, selectedYeast) {
+    return `
+        <strong>Yeast Selection:</strong> ${yeastResult.status}<br>
+        Selected yeast: ${selectedYeast}<br>
+        ${yeastResult.message}
+    `;
+}
+
 function renderCompareAnchor() {
     compareStep = "anchor";
     selectedCompareOptions = [];
