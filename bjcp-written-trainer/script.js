@@ -1479,9 +1479,11 @@ function evaluateFermentationTemps(styleCode, startTemp, finishTemp) {
 }
 
 function formatFermentationTempFeedback(tempResult, startTemp, finishTemp) {
+    const finishDisplay = finishTemp === null ? "N/A" : `${finishTemp}°C`;
+
     return `
         <strong>Fermentation Temperature:</strong> ${tempResult.status}<br>
-        Start: ${startTemp}°C | Finish: ${finishTemp}°C<br>
+        Start: ${startTemp}°C | End Active: ${finishDisplay}<br>
         ${tempResult.message}
     `;
 }
