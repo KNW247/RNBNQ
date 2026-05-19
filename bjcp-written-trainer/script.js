@@ -2323,6 +2323,25 @@ function renderRecipeBuild() {
         evaluateRecipeSubmission();
     });
 }
+
+function collectFermentables() {
+    const fermentables = [];
+
+    for (let i = 0; i < 10; i++) {
+        const ingredient = document.getElementById(`recipe-fermentable-${i}`).value;
+        const pct = parseFloat(document.getElementById(`recipe-fermentable-pct-${i}`).value);
+
+        if (ingredient && ingredient !== "Unused" && !isNaN(pct) && pct > 0) {
+            fermentables.push({
+                ingredient,
+                pct
+            });
+        }
+    }
+
+    return fermentables;
+}
+
 function evaluateRecipeSubmission() {
 const abv = parseFloat(document.getElementById("recipe-abv").value);
 const fg = parseFloat(document.getElementById("recipe-fg").value);
