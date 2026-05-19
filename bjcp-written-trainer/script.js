@@ -2263,15 +2263,14 @@ function renderRecipeBuild() {
         evaluateRecipeSubmission();
     });
 }
+const abv = parseFloat(document.getElementById("recipe-abv").value);
+const fg = parseFloat(document.getElementById("recipe-fg").value);
+const og = parseFloat(document.getElementById("recipe-og").value);
+const ibu = parseFloat(document.getElementById("recipe-ibu").value);
+const srm = parseFloat(document.getElementById("recipe-srm").value);
+const selectedYeast = document.getElementById("recipe-yeast").value;
 
-function evaluateRecipeSubmission() {
-    const abv = parseFloat(document.getElementById("recipe-abv").value);
-    const fg = parseFloat(document.getElementById("recipe-fg").value);
-    const og = parseFloat(document.getElementById("recipe-og").value);
-    const ibu = parseFloat(document.getElementById("recipe-ibu").value);
-    const srm = parseFloat(document.getElementById("recipe-srm").value);
-
-    const gristInput = parseFloat(document.getElementById("recipe-grist").value);
+const gristInput = parseFloat(document.getElementById("recipe-grist").value);
 
     const fermentables = [];
 
