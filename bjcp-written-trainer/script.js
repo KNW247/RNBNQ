@@ -1812,24 +1812,6 @@ if (gristDelta > 0.6) {
     gristStatus = "Likely point loss";
     gristMessage = `${gristKg.toFixed(1)} kg does not support the target OG. Expected about ${expectedGristKg.toFixed(1)} kg.`;
 }
-
-    const grainPctTotal = basePct + specialtyPct + adjunctPct + roastPct + wheatPct;
-
-    let grainPctStatus = "Strong";
-    let grainPctMessage = `Grain bill percentages total ${grainPctTotal}%.`;
-
-    if (Math.abs(grainPctTotal - 100) > 2 && Math.abs(grainPctTotal - 100) <= 5) {
-        grainPctStatus = "Close";
-        grainPctMessage = `Grain bill totals ${grainPctTotal}%. Tighten this closer to 100%.`;
-}
-
-    if (Math.abs(grainPctTotal - 100) > 5) {
-        grainPctStatus = "Likely point loss";
-        grainPctMessage = `Grain bill totals ${grainPctTotal}%, which does not add up cleanly.`;
-}
-
-
-    
     const expectedOg = fg + (abv / 131.25);
     const userOgPoints = Math.round((og - 1) * 1000);
     const expectedOgPoints = Math.round((expectedOg - 1) * 1000);
