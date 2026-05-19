@@ -2351,7 +2351,7 @@ function renderRecipeBuild() {
             </select>
         </label>
 
-        <label>
+              <label>
             Fermentation Start Temp:
             <select id="recipe-ferment-start">
                 ${recipeTempOptionsC.map(temp => `
@@ -2361,15 +2361,22 @@ function renderRecipeBuild() {
         </label>
 
         <label>
-            Fermentation Finish Temp:
+            End of Active Fermentation:
             <select id="recipe-ferment-finish">
+                <option value="na" selected>N/A</option>
                 ${recipeTempOptionsC.map(temp => `
                     <option value="${temp}">${temp}°C</option>
                 `).join("")}
             </select>
         </label>
 
- 
+        <label>
+            Cold Crash Included:
+            <select id="recipe-cold-crash">
+                <option value="yes" selected>Yes</option>
+                <option value="no">No</option>
+            </select>
+        </label>
 
         <button id="evaluate-recipe">Evaluate Recipe</button>
     `;
@@ -2407,7 +2414,13 @@ const ibu = parseFloat(document.getElementById("recipe-ibu").value);
 const srm = parseFloat(document.getElementById("recipe-srm").value);
 const selectedYeast = document.getElementById("recipe-yeast").value;
 const fermentationStartTemp = parseFloat(document.getElementById("recipe-ferment-start").value);
-const fermentationFinishTemp = parseFloat(document.getElementById("recipe-ferment-finish").value);
+
+const fermentationFinishRaw = document.getElementById("recipe-ferment-finish").value;
+const fermentationFinishTemp = fermentationFinishRaw === "na"
+    ? null
+    : parseFloat(fermentationFinishRaw);
+
+const coldCrashIncluded = document.getElementById("recipe-cold-crash").value === "yes";
 
 const gristInput = parseFloat(document.getElementById("recipe-grist").value);
 const fermentables = collectFermentables();
