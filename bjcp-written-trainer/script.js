@@ -2358,7 +2358,8 @@ function renderRecipeBuild() {
             </select>
         </label>
 
-              <label>
+  
+          <label>
             Fermentation Start Temp:
             <select id="recipe-ferment-start">
                 ${recipeTempOptionsC.map(temp => `
@@ -2366,17 +2367,20 @@ function renderRecipeBuild() {
                 `).join("")}
             </select>
         </label>
-        
+
         <label>
-           <select id="recipe-ferment-finish">
-            <option value="na" selected>N/A</option>
-            ${recipeTempOptionsC
-            .filter(temp => temp >= 10)
-            .map(temp => `
-            <option value="${temp}">${temp}°C</option>
-        `).join("")}
+            End of Active Fermentation:
+            <select id="recipe-ferment-finish">
+                <option value="na" selected>N/A</option>
+                ${recipeTempOptionsC
+                    .filter(temp => temp >= 10)
+                    .map(temp => `
+                        <option value="${temp}">${temp}°C</option>
+                    `).join("")}
             </select>
-         </label>
+        </label>
+
+    
         <label>
             Cold Crash Included:
             <select id="recipe-cold-crash">
