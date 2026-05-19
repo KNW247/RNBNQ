@@ -2125,7 +2125,8 @@ function evaluateRecipeSubmission() {
     }
 
     const grainPctTotal = fermentables.reduce((sum, item) => sum + item.pct, 0);
-
+    const grainRuleResult = evaluateStyleGrainRules(currentRecipeStyle.code, fermentables);
+    
     let grainPctStatus = "Strong";
     let grainPctMessage = `Fermentable total is ${grainPctTotal}%.`;
 
