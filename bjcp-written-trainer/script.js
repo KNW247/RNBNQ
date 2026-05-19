@@ -1384,13 +1384,45 @@ function formatYeastFeedback(yeastResult, selectedYeast) {
 }
 
 function evaluateFermentationTemps(styleCode, startTemp, finishTemp) {
-    const fermentationTempRules = {
-        "5D": { strongStartMin: 8, strongStartMax: 12, defendStartMin: 6, defendStartMax: 14, strongFinishMin: 8, strongFinishMax: 14, defendFinishMin: 6, defendFinishMax: 16, note: "German Pils should use cool, clean lager fermentation." },
-        "3B": { strongStartMin: 8, strongStartMax: 12, defendStartMin: 6, defendStartMax: 14, strongFinishMin: 8, strongFinishMax: 14, defendFinishMin: 6, defendFinishMax: 16, note: "Czech Premium Pale Lager should use clean lager fermentation." },
-        "4B": { strongStartMin: 8, strongStartMax: 12, defendStartMin: 6, defendStartMax: 14, strongFinishMin: 8, strongFinishMax: 14, defendFinishMin: 6, defendFinishMax: 16, note: "Festbier should use cool, clean lager fermentation." },
-        "6A": { strongStartMin: 8, strongStartMax: 12, defendStartMin: 6, defendStartMax: 14, strongFinishMin: 8, strongFinishMax: 14, defendFinishMin: 6, defendFinishMax: 16, note: "Märzen should use clean lager fermentation to showcase malt." },
-        "9A": { strongStartMin: 8, strongStartMax: 12, defendStartMin: 6, defendStartMax: 14, strongFinishMin: 8, strongFinishMax: 14, defendFinishMin: 6, defendFinishMax: 16, note: "Doppelbock needs cool fermentation and controlled cleanup." },
+    const lagerStyles = ["5D", "3B", "4B", "6A", "9A"];
 
+    const lagerNotes = {
+        "5D": "German Pils should use cool primary fermentation followed by a warm cleanup rest or an explicitly extended cold maturation plan.",
+        "3B": "Czech Premium Pale Lager should use cool primary fermentation followed by a warm cleanup rest or an explicitly extended cold maturation plan.",
+        "4B": "Festbier should use cool primary fermentation followed by a warm cleanup rest or an explicitly extended cold maturation plan.",
+        "6A": "Märzen should use cool primary fermentation followed by a warm cleanup rest or an explicitly extended cold maturation plan.",
+        "9A": "Doppelbock should use cool primary fermentation followed by a warm cleanup rest or an explicitly extended cold maturation plan."
+    };
+
+    if (lagerStyles.includes(styleCode)) {
+        const coldPrimaryStrong = startTemp >= 8 && startTemp <= 12;
+        const coldPrimaryDefensible = startTemp >= 6 && startTemp <= 14;
+
+        const warmCleanupStrong = finishTemp >= 14 && finishTemp <= 20 && finishTemp >= startTemp;
+        const warmCleanupDefensible = finishTemp >= 12 && finishTemp <= 22 && finishTemp >= startTemp;
+
+        const extendedColdDefensible = finishTemp >= 6 && finishTemp <= 12 && finishTemp === startTemp;
+
+        let status = "Strong";
+
+        if (coldPrimaryStrong && warmCleanupStrong) {
+            status = "Strong";
+        } else if (
+            (coldPrimaryDefensible && warmCleanupDefensible) ||
+            (coldPrimaryStrong && extendedColdDefensible)
+        ) {
+            status = "Defensible";
+        } else {
+            status = "Difficult to Defend";
+        }
+
+        return {
+            status,
+            message: lagerNotes[styleCode]
+        };
+    }
+
+    const fermentationTempRules = {
         "10A": { strongStartMin: 16, strongStartMax: 20, defendStartMin: 14, defendStartMax: 22, strongFinishMin: 18, strongFinishMax: 22, defendFinishMin: 16, defendFinishMax: 24, note: "Weissbier fermentation should support expressive ester and phenolic character." },
 
         "26C": { strongStartMin: 17, strongStartMax: 20, defendStartMin: 16, defendStartMax: 22, strongFinishMin: 22, strongFinishMax: 26, defendFinishMin: 20, defendFinishMax: 28, note: "Tripel benefits from a controlled warm rise for attenuation and Belgian expression." },
@@ -1415,6 +1447,25 @@ function evaluateFermentationTemps(styleCode, startTemp, finishTemp) {
         };
     }
 
+    const startStrong = startTemp >= rules.strongStartMin && startTemp <= rules.strongStartMax;
+    const finishStrong = finishTemp >= rules.strongFinishMin && finishTemp <= rules.strongFinishMax;
+
+    const startDefensible = startTemp >= rules.defendStartMin && startTemp <= rules.defendStartMax;
+    const finishDefensible = finishTemp >= rules.defendFinishMin && finishTemp <= rules.defendFinishMax;
+
+    let status = "Strong";
+
+    if (!startDefensible || !finishDefensible) {
+        status = "Difficult to Defend";
+    } else if (!startStrong || !finishStrong) {
+        status = "Defensible";
+    }
+
+    return {
+        status,
+        message: rules.note
+    };
+}
     const startStrong = startTemp >= rules.strongStartMin && startTemp <= rules.strongStartMax;
     const finishStrong = finishTemp >= rules.strongFinishMin && finishTemp <= rules.strongFinishMax;
 
