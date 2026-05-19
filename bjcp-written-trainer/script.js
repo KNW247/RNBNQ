@@ -1780,7 +1780,7 @@ const gristKg = recipeSetup.units === "imperial"
     : gristInput;
 
     
-   if ([abv, fg, og, ibu, srm, gristInput, basePct, specialtyPct, adjunctPct, roastPct, wheatPct].some(value => isNaN(value))) {
+if ([abv, fg, og, ibu, srm, gristInput].some(value => isNaN(value))) {
         feedbackBox.innerHTML = `
             <strong class="incorrect">Enter all target numbers before evaluating.</strong>
         `;
