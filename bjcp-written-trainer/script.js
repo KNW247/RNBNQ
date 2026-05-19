@@ -2229,6 +2229,10 @@ function renderRecipeSetup() {
 }
 
 function renderRecipeBuild() {
+    currentRecipeStyle = selectedRecipeStyleCode === "random"
+        ? getRandomRecipeStyle()
+        : getRecipeStyles().find(style => style.code === selectedRecipeStyleCode);
+
     styleName.textContent = `Style: ${currentRecipeStyle.code} ${currentRecipeStyle.name}`;
 
     questionText.innerHTML = `
