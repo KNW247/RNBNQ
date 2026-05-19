@@ -2395,7 +2395,8 @@ const gristInput = parseFloat(document.getElementById("recipe-grist").value);
 
         ${formatGrainRuleFeedback(grainRuleResult)}<br><br>
     `;
-
+    ${formatYeastFeedback(yeastResult, selectedYeast)}<br><br>
+    
     nextQuestionButton.style.display = "inline-block";
 }
 function evaluateRange(label, value, min, max, closeTolerance) {
