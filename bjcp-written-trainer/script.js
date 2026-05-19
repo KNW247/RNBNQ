@@ -1760,12 +1760,24 @@ function evaluateRecipeSubmission() {
     const srm = parseFloat(document.getElementById("recipe-srm").value);
 
     const gristInput = parseFloat(document.getElementById("recipe-grist").value);
-    const gristKg = recipeSetup.units === "imperial" ? lbToKg(gristInput) : gristInput;
-    const basePct = parseFloat(document.getElementById("recipe-basepct").value);
-    const specialtyPct = parseFloat(document.getElementById("recipe-specialtypct").value);
-    const adjunctPct = parseFloat(document.getElementById("recipe-adjunctpct").value);
-    const roastPct = parseFloat(document.getElementById("recipe-roastpct").value);
-    const wheatPct = parseFloat(document.getElementById("recipe-wheatpct").value);
+
+const fermentables = [];
+
+for (let i = 0; i < 10; i++) {
+    const ingredient = document.getElementById(`recipe-fermentable-${i}`).value;
+    const pct = parseFloat(document.getElementById(`recipe-fermentable-pct-${i}`).value);
+
+    if (ingredient && !isNaN(pct)) {
+        fermentables.push({
+            ingredient,
+            pct
+        });
+    }
+}
+
+const gristKg = recipeSetup.units === "imperial"
+    ? lbToKg(gristInput)
+    : gristInput;
 
     
    if ([abv, fg, og, ibu, srm, gristInput, basePct, specialtyPct, adjunctPct, roastPct, wheatPct].some(value => isNaN(value))) {
