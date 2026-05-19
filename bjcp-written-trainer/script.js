@@ -2263,6 +2263,7 @@ function renderRecipeBuild() {
         evaluateRecipeSubmission();
     });
 }
+function evaluateRecipeSubmission() {
 const abv = parseFloat(document.getElementById("recipe-abv").value);
 const fg = parseFloat(document.getElementById("recipe-fg").value);
 const og = parseFloat(document.getElementById("recipe-og").value);
