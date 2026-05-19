@@ -127,6 +127,80 @@ const yeastFamilyMap = {
     "K-97": "hybrid_clean"
 };
 
+const recipeYeastRules = {
+    "5D": {
+        strong: ["german_lager"],
+        defensible: ["czech_lager"],
+        note: "German Pils needs a clean lager fermentation profile."
+    },
+
+    "3B": {
+        strong: ["czech_lager"],
+        defensible: ["german_lager"],
+        note: "Czech Premium Pale Lager should use a clean lager strain that supports rounded malt and hop balance."
+    },
+
+    "4B": {
+        strong: ["german_lager"],
+        defensible: ["czech_lager"],
+        note: "Festbier should use a clean German lager profile."
+    },
+
+    "6A": {
+        strong: ["german_lager"],
+        defensible: ["czech_lager"],
+        note: "Märzen should use clean lager fermentation to showcase malt."
+    },
+
+    "9A": {
+        strong: ["german_lager"],
+        defensible: ["czech_lager"],
+        note: "Doppelbock needs clean lager fermentation to support rich malt without distracting yeast character."
+    },
+
+    "10A": {
+        strong: ["wheat_expressive"],
+        defensible: [],
+        note: "Weissbier depends on expressive wheat yeast character."
+    },
+
+    "26C": {
+        strong: ["belgian_abbey"],
+        defensible: ["belgian_saison"],
+        note: "Tripel needs expressive Belgian yeast character with strong attenuation."
+    },
+
+    "15B": {
+        strong: ["irish"],
+        defensible: ["english", "clean_american"],
+        note: "Irish Stout should use a restrained ale strain that keeps roast and dryness in focus."
+    },
+
+    "20A": {
+        strong: ["clean_american"],
+        defensible: ["english", "irish"],
+        note: "American Porter should use a clean or lightly characterful ale strain."
+    },
+
+    "11C": {
+        strong: ["english"],
+        defensible: ["irish", "clean_american"],
+        note: "Strong Bitter is best supported by English ale fermentation character."
+    },
+
+    "21A": {
+        strong: ["clean_american"],
+        defensible: ["english", "neutral_kveik", "hybrid_clean"],
+        note: "American IPA should keep fermentation clean so hops remain the focus."
+    },
+
+    "22A": {
+        strong: ["clean_american"],
+        defensible: ["neutral_kveik", "hybrid_clean"],
+        note: "Double IPA needs clean fermentation and strong attenuation to avoid sweetness."
+    }
+};
+
 const recipeHopOptions = [
     "Hallertau Mittelfruh",
     "Tettnang",
