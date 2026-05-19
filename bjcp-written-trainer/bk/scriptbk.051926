@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BJCP Written Exam Trainer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <h1>BJCP Written Exam Trainer</h1>
+    <p>by Doug "Old Man" Walker </p>
+</header>
+        
+<main class="container">
+
+    
+    <section class="intro-panel">
+    <h2>Train the System Behind the Exam</h2>
+
+ <p>
+    Train the repeatable system behind strong BJCP Written Exam answers:
+    gravity, bitterness, grist, mash logic, fermentation, and style comparison.
+</p>
+
+        <a href="methodology.html" class="method-link">New here? Start with the method →</a>
+</section>
+    
+    <section class="study-sets" id="study-sets">
+        <h2>Study Set</h2>
+   <div class="button-grid">
+    <button type="button" data-set="highFrequency">High-Frequency Compare</button>
+    <button type="button" data-set="recipe">Recipe Styles</button>
+    <button type="button" data-set="comparison">Comparison Pool</button>
+    <button type="button" data-set="foundation">Foundation Pool</button>
+    <button type="button" data-set="missed">Review Misses</button>
+</div>
+    </section>
+
+    <section class="modules" id="modules">
+        <h2>Training Modes</h2>
+        <div class="card-grid">
+
+            <div class="card active">
+                <h3>Foundation Drill</h3>
+                <p>Train style identity anchors.</p>
+                <button id="launch-foundation">Launch</button>
+            </div>
+
+        
+        <div class="card active">
+                 <h3>Gravity Drill</h3>
+                 <p>ABV + FG → estimate OG.</p>
+                 <button id="launch-gravity">Launch</button>
+            </div>
+     <div class="card active">
+       <h3>True / False Drill</h3>
+       <p>Rapid-fire BJCP exam fact validation.</p>
+       <button id="launch-truefalse">Launch</button>
+      </div>
+            
+        <div class="card active">
+    <h3>IBU Drill</h3>
+    <p>Style + OG → estimate IBU.</p>
+    <button id="launch-ibu">Launch</button>
+</div>
+
+<div class="card active">
+    <h3>Grist Drill</h3>
+    <p>OG → estimate total grist.</p>
+    <button id="launch-grist">Launch</button>
+</div>
+
+<div class="card active">
+    <h3>Mash Schedule Drill</h3>
+    <p>Choose acceptable mash schedules by style.</p>
+    <button id="launch-mash">Launch</button>
+</div>
+
+<div class="card active">
+    <h3>Fermentation Drill</h3>
+    <p>Choose acceptable fermentation schedules by style.</p>
+    <button id="launch-fermentation">Launch</button>
+</div>          
+
+ <div class="card active">
+     <h3>Triple Compare Drill</h3>
+      <p>Train shared identity, anchor logic, style differences, and model-answer structure.</p>
+      <button id="launch-compare">Launch</button>
+ </div>
+            
+            
+<div class="card active">
+    <h3>Recipe Construction Lab</h3>
+    <p>Build a defensible BJCP written exam recipe from prompt to process.</p>
+    <button id="launch-recipe">Launch</button>
+</div>
+
+            
+        </div>
+    </section>
+
+    <section class="drill-panel" id="drill-panel">
+      <h2 id="drill-title">Foundation Drill — Foundation Pool</h2>
+        
+        <button id="back-home" class="next-button">← Back to Home</button>
+
+        <div id="score-panel" class="score-panel">
+            Correct: <span id="correct-count">0</span> |
+            Missed: <span id="incorrect-count">0</span> |
+            Accuracy: <span id="accuracy">0%</span>
+        </div>
+
+        <div class="category-select">
+            <button data-category="strength">Strength</button>
+            <button data-category="bitterness">Bitterness</button>
+            <button data-category="body">Body</button>
+            <button data-category="carbonation">Carbonation</button>
+            <button data-category="color">Color</button>
+            <button data-category="mixed">Mixed</button>
+        </div>
+
+        <div class="question-box">
+            <h3 id="style-name">Style: German Pils</h3>
+            <p id="question-text">Question: Strength Identity?</p>
+
+            <div class="answers" id="answer-container"></div>
+
+            <div class="feedback-box" id="feedback-box"></div>
+
+            <button id="next-question" class="next-button">Next</button>
+        </div>
+    </section>
+
+</main>
+
+<script src="styles.js"></script>
+<script src="compare-data.js"></script>
+<script src="true-false-data.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
