@@ -1761,28 +1761,34 @@ function evaluateRecipeSubmission() {
 
     const gristInput = parseFloat(document.getElementById("recipe-grist").value);
 
-const fermentables = [];
+    const fermentables = [];
 
-for (let i = 0; i < 10; i++) {
-    const ingredient = document.getElementById(`recipe-fermentable-${i}`).value;
-    const pct = parseFloat(document.getElementById(`recipe-fermentable-pct-${i}`).value);
+    for (let i = 0; i < 10; i++) {
+        const ingredient = document.getElementById(`recipe-fermentable-${i}`).value;
+        const pct = parseFloat(document.getElementById(`recipe-fermentable-pct-${i}`).value);
 
-    if (ingredient && !isNaN(pct)) {
-        fermentables.push({
-            ingredient,
-            pct
-        });
+        if (ingredient && !isNaN(pct)) {
+            fermentables.push({
+                ingredient,
+                pct
+            });
+        }
     }
-}
 
-const gristKg = recipeSetup.units === "imperial"
-    ? lbToKg(gristInput)
-    : gristInput;
+    const gristKg = recipeSetup.units === "imperial"
+        ? lbToKg(gristInput)
+        : gristInput;
 
-    
-if ([abv, fg, og, ibu, srm, gristInput].some(value => isNaN(value))) {
+    if ([abv, fg, og, ibu, srm, gristInput].some(value => isNaN(value))) {
         feedbackBox.innerHTML = `
             <strong class="incorrect">Enter all target numbers before evaluating.</strong>
+        `;
+        return;
+    }
+
+    if (fermentables.length === 0) {
+        feedbackBox.innerHTML = `
+            <strong class="incorrect">Enter at least one fermentable before evaluating.</strong>
         `;
         return;
     }
@@ -1791,6 +1797,7 @@ if ([abv, fg, og, ibu, srm, gristInput].some(value => isNaN(value))) {
     const fgResult = evaluateRange("FG", fg, currentRecipeStyle.body.min, currentRecipeStyle.body.max, 0.003);
     const ibuResult = evaluateRange("IBU", ibu, currentRecipeStyle.bitterness.min, currentRecipeStyle.bitterness.max, 5);
     const srmResult = evaluateRange("SRM", srm, currentRecipeStyle.color.min, currentRecipeStyle.color.max, 3);
+
     const ogPoints = Math.round((og - 1) * 1000);
 
     const expectedGristKg =
@@ -1801,17 +1808,39 @@ if ([abv, fg, og, ibu, srm, gristInput].some(value => isNaN(value))) {
     const gristDelta = Math.abs(gristKg - expectedGristKg);
 
     let gristStatus = "Strong";
-    let gristMessage = `${gristKg.toFixed(1)} kg is close to the expected ${expectedGristKg.toFixed(1)} kg for ${recipeSetup.postBoilVolume} L @ ${recipeSetup.efficiency}% BHE.`;
+    let gristMessage = `${gristKg.toFixed(1)} ${recipeSetup.units === "imperial" ? "lb" : "kg"} is close to the expected ${recipeSetup.units === "imperial" ? kgToLb(expectedGristKg).toFixed(1) + " lb" : expectedGristKg.toFixed(1) + " kg"} for ${formatRecipeVolume(recipeSetup.postBoilVolume)} @ ${recipeSetup.efficiency}% BHE.`;
 
     if (gristDelta > 0.3 && gristDelta <= 0.6) {
-    gristStatus = "Close";
-    gristMessage = `${gristKg.toFixed(1)} kg is close, but expected about ${expectedGristKg.toFixed(1)} kg based on OG, volume, and BHE.`;
-}
+        gristStatus = "Defensible";
+        gristMessage = `${gristInput.toFixed(1)} ${recipeSetup.units === "imperial" ? "lb" : "kg"} is close, but expected about ${recipeSetup.units === "imperial" ? kgToLb(expectedGristKg).toFixed(1) + " lb" : expectedGristKg.toFixed(1) + " kg"} based on OG, volume, and BHE.`;
+    }
 
-if (gristDelta > 0.6) {
-    gristStatus = "Likely point loss";
-    gristMessage = `${gristKg.toFixed(1)} kg does not support the target OG. Expected about ${expectedGristKg.toFixed(1)} kg.`;
-}
+    if (gristDelta > 0.6) {
+        gristStatus = "Difficult to Defend";
+        gristMessage = `${gristInput.toFixed(1)} ${recipeSetup.units === "imperial" ? "lb" : "kg"} does not appear to support the target OG. Expected about ${recipeSetup.units === "imperial" ? kgToLb(expectedGristKg).toFixed(1) + " lb" : expectedGristKg.toFixed(1) + " kg"}.`;
+    }
+
+    const grainPctTotal = fermentables.reduce((sum, item) => sum + item.pct, 0);
+
+    let grainPctStatus = "Strong";
+    let grainPctMessage = `Fermentable total is ${grainPctTotal}%.`;
+
+    if (
+        (grainPctTotal >= grainTotalRules.defendMin && grainPctTotal < grainTotalRules.strongMin) ||
+        (grainPctTotal > grainTotalRules.strongMax && grainPctTotal <= grainTotalRules.defendMax)
+    ) {
+        grainPctStatus = "Defensible";
+        grainPctMessage = `Fermentable total is ${grainPctTotal}%. Close, but could be tightened.`;
+    }
+
+    if (
+        grainPctTotal < grainTotalRules.defendMin ||
+        grainPctTotal > grainTotalRules.defendMax
+    ) {
+        grainPctStatus = "Difficult to Defend";
+        grainPctMessage = `Fermentable total is ${grainPctTotal}%. This would be difficult to defend.`;
+    }
+
     const expectedOg = fg + (abv / 131.25);
     const userOgPoints = Math.round((og - 1) * 1000);
     const expectedOgPoints = Math.round((expectedOg - 1) * 1000);
@@ -1821,12 +1850,12 @@ if (gristDelta > 0.6) {
     let ogMathMessage = `OG math is internally consistent. Expected about 1.${String(expectedOgPoints).padStart(3, "0")}.`;
 
     if (ogMathDelta > 3 && ogMathDelta <= 5) {
-        ogMathStatus = "Close";
+        ogMathStatus = "Defensible";
         ogMathMessage = `OG is close, but ABV / FG / OG do not fully align. Expected about 1.${String(expectedOgPoints).padStart(3, "0")}.`;
     }
 
     if (ogMathDelta > 5) {
-        ogMathStatus = "Likely point loss";
+        ogMathStatus = "Difficult to Defend";
         ogMathMessage = `OG math does not add up. Based on ABV and FG, expected about 1.${String(expectedOgPoints).padStart(3, "0")}.`;
     }
 
@@ -1838,22 +1867,22 @@ if (gristDelta > 0.6) {
         ${formatRecipeResult(abvResult)}
         ${formatRecipeResult(fgResult)}
         ${formatRecipeResult(ogRangeResult)}
+
         <strong>OG Math:</strong> ${ogMathStatus}<br>
         ${ogMathMessage}<br><br>
+
         ${formatRecipeResult(ibuResult)}
         ${formatRecipeResult(srmResult)}
 
-    <strong>Total Grist:</strong> ${gristStatus}<br>
+        <strong>Total Grist:</strong> ${gristStatus}<br>
         ${gristMessage}<br><br>
 
-    <strong>Grain Bill %:</strong> ${grainPctStatus}<br>
+        <strong>Fermentable % Total:</strong> ${grainPctStatus}<br>
         ${grainPctMessage}<br><br>
     `;
 
     nextQuestionButton.style.display = "inline-block";
-    
 }
-
 function evaluateRange(label, value, min, max, closeTolerance) {
     if (value >= min && value <= max) {
         return {
