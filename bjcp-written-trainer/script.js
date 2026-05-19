@@ -2184,6 +2184,8 @@ function evaluateRecipeSubmission() {
 
         <strong>Fermentable % Total:</strong> ${grainPctStatus}<br>
         ${grainPctMessage}<br><br>
+
+        ${formatGrainRuleFeedback(grainRuleResult)}<br><br>
     `;
 
     nextQuestionButton.style.display = "inline-block";
