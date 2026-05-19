@@ -1644,39 +1644,38 @@ function renderRecipeBuild() {
         </label>
 
         <label>
-            Total Grist (${recipeSetup.units === "imperial" ? "lb" : "kg"}):
-        <input
-            id="recipe-grist"
-            type="number"
-            step="0.1"
-            placeholder="${recipeSetup.units === "imperial" ? "11.0" : "5.0"}"
-        >
+    Total Grist (${recipeSetup.units === "imperial" ? "lb" : "kg"}):
+    <input
+        id="recipe-grist"
+        type="number"
+        step="0.1"
+        placeholder="${recipeSetup.units === "imperial" ? "11.0" : "5.0"}"
+    >
 </label>
 
-  <label>
-      Base Malt %:
-      <input id="recipe-basepct" type="number" step="1" placeholder="85">
-  </label>
+<div class="fermentable-section">
+    <h4>Fermentables</h4>
+    <p>Build your grain bill using actual fermentables. Leave unused rows blank.</p>
 
-    <label>
-        Specialty Malt %:
-        <input id="recipe-specialtypct" type="number" step="1" placeholder="10">
-    </label>
+    ${Array.from({ length: 10 }, (_, i) => `
+        <div class="fermentable-row">
+            <select id="recipe-fermentable-${i}">
+                <option value="">Unused</option>
+                ${fermentableOptions.map(item => `
+                    <option value="${item}">${item}</option>
+                `).join("")}
+            </select>
 
-    <label>
-        Sugar / Adjunct %:
-        <input id="recipe-adjunctpct" type="number" step="1" placeholder="0">
-    </label>
+            <input
+                id="recipe-fermentable-pct-${i}"
+                type="number"
+                step="1"
+                placeholder="%"
+            >
+        </div>
+    `).join("")}
+</div>
 
-    <label>
-        Roast Malt %:
-        <input id="recipe-roastpct" type="number" step="1" placeholder="0">
-    </label>
-
-    <label>
-        Wheat %:
-        <input id="recipe-wheatpct" type="number" step="1" placeholder="0">
-    </label>
 
         <label>
             Mash Strategy:
