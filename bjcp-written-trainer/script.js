@@ -208,6 +208,176 @@ const grainTotalRules = {
     defendMax: 105
 };
 
+const recipeGrainCategoryRules = {
+    "5D": {
+        name: "German Pils",
+        base: { strongMin: 85, defendMin: 75 },
+        wheat: { strongMax: 5, defendMax: 10 },
+        structuralHelper: { strongMax: 5, defendMax: 10 },
+        processHelper: { strongMax: 3, defendMax: 5 },
+        flakedAdjunct: { strongMax: 3, defendMax: 8 },
+        character: { strongMax: 3, defendMax: 8 },
+        darkCharacter: { strongMax: 0, defendMax: 1 },
+        roast: { strongMax: 0, defendMax: 0 },
+        sugar: { strongMax: 0, defendMax: 3 },
+        note: "German Pils should remain lean, pale, and base-malt focused."
+    },
+
+    "3B": {
+        name: "Czech Premium Pale Lager",
+        base: { strongMin: 80, defendMin: 70 },
+        wheat: { strongMax: 5, defendMax: 10 },
+        structuralHelper: { strongMax: 5, defendMax: 10 },
+        processHelper: { strongMax: 3, defendMax: 5 },
+        flakedAdjunct: { strongMax: 5, defendMax: 12 },
+        character: { strongMax: 8, defendMax: 15 },
+        darkCharacter: { strongMax: 0, defendMax: 2 },
+        roast: { strongMax: 0, defendMax: 0 },
+        sugar: { strongMax: 0, defendMax: 3 },
+        note: "Czech Premium Pale Lager can support more malt depth than German Pils, but should remain pale and lager-focused."
+    },
+
+    "4B": {
+        name: "Festbier",
+        base: { strongMin: 80, defendMin: 70 },
+        wheat: { strongMax: 5, defendMax: 10 },
+        structuralHelper: { strongMax: 5, defendMax: 10 },
+        processHelper: { strongMax: 3, defendMax: 5 },
+        flakedAdjunct: { strongMax: 3, defendMax: 8 },
+        character: { strongMax: 10, defendMax: 18 },
+        darkCharacter: { strongMax: 0, defendMax: 2 },
+        roast: { strongMax: 0, defendMax: 0 },
+        sugar: { strongMax: 0, defendMax: 3 },
+        note: "Festbier should show elegant pale malt richness, not heavy sweetness or roast."
+    },
+
+    "6A": {
+        name: "Märzen",
+        base: { strongMin: 65, defendMin: 55 },
+        wheat: { strongMax: 5, defendMax: 10 },
+        structuralHelper: { strongMax: 5, defendMax: 10 },
+        processHelper: { strongMax: 3, defendMax: 5 },
+        flakedAdjunct: { strongMax: 3, defendMax: 8 },
+        character: { strongMax: 25, defendMax: 35 },
+        darkCharacter: { strongMax: 2, defendMax: 5 },
+        roast: { strongMax: 0, defendMax: 2 },
+        sugar: { strongMax: 0, defendMax: 3 },
+        note: "Märzen should have intentional malt depth, usually from Vienna/Munich-style structure, without roast or sugar-driven dryness."
+    },
+
+    "9A": {
+        name: "Doppelbock",
+        base: { strongMin: 55, defendMin: 45 },
+        wheat: { strongMax: 5, defendMax: 10 },
+        structuralHelper: { strongMax: 5, defendMax: 10 },
+        processHelper: { strongMax: 3, defendMax: 5 },
+        flakedAdjunct: { strongMax: 3, defendMax: 8 },
+        character: { strongMax: 35, defendMax: 45 },
+        darkCharacter: { strongMax: 8, defendMax: 15 },
+        roast: { strongMax: 2, defendMax: 5 },
+        sugar: { strongMax: 0, defendMax: 5 },
+        note: "Doppelbock is a malt showcase. Some dark malt support can be defensible, but heavy roast or sugar-driven thinning is hard to defend."
+    },
+
+    "10A": {
+        name: "Weissbier",
+        base: { strongMin: 30, defendMin: 20, strongMax: 60, defendMax: 70 },
+        wheat: { strongMin: 40, defendMin: 30, strongMax: 70, defendMax: 80 },
+        structuralHelper: { strongMax: 3, defendMax: 8 },
+        processHelper: { strongMax: 3, defendMax: 5 },
+        flakedAdjunct: { strongMax: 0, defendMax: 5 },
+        character: { strongMax: 3, defendMax: 8 },
+        darkCharacter: { strongMax: 0, defendMax: 1 },
+        roast: { strongMax: 0, defendMax: 0 },
+        sugar: { strongMax: 0, defendMax: 0 },
+        note: "Weissbier needs wheat as a defining structural element. Low wheat, roast, or sugar are hard to defend."
+    },
+
+    "26C": {
+        name: "Belgian Tripel",
+        base: { strongMin: 65, defendMin: 55 },
+        wheat: { strongMax: 5, defendMax: 10 },
+        structuralHelper: { strongMax: 3, defendMax: 8 },
+        processHelper: { strongMax: 3, defendMax: 5 },
+        flakedAdjunct: { strongMax: 0, defendMax: 5 },
+        character: { strongMax: 8, defendMax: 15 },
+        darkCharacter: { strongMax: 0, defendMax: 2 },
+        roast: { strongMax: 0, defendMax: 0 },
+        sugar: { strongMin: 8, defendMin: 0, strongMax: 20, defendMax: 25 },
+        note: "Tripel is usually pale, dry, elegant, and often sugar-supported. No sugar can be defensible, but roast or heavy dark character is difficult to defend."
+    },
+
+    "15B": {
+        name: "Irish Stout",
+        base: { strongMin: 55, defendMin: 45 },
+        wheat: { strongMax: 0, defendMax: 5 },
+        structuralHelper: { strongMax: 5, defendMax: 10 },
+        processHelper: { strongMax: 3, defendMax: 5 },
+        flakedAdjunct: { strongMin: 8, defendMin: 0, strongMax: 25, defendMax: 30 },
+        character: { strongMax: 8, defendMax: 15 },
+        darkCharacter: { strongMax: 3, defendMax: 8 },
+        roast: { strongMin: 6, defendMin: 4, strongMax: 15, defendMax: 20 },
+        sugar: { strongMax: 0, defendMax: 5 },
+        note: "Irish Stout should show roast and texture. No roast is very hard to defend; flaked adjuncts strongly support the expected mouthfeel."
+    },
+
+    "20A": {
+        name: "American Porter",
+        base: { strongMin: 55, defendMin: 45 },
+        wheat: { strongMax: 5, defendMax: 10 },
+        structuralHelper: { strongMax: 5, defendMax: 10 },
+        processHelper: { strongMax: 3, defendMax: 5 },
+        flakedAdjunct: { strongMax: 10, defendMax: 20 },
+        character: { strongMax: 25, defendMax: 35 },
+        darkCharacter: { strongMax: 10, defendMax: 18 },
+        roast: { strongMin: 5, defendMin: 3, strongMax: 15, defendMax: 22 },
+        sugar: { strongMax: 0, defendMax: 5 },
+        note: "American Porter can support layered malt complexity. Some roast character is expected; a pale, sugar-thinned recipe is difficult to defend."
+    },
+
+    "11C": {
+        name: "Strong Bitter",
+        base: { strongMin: 75, defendMin: 65 },
+        wheat: { strongMax: 5, defendMax: 10 },
+        structuralHelper: { strongMax: 5, defendMax: 10 },
+        processHelper: { strongMax: 3, defendMax: 5 },
+        flakedAdjunct: { strongMax: 5, defendMax: 12 },
+        character: { strongMax: 18, defendMax: 25 },
+        darkCharacter: { strongMax: 2, defendMax: 5 },
+        roast: { strongMax: 0, defendMax: 2 },
+        sugar: { strongMax: 5, defendMax: 10 },
+        note: "Strong Bitter should remain balanced and drinkable with restrained malt support. Roast or aggressive dark character is difficult to defend."
+    },
+
+    "21A": {
+        name: "American IPA",
+        base: { strongMin: 80, defendMin: 70 },
+        wheat: { strongMax: 5, defendMax: 10 },
+        structuralHelper: { strongMax: 5, defendMax: 10 },
+        processHelper: { strongMax: 3, defendMax: 5 },
+        flakedAdjunct: { strongMax: 5, defendMax: 12 },
+        character: { strongMax: 8, defendMax: 15 },
+        darkCharacter: { strongMax: 0, defendMax: 2 },
+        roast: { strongMax: 0, defendMax: 2 },
+        sugar: { strongMax: 5, defendMax: 10 },
+        note: "American IPA grain should support hops. Heavy crystal, roast, or chewy malt structure is hard to defend."
+    },
+
+    "22A": {
+        name: "Double IPA",
+        base: { strongMin: 70, defendMin: 60 },
+        wheat: { strongMax: 5, defendMax: 10 },
+        structuralHelper: { strongMax: 5, defendMax: 10 },
+        processHelper: { strongMax: 3, defendMax: 5 },
+        flakedAdjunct: { strongMax: 5, defendMax: 12 },
+        character: { strongMax: 8, defendMax: 15 },
+        darkCharacter: { strongMax: 0, defendMax: 2 },
+        roast: { strongMax: 0, defendMax: 2 },
+        sugar: { strongMin: 5, defendMin: 0, strongMax: 15, defendMax: 20 },
+        note: "Double IPA should be big but drinkable. Sugar can support dryness; heavy crystal, roast, or dense malt sweetness is difficult to defend."
+    }
+};
+
 let currentRecipeStyle = null;
 
 let recipeSetup = {
