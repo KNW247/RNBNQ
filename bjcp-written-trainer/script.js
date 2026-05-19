@@ -944,6 +944,140 @@ function formatRecipeVolume(liters) {
 function formatVolumeOption(liters) {
     return `${liters} L / ${litersToGallons(liters).toFixed(1)} gal`;
 }
+
+function sumFermentableCategories(fermentables) {
+    const totals = {
+        base: 0,
+        wheat: 0,
+        structuralHelper: 0,
+        processHelper: 0,
+        flakedAdjunct: 0,
+        character: 0,
+        darkCharacter: 0,
+        roast: 0,
+        sugar: 0
+    };
+
+    fermentables.forEach(item => {
+        const category = fermentableCategoryMap[item.ingredient];
+
+        if (category && totals.hasOwnProperty(category)) {
+            totals[category] += item.pct;
+        }
+    });
+
+    return totals;
+}
+
+function evaluateCategoryAgainstRules(category, value, rules) {
+    let status = "Strong";
+
+    const hasMin = rules.strongMin !== undefined || rules.defendMin !== undefined;
+    const hasMax = rules.strongMax !== undefined || rules.defendMax !== undefined;
+
+    if (hasMin) {
+        const strongMin = rules.strongMin ?? rules.defendMin;
+        const defendMin = rules.defendMin ?? strongMin;
+
+        if (value < defendMin) {
+            status = "Difficult to Defend";
+        } else if (value < strongMin) {
+            status = "Defensible";
+        }
+    }
+
+    if (hasMax) {
+        const strongMax = rules.strongMax ?? rules.defendMax;
+        const defendMax = rules.defendMax ?? strongMax;
+
+        if (value > defendMax) {
+            status = "Difficult to Defend";
+        } else if (value > strongMax && status !== "Difficult to Defend") {
+            status = "Defensible";
+        }
+    }
+
+    return {
+        category,
+        value,
+        status
+    };
+}
+
+function evaluateStyleGrainRules(styleCode, fermentables) {
+    const styleRules = recipeGrainCategoryRules[styleCode];
+
+    if (!styleRules) {
+        return {
+            status: "Defensible",
+            message: "No grain category rules found for this style.",
+            categoryResults: []
+        };
+    }
+
+    const categoryTotals = sumFermentableCategories(fermentables);
+
+    const categoryResults = Object.keys(categoryTotals)
+        .filter(category => styleRules[category])
+        .map(category => {
+            return evaluateCategoryAgainstRules(
+                category,
+                categoryTotals[category],
+                styleRules[category]
+            );
+        });
+
+    let overallStatus = "Strong";
+
+    if (categoryResults.some(result => result.status === "Difficult to Defend")) {
+        overallStatus = "Difficult to Defend";
+    } else if (categoryResults.some(result => result.status === "Defensible")) {
+        overallStatus = "Defensible";
+    }
+
+    const complexityNote = fermentables.length >= 7
+        ? "Complex recipe. Be prepared to justify each ingredient."
+        : "";
+
+    return {
+        status: overallStatus,
+        styleNote: styleRules.note,
+        complexityNote,
+        categoryResults
+    };
+}
+
+function formatCategoryName(category) {
+    const names = {
+        base: "Base malt",
+        wheat: "Wheat",
+        structuralHelper: "Structural helper",
+        processHelper: "Process helper",
+        flakedAdjunct: "Flaked adjunct",
+        character: "Character malt",
+        darkCharacter: "Dark character malt",
+        roast: "Roast",
+        sugar: "Sugar"
+    };
+
+    return names[category] || category;
+}
+
+function formatGrainRuleFeedback(grainRuleResult) {
+    const categoryHtml = grainRuleResult.categoryResults
+        .map(result => `
+            ${formatCategoryName(result.category)}: ${result.value}% — <strong>${result.status}</strong>
+        `)
+        .join("<br>");
+
+    return `
+        <strong>Grain Architecture:</strong> ${grainRuleResult.status}<br>
+        ${grainRuleResult.styleNote}<br><br>
+        ${categoryHtml}
+        ${grainRuleResult.complexityNote ? `<br><br><em>${grainRuleResult.complexityNote}</em>` : ""}
+    `;
+}
+
 function updateScoreDisplay() {
     const total = correctCount + incorrectCount;
     const accuracy = total === 0 ? 0 : Math.round((correctCount / total) * 100);
