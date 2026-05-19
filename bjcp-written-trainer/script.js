@@ -2336,19 +2336,7 @@ const fermentationFinishTemp = parseFloat(document.getElementById("recipe-fermen
 const gristInput = parseFloat(document.getElementById("recipe-grist").value);
 const fermentables = collectFermentables();
 
-    const fermentables = [];
-
-    for (let i = 0; i < 10; i++) {
-        const ingredient = document.getElementById(`recipe-fermentable-${i}`).value;
-        const pct = parseFloat(document.getElementById(`recipe-fermentable-pct-${i}`).value);
-
-        if (ingredient && !isNaN(pct)) {
-            fermentables.push({
-                ingredient,
-                pct
-            });
-        }
-    }
+   
 
     const gristKg = recipeSetup.units === "imperial"
         ? lbToKg(gristInput)
@@ -2405,12 +2393,7 @@ const fermentables = collectFermentables();
     fermentationFinishTemp
 );
     
-    const fermentationTempResult = evaluateFermentationTemps(
-    currentRecipeStyle.code,
-    fermentationStartTemp,
-    fermentationFinishTemp
-);
-    
+     
     let grainPctStatus = "Strong";
     let grainPctMessage = `Fermentable total is ${grainPctTotal}%.`;
 
