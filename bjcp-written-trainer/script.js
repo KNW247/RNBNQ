@@ -2554,6 +2554,15 @@ ${formatFermentationTempFeedback(fermentationTempResult, fermentationStartTemp, 
 
 nextQuestionButton.style.display = "inline-block";
 }
+function formatYeastFeedback(yeastResult, selectedYeast) {
+    return `
+        <strong>Yeast Selection:</strong> ${yeastResult.status}<br>
+        Selected: ${selectedYeast}<br>
+        ${yeastResult.message}
+    `;
+}
+
+
 function evaluateRange(label, value, min, max, closeTolerance) {
     if (value >= min && value <= max) {
         return {
