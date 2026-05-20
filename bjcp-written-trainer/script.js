@@ -2407,7 +2407,7 @@ function collectFermentables() {
     }
 
     return fermentables;
-
+}
 
 function evaluateRecipeSubmission() {
 const abv = parseFloat(document.getElementById("recipe-abv").value);
