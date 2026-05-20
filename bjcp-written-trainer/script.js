@@ -2377,7 +2377,6 @@ function renderRecipeBuild() {
                 `).join("")}
             </select>
         </label>
-
         <label>
             Cold Crash Included:
             <select id="recipe-cold-crash">
@@ -2385,6 +2384,12 @@ function renderRecipeBuild() {
                 <option value="no">No</option>
             </select>
         </label>
+
+        <button id="evaluate-recipe">Evaluate</button>
+    `;
+
+    document.getElementById("evaluate-recipe").addEventListener("click", evaluateRecipeSubmission);
+}
 
 function collectFermentables() {
     const fermentables = [];
