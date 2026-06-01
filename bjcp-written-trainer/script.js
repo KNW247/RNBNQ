@@ -2508,7 +2508,7 @@ function renderRecipeBuild() {
         </label>
 
 <div class="recipe-action-row">
-    <button id="show-classic-examples">Classic Examples</button>
+   
     <button id="evaluate-recipe">Evaluate</button>
 </div>
     `;
