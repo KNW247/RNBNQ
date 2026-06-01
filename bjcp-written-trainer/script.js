@@ -41,6 +41,125 @@ let selectedCompareOptions = [];
 let trueFalseSession = [];
 let currentTrueFalseIndex = 0;
 let selectedRecipeStyleCode = "random";
+
+// ==============================
+// NAVIGATION / BUTTON MAP
+// ==============================
+//
+// CURRENT DEVELOPMENT STANDARD:
+// - Back to Home stays at the top for now.
+// - Question progression buttons may remain near the bottom of the question box.
+// - Do not move button locations during active debugging unless intentionally migrating one module.
+//
+// FUTURE PRODUCTION STANDARD:
+// - All navigation/progression buttons move into a shared bottom action bar.
+// - Sticky footer behavior comes later.
+// - One module at a time.
+//
+// STATIC HTML BUTTONS:
+// - backHomeButton / #back-home
+//   Purpose: return to home/module selection.
+//   Current location: top of drill panel.
+//
+// - nextQuestionButton / #next-question
+//   Purpose: shared progression button for some drill modes.
+//   Current location: bottom of question box / action-bar area.
+//
+// FOUNDATION BUTTONS:
+// - Category buttons:
+//   Source: HTML .category-select buttons
+//   Purpose: choose strength / bitterness / body / carbonation / color / mixed.
+//   Future: likely removed when Foundation becomes 20-question mixed session.
+//
+// - Answer buttons:
+//   Source: renderQuestion()
+//   Destination: answerContainer
+//   Purpose: multiple-choice answer selection.
+//
+// COMPARE BUTTONS:
+// - Shared identity answer buttons:
+//   Source: renderCompareSharedIdentity()
+//   Destination: answerContainer
+//
+// - Anchor answer buttons:
+//   Source: renderCompareAnchor()
+//   Destination: answerContainer
+//
+// - Descriptor chip buttons:
+//   Source: renderCompareDescriptorStep()
+//   Destination: answerContainer
+//
+// - Submit button:
+//   Source: renderCompareDescriptorStep()
+//   Destination: answerContainer
+//   Future label review: likely "Evaluate" or contextual action.
+//
+// - Continue / Show Model Answer buttons:
+//   Source: checkCompareDescriptors()
+//   Destination: answerContainer
+//   Future: move to action-bar later.
+//
+// GRAVITY / OG ESTIMATION BUTTONS:
+// - Input submit button:
+//   Source: renderGravityQuestion()
+//   Destination: answerContainer
+//   Future label/name may change when Gravity becomes OG Estimation Drill.
+//
+// IBU BUTTONS:
+// - Input submit button:
+//   Source: renderIbuQuestion()
+//   Destination: answerContainer
+//
+// GRIST BUTTONS:
+// - Input submit button:
+//   Source: renderGristQuestion()
+//   Destination: answerContainer
+//
+// MASH BUTTONS:
+// - Answer buttons:
+//   Source: renderMashQuestion()
+//   Destination: answerContainer
+//
+// FERMENTATION BUTTONS:
+// - Yeast / fermentation selection buttons:
+//   Source: renderFermentationQuestion()
+//   Destination: answerContainer
+//
+// TRUE / FALSE BUTTONS:
+// - True / False buttons:
+//   Source: renderTrueFalseQuestion()
+//   Destination: answerContainer
+//   Special rule: rapid-fire auto-advance only.
+//
+// RECIPE BUTTONS:
+// - Evaluate Recipe:
+//   Source: renderRecipeLab() or recipe evaluation area
+//   Current location: likely inside recipe inputs/content.
+//   Future pre-evaluation action bar: Back to Home + Evaluate Recipe.
+//
+// - Adjust & Re-Evaluate:
+//   Source: post-evaluation recipe state
+//   Future post-evaluation action bar.
+//
+// - New Recipe:
+//   Source: post-evaluation recipe state
+//   Future post-evaluation action bar.
+//
+// SEARCH TERMS FOR BUTTON AUDIT:
+// - createElement("button")
+// - textContent =
+// - innerHTML =
+// - appendChild(
+// - nextQuestionButton
+// - backHomeButton
+
+
+
+
+
+
+
+
 const TRUE_FALSE_SESSION_SIZE = 20;
 
 const recipeStyleCodes = [
@@ -1668,7 +1787,7 @@ function renderGravityQuestion() {
     input.placeholder = "Enter OG (example: 1.050)";
 
     const button = document.createElement("button");
-    button.textContent = "Check Answer";
+   button.textContent = "Evaluate";
 
         button.addEventListener("click", function () {
         checkGravityAnswer(input.value, question);
@@ -1704,7 +1823,7 @@ questionText.textContent =
     input.placeholder = "Enter IBU target";
 
     const button = document.createElement("button");
-    button.textContent = "Check Answer";
+button.textContent = "Evaluate";
 
     button.addEventListener("click", function () {
         checkIbuAnswer(input.value, question, style);
@@ -1738,7 +1857,7 @@ questionText.textContent =
     input.placeholder = "Enter kg";
 
     const button = document.createElement("button");
-    button.textContent = "Check Answer";
+    button.textContent = "Evaluate";
 
     button.addEventListener("click", function () {
         checkGristAnswer(input.value, question);
