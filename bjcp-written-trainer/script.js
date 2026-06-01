@@ -1969,7 +1969,7 @@ function checkGravityAnswer(userInput, question) {
 
         feedbackBox.innerHTML = `
             <strong class="correct">Correct.</strong><br>
-            Expected OG: 1.${truePoints}
+            Expected OG: 1.${String(truePoints).padStart(3, "0")}
         `;
     } else {
         incorrectCount++;
@@ -1978,7 +1978,7 @@ function checkGravityAnswer(userInput, question) {
         feedbackBox.innerHTML = `
             <strong class="incorrect">Incorrect.</strong><br>
             You entered: ${userOg.toFixed(3)}<br>
-            Expected OG: 1.${truePoints}
+            Expected OG: 1.${String(truePoints).padStart(3, "0")}
         `;
     }
 }
