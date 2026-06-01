@@ -2694,18 +2694,42 @@ const fermentables = collectFermentables();
         ogRangeResult.status
     )}
 
-        <strong>OG Math:</strong> ${ogMathStatus}<br>
-        ${ogMathMessage}<br><br>
+        ${formatScorecardLine(
+    "OG Math",
+    `Expected 1.${String(expectedOgPoints).padStart(3, "0")}`,
+    "ABV + FG",
+    ogMathStatus
+)}
 
-        ${formatRecipeResult(ibuResult)}
-        ${formatRecipeResult(srmResult)}
+${formatScorecardLine(
+    "IBU",
+    ibu,
+    `${currentRecipeStyle.bitterness.min}-${currentRecipeStyle.bitterness.max}`,
+    ibuResult.status
+)}
 
-        <strong>Total Grist:</strong> ${gristStatus}<br>
-        ${gristMessage}<br><br>
+${formatScorecardLine(
+    "SRM",
+    srm,
+    `${currentRecipeStyle.color.min}-${currentRecipeStyle.color.max}`,
+    srmResult.status
+)}
 
-        <strong>Fermentable % Total:</strong> ${grainPctStatus}<br>
-        ${grainPctMessage}<br><br>
+${formatScorecardLine(
+    "Total Grist",
+    `${gristInput.toFixed(1)} ${recipeSetup.units === "imperial" ? "lb" : "kg"}`,
+    recipeSetup.units === "imperial"
+        ? `Expected ${kgToLb(expectedGristKg).toFixed(1)} lb`
+        : `Expected ${expectedGristKg.toFixed(1)} kg`,
+    gristStatus
+)}
 
+${formatScorecardLine(
+    "Fermentables",
+    `${grainPctTotal}%`,
+    "Target: 100%",
+    grainPctStatus
+)}
      ${formatGrainRuleFeedback(grainRuleResult)}<br><br>
 
 
