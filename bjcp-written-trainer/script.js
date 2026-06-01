@@ -23,6 +23,8 @@ const category = document.querySelectorAll(".category-select button");
 const categorySelect = document.querySelector(".category-select");
 const studySetButtons = document.querySelectorAll(".button-grid button");
 const drillTitle = document.getElementById("drill-title");
+const recipeReevaluateButton = document.getElementById("recipe-reevaluate");
+const recipeNewButton = document.getElementById("recipe-new");
 
 const categoryOptions = {
     strength: ["Session / Low (≤4%)","Standard (≤6%)","Standard+ (≤7.5%)","Strong (≤9%)","Very Strong (>9%)"],
@@ -2682,9 +2684,10 @@ ${formatYeastFeedback(yeastResult, selectedYeast)}<br><br>
 
 ${formatFermentationTempFeedback(fermentationTempResult, fermentationStartTemp, fermentationFinishTemp)}<br><br>
 `;
+nextQuestionButton.style.display = "none";
 
-nextQuestionButton.textContent = "Next Question";
-nextQuestionButton.style.display = "inline-block";
+recipeReevaluateButton.style.display = "inline-block";
+recipeNewButton.style.display = "inline-block";
 }
 function formatYeastFeedback(yeastResult, selectedYeast) {
     return `
