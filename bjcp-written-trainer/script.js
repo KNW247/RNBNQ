@@ -2507,10 +2507,19 @@ function renderRecipeBuild() {
             </select>
         </label>
 
-        <button id="evaluate-recipe">Evaluate</button>
+<div class="recipe-action-row">
+    <button id="show-classic-examples">Classic Examples</button>
+    <button id="evaluate-recipe">Evaluate</button>
+</div>
     `;
 
     document.getElementById("evaluate-recipe").addEventListener("click", evaluateRecipeSubmission);
+    document.getElementById("show-classic-examples").addEventListener("click", function () {
+    feedbackBox.innerHTML = `
+        <strong>Classic Examples</strong><br>
+        Commercial examples for this style will display here.
+    `;
+});
 }
 
 function collectFermentables() {
