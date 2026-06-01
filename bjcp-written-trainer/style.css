@@ -159,6 +159,37 @@ h2 {
     color: white;
 }
 
+
+.scorecard-row {
+    padding: 6px 10px;
+    margin: 0;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 0.95rem;
+}
+
+.scorecard-range {
+    margin-left: 10px;
+    color: #555;
+}
+
+.scorecard-status {
+    float: right;
+    font-weight: bold;
+}
+
+.scorecard-row.strong {
+    border-left: 5px solid #16a34a;
+}
+
+.scorecard-row.defensible {
+    border-left: 5px solid #f59e0b;
+}
+
+.scorecard-row.difficult-to-defend {
+    border-left: 5px solid #dc2626;
+}
+
+
 .card.active button:hover {
     background: #1f2937;
 }
