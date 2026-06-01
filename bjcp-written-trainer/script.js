@@ -2516,6 +2516,9 @@ function renderRecipeBuild() {
     `;
 
     document.getElementById("evaluate-recipe").addEventListener("click", evaluateRecipeSubmission);
+    recipeReevaluateButton.addEventListener("click", function () {
+    evaluateRecipeSubmission();
+});
     document.getElementById("show-classic-examples").addEventListener("click", function () {
     feedbackBox.innerHTML = `
         <strong>Classic Examples</strong><br>
