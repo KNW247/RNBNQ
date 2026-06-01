@@ -2670,12 +2670,29 @@ const fermentables = collectFermentables();
 
     const ogRangeResult = evaluateRange("OG", og, currentRecipeStyle.og.min, currentRecipeStyle.og.max, 0.003);
 
-    feedbackBox.innerHTML = `
-        <strong>Recipe Evaluation</strong><br><br>
+   feedbackBox.innerHTML = `
+    <strong>Recipe Evaluation</strong><br><br>
 
-        ${formatRecipeResult(abvResult)}
-        ${formatRecipeResult(fgResult)}
-        ${formatRecipeResult(ogRangeResult)}
+    ${formatScorecardLine(
+        "ABV",
+        abv,
+        `${currentRecipeStyle.strength.min}-${currentRecipeStyle.strength.max}`,
+        abvResult.status
+    )}
+
+    ${formatScorecardLine(
+        "FG",
+        fg,
+        `${currentRecipeStyle.body.min}-${currentRecipeStyle.body.max}`,
+        fgResult.status
+    )}
+
+    ${formatScorecardLine(
+        "OG",
+        og,
+        `${currentRecipeStyle.og.min}-${currentRecipeStyle.og.max}`,
+        ogRangeResult.status
+    )}
 
         <strong>OG Math:</strong> ${ogMathStatus}<br>
         ${ogMathMessage}<br><br>
