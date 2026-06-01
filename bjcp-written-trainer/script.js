@@ -2542,6 +2542,18 @@ function collectFermentables() {
     return fermentables;
 }
 
+function formatScorecardLine(label, value, range, status) {
+    const statusClass = status.toLowerCase().replaceAll(" ", "-");
+
+    return `
+        <div class="scorecard-row ${statusClass}">
+            <strong>${label}:</strong>
+            ${value} <span class="scorecard-range">Range: ${range}</span>
+            <span class="scorecard-status">${status}</span>
+        </div>
+    `;
+}
+
 function evaluateRecipeSubmission() {
 const abv = parseFloat(document.getElementById("recipe-abv").value);
 const fg = parseFloat(document.getElementById("recipe-fg").value);
