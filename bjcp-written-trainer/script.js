@@ -2683,6 +2683,7 @@ ${formatYeastFeedback(yeastResult, selectedYeast)}<br><br>
 ${formatFermentationTempFeedback(fermentationTempResult, fermentationStartTemp, fermentationFinishTemp)}<br><br>
 `;
 
+nextQuestionButton.textContent = "Re-Evaluate";
 nextQuestionButton.style.display = "inline-block";
 }
 function formatYeastFeedback(yeastResult, selectedYeast) {
