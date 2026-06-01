@@ -11,6 +11,16 @@ body {
     line-height: 1.5;
 }
 
+.action-bar {
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .site-header {
     background: #111827;
     color: white;
