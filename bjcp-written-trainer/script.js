@@ -2214,6 +2214,7 @@ function checkMashAnswer(selectedChoice, displayedChoices) {
             ${strongChoice.response}
         `;
     }
+    nextQuestionButton.style.display = "inline-block";
 }
     
 function checkAnswer(selectedAnswer, data) {
