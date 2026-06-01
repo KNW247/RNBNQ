@@ -2519,12 +2519,7 @@ function renderRecipeBuild() {
     recipeReevaluateButton.addEventListener("click", function () {
     evaluateRecipeSubmission();
 });
-    document.getElementById("show-classic-examples").addEventListener("click", function () {
-    feedbackBox.innerHTML = `
-        <strong>Classic Examples</strong><br>
-        Commercial examples for this style will display here.
-    `;
-});
+    
 }
 
 function collectFermentables() {
