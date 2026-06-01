@@ -2139,6 +2139,8 @@ function checkIbuAnswer(userInput, question, style) {
              ${style.bitterness.designNote ? `<br><em>${style.bitterness.designNote}</em>` : ""}
         `;
     }
+    
+    nextQuestionButton.style.display = "inline-block";
 }
 function checkGristAnswer(userInput, question) {
     const userKg = parseFloat(userInput);
