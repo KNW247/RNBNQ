@@ -3239,22 +3239,19 @@ category.forEach(function(button) {
     });
 });
 if (recipeReevaluateButton) {
-    recipeReevaluateButton.addEventListener("click", function () {
-        console.log("Recipe Re-Evaluate clicked");
+    recipeReevaluateButton.onclick = function () {
         evaluateRecipe();
-    });
+    };
 }
 
 if (recipeNewButton) {
-    recipeNewButton.addEventListener("click", function () {
-        console.log("Recipe New clicked");
+    recipeNewButton.onclick = function () {
         currentMode = "recipe";
         currentRecipeStyle = getRandomRecipeStyle();
         renderRecipeSetup();
         window.scrollTo(0, 0);
-    });
+    };
 }
-
 
 backHomeButton.addEventListener("click", function () {
     studySets.style.display = "block";
