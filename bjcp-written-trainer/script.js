@@ -1840,9 +1840,14 @@ const question = {
     const button = document.createElement("button");
     button.textContent = "Evaluate";
 
-    button.addEventListener("click", function () {
-        checkGravityAnswer(input.value, question);
-    });
+  button.addEventListener("click", function () {
+    if (button.disabled) return;
+
+    checkGravityAnswer(input.value, question);
+
+    input.disabled = true;
+    button.disabled = true;
+});
 
     input.addEventListener("keydown", function(e) {
         if (e.key === "Enter") {
