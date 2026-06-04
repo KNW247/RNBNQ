@@ -3239,18 +3239,20 @@ category.forEach(function(button) {
     });
 });
 if (recipeReevaluateButton) {
-    recipeReevaluateButton.onclick = function () {
+    recipeReevaluateButton.addEventListener("click", function () {
+        console.log("Recipe Re-Evaluate clicked");
         evaluateRecipe();
-    };
+    });
 }
 
 if (recipeNewButton) {
-    recipeNewButton.onclick = function () {
+    recipeNewButton.addEventListener("click", function () {
+        console.log("Recipe New clicked");
         currentMode = "recipe";
         currentRecipeStyle = getRandomRecipeStyle();
         renderRecipeSetup();
         window.scrollTo(0, 0);
-    };
+    });
 }
 
 backHomeButton.addEventListener("click", function () {
