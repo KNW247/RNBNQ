@@ -1805,11 +1805,12 @@ for (let attempt = 0; attempt < 100; attempt++) {
 
     calculatedOg = selectedFg + (selectedAbv / 131.25);
 
-    if (calculatedOg >= style.og.min && calculatedOg <= style.og.max) {
-        break;
-    }
+  if (
+    calculatedOg >= style.og.min - 0.0005 &&
+    calculatedOg <= style.og.max + 0.0005
+) {
+    break;
 }
-
 if (!style || !selectedAbv || !selectedFg) {
     feedbackBox.innerHTML = "Could not generate a valid OG question. Try again.";
     return;
