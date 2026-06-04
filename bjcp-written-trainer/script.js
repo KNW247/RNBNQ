@@ -3238,7 +3238,17 @@ category.forEach(function(button) {
         renderQuestion(button.dataset.category);
     });
 });
+if (recipeReevaluateButton) {
+    recipeReevaluateButton.addEventListener("click", function () {
+        evaluateRecipe();
+    });
+}
 
+if (recipeNewButton) {
+    recipeNewButton.addEventListener("click", function () {
+        renderRecipeSetup();
+    });
+}
 backHomeButton.addEventListener("click", function () {
     studySets.style.display = "block";
     modules.style.display = "block";
