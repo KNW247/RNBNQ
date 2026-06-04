@@ -1776,8 +1776,13 @@ function renderGravityQuestion() {
         style.anchorStatus === "approved"
     );
 
-    const style =
-        gravityStylePool[Math.floor(Math.random() * gravityStylePool.length)];
+   let style = null;
+let selectedAbv = null;
+let selectedFg = null;
+let calculatedOg = null;
+
+for (let attempt = 0; attempt < 100; attempt++) {
+    style = gravityStylePool[Math.floor(Math.random() * gravityStylePool.length)];
 
     const abvMin = Math.ceil(style.strength.min * 4) / 4;
     const abvMax = Math.floor(style.strength.max * 4) / 4;
@@ -1788,8 +1793,7 @@ function renderGravityQuestion() {
         possibleAbvs.push(Number(abv.toFixed(2)));
     }
 
-    const selectedAbv =
-        possibleAbvs[Math.floor(Math.random() * possibleAbvs.length)];
+    selectedAbv = possibleAbvs[Math.floor(Math.random() * possibleAbvs.length)];
 
     const fgMinPoints = Math.round((style.body.min - 1) * 1000);
     const fgMaxPoints = Math.round((style.body.max - 1) * 1000);
@@ -1797,15 +1801,27 @@ function renderGravityQuestion() {
     const selectedFgPoints =
         Math.floor(Math.random() * (fgMaxPoints - fgMinPoints + 1)) + fgMinPoints;
 
-    const selectedFg = 1 + selectedFgPoints / 1000;
+    selectedFg = 1 + selectedFgPoints / 1000;
 
-    const question = {
-        styleCode: style.code,
-        styleName: style.name,
-        abv: selectedAbv,
-        fg: selectedFg
-    };
+    calculatedOg = selectedFg + (selectedAbv / 131.25);
 
+    if (calculatedOg >= style.og.min && calculatedOg <= style.og.max) {
+        break;
+    }
+}
+
+if (!style || !selectedAbv || !selectedFg) {
+    feedbackBox.innerHTML = "Could not generate a valid OG question. Try again.";
+    return;
+}    
+    
+const question = {
+    styleCode: style.code,
+    styleName: style.name,
+    abv: selectedAbv,
+    fg: selectedFg,
+    calculatedOg
+};
     currentStyle = style;
 
     styleName.textContent = `Style: ${style.code} ${style.name}`;
