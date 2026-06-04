@@ -3066,6 +3066,242 @@ launchRecipeButton.addEventListener("click", function () {
     window.scrollTo(0, 0);
 });
 
+studySetButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+        activeStudySet = button.dataset.set;
+
+        studySetButtons.forEach(btn => {
+            btn.classList.remove("selected");
+        });
+
+        button.classList.add("selected");
+
+        drillTitle.textContent = `Foundation Drill — ${getStudySetLabel()}`;
+    });
+});
+
+launchFoundationButton.addEventListener("click", function () {
+    currentMode = "foundation";
+    
+    studySets.style.display = "none";
+    modules.style.display = "none";
+    setCategoryVisibility(true);
+    
+    drillTitle.textContent = `Foundation Drill — ${getStudySetLabel()}`;
+
+    drillPanel.style.display = "block";
+    renderQuestion("strength");
+    window.scrollTo(0, 0);
+});
+
+if (launchCompareButton) {
+    launchCompareButton.addEventListener("click", function () {
+        currentMode = "compare";
+
+        studySets.style.display = "none";
+        modules.style.display = "none";
+        setCategoryVisibility(false);
+
+        drillTitle.textContent = "Compare Drill";
+
+        drillPanel.style.display = "block";
+        renderCompareQuestion();
+        window.scrollTo(0, 0);
+    });
+}
+launchGravityButton.addEventListener("click", function () {
+    currentMode = "gravity";
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+    setCategoryVisibility(false);
+    
+    drillTitle.textContent = "Gravity Drill";
+
+    drillPanel.style.display = "block";
+
+    renderGravityQuestion();
+
+    window.scrollTo(0, 0);
+});
+launchIbuButton.addEventListener("click", function () {
+    currentMode = "ibu";
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+    setCategoryVisibility(false);
+    
+    drillTitle.textContent = "IBU Drill";
+    drillPanel.style.display = "block";
+
+    renderIbuQuestion();
+
+    window.scrollTo(0, 0);
+});
+launchGristButton.addEventListener("click", function () {
+    currentMode = "grist";
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+    setCategoryVisibility(false);
+    
+    drillTitle.textContent = "Grist Drill";
+    drillPanel.style.display = "block";
+
+    renderGristQuestion();
+
+    window.scrollTo(0, 0);
+});
+
+launchMashButton.addEventListener("click", function () {
+    currentMode = "mash";
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+    setCategoryVisibility(false);
+    
+    drillTitle.textContent = "Mash Strategy Drill";
+    drillPanel.style.display = "block";
+
+    renderMashQuestion();
+
+    window.scrollTo(0, 0);
+});
+
+launchFermentationButton.addEventListener("click", function () {
+    currentMode = "fermentation";
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+    setCategoryVisibility(false);
+    
+    drillTitle.textContent = "Fermentation Drill";
+    drillPanel.style.display = "block";
+
+  renderFermentationYeastQuestion();
+
+    window.scrollTo(0, 0);
+});
+
+launchTrueFalseButton.addEventListener("click", function () {
+    currentMode = "truefalse";
+
+    correctCount = 0;
+    incorrectCount = 0;
+    missedQuestions = [];
+    updateScoreDisplay();
+
+    trueFalseSession = [...trueFalseQuestions]
+        .sort(() => Math.random() - 0.5)
+        .slice(0, TRUE_FALSE_SESSION_SIZE);
+
+    currentTrueFalseIndex = 0;
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+    setCategoryVisibility(false);
+
+    drillTitle.textContent = "True / False Drill";
+    drillPanel.style.display = "block";
+
+    renderTrueFalseQuestion();
+
+    window.scrollTo(0, 0);
+});
+
+launchRecipeButton.addEventListener("click", function () {
+    currentMode = "recipe";
+
+    correctCount = 0;
+    incorrectCount = 0;
+    missedQuestions = [];
+    updateScoreDisplay();
+
+    currentRecipeStyle = getRandomRecipeStyle();
+
+    studySets.style.display = "none";
+    modules.style.display = "none";
+    setCategoryVisibility(false);
+
+    drillTitle.textContent = "Recipe Construction Lab";
+    drillPanel.style.display = "block";
+
+    renderRecipeSetup();
+
+    window.scrollTo(0, 0);
+});
+
+
+category.forEach(function(button) {
+    button.addEventListener("click", function() {
+        currentMode = "foundation";
+        renderQuestion(button.dataset.category);
+    });
+});
+
+backHomeButton.addEventListener("click", function () {
+    studySets.style.display = "block";
+    modules.style.display = "block";
+    drillPanel.style.display = "none";
+});
+
+nextQuestionButton.addEventListener("click", function () {
+    if (currentMode === "compare") {
+        renderCompareQuestion();
+        return;
+    }
+
+    if (currentMode === "gravity") {
+        renderGravityQuestion();
+        return;
+    }
+
+    if (currentMode === "ibu") {
+        renderIbuQuestion();
+        return;
+    }
+
+    if (currentMode === "grist") {
+        renderGristQuestion();
+        return;
+    }
+
+    if (currentMode === "fermentation") {
+        renderFermentationYeastQuestion();
+        return;
+    }
+
+    if (currentMode === "mash") {
+        renderMashQuestion();
+        return;
+    }
+
+    if (currentMode === "truefalse") {
+    currentTrueFalseIndex++;
+    renderTrueFalseQuestion();
+    return;
+}
+
+    if (currentMode === "recipe") {
+    currentRecipeStyle = getRandomRecipeStyle();
+    renderRecipeBuild();
+    return;
+}
+    
+    renderQuestion(currentCategory);
+});
+document.addEventListener("keydown", function(e) {
+    if (e.key !== "Enter") return;
+
+    const activeElement = document.activeElement;
+    const isTypingInInput = activeElement && activeElement.tagName === "INPUT";
+
+    if (isTypingInInput) return;
+
+    if (drillPanel.style.display === "block" && nextQuestionButton.style.display !== "none") {
+        nextQuestionButton.click();
+    }
+});
 
 category.forEach(function(button) {
     button.addEventListener("click", function() {
