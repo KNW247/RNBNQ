@@ -1811,6 +1811,7 @@ for (let attempt = 0; attempt < 100; attempt++) {
 ) {
     break;
 }
+}
 if (!style || !selectedAbv || !selectedFg) {
     feedbackBox.innerHTML = "Could not generate a valid OG question. Try again.";
     return;
