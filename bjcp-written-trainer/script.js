@@ -3241,7 +3241,7 @@ category.forEach(function(button) {
 if (recipeReevaluateButton) {
     recipeReevaluateButton.addEventListener("click", function () {
         console.log("Recipe Re-Evaluate clicked");
-        evaluateRecipe();
+        evaluateRecipeSubmission();
     });
 }
 
