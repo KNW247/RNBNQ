@@ -1771,15 +1771,47 @@ function renderCompareModelAnswer() {
     answerContainer.innerHTML = "";
 }
 function renderGravityQuestion() {
-    const question =
-        module1GravityQuestions[Math.floor(Math.random() * module1GravityQuestions.length)];
+    const gravityStylePool = styles.filter(style =>
+        recipeStyleCodes.includes(style.code) ||
+        style.anchorStatus === "approved"
+    );
 
-    currentStyle = null;
+    const style =
+        gravityStylePool[Math.floor(Math.random() * gravityStylePool.length)];
 
-    styleName.textContent = "Gravity Drill";
+    const abvMin = Math.ceil(style.strength.min * 4) / 4;
+    const abvMax = Math.floor(style.strength.max * 4) / 4;
+
+    const possibleAbvs = [];
+
+    for (let abv = abvMin; abv <= abvMax; abv += 0.25) {
+        possibleAbvs.push(Number(abv.toFixed(2)));
+    }
+
+    const selectedAbv =
+        possibleAbvs[Math.floor(Math.random() * possibleAbvs.length)];
+
+    const fgMinPoints = Math.round((style.body.min - 1) * 1000);
+    const fgMaxPoints = Math.round((style.body.max - 1) * 1000);
+
+    const selectedFgPoints =
+        Math.floor(Math.random() * (fgMaxPoints - fgMinPoints + 1)) + fgMinPoints;
+
+    const selectedFg = 1 + selectedFgPoints / 1000;
+
+    const question = {
+        styleCode: style.code,
+        styleName: style.name,
+        abv: selectedAbv,
+        fg: selectedFg
+    };
+
+    currentStyle = style;
+
+    styleName.textContent = `Style: ${style.code} ${style.name}`;
 
     questionText.textContent =
-        `Target ABV: ${question.abv}% | Target FG: ${question.fg.toFixed(3)} | Estimate OG`;
+        `Target ABV: ${question.abv.toFixed(2)}% | Expected FG: ${question.fg.toFixed(3)} | Estimate OG`;
 
     feedbackBox.innerHTML = "";
     answerContainer.innerHTML = "";
@@ -1789,17 +1821,18 @@ function renderGravityQuestion() {
     input.placeholder = "Enter OG (example: 1.050)";
 
     const button = document.createElement("button");
-   button.textContent = "Evaluate";
+    button.textContent = "Evaluate";
 
-        button.addEventListener("click", function () {
+    button.addEventListener("click", function () {
         checkGravityAnswer(input.value, question);
     });
 
     input.addEventListener("keydown", function(e) {
-    if (e.key === "Enter") {
-        button.click();
-    }
-});
+        if (e.key === "Enter") {
+            button.click();
+        }
+    });
+
     answerContainer.appendChild(input);
     answerContainer.appendChild(button);
 
