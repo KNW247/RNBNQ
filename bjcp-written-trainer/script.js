@@ -2291,6 +2291,9 @@ function capitalize(word) {
 }
 
 function renderRecipeSetup() {
+    nextQuestionButton.style.display = "none";
+    recipeReevaluateButton.style.display = "none";
+    recipeNewButton.style.display = "none";
     styleName.textContent = "Recipe Setup";
 
     questionText.innerHTML = `
