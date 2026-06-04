@@ -3240,15 +3240,22 @@ category.forEach(function(button) {
 });
 if (recipeReevaluateButton) {
     recipeReevaluateButton.addEventListener("click", function () {
+        console.log("Recipe Re-Evaluate clicked");
         evaluateRecipe();
     });
 }
 
 if (recipeNewButton) {
     recipeNewButton.addEventListener("click", function () {
+        console.log("Recipe New clicked");
+        currentMode = "recipe";
+        currentRecipeStyle = getRandomRecipeStyle();
         renderRecipeSetup();
+        window.scrollTo(0, 0);
     });
 }
+
+
 backHomeButton.addEventListener("click", function () {
     studySets.style.display = "block";
     modules.style.display = "block";
@@ -3313,20 +3320,7 @@ document.addEventListener("keydown", function(e) {
     }
 });
 
-category.forEach(function(button) {
-    button.addEventListener("click", function() {
-        currentMode = "foundation";
-        renderQuestion(button.dataset.category);
-    });
-});
 
-backHomeButton.addEventListener("click", function () {
-    studySets.style.display = "block";
-    modules.style.display = "block";
-    drillPanel.style.display = "none";
-});
-
-nextQuestionButton.addEventListener("click", function () {
     if (currentMode === "compare") {
         renderCompareQuestion();
         return;
