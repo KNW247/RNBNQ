@@ -1841,8 +1841,13 @@ const question = {
     const button = document.createElement("button");
     button.textContent = "Evaluate";
 
-  button.addEventListener("click", function () {
+ button.addEventListener("click", function () {
+    if (button.disabled) return;
+
     checkGravityAnswer(input.value, question);
+
+    input.disabled = true;
+    button.disabled = true;
 });
 
     input.addEventListener("keydown", function(e) {
