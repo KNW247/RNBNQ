@@ -1945,12 +1945,35 @@ function renderMashQuestion() {
     feedbackBox.innerHTML = "";
     answerContainer.innerHTML = "";
 
-    const choices = [
-        { ...pickRandom(question.highlyDefensible), tier: "highlyDefensible" },
-        { ...pickRandom(question.defensible), tier: "defensible" },
-        { ...pickRandom(question.difficultToDefend), tier: "difficultToDefend" },
-        { ...pickRandom(question.poorFit), tier: "poorFit" }
-    ];
+   const choices = [];
+
+// Up to two Highly Defensible choices
+const highChoices = [...question.highlyDefensible];
+shuffleArray(highChoices);
+
+highChoices.slice(0, 2).forEach(choice => {
+    choices.push({ ...choice, tier: "highlyDefensible" });
+});
+
+// One Defensible (if present)
+if (question.defensible && question.defensible.length) {
+    choices.push({
+        ...pickRandom(question.defensible),
+        tier: "defensible"
+    });
+}
+
+// One Difficult to Defend
+choices.push({
+    ...pickRandom(question.difficultToDefend),
+    tier: "difficultToDefend"
+});
+
+// One Poor Fit
+choices.push({
+    ...pickRandom(question.poorFit),
+    tier: "poorFit"
+});
 
     shuffleArray(choices).forEach(choice => {
         const button = document.createElement("button");
