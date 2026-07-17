@@ -1054,7 +1054,7 @@ const module5FermentationQuestions = [
     styleCode: "10A",
     styleName: "Weissbier",
     correctYeast: "german_expressive",
-    correctSchedules: ["wheat_expression"],
+    correctSchedules: ["wheat_phenolic", "wheat_estery"]
     rationale: "For Weissbier, fermentation should encourage appropriate banana ester and clove phenol character from the wheat yeast."
   },
   {
