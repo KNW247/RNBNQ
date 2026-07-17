@@ -66,7 +66,7 @@ const styles = [
   {
     code: "15B",
     name: "Irish Stout",
-    strength: { anchor: ["Session / Low", "Standard"], min: 3.8, max: 5.0, unit: "%" },
+    strength: { anchor: ["Standard", "Session / Low"], min: 3.8, max: 5.0, unit: "%" },
     bitterness: { anchor: "Medium-High Bitter", min: 25, max: 45, unit: "IBU" },
     body: { anchor: "Medium-Light", min: 1.007, max: 1.011, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium-light to medium body. Moderate carbonation. Smooth." },
@@ -384,7 +384,7 @@ const styles = [
 {
     code: "4B",
     name: "Festbier",
-    strength: { anchor:["Standard", "Standard+"], min: 5.8, max: 6.3, unit: "%" },
+    strength: { anchor:["Standard+", "Standard"], min: 5.8, max: 6.3, unit: "%" },
     bitterness: { anchor: "Slightly Malt-forward", min: 18, max: 25, unit: "IBU" },
     body: { anchor: "Medium", min: 1.010, max: 1.012, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium body. Medium carbonation." },
