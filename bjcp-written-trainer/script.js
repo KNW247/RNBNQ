@@ -969,48 +969,48 @@ const yeastFamilyOptions = [
 const fermentationScheduleOptions = [
   {
     id: "lager_classic",
-    label: "8–12°C primary / cleanup rest / cold conditioning",
-    explanation: "Classic cool fermentation supports clean attenuation and smooth maturation appropriate for lager styles."
+    label: "8–12°C primary / diacetyl rest / cold conditioning",
+    explanation: "Classic cool lager fermentation supports clean attenuation, followed by a diacetyl rest and extended cold conditioning for maturation."
   },
   {
     id: "american_clean",
-    label: "18–20°C controlled fermentation",
-    explanation: "A controlled fermentation in this range supports clean attenuation with restrained yeast character."
+    label: "17–19°C clean, controlled ale fermentation",
+    explanation: "A cool, controlled fermentation minimizes ester production while promoting clean attenuation."
   },
   {
     id: "english_moderate",
-    label: "18–21°C controlled fermentation with moderate ester expression",
-    explanation: "This schedule supports moderate ester development while maintaining control and balance."
+    label: "19–21°C fermentation encouraging moderate ester expression",
+    explanation: "A slightly warmer fermentation encourages the moderate fruity esters expected in traditional English ales."
   },
   {
     id: "irish_clean",
-    label: "17–20°C restrained fermentation",
-    explanation: "A restrained fermentation helps preserve clean roast expression and drinkability."
+    label: "17–19°C restrained ale fermentation",
+    explanation: "A restrained fermentation keeps ester production low, allowing roast character and drinkability to remain the focus."
   },
   {
-    id: "wheat_expression",
-    label: "17–22°C fermentation encouraging ester/phenolic expression",
-    explanation: "This range supports expressive yeast character including ester and phenolic development."
+    id: "wheat_phenolic",
+    label: "17–19°C fermentation favoring clove/phenolic expression",
+    explanation: "A cooler fermentation with a German wheat strain emphasizes clove-like phenols while restraining banana esters."
+  },
+  {
+    id: "wheat_estery",
+    label: "20–22°C fermentation favoring banana/ester expression",
+    explanation: "A warmer fermentation with a German wheat strain encourages banana esters while maintaining appropriate phenolic complexity."
   },
   {
     id: "belgian_rise",
     label: "18°C start / controlled rise to 24–26°C",
-    explanation: "A controlled temperature rise encourages expressive Belgian character and complete attenuation."
+    explanation: "Beginning cool and allowing a controlled rise promotes expressive Belgian character and complete attenuation."
   },
   {
     id: "warm_clean_fast",
-    label: "20–23°C controlled fermentation for faster completion",
-    explanation: "A plausible clean-fermentation approach, but often warmer than ideal for styles requiring restrained fermentation character."
+    label: "22–24°C warm fermentation for rapid completion",
+    explanation: "A warmer fermentation may complete quickly but increases the risk of excessive ester or fusel alcohol production in restrained styles."
   },
   {
     id: "cool_restrained",
-    label: "14–16°C restrained fermentation with extended conditioning",
-    explanation: "A plausible restrained schedule, but often mismatched for styles requiring either colder lagering or warmer expressive ale fermentation."
-  },
-  {
-    id: "steady_room_temp",
-    label: "19–21°C steady fermentation through completion",
-    explanation: "A plausible general-purpose ale schedule, but not always appropriate for style-specific fermentation goals."
+    label: "14–16°C cool ale fermentation with extended conditioning",
+    explanation: "An unusually cool ale fermentation suppresses yeast expression and often requires extended conditioning."
   }
 ];
 
