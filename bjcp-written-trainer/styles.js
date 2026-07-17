@@ -169,7 +169,7 @@ const styles = [
 {
     code: "11C",
     name: "Strong Bitter",
-    strength: { anchor: ["Standard+", "Standard"], min: 4.6, max: 6.2, unit: "%" },
+    strength: { anchor: ["Standard", "Standard+"], min: 4.6, max: 6.2, unit: "%" },
     bitterness: { anchor: "Firm Bitter", min: 30, max: 50, unit: "IBU" },
     body: { anchor: "Medium", min: 1.010, max: 1.016, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Low to moderate carbonation, although bottled versions will be higher." },
@@ -384,7 +384,7 @@ const styles = [
 {
     code: "4B",
     name: "Festbier",
-    strength: { anchor: "Standard+", min: 5.8, max: 6.3, unit: "%" },
+    strength: { anchor:["Standard", "Standard+"], min: 5.8, max: 6.3, unit: "%" },
     bitterness: { anchor: "Slightly Malt-forward", min: 18, max: 25, unit: "IBU" },
     body: { anchor: "Medium", min: 1.010, max: 1.012, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium body. Medium carbonation." },
