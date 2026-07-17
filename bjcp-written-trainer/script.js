@@ -710,12 +710,14 @@ const module4MashQuestions = [
     styleCode: "5D",
     styleName: "German Pils",
     highlyDefensible: [
-      { id: "low", response: "A lower saccharification mash promotes a highly fermentable wort, directly supporting the crisp dry finish, lean body, and firm drinkability expected in German Pils." },
-      { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach for German Pils when fully specified. A lower beta-amylase rest establishes fermentability, followed by a higher alpha-amylase rest to preserve structure without sacrificing the dry finish expected in the style." }
-    ],
-    defensible: [
-      { id: "decoction", response: "Incorrect for this drill, but defensible. A decoction mash can be a strong traditional choice for German Pils if fully justified and properly detailed. However, it requires more explanation, process clarity, and writing time, making it higher-risk if left incomplete." }
-    ],
+  { id: "low", response: "A lower saccharification mash promotes a highly fermentable wort, directly supporting the crisp dry finish, lean body, and firm drinkability expected in German Pils." },
+
+  { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach for German Pils when fully specified. A lower beta-amylase rest establishes fermentability, followed by a higher alpha-amylase rest to preserve structure without sacrificing the dry finish expected in the style." },
+
+  { id: "decoction", response: "A decoction mash is a classic traditional approach for German Pils and is highly defensible on the BJCP written exam. While it requires more explanation than a single-infusion or Hochkurz mash, it is entirely appropriate if you clearly describe the process and explain how it supports the crisp, highly attenuated profile expected in the style." }
+],
+defensible: [
+],
     difficultToDefend: [
       { id: "mid", response: "A mid saccharification mash can work, but it is less direct for achieving the crisp dry finish expected in German Pils and may preserve more body than ideal." }
     ],
@@ -724,77 +726,76 @@ const module4MashQuestions = [
     ]
   },
 
-  {
-    styleCode: "3B",
-    styleName: "Czech Premium Pale Lager",
-    highlyDefensible: [
-      { id: "mid", response: "A mid saccharification mash balances fermentability and dextrin production, preserving the rounded malt body expected in Czech Premium Pale Lager while still allowing sufficient attenuation to balance firm bitterness." },
-      { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest provides balanced fermentability and body while aligning with classic continental lager process." }
-    ],
-    defensible: [
-      { id: "decoction", response: "Incorrect for this drill, but defensible. A decoction mash can be a strong traditional choice for Czech Premium Pale Lager if fully justified and properly detailed. However, it requires more explanation, process clarity, and writing time, making it higher-risk if left incomplete." }
-    ],
-    difficultToDefend: [
-      { id: "low", response: "A lower saccharification mash may overemphasize fermentability and push the beer drier than intended, reducing the rounded malt character expected in the style." }
-    ],
-    poorFit: [
-      { id: "high", response: "A high saccharification mash may preserve excessive dextrins, pushing the beer toward a heavier finish that works against the intended balance and drinkability." }
-    ]
-  },
+ {
+  styleCode: "3B",
+  styleName: "Czech Premium Pale Lager",
+  highlyDefensible: [
+    { id: "mid", response: "A mid saccharification mash balances fermentability and dextrin production, preserving the rounded malt body expected in Czech Premium Pale Lager while still allowing sufficient attenuation to balance firm bitterness." },
+    { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest provides balanced fermentability and body while aligning with classic continental lager process." },
+    { id: "decoction", response: "A decoction mash is a classic traditional approach for Czech Premium Pale Lager and is highly defensible on the BJCP written exam. While it requires more explanation than a single-infusion or Hochkurz mash, it is entirely appropriate if you clearly describe the process and explain how it supports the rounded malt character and balanced finish expected in the style." }
+  ],
+  defensible: [
+  ],
+  difficultToDefend: [
+    { id: "low", response: "A lower saccharification mash may overemphasize fermentability and push the beer drier than intended, reducing the rounded malt character expected in the style." }
+  ],
+  poorFit: [
+    { id: "high", response: "A high saccharification mash may preserve excessive dextrins, pushing the beer toward a heavier finish that works against the intended balance and drinkability." }
+  ]
+},
+{
+  styleCode: "6A",
+  styleName: "Märzen",
+  highlyDefensible: [
+    { id: "mid", response: "A mid saccharification mash balances fermentability and dextrin production, preserving the smooth malt richness expected in Märzen while still allowing sufficient attenuation to avoid a heavy or sweet finish." },
+    { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest provides balanced fermentability and malt structure while aligning with traditional continental lager process." },
+    { id: "decoction", response: "A decoction mash is a classic traditional approach for Märzen and is highly defensible on the BJCP written exam. While it requires more explanation than a single-infusion or Hochkurz mash, it is entirely appropriate if you clearly describe the process and explain how it supports the rich malt depth and smooth finish expected in the style." }
+  ],
+  defensible: [
+  ],
+  difficultToDefend: [
+    { id: "low", response: "A lower saccharification mash may overemphasize fermentability and dry the beer out more than intended, reducing the smooth malt richness expected in Märzen." }
+  ],
+  poorFit: [
+    { id: "high", response: "A high saccharification mash may preserve excessive dextrins and push the beer toward a heavier or sweeter finish, reducing drinkability." }
+  ]
+},
 
-  {
-    styleCode: "6A",
-    styleName: "Märzen",
-    highlyDefensible: [
-      { id: "mid", response: "A mid saccharification mash balances fermentability and dextrin production, preserving the smooth malt richness expected in Märzen while still allowing sufficient attenuation to avoid a heavy or sweet finish." },
-      { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest provides balanced fermentability and malt structure while aligning with traditional continental lager process." }
-    ],
-    defensible: [
-      { id: "decoction", response: "Incorrect for this drill, but defensible. A decoction mash can be a strong traditional choice for Märzen if fully justified and properly detailed. However, it requires more explanation, process clarity, and writing time, making it higher-risk if left incomplete." }
-    ],
-    difficultToDefend: [
-      { id: "low", response: "A lower saccharification mash may overemphasize fermentability and dry the beer out more than intended, reducing the smooth malt richness expected in Märzen." }
-    ],
-    poorFit: [
-      { id: "high", response: "A high saccharification mash may preserve excessive dextrins and push the beer toward a heavier or sweeter finish, reducing drinkability." }
-    ]
-  },
+{
+  styleCode: "4B",
+  styleName: "Festbier",
+  highlyDefensible: [
+    { id: "low", response: "A lower saccharification mash promotes a highly fermentable wort, supporting the dry, highly drinkable finish expected in Festbier while preserving enough malt structure through the grist and lager fermentation profile." },
+    { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest supports strong attenuation while preserving structure and aligning with traditional continental lager process." },
+    { id: "decoction", response: "A decoction mash is a classic traditional approach for Festbier and is highly defensible on the BJCP written exam. While it requires more explanation than a single-infusion or Hochkurz mash, it is entirely appropriate if you clearly describe the process and explain how it supports the clean malt character and highly drinkable finish expected in the style." }
+  ],
+  defensible: [
+  ],
+  difficultToDefend: [
+    { id: "mid", response: "A mid saccharification mash can work, but it may preserve more body than ideal for a style that should finish cleaner and more attenuated than Märzen." }
+  ],
+  poorFit: [
+    { id: "high", response: "A high saccharification mash favors dextrin production and fuller body, which conflicts with the clean, highly drinkable finish expected in Festbier." }
+  ]
+},
 
-  {
-    styleCode: "4B",
-    styleName: "Festbier",
-    highlyDefensible: [
-      { id: "low", response: "A lower saccharification mash promotes a highly fermentable wort, supporting the dry, highly drinkable finish expected in Festbier while preserving enough malt structure through the grist and lager fermentation profile." },
-      { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest supports strong attenuation while preserving structure and aligning with traditional continental lager process." }
-    ],
-    defensible: [
-      { id: "decoction", response: "Incorrect for this drill, but defensible. A decoction mash can be a strong traditional choice for Festbier if fully justified and properly detailed. However, it requires more explanation, process clarity, and writing time, making it higher-risk if left incomplete." }
-    ],
-    difficultToDefend: [
-      { id: "mid", response: "A mid saccharification mash can work, but it may preserve more body than ideal for a style that should finish cleaner and more attenuated than Märzen." }
-    ],
-    poorFit: [
-      { id: "high", response: "A high saccharification mash favors dextrin production and fuller body, which conflicts with the clean, highly drinkable finish expected in Festbier." }
-    ]
-  },
-
-  {
-    styleCode: "9A",
-    styleName: "Doppelbock",
-   highlyDefensible: [
-      { id: "mid", response: "A mid saccharification mash balances fermentability and dextrin production, preserving the rich malt depth and fuller body expected in Doppelbock while still allowing enough attenuation to avoid a cloying finish." },
-      { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest provides balanced fermentability and malt structure while aligning with traditional continental lager brewing practice." }
-    ],
-    defensible: [
-      { id: "decoction", response: "Incorrect for this drill, but defensible. A decoction mash can be a strong traditional choice for Doppelbock if fully justified and properly detailed. However, it requires more explanation, process clarity, and writing time, making it higher-risk if left incomplete." }
-    ],
-    difficultToDefend: [
-      { id: "high", response: "A high saccharification mash may preserve excessive dextrins in an already high-gravity beer, increasing the risk of a heavy, cloying finish." }
-    ],
-    poorFit: [
-      { id: "low", response: "A lower saccharification mash may overemphasize fermentability and dry the beer out more than intended, reducing the rich malt fullness expected in Doppelbock." }
-    ]
-  },
+{
+  styleCode: "9A",
+  styleName: "Doppelbock",
+  highlyDefensible: [
+    { id: "mid", response: "A mid saccharification mash balances fermentability and dextrin production, preserving the rich malt depth and fuller body expected in Doppelbock while still allowing enough attenuation to avoid a cloying finish." },
+    { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest provides balanced fermentability and malt structure while aligning with traditional continental lager brewing practice." },
+    { id: "decoction", response: "A decoction mash is a classic traditional approach for Doppelbock and is highly defensible on the BJCP written exam. While it requires more explanation than a single-infusion or Hochkurz mash, it is entirely appropriate if you clearly describe the process and explain how it supports the rich malt depth and full-bodied finish expected in the style." }
+  ],
+  defensible: [
+  ],
+  difficultToDefend: [
+    { id: "high", response: "A high saccharification mash may preserve excessive dextrins in an already high-gravity beer, increasing the risk of a heavy, cloying finish." }
+  ],
+  poorFit: [
+    { id: "low", response: "A lower saccharification mash may overemphasize fermentability and dry the beer out more than intended, reducing the rich malt fullness expected in Doppelbock." }
+  ]
+},
 
   {
     styleCode: "10A",
