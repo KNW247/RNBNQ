@@ -694,7 +694,7 @@ const module3GristQuestions = [
 
 
 // MODULE 4 — Mash Strategy
-// Prompt: choose the strongest exam-safe mash strategy
+// Prompt: choose an appropriate exam-safe mash strategy
 
 const mashStrategyOptions = {
   low: "Low Saccharification Mash (62–64°C)",
@@ -1944,16 +1944,16 @@ function renderMashQuestion() {
         module4MashQuestions[Math.floor(Math.random() * module4MashQuestions.length)];
 
     styleName.textContent = `Style: ${question.styleCode} ${question.styleName}`;
-    questionText.textContent = "Choose the strongest mash strategy for this recipe.";
+    questionText.textContent = "Choose an appropriate mash schedule for this style.";
 
     feedbackBox.innerHTML = "";
     answerContainer.innerHTML = "";
 
     const choices = [
-        { ...pickRandom(question.strong), tier: "strong" },
+        { ...pickRandom(question.highlyDefensible), tier: "highlyDefensible" },
         { ...pickRandom(question.defensible), tier: "defensible" },
-        { ...pickRandom(question.risky), tier: "risky" },
-        { ...pickRandom(question.inconsistent), tier: "inconsistent" }
+        { ...pickRandom(question.difficultToDefend), tier: "difficultToDefend" },
+        { ...pickRandom(question.poorFit), tier: "poorFit" }
     ];
 
     shuffleArray(choices).forEach(choice => {
@@ -2230,17 +2230,17 @@ function checkGristAnswer(userInput, question) {
     }
 }
 function checkMashAnswer(selectedChoice, displayedChoices) {
-    const isCorrect = selectedChoice.tier === "strong";
+    const isCorrect = selectedChoice.tier === "highlyDefensible";
 
-    const strongChoice = displayedChoices.find(choice => choice.tier === "strong");
-    const strongLabel = mashStrategyOptions[strongChoice.id];
+    const highlyDefensibleChoice = displayedChoices.find(choice => choice.tier === "highlyDefensible");
+    const highlyDefensibleLabel = mashStrategyOptions[highlyDefensibleChoice.id];
 
     const buttons = answerContainer.querySelectorAll("button");
 
     buttons.forEach(button => {
         button.disabled = true;
 
-        if (button.textContent === strongLabel) {
+        if (button.textContent === highlyDefensibleLabel) {
             button.style.backgroundColor = "#16a34a";
             button.style.color = "white";
         }
@@ -2270,8 +2270,8 @@ function checkMashAnswer(selectedChoice, displayedChoices) {
             <strong class="incorrect">Incorrect.</strong><br>
             ${selectedChoice.response}<br><br>
             <strong>Stronger answer shown:</strong><br>
-            ${strongLabel}<br><br>
-            ${strongChoice.response}
+            ${highlyDefensibleLabel}<br><br>
+            ${highlyDefensibleChoice.response}
         `;
     }
     nextQuestionButton.style.display = "inline-block";
