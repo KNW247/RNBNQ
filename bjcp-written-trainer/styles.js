@@ -324,7 +324,7 @@ const styles = [
 {
     code: "24B",
     name: "Belgian Pale Ale",
-    strength: { anchor: ["Standard+", "Strong"], min: 4.8, max: 5.5, unit: "%" },
+    strength: { anchor: "Standard", min: 4.8, max: 5.5, unit: "%" },
     bitterness: { anchor: "Balanced", min: 20, max: 30, unit: "IBU" },
     body: { anchor: "Medium", min: 1.008, max: 1.014, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium body. Moderate to moderately-high carbonation." },
@@ -336,7 +336,7 @@ const styles = [
 {
     code: "25A",
     name: "Belgian Blond Ale",
-    strength: { anchor: "Standard+", min: 6.0, max: 7.5, unit: "%" },
+    strength: { anchor: ["Standard+", "Strong"], min: 6.0, max: 7.5, unit: "%" },
     bitterness: { anchor: "Slightly Malt-forward", min: 15, max: 30, unit: "IBU" },
     body: { anchor: "Medium", min: 1.008, max: 1.018, unit: "FG" },
     carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium body. Medium-high to high carbonation." },
