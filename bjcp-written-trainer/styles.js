@@ -420,7 +420,7 @@ const styles = [
 {
     code: "5C",
     name: "German Helles Exportbier",
-    strength: { anchor: "Standard+", min: 5.0, max: 6.0, unit: "%" },
+    strength: { anchor: "Standard", min: 5.0, max: 6.0, unit: "%" },
     bitterness: { anchor: "Balanced", min: 20, max: 30, unit: "IBU" },
     body: { anchor: "Medium", min: 1.008, max: 1.015, unit: "FG" },
     carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium body. Medium to high carbonation." },
