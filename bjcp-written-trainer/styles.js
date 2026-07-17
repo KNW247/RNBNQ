@@ -50,7 +50,7 @@ const styles = [
 {
     code: "6A",
     name: "Märzen",
-    strength: { anchor: "Standard+", min: 5.6, max: 6.3, unit: "%" },
+    strength: { anchor: ["Standard", "Standard+"], min: 5.6, max: 6.3, unit: "%" },
     bitterness: { anchor: "Slightly Malt-forward", min: 18, max: 24, unit: "IBU" },
     body: { anchor: "Medium", min: 1.010, max: 1.014, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium body, with a smooth, creamy texture that often suggests a fuller mouthfeel. Medium carbonation. Fully attenuated, without a sweet or cloying impression." },
@@ -185,7 +185,7 @@ const styles = [
 {
     code: "18A",
     name: "Blonde Ale",
-    strength: { anchor: "Standard", min: 3.8, max: 5.5, unit: "%" },
+    strength: { anchor: ["Standard", "Session / Low"], min: 3.8, max: 5.5, unit: "%" },
     bitterness: { anchor: "Balanced", min: 15, max: 28, unit: "IBU" },
     body: { anchor: "Medium-Light", min: 1.008, max: 1.013, unit: "FG" },
     carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium to high carbonation." },
@@ -228,7 +228,7 @@ const styles = [
 {
     code: "20A",
     name: "American Porter",
-    strength: { anchor: ["Standard+", "Standard"], min: 4.8, max: 6.5, unit: "%" },
+    strength: { anchor: ["Standard", "Standard+"], min: 4.8, max: 6.5, unit: "%" },
     bitterness: { anchor: "Firm Bitter", min: 25, max: 50, unit: "IBU" },
     body: { anchor: "Medium-Full", min: 1.012, max: 1.018, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium to medium-full body. Moderate carbonation." },
@@ -264,7 +264,7 @@ const styles = [
 {
     code: "21A",
     name: "American IPA",
-    strength: { anchor: "Standard+", min: 5.5, max: 7.5, unit: "%" },
+    strength: { anchor: ["Standard+", "Standard"], min: 5.5, max: 7.5, unit: "%" },
     bitterness: { anchor: "Hop-forward", min: 40, max: 70, unit: "IBU" },
     body: { anchor: "Medium", min: 1.008, max: 1.014, unit: "FG" },
     carbonation: { anchor: "Medium-High", min: null, max: null, unit: null, text: "Medium-light to medium body. Medium to high carbonation." },
@@ -324,7 +324,7 @@ const styles = [
 {
     code: "24B",
     name: "Belgian Pale Ale",
-    strength: { anchor: "Standard", min: 4.8, max: 5.5, unit: "%" },
+    strength: { anchor: ["Standard+", "Strong"], min: 4.8, max: 5.5, unit: "%" },
     bitterness: { anchor: "Balanced", min: 20, max: 30, unit: "IBU" },
     body: { anchor: "Medium", min: 1.008, max: 1.014, unit: "FG" },
     carbonation: { anchor: "Moderate", min: null, max: null, unit: null, text: "Medium body. Moderate to moderately-high carbonation." },
