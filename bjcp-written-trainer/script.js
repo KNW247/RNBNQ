@@ -716,8 +716,7 @@ const module4MashQuestions = [
 
   { id: "decoction", response: "A decoction mash is a classic traditional approach for German Pils and is highly defensible on the BJCP written exam. While it requires more explanation than a single-infusion or Hochkurz mash, it is entirely appropriate if you clearly describe the process and explain how it supports the crisp, highly attenuated profile expected in the style." }
 ],
-defensible: [
-],
+
     difficultToDefend: [
       { id: "mid", response: "A mid saccharification mash can work, but it is less direct for achieving the crisp dry finish expected in German Pils and may preserve more body than ideal." }
     ],
@@ -734,8 +733,7 @@ defensible: [
     { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest provides balanced fermentability and body while aligning with classic continental lager process." },
     { id: "decoction", response: "A decoction mash is a classic traditional approach for Czech Premium Pale Lager and is highly defensible on the BJCP written exam. While it requires more explanation than a single-infusion or Hochkurz mash, it is entirely appropriate if you clearly describe the process and explain how it supports the rounded malt character and balanced finish expected in the style." }
   ],
-  defensible: [
-  ],
+ 
   difficultToDefend: [
     { id: "low", response: "A lower saccharification mash may overemphasize fermentability and push the beer drier than intended, reducing the rounded malt character expected in the style." }
   ],
@@ -751,8 +749,7 @@ defensible: [
     { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest provides balanced fermentability and malt structure while aligning with traditional continental lager process." },
     { id: "decoction", response: "A decoction mash is a classic traditional approach for Märzen and is highly defensible on the BJCP written exam. While it requires more explanation than a single-infusion or Hochkurz mash, it is entirely appropriate if you clearly describe the process and explain how it supports the rich malt depth and smooth finish expected in the style." }
   ],
-  defensible: [
-  ],
+ 
   difficultToDefend: [
     { id: "low", response: "A lower saccharification mash may overemphasize fermentability and dry the beer out more than intended, reducing the smooth malt richness expected in Märzen." }
   ],
@@ -769,8 +766,7 @@ defensible: [
     { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest supports strong attenuation while preserving structure and aligning with traditional continental lager process." },
     { id: "decoction", response: "A decoction mash is a classic traditional approach for Festbier and is highly defensible on the BJCP written exam. While it requires more explanation than a single-infusion or Hochkurz mash, it is entirely appropriate if you clearly describe the process and explain how it supports the clean malt character and highly drinkable finish expected in the style." }
   ],
-  defensible: [
-  ],
+ 
   difficultToDefend: [
     { id: "mid", response: "A mid saccharification mash can work, but it may preserve more body than ideal for a style that should finish cleaner and more attenuated than Märzen." }
   ],
@@ -787,8 +783,7 @@ defensible: [
     { id: "hochkurz", response: "A Hochkurz step mash is a strong traditional approach when fully specified. A lower beta-amylase rest followed by a higher alpha-amylase rest provides balanced fermentability and malt structure while aligning with traditional continental lager brewing practice." },
     { id: "decoction", response: "A decoction mash is a classic traditional approach for Doppelbock and is highly defensible on the BJCP written exam. While it requires more explanation than a single-infusion or Hochkurz mash, it is entirely appropriate if you clearly describe the process and explain how it supports the rich malt depth and full-bodied finish expected in the style." }
   ],
-  defensible: [
-  ],
+
   difficultToDefend: [
     { id: "high", response: "A high saccharification mash may preserve excessive dextrins in an already high-gravity beer, increasing the risk of a heavy, cloying finish." }
   ],
